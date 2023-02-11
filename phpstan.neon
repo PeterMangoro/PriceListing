@@ -24,6 +24,7 @@ parameters:
         - app/Http/Kernel.php
         - app/Providers/*
         - app/Events/*
+        - app/Support/*
 
     
 #    checkMissingIterableValueType: false

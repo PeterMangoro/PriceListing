@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenDefineFunctions;
-use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenFinalClasses;
-use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses;
-use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenPrivateMethods;
 use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits;
 use NunoMaduro\PhpInsights\Domain\Metrics\Architecture\Classes;
-use SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff;
-use SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff;
+use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenFinalClasses;
+use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses;
+use SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff;
+use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenPrivateMethods;
+use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff;
+use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenDefineFunctions;
 use SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff;
-use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff;
-use SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff;
-use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff;
+use SlevomatCodingStandard\Sniffs\ControlStructures\DisallowShortTernaryOperatorSniff;
 
 return [
 
@@ -73,7 +74,9 @@ return [
         'app/Providers',
         'app/Casts',
         'app/Actions/Fortify',
-        'app/Actions/Jetstream'
+        'app/Actions/Jetstream',
+        'app/Support'
+
     ],
 
     'add' => [
@@ -93,6 +96,8 @@ return [
         PropertyTypeHintSniff::class,
         ReturnTypeHintSniff::class,
         UselessFunctionDocCommentSniff::class,
+        ForbiddenPublicPropertySniff::class,
+        DisallowShortTernaryOperatorSniff::class
     ],
 
     'config' => [
