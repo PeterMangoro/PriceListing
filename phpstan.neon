@@ -1,0 +1,29 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app/
+
+    # Level 9 is the highest level
+    level: 6
+
+    checkGenericClassInNonGenericObjectType: false
+
+#    ignoreErrors:
+#        - '#PHPDoc tag @var#'
+#
+    excludePaths:
+        - app/Builders/*
+        - app/Actions/Fortify/*
+        - app/Actions/Jetstream/*
+        - app/Casts/*
+        - app/Console/*
+        - app/Http/Middleware/*
+        - app/Http/Kernel.php
+        - app/Providers/*
+        - app/Events/*
+
+    
+#    checkMissingIterableValueType: false
