@@ -9,10 +9,10 @@ use Illuminate\Support\Collection;
 class GetDataAction
 {
     public static function fetchUnpaginatedModels(
-        object $data,
+        object $model,
         ?int $limit = 50
     ): Collection {
-        return $data
+        return $model
             ->whereActive()
             ->withDisplayImage()
             ->withActiveDiscountPrice()
@@ -25,10 +25,10 @@ class GetDataAction
     }
 
     public static function fetchDisplayModelByUUID(
-        object $data,
+        object $model,
         string $uuid
     ): Model {
-        return $data
+        return $model
             ->whereUUIDmatches($uuid)
             ->withUserSocialAccounts()
             ->withRatings()
@@ -40,10 +40,10 @@ class GetDataAction
     }
 
     public static function fetchEditModelByUUID(
-        object $data,
+        object $model,
         string $uuid
     ): Model {
-        return $data
+        return $model
             ->whereUUIDmatches($uuid)
             ->selectDetailAttributes()
             ->withImages()
@@ -57,11 +57,11 @@ class GetDataAction
     }
 
     public static function fetchPaginatedModels(
-        object $data,
+        object $model,
         int $per_page = 9
     ): LengthAwarePaginator {
         $paginate = request('per_page') ?: $per_page;
-        return $data
+        return $model
             ->whereActive()
             ->selectMinAttributes()
             ->withDisplayImage()

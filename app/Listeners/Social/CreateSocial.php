@@ -3,8 +3,9 @@
 namespace App\Listeners\Social;
 
 use App\Events\Social\CreatingSocial;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Services\Shared\SocialService;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class CreateSocial
 {
@@ -26,6 +27,7 @@ class CreateSocial
      */
     public function handle(CreatingSocial $event)
     {
-        //
+        $validated_request = $event->validated_request;
+        SocialService::create($validated_request);
     }
 }

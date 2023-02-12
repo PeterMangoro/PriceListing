@@ -3,8 +3,9 @@
 namespace App\Listeners\Social;
 
 use App\Events\Social\UpdatingSocial;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Services\Shared\SocialService;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class UpdateSocial
 {
@@ -26,6 +27,8 @@ class UpdateSocial
      */
     public function handle(UpdatingSocial $event)
     {
-        //
+        $validated_request = $event->validated_request;
+        $social = $event->social;
+        SocialService::update($validated_request, $social);
     }
 }

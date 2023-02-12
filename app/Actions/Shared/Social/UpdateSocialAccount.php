@@ -4,11 +4,11 @@ namespace App\Actions\Shared\Social;
 
 class UpdateSocialAccount
 {
-    public static function handle(object $request, object $social): void
+    public static function handle(object $validated_request, object $social): void
     {
-        $social->title = $request->title;
-        $social->value = $request->value;
-        $social->username = $request->username;
+        $social->title = $validated_request->title;
+        $social->value = $validated_request->value;
+        $social->username = $validated_request->username;
         $social->save();
     }
 }

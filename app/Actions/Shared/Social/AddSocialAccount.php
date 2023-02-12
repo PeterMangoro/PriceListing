@@ -6,13 +6,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AddSocialAccount
 {
-    public static function handle(object $request): void
+    public static function handle(object $validated_request): void
     {
-        // dd($request);
+        // dd($validated_request);
         Auth::user()->socials()->create([
-            'title' => $request->title,
-            'username' => $request->username,
-            'value' => $request->value,
+            'title' => $validated_request->title,
+            'username' => $validated_request->username,
+            'value' => $validated_request->value,
         ]);
     }
 }

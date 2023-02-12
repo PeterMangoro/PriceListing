@@ -8,15 +8,15 @@ class CreateAccommodationRoomPayment
 {
     public static function create(
         object $room,
-        object $request
+        object $validated_request
     ): int {
         return DB::table('payments')->insertGetId([
             'payable_type' => 'App\Models\Shared\Room',
             'payable_id' => $room->id,
             'amount' => $room->latestPrice->amount,
-            'service' => $request->service,
+            'service' => $validated_request->service,
             'status' => 'Success',
-            'guest' => $request->guest,
+            'guest' => $validated_request->guest,
         ]);
     }
 }

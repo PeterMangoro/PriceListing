@@ -1,0 +1,56 @@
+<?php
+
+namespace App\View\Welcome\Car;
+
+use App\DataObjects\Car\CarDisplayData;
+use App\DataObjects\Category\CategoryData;
+use App\Handlers\Car\CarHandler;
+use App\ValueObjects\CategoryType;
+use App\View\Shared\BaseView;
+use App\View\Shared\Filters;
+
+class WelcomeCategoryTypeIndexProps extends BaseView
+{
+    public function __construct(
+        public object $car_make,
+    ) {
+        $this->car_make = $car_make;
+    }
+
+    public function cars()
+    {
+        return CarDisplayData::to_web_page(
+            CarHandler::get_paginated_cars(
+                $this->car_make->cars(),
+                18
+            )
+        );
+    }
+
+    public function categories()
+    {
+        return CategoryData::for_display(
+            $this->car_make->carModels()->get('title')
+        );
+    }
+
+    public function category_type()
+    {
+        return CategoryType::from($this->car_make->title);
+    }
+
+    // public function car_makes()
+    // {
+    //     return
+    //         CategoryTypeData::for_display(
+    //             CategoryHandler::get_car_makes(
+    //                 CarCategory::whereNot('type', $this->car_make)
+    //             )
+    //         );
+    // }
+
+    public function filters()
+    {
+        return Filters::filters();
+    }
+}

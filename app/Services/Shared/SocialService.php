@@ -7,15 +7,15 @@ use App\Actions\Shared\Social\UpdateSocialAccount;
 
 class SocialService
 {
-    public static function create(object $product): void
+    public static function create(object $validated_request): void
     {
-        AddSocialAccount::handle($product);
+        AddSocialAccount::handle($validated_request);
     }
 
     public static function update(
-        object $request,
-        object $product
+        object $validated_request,
+        object $social
     ): void {
-        UpdateSocialAccount::handle($request, $product);
+        UpdateSocialAccount::handle($validated_request, $social);
     }
 }

@@ -19,9 +19,9 @@ class CreatingPlot
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public object $validated_request)
     {
-        //
+        $this->validated_request=$validated_request;
     }
 
     /**

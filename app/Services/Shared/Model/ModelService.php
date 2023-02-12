@@ -11,41 +11,41 @@ use Illuminate\Support\Collection;
 class ModelService
 {
     public static function getPaginatedData(
-        object $data,
+        object $model,
         int $per_page
     ): LengthAwarePaginator {
         return GetDataAction::fetchPaginatedModels(
-            $data,
+            $model,
             $per_page
         );
     }
 
     public static function getUnpaginatedData(
-        object $data,
+        object $model,
         ?int $limit = 9
     ): Collection {
         return GetDataAction::fetchUnpaginatedModels(
-            $data,
+            $model,
             $limit
         );
     }
 
         public static function getDisplayModel(
-            object $data,
+            object $model,
             string $uuid
         ): Model {
             return GetDataAction::fetchDisplayModelByUUID(
-                $data,
+                $model,
                 $uuid
             );
         }
 
     public static function getEditModel(
-        object $data,
+        object $model,
         string $uuid
     ): Model {
         return GetDataAction::fetchEditModelByUUID(
-            $data,
+            $model,
             $uuid
         );
     }
@@ -58,5 +58,10 @@ class ModelService
     public static function destroy(object $model): void
     {
         DeleteModelAction::destroy($model);
+    }
+
+    public static function restore(object $model,int $id): Model
+    {
+        return DeleteModelAction::restore($model,$id);
     }
 }
