@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Team;
+use App\Models\User;
 use App\Traits\UUID;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Vacancy extends Model
 {

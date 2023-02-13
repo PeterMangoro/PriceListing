@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Shared\SharedModel;
 use App\Builders\Product\ProductBuilder;
 use App\Models\Categories\ProductCategory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

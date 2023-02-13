@@ -3,9 +3,11 @@
 namespace App\Models\Shared;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Shared\Room;
+use App\Models\Shared\Payment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RoomUser extends Model
 {

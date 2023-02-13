@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\SharedModel;
+use App\Models\Shared\SharedModel;
 use App\ValueObjects\Category;
 use App\Builders\Plot\PlotBuilder;
 

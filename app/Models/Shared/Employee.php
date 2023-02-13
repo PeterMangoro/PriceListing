@@ -2,12 +2,13 @@
 
 namespace App\Models\Shared;
 
-use App\Builders\Shared\EmployeeBuilder;
 use App\Models\User;
 use App\Traits\UUID;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Shared\Attachment;
 use Illuminate\Database\Eloquent\Model;
+use App\Builders\Shared\EmployeeBuilder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Employee extends Model
 {

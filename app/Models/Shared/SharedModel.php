@@ -1,24 +1,26 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Shared;
 
-use App\Builders\Shared\SharedScopes;
+use App\Models\Team;
+use App\Models\User;
+use App\Traits\UUID;
+use App\Models\Shared\Price;
+use App\Models\Shared\Rating;
 use App\Models\Shared\Address;
-use App\Models\Shared\Attachment;
-use App\Models\Shared\Discount;
 use App\Models\Shared\Feature;
 use App\Models\Shared\Payment;
 use App\Models\Shared\Popular;
-use App\Models\Shared\Price;
-use App\Models\Shared\Rating;
-use App\Traits\UUID;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Shared\Discount;
+use App\Models\Shared\Attachment;
+use App\Builders\Shared\SharedScopes;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class SharedModel extends Model
 {

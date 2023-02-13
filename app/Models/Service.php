@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Shared\SharedModel;
 use App\Builders\Service\ServiceBuilder;
 use App\Models\Categories\ServiceCategory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

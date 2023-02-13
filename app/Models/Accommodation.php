@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\Shared\Room;
-use App\Models\SharedModel;
+use App\Models\Shared\SharedModel;
 use App\Models\Categories\AccommodationCategory;
 use App\Builders\Accommodation\AccommodationBuilder;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
