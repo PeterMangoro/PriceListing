@@ -1,23 +1,24 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Lodge;
+namespace App\Views\Welcome\Accommodation\Lodge;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
+use App\Handlers\Shared\ModelHandler;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
 use App\Models\Accommodation;
 use App\Models\Feature;
 use App\Models\Popular;
 use App\Models\Shared\Discount;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeLodgeAccommodationIndexProps extends BaseView
 {
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            WelcomeAccommodationHandler::get_paginated_display_accommodations(
+            ModelHandler::getPaginatedData(
                 Accommodation::forLodges()
             )
         );

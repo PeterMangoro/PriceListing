@@ -7,8 +7,8 @@ use App\Actions\Shared\Room\GetRooms;
 use App\DataObjects\Accommodation\Room\AccommodationRoomDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\ValueObjects\Money;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class RoomIndexProps extends BaseView
 {

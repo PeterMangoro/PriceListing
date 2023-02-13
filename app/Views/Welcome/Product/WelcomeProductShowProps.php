@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Product;
+namespace App\Views\Welcome\Product;
 
 use App\DataObjects\Product\ProductDetailData;
 use App\DataObjects\Product\ProductDisplayData;
@@ -10,7 +10,7 @@ use App\Handlers\Product\ProductHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Product;
 use App\ValueObjects\CategoryType;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class WelcomeProductShowProps extends BaseView
 {
@@ -21,7 +21,7 @@ class WelcomeProductShowProps extends BaseView
     ) {
         $this->uuid = $uuid;
         $this->product =
-            ModelHandler::get_model_for_detailed_display(
+            ModelHandler::getModelForDisplay(
                 new Product(),
                 $uuid
             );
@@ -43,7 +43,7 @@ class WelcomeProductShowProps extends BaseView
 
     public function similar_products()
     {
-        return ProductDisplayData::collection_to_web_page(
+        return ProductDisplayData::collectionToWebPage(
             ProductHandler::get_unpaginated_products(
                 $this->category->products()
                     ->dontInclude($this->product->id),
@@ -54,7 +54,7 @@ class WelcomeProductShowProps extends BaseView
 
     public function owner_products()
     {
-        return ProductDisplayData::collection_to_web_page(
+        return ProductDisplayData::collectionToWebPage(
             ProductHandler::get_unpaginated_products(
                 Product::belongsToOwner($this->product->user->id)
                     ->dontInclude($this->product->id),

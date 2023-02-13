@@ -6,7 +6,7 @@ use App\DataObjects\Product\Partials\ProductForUpdate;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Product;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class ProductEditProps extends BaseView
 {
@@ -16,7 +16,9 @@ class ProductEditProps extends BaseView
         public ?object $categories = null
     ) {
         $this->uuid = $uuid;
-        $this->product = ProductForUpdate::from(ModelHandler::getModelForEdit(new Product(), $this->uuid));
+        $this->product = ProductForUpdate::from(
+            ModelHandler::getModelForEdit(
+                new Product(), $this->uuid));
         $this->categories = $this->product->categories;
     }
 

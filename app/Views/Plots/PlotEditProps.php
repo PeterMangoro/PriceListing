@@ -5,7 +5,7 @@ namespace App\Views\Plots;
 use App\DataObjects\Plot\Partials\PlotForUpdate;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Plot;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class PlotEditProps extends BaseView
 {

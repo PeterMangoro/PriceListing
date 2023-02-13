@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Welcome\Plot;
+namespace App\Views\Welcome\Plot;
 
 use App\DataObjects\Plot\PlotDetailData;
 use App\DataObjects\Plot\PlotDisplayData;
 use App\Handlers\Plot\PlotHandler;
 use App\Models\Plot;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class WelcomePlotShowProps extends BaseView
 {
@@ -26,7 +26,7 @@ class WelcomePlotShowProps extends BaseView
 
     public function similar_plots()
     {
-        return PlotDisplayData::collection_to_web_page(
+        return PlotDisplayData::collectionToWebPage(
             PlotHandler::get_unpaginated_plots(
                 Plot::fromSameLocation($this->city)
                     ->dontInclude($this->plot->id),
@@ -37,7 +37,7 @@ class WelcomePlotShowProps extends BaseView
 
     public function owner_plots()
     {
-        return PlotDisplayData::collection_to_web_page(
+        return PlotDisplayData::collectionToWebPage(
             PlotHandler::get_unpaginated_plots(
                 Plot::belongsToOwner($this->plot->user->id)
                     ->dontInclude($this->plot->id),

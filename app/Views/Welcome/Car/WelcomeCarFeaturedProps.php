@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Car;
+namespace App\Views\Welcome\Car;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Car\CarDisplayData;
@@ -8,15 +8,15 @@ use App\DataObjects\Category\CategoryTypeData;
 use App\Handlers\Category\CategoryHandler;
 use App\Models\Categories\CarCategory;
 use App\Models\Feature;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeCarFeaturedProps extends BaseView
 {
     public function cars()
     {
         return CarDisplayData::toWebPage(
-            GetFeaturedModels::for_paginated_display_of_type(
+            GetFeaturedModels::forPaginatedDisplayOfType(
                 Feature::orderByRating(),
                 'Car'
             ),
@@ -26,8 +26,8 @@ class WelcomeCarFeaturedProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new CarCategory()
             )
         );

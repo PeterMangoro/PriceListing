@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Sale;
+namespace App\Views\Welcome\Accommodation\Sale;
 
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\DataObjects\Category\CategoryTypeData;
@@ -8,8 +8,8 @@ use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
 use App\Models\Accommodation;
 use App\Models\Categories\AccommodationCategory;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeAccommodationRecentProps extends BaseView
 {
@@ -24,8 +24,8 @@ class WelcomeAccommodationRecentProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new AccommodationCategory()
             )
         );

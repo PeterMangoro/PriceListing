@@ -1,11 +1,11 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Rental;
+namespace App\Views\Welcome\Accommodation\Rental;
 
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerAccommodationsProps extends BaseView
 {

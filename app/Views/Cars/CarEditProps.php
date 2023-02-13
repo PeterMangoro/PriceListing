@@ -6,8 +6,8 @@ use App\DataObjects\Car\Partials\CarForUpdate;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Car\Car;
 use App\Models\Categories\CarCategory;
-use App\View\Shared\BaseView;
-use App\View\Shared\CarMakes;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\CarMakes;
 
 class CarEditProps extends BaseView
 {
@@ -18,7 +18,9 @@ class CarEditProps extends BaseView
     ) {
         $this->uuid = $uuid;
 
-        $this->car = CarForUpdate::from(ModelHandler::getModelForEdit(new Car(), $this->uuid));
+        $this->car = CarForUpdate::from(
+            ModelHandler::getModelForEdit(
+                new Car(), $this->uuid));
         $this->categories = $this->car->categories;
     }
 

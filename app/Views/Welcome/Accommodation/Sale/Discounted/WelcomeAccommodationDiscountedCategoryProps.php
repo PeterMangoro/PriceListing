@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Sale\Discounted;
+namespace App\Views\Welcome\Accommodation\Sale\Discounted;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
@@ -10,9 +10,9 @@ use App\Handlers\Category\CategoryHandler;
 use App\Models\Categories\AccommodationCategory;
 use App\Models\Shared\Discount;
 use App\ValueObjects\Category;
-use App\View\Shared\BaseView;
-use App\View\Shared\Categories;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Views\Shared\Filters;
 
 class WelcomeAccommodationDiscountedCategoryProps extends BaseView
 {
@@ -24,7 +24,7 @@ class WelcomeAccommodationDiscountedCategoryProps extends BaseView
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            GetFeaturedModels::for_paginated_display_of_type(
+            GetFeaturedModels::forPaginatedDisplayOfType(
                 Discount::ofCategory($this->category->slug)->orderByExpDate(),
                 'Accommodation'
             ),
@@ -34,8 +34,8 @@ class WelcomeAccommodationDiscountedCategoryProps extends BaseView
 
     public function categories()
     {
-        return CategoryData::for_display(
-            Categories::get_all_categories(
+        return CategoryData::forDisplay(
+            Categories::getAllCategories(
                 new AccommodationCategory()
             )
         );
@@ -48,8 +48,8 @@ class WelcomeAccommodationDiscountedCategoryProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new AccommodationCategory()
             )
         );

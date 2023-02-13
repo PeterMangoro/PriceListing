@@ -6,7 +6,7 @@ use App\DataObjects\Accommodation\Partials\AccommodationForUpdate;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Accommodation;
 use App\Models\Categories\AccommodationCategory;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class AccommodationEditProps extends BaseView
 {

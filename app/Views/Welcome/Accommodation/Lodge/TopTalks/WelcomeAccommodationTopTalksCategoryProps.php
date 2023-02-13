@@ -1,18 +1,20 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Lodge\TopTalks;
+namespace App\Views\Welcome\Accommodation\Lodge\TopTalks;
 
-use App\Actions\Shared\Popular\GetPopularModels;
-use App\DataObjects\Accommodation\AccommodationDisplayData;
+use App\Views\Shared\Filters;
+use App\Models\Shared\Popular;
+use App\ValueObjects\Category;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
+use App\Actions\Shared\Popular\GetPopularModels;
 use App\Models\Categories\AccommodationCategory;
-use App\Models\Popular;
-use App\ValueObjects\Category;
-use App\View\Shared\BaseView;
-use App\View\Shared\Categories;
-use App\View\Shared\Filters;
+use App\DataObjects\Accommodation\AccommodationDisplayData;
+
+
 
 class WelcomeAccommodationTopTalksCategoryProps extends BaseView
 {
@@ -24,7 +26,7 @@ class WelcomeAccommodationTopTalksCategoryProps extends BaseView
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            GetPopularModels::for_paginated_display_of_type(
+            GetPopularModels::forPaginatedDisplayOfType(
                 Popular::ofCategory($this->category->slug)->orderByPageVisits(),
                 'Accommodation',
                 9
@@ -34,8 +36,8 @@ class WelcomeAccommodationTopTalksCategoryProps extends BaseView
 
     public function categories()
     {
-        return CategoryData::for_display(
-            Categories::get_all_categories(
+        return CategoryData::forDisplay(
+            Categories::getAllCategories(
                 new AccommodationCategory()
             )
         );
@@ -48,8 +50,8 @@ class WelcomeAccommodationTopTalksCategoryProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new AccommodationCategory()
             )
         );

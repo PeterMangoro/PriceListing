@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Shared;
+namespace App\Views\Shared;
 
 use App\Handlers\Shared\ModelHandler;
 
 class Categories
 {
-    public static function get_all_categories($data)
+    public static function getAllCategories($data)
     {
         return ModelHandler::getUnPaginatedData($data);
     }
 
-    public static function get_categories_of_type($data, $type)
+    public static function getCategoriesOfType($data, $type)
     {
         return ModelHandler::getUnPaginatedData($data->ofType($type));
     }

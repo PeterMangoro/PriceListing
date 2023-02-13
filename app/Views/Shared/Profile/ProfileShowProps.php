@@ -8,7 +8,7 @@ use App\DataObjects\Employee\EmployeeDisplayData;
 use App\Models\User;
 use App\ValueObjects\Address;
 use App\ValueObjects\Socials;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class ProfileShowProps extends BaseView
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Welcome\Transport;
+namespace App\Views\Welcome\Transport;
 
 use App\Handlers\Transport\TransportHandler;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerTransportsProps extends BaseView
 {

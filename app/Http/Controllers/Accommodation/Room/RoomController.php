@@ -6,8 +6,8 @@ use App\Handlers\Accommodation\RoomHandler;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Accommodation\Room\CreateRoomRequest;
 use App\Models\Accommodation;
-use App\View\Shared\Room\RoomCreateProps;
-use App\View\Shared\Room\RoomIndexProps;
+use App\Views\Shared\Room\RoomCreateProps;
+use App\Views\Shared\Room\RoomIndexProps;
 use Inertia\Inertia;
 
 class RoomController extends Controller

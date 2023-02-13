@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Welcome\Transport;
+namespace App\Views\Welcome\Transport;
 
 use App\DataObjects\Transport\TransportDisplayData;
 use App\Handlers\Transport\TransportHandler;
 use App\Models\Transport;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeTransportIndexProps extends BaseView
 {

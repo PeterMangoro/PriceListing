@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Car;
+namespace App\Views\Welcome\Car;
 
 use App\Actions\Shared\Popular\GetPopularModels;
 use App\DataObjects\Car\CarDisplayData;
@@ -10,9 +10,9 @@ use App\Handlers\Category\CategoryHandler;
 use App\Models\Categories\CarCategory;
 use App\Models\Popular;
 use App\ValueObjects\Category;
-use App\View\Shared\BaseView;
-use App\View\Shared\Categories;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Views\Shared\Filters;
 
 class WelcomeCarTopTalksCategoryProps extends BaseView
 {
@@ -24,7 +24,7 @@ class WelcomeCarTopTalksCategoryProps extends BaseView
     public function cars()
     {
         return CarDisplayData::toWebPage(
-            GetPopularModels::for_paginated_display_of_type(
+            GetPopularModels::forPaginatedDisplayOfType(
                 Popular::ofCategory($this->category->slug)->orderByPageVisits(),
                 'Car'
             )
@@ -33,8 +33,8 @@ class WelcomeCarTopTalksCategoryProps extends BaseView
 
     public function categories()
     {
-        return CategoryData::for_display(
-            Categories::get_all_categories(
+        return CategoryData::forDisplay(
+            Categories::getAllCategories(
                 new CarCategory()
             )
         );
@@ -47,8 +47,8 @@ class WelcomeCarTopTalksCategoryProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new CarCategory()
             )
         );

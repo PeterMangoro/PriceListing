@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Car;
+namespace App\Views\Welcome\Car;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Car\CarDisplayData;
@@ -12,8 +12,8 @@ use App\Models\Categories\CarCategory;
 use App\Models\Feature;
 use App\Models\Popular;
 use App\Models\Shared\Discount;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeCarIndexProps extends BaseView
 {
@@ -108,8 +108,8 @@ class WelcomeCarIndexProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new CarCategory()
             )
         );

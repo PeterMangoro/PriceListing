@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Sale;
+namespace App\Views\Welcome\Accommodation\Sale;
 
 use App\DataObjects\Accommodation\AccommodationDetailData;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
@@ -9,7 +9,7 @@ use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Model\ModelHandler;
 use App\Models\Accommodation;
 use App\Models\Categories\AccommodationCategory;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class WelcomeSaleAccommodationShowProps extends BaseView
 {
@@ -20,7 +20,7 @@ class WelcomeSaleAccommodationShowProps extends BaseView
     ) {
         $this->uuid = $uuid;
         $this->accommodation =
-            ModelHandler::get_model_for_detailed_display(
+            ModelHandler::getModelForDisplay(
                 new Accommodation(),
                 $uuid
             );
@@ -37,8 +37,8 @@ class WelcomeSaleAccommodationShowProps extends BaseView
 
     public function similar_accommodations()
     {
-        return AccommodationDisplayData::collection_to_web_page(
-            AccommodationHandler::get_unpaginated_accommodations(
+        return AccommodationDisplayData::collectionToWebPage(
+            ModelHandler::getUnPaginatedData(
                 Accommodation::fromSameCity($this->accommodation->address->city)
                     ->dontInclude($this->accommodation->id)
                     ->withAddress()
@@ -50,8 +50,8 @@ class WelcomeSaleAccommodationShowProps extends BaseView
 
     public function owner_accommodations()
     {
-        return AccommodationDisplayData::collection_to_web_page(
-            AccommodationHandler::get_unpaginated_accommodations(
+        return AccommodationDisplayData::collectionToWebPage(
+            ModelHandler::getUnPaginatedData(
                 Accommodation::belongsToOwner($this->accommodation->user->id)
                     ->dontInclude($this->accommodation->id)
                     ->withAddress(),

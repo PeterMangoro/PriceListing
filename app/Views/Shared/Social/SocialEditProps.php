@@ -3,7 +3,7 @@
 namespace App\Views\Shared\Social;
 
 use App\DataObjects\Social\SocialForUpdate;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class SocialEditProps extends BaseView
 {

@@ -5,8 +5,8 @@ namespace App\Views\Cars;
 use App\DataObjects\Car\CarDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Car\Car;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class CarIndexProps extends BaseView
 {

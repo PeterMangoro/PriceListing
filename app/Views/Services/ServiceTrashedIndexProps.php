@@ -5,16 +5,18 @@ namespace App\Views\Services;
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Service;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class ServiceTrashedIndexProps extends BaseView
 {
     public function services()
     {
-        return ServiceDisplayData::toOwnerDisplay(
+        return 
+        ServiceDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
-                Service::onlyTrashed()->belongsToAuthUser()
+                Service::onlyTrashed()
+                ->belongsToAuthUser()
             )
         );
     }

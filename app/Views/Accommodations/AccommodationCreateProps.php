@@ -4,7 +4,7 @@ namespace App\Views\Accommodations;
 
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\AccommodationCategory;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class AccommodationCreateProps extends BaseView
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\View\Welcome\Service;
+namespace App\Views\Welcome\Service;
 
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Service\ServiceHandler;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerServicesProps extends BaseView
 {

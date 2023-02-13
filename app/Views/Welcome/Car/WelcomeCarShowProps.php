@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Car;
+namespace App\Views\Welcome\Car;
 
 use App\DataObjects\Car\CarDetailData;
 use App\DataObjects\Car\CarDisplayData;
@@ -9,7 +9,7 @@ use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Model\ModelHandler;
 use App\Models\Car;
 use App\Models\Categories\CarCategory;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class WelcomeCarShowProps extends BaseView
 {
@@ -20,7 +20,7 @@ class WelcomeCarShowProps extends BaseView
     ) {
         $this->uuid = $uuid;
         $this->car =
-            ModelHandler::get_model_for_detailed_display(
+            ModelHandler::getModelForDisplay(
                 Car::includeCarDetail(),
                 $uuid
             );
@@ -44,7 +44,7 @@ class WelcomeCarShowProps extends BaseView
     {
         // dd($this->car->carMake->cars()->limit(8)->get());
 
-        return CarDisplayData::collection_to_web_page(
+        return CarDisplayData::collectionToWebPage(
             CarHandler::get_unpaginated_cars(
                 $this->car->carMake->cars()
                     ->dontInclude($this->car->id)
@@ -56,7 +56,7 @@ class WelcomeCarShowProps extends BaseView
 
     public function owner_cars()
     {
-        return CarDisplayData::collection_to_web_page(
+        return CarDisplayData::collectionToWebPage(
             CarHandler::get_unpaginated_cars(
                 Car::belongsToOwner($this->car->user->id)
                     ->dontInclude($this->car->id),

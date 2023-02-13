@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Product;
+namespace App\Views\Welcome\Product;
 
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
@@ -10,9 +10,9 @@ use App\Handlers\Product\ProductHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Product;
 use App\ValueObjects\CategoryType;
-use App\View\Shared\BaseView;
-use App\View\Shared\Categories;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Views\Shared\Filters;
 
 class WelcomeCategoryTypeIndexProps extends BaseView
 {
@@ -33,8 +33,8 @@ class WelcomeCategoryTypeIndexProps extends BaseView
 
     public function categories()
     {
-        return CategoryData::for_display(
-            Categories::get_categories_of_type(
+        return CategoryData::forDisplay(
+            Categories::getCategoriesOfType(
                 new ProductCategory(),
                 $this->category_type
             )
@@ -48,8 +48,8 @@ class WelcomeCategoryTypeIndexProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 ProductCategory::whereNot('type', $this->category_type)
             )
         );

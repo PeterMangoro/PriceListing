@@ -5,7 +5,7 @@ namespace App\Views\Shared\Employee;
 use App\DataObjects\Employee\EmployeeDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Shared\Employee;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class EmployeeIndexProps extends BaseView
 {

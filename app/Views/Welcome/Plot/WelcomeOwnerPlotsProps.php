@@ -1,11 +1,11 @@
 <?php
 
-namespace App\View\Welcome\Plot;
+namespace App\Views\Welcome\Plot;
 
 use App\DataObjects\Plot\PlotDisplayData;
 use App\Handlers\Plot\PlotHandler;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerPlotsProps extends BaseView
 {

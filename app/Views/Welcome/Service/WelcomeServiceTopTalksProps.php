@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Service;
+namespace App\Views\Welcome\Service;
 
 use App\Actions\Shared\Popular\GetPopularModels;
 use App\DataObjects\Category\CategoryTypeData;
@@ -8,15 +8,15 @@ use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Category\CategoryHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Models\Popular;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeServiceTopTalksProps extends BaseView
 {
     public function services()
     {
         return ServiceDisplayData::toWebPage(
-            GetPopularModels::for_paginated_display_of_type(
+            GetPopularModels::forPaginatedDisplayOfType(
                 Popular::orderByPageVisits(),
                 'Service'
             )
@@ -25,8 +25,8 @@ class WelcomeServiceTopTalksProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new ServiceCategory()
             )
         );

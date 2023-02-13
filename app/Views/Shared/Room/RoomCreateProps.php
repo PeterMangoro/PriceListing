@@ -2,7 +2,7 @@
 
 namespace App\Views\Shared\Room;
 
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class RoomCreateProps extends BaseView
 {

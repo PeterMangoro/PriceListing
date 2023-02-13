@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Shared;
+namespace App\Views\Shared;
 
 class Filters
 {

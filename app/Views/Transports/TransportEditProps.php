@@ -2,11 +2,14 @@
 
 namespace App\Views\Transports;
 
+use App\Models\Car\Car;
+use App\Views\Shared\Teams;
+use App\Models\Car\Transport;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\CarMakes;
 use App\Handlers\Car\CarHandler;
+use App\Handlers\Shared\ModelHandler;
 use App\Listeners\Model\ModelEditListener;
-use App\View\Shared\BaseView;
-use App\View\Shared\CarMakes;
-use App\View\Shared\Teams;
 
 class TransportEditProps extends BaseView
 {
@@ -17,18 +20,15 @@ class TransportEditProps extends BaseView
 
     public function transport()
     {
-        return (new ModelEditListener())->get_transport($this->uuid);
+        return ModelHandler::getModelForEdit(new Transport(),$this->uuid);
     }
 
     public function ownerCars()
     {
-        return CarHandler::get_plain_user_cars();
+        return ModelHandler::getUnPaginatedData(Car::belongsToAuthUser());
     }
 
-    public function teams()
-    {
-        return (new Teams())->teams($this->uuid);
-    }
+   
 
     public function carMakes()
     {

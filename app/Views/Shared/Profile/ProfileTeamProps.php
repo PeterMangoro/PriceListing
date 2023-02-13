@@ -4,7 +4,7 @@ namespace App\Views\Shared\Profile;
 
 use App\DataObjects\Employee\EmployeeDisplayData;
 use App\Models\User;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class ProfileTeamProps extends BaseView
 {

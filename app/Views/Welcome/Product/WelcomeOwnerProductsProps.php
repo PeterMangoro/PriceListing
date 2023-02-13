@@ -1,11 +1,11 @@
 <?php
 
-namespace App\View\Welcome\Product;
+namespace App\Views\Welcome\Product;
 
 use App\DataObjects\Product\ProductDisplayData;
 use App\Handlers\Product\ProductHandler;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerProductsProps extends BaseView
 {

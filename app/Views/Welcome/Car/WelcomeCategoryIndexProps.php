@@ -1,13 +1,13 @@
 <?php
 
-namespace App\View\Welcome\Car;
+namespace App\Views\Welcome\Car;
 
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryData;
 use App\Handlers\Welcome\WelcomeCarHandler;
 use App\ValueObjects\Category;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeCategoryIndexProps extends BaseView
 {
@@ -27,7 +27,7 @@ class WelcomeCategoryIndexProps extends BaseView
 
     public function categories()
     {
-        return CategoryData::for_display(
+        return CategoryData::forDisplay(
             $this->car_model->carMake->carModels()->get('title')
         );
     }

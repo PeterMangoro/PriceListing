@@ -1,14 +1,14 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Sale;
+namespace App\Views\Welcome\Accommodation\Sale;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
 use App\Models\Accommodation;
 use App\Models\Shared\Discount;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeSaleAccommodationIndexProps extends BaseView
 {

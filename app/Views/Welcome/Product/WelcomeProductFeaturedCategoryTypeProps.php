@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Product;
+namespace App\Views\Welcome\Product;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Category\CategoryData;
@@ -10,9 +10,9 @@ use App\Handlers\Category\CategoryHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Feature;
 use App\ValueObjects\CategoryType;
-use App\View\Shared\BaseView;
-use App\View\Shared\Categories;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Views\Shared\Filters;
 
 class WelcomeProductFeaturedCategoryTypeProps extends BaseView
 {
@@ -24,7 +24,7 @@ class WelcomeProductFeaturedCategoryTypeProps extends BaseView
     public function products()
     {
         return ProductDisplayData::toWebPage(
-            GetFeaturedModels::for_paginated_display_of_type(
+            GetFeaturedModels::forPaginatedDisplayOfType(
                 Feature::ofCategoryType($this->category_type)->orderByRating(),
                 'Product'
             ),
@@ -34,8 +34,8 @@ class WelcomeProductFeaturedCategoryTypeProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new ProductCategory()
             )
         );
@@ -48,8 +48,8 @@ class WelcomeProductFeaturedCategoryTypeProps extends BaseView
 
     public function categories()
     {
-        return CategoryData::for_display(
-            Categories::get_categories_of_type(
+        return CategoryData::forDisplay(
+            Categories::getCategoriesOfType(
                 new ProductCategory(),
                 $this->category_type
             )

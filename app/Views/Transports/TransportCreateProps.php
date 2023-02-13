@@ -2,9 +2,10 @@
 
 namespace App\Views\Transports;
 
-use App\Handlers\Car\CarHandler;
-use App\View\Shared\BaseView;
-use App\View\Shared\CarMakes;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Car\Car;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\CarMakes;
 
 class TransportCreateProps extends BaseView
 {
@@ -15,6 +16,6 @@ class TransportCreateProps extends BaseView
 
     public function ownerCars()
     {
-        return CarHandler::get_plain_user_cars();
+        return ModelHandler::getUnPaginatedData(Car::belongsToAuthUser());
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Views;
 
 use App\Actions\Dashboard\DashboardCountAction;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class MallDashboardProps extends BaseView
 {

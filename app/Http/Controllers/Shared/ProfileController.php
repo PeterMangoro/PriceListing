@@ -6,8 +6,8 @@ use App\Handlers\Shared\UserProfileHandler;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\Profile\ProfileUpdateRequest;
 use App\Models\User;
-use App\View\Shared\Profile\ProfileShowProps;
-use App\View\Shared\Profile\ProfileTeamProps;
+use App\Views\Shared\Profile\ProfileShowProps;
+use App\Views\Shared\Profile\ProfileTeamProps;
 use Inertia\Inertia;
 
 class ProfileController extends Controller

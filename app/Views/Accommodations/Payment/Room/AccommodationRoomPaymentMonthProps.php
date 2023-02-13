@@ -5,8 +5,8 @@ namespace App\Views\Accommodations\Payment\Room;
 use App\DataObjects\Accommodation\Room\Payment\RoomPaymentDisplayData;
 use App\Models\Accommodation;
 use App\Support\Collection;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class AccommodationRoomPaymentMonthProps extends BaseView
 {

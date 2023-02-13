@@ -1,17 +1,19 @@
 <?php
 
-namespace App\View\Welcome\Accommodation;
+namespace App\Views\Welcome\Accommodation;
 
-use App\DataObjects\Accommodation\AccommodationDisplayData;
-use App\DataObjects\Category\CategoryData;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Categories\AccommodationCategory;
+use App\Models\Accommodation;
+use App\Views\Shared\Filters;
 use App\ValueObjects\Category;
-use App\View\Shared\BaseView;
-use App\View\Shared\Categories;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Category\CategoryData;
+use App\Handlers\Category\CategoryHandler;
+use App\DataObjects\Category\CategoryTypeData;
+use App\Models\Categories\AccommodationCategory;
+use App\Handlers\Welcome\WelcomeAccommodationHandler;
+use App\DataObjects\Accommodation\AccommodationDisplayData;
 
 class WelcomeCategoryIndexProps extends BaseView
 {
@@ -23,16 +25,17 @@ class WelcomeCategoryIndexProps extends BaseView
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            WelcomeAccommodationHandler::get_category_accommodations(
-                $this->category->slug
+            ModelHandler::getPaginatedData(
+                Accommodation::withAddress()
+                ->classifiedUnder($this->category->slug)
             )
         );
     }
 
     public function categories()
     {
-        return CategoryData::for_display(
-            Categories::get_all_categories(
+        return CategoryData::forDisplay(
+            Categories::getAllCategories(
                 new AccommodationCategory()
             )
         );
@@ -45,8 +48,8 @@ class WelcomeCategoryIndexProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new AccommodationCategory()
             )
         );

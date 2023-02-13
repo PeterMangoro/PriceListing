@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Welcome\Service;
+namespace App\Views\Welcome\Service;
 
 use App\DataObjects\Service\ServiceDetailData;
 use App\DataObjects\Service\ServiceDisplayData;
@@ -10,7 +10,7 @@ use App\Handlers\Service\ServiceHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Models\Service;
 use App\ValueObjects\CategoryType;
-use App\View\Shared\BaseView;
+use App\Views\Shared\BaseView;
 
 class WelcomeServiceShowProps extends BaseView
 {
@@ -18,7 +18,7 @@ class WelcomeServiceShowProps extends BaseView
     {
         $this->uuid = $uuid;
         $this->service =
-            ModelHandler::get_model_for_detailed_display(
+            ModelHandler::getModelForDisplay(
                 new Service(),
                 $uuid
             );
@@ -40,7 +40,7 @@ class WelcomeServiceShowProps extends BaseView
 
     public function similar_services()
     {
-        return ServiceDisplayData::collection_to_web_page(
+        return ServiceDisplayData::collectionToWebPage(
             ServiceHandler::get_unpaginated_services(
                 $this->category->services()
                     ->dontInclude($this->service->id),
@@ -51,7 +51,7 @@ class WelcomeServiceShowProps extends BaseView
 
     public function owner_services()
     {
-        return ServiceDisplayData::collection_to_web_page(
+        return ServiceDisplayData::collectionToWebPage(
             ServiceHandler::get_unpaginated_services(
                 Service::belongsToOwner($this->service->user->id)
                     ->dontInclude($this->service->id),

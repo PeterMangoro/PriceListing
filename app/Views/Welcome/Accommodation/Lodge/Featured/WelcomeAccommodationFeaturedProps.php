@@ -1,22 +1,24 @@
 <?php
 
-namespace App\View\Welcome\Accommodation\Lodge\Featured;
+namespace App\Views\Welcome\Accommodation\Lodge\Featured;
 
+use App\Views\Shared\Filters;
+use App\Models\Shared\Feature;
+use App\Views\Shared\BaseView;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Category\CategoryTypeData;
+use App\Models\Categories\AccommodationCategory;
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
-use App\Models\Categories\AccommodationCategory;
-use App\Models\Feature;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+
+
 
 class WelcomeAccommodationFeaturedProps extends BaseView
 {
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            GetFeaturedModels::for_paginated_display_of_type(
+            GetFeaturedModels::forPaginatedDisplayOfType(
                 Feature::orderByRating(),
                 'Accommodation',
                 9
@@ -27,8 +29,8 @@ class WelcomeAccommodationFeaturedProps extends BaseView
 
     public function category_types()
     {
-        return CategoryTypeData::for_display(
-            CategoryHandler::get_category_types(
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
                 new AccommodationCategory()
             )
         );

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\Social\CreateSocialRequest;
 use App\Http\Requests\Shared\Social\UpdateSocialRequest;
 use App\Models\Shared\Social;
-use App\View\Shared\Social\SocialIndexProps;
+use App\Views\Shared\Social\SocialIndexProps;
 use Inertia\Inertia;
 
 class SocialController extends Controller

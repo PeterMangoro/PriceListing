@@ -1,11 +1,11 @@
 <?php
 
-namespace App\View\Welcome\Car;
+namespace App\Views\Welcome\Car;
 
 use App\DataObjects\Car\CarDisplayData;
 use App\Handlers\Car\CarHandler;
-use App\View\Shared\BaseView;
-use App\View\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerCarsProps extends BaseView
 {
