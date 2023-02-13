@@ -19,14 +19,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Mall/Product/show', [
+        return Inertia::render('Product/show', [
             'data' => new ProductIndexProps(),
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Mall/Product/add', [
+        return Inertia::render('Product/add', [
             'data' => new ProductCreateProps(),
         ]);
     }
@@ -39,7 +39,7 @@ class ProductController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Mall/Product/edit', [
+        return Inertia::render('Product/edit', [
             'data' => new ProductEditProps($uuid),
         ]);
     }

@@ -1,35 +1,31 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Shared;
 
+use App\Models\Shared\Attachment;
+use App\Http\Controllers\Controller;
+use App\Handlers\Shared\ModelHandler;
 use App\Handlers\Shared\AttachmentHandler;
-use App\Models\Attachment;
+
+
 
 class AttachmentController extends Controller
 {
     public function update(int $attachment)
     {
-        $this->handle()::restore($attachment);           //deletes accommodation
+        ModelHandler::restore(new Attachment(),$attachment);           
         return back()->with('flash.banner', 'Attachment deleted');
     }
 
     public function destroy(Attachment $attachment)
     {
-        $this->handle()::delete($attachment);           //deletes accommodation
+        ModelHandler::delete($attachment);         
         return back()->with('flash.banner', 'Attachment deleted');
     }
 
     public function show(Attachment $attachment)
     {
-        return $this->handle()::display($attachment);
+        return AttachmentHandler::display($attachment);
     }
 
-    public function download(Attachment $attachment)
-    {
-    }
-
-    private function handle()
-    {
-        return new AttachmentHandler();
-    }
 }

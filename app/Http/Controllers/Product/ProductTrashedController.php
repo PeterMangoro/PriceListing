@@ -17,7 +17,7 @@ class ProductTrashedController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Mall/Product/Trashed/show', [
+        return Inertia::render('Product/Trashed/show', [
             'data' => new ProductTrashedIndexProps(),
         ]);
     }
@@ -33,7 +33,7 @@ class ProductTrashedController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Mall\Product  $product
+     * @param  \App\Models\Product  $product
      *
      * @return \Illuminate\Http\Response
      */

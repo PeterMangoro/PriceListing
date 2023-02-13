@@ -6,7 +6,7 @@ use App\DataObjects\Accommodation\AccommodationDetailData;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Accommodation\AccommodationHandler;
 use App\Handlers\Model\ModelHandler;
-use App\Models\Mall\Accommodation;
+use App\Models\Accommodation;
 use App\View\Shared\BaseView;
 
 class WelcomeAccommodationShowProps extends BaseView

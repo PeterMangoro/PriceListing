@@ -11,7 +11,7 @@ use App\Views\Accommodations\AccommodationCreateProps;
 use App\Views\Accommodations\AccommodationEditProps;
 use App\Views\Accommodations\AccommodationIndexProps;
 use App\Http\Requests\Accommodation\UpdateAccommodationRequest;
-use App\Http\Requests\Mall\Accommodation\CreateAccommodationRequest;
+use App\Http\Requests\Accommodation\CreateAccommodationRequest;
 
 
 
@@ -19,14 +19,14 @@ class AccommodationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Mall/Accommodation/show', [
+        return Inertia::render('Accommodation/show', [
             'data' => new AccommodationIndexProps(),
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Mall/Accommodation/add', [
+        return Inertia::render('Accommodation/add', [
             'data' => new AccommodationCreateProps(),
         ]);
     }
@@ -41,7 +41,7 @@ class AccommodationController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Mall/Accommodation/edit', [
+        return Inertia::render('Accommodation/edit', [
             'data' => new AccommodationEditProps($uuid),
         ]);
     }

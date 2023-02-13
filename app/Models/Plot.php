@@ -46,7 +46,7 @@ class Plot extends SharedModel
                                         ->from('plots')
                                         ->join('addresses', 'addresses.addressable_id', 'plots.id')
                                         ->where('addresses.city', 'like', $term)
-                                        ->where('addresses.addressable_type', 'App\Models\Mall\Plot')
+                                        ->where('addresses.addressable_type', 'App\Models\Plot')
                                 )
                             ;
                         }, 'matches');

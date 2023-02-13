@@ -8,7 +8,7 @@ use App\Handlers\Car\CarHandler;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Model\ModelHandler;
 use App\Models\Categories\CarCategory;
-use App\Models\Mall\Car;
+use App\Models\Car;
 use App\View\Shared\BaseView;
 
 class WelcomeCarShowProps extends BaseView

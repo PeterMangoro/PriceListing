@@ -11,7 +11,7 @@ class DiscountBuilder extends Builder
 {
     public function ofType(string $model)
     {
-        return $this->where('discountable_type', 'App\Models\Mall\\' . $model);
+        return $this->where('discountable_type', 'App\Models\\' . $model);
     }
 
     // public function lodgesOfCategoryType(string $category_type)

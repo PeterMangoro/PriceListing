@@ -2,8 +2,9 @@
 
 namespace App\Services\Accommodation;
 
-use App\Actions\Mall\Accommodation\CreateAccommodationAction;
-use App\Actions\Mall\Accommodation\UpdateAccommodationAction;
+use App\Actions\Accommodation\CreateAccommodationAction;
+use App\Actions\Accommodation\UpdateAccommodationAction;
+
 
 
 class AccommodationService

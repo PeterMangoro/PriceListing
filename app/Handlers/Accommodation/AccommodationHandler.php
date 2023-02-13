@@ -7,7 +7,7 @@ use App\Events\Accommodation\UpdatingAccommodation;
 use App\DataObjects\Accommodation\AccommodationCreateData;
 use App\DataObjects\Accommodation\AccommodationUpdateData;
 use App\Http\Requests\Accommodation\UpdateAccommodationRequest;
-use App\Http\Requests\Mall\Accommodation\CreateAccommodationRequest;
+use App\Http\Requests\Accommodation\CreateAccommodationRequest;
 
 class AccommodationHandler
 {

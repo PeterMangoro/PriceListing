@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Mall\Accommodation;
+namespace App\Http\Requests\Accommodation;
 
 use Illuminate\Foundation\Http\FormRequest;
 

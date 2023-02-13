@@ -18,7 +18,7 @@ class CarTrashedController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Mall/Car/Trashed/show', [
+        return Inertia::render('Car/Trashed/show', [
             'data' => new CarTrashedIndexProps(),
         ]);
     }
@@ -33,7 +33,7 @@ class CarTrashedController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Mall\Car  $car
+     * @param  \App\Models\Car  $car
      *
      * @return \Illuminate\Http\Response
      */

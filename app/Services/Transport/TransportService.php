@@ -2,8 +2,10 @@
 
 namespace App\Services\Transport;
 
-use App\Actions\Mall\Transport\CreateTripAction;
-use App\Actions\Mall\Transport\UpdateTripAction;
+use App\Actions\Transport\CreateTripAction;
+use App\Actions\Transport\UpdateTripAction;
+
+
 
 
 

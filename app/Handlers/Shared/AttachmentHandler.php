@@ -2,11 +2,9 @@
 
 namespace App\Handlers\Shared;
 
-use Illuminate\Database\Eloquent\Model;
-use App\Services\Shared\Model\ModelService;
 use App\Actions\Shared\Attachment\GetAttachment;
-use App\Actions\Shared\Attachment\RestoreAttachment;
-use App\Actions\Shared\Attachment\DeleteAttachmentAction;
+
+
 
 class AttachmentHandler
 {

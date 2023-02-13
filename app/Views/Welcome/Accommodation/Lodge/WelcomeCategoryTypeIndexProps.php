@@ -8,7 +8,7 @@ use App\DataObjects\Category\CategoryTypeData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
 use App\Models\Categories\AccommodationCategory;
-use App\Models\Mall\Accommodation;
+use App\Models\Accommodation;
 use App\ValueObjects\CategoryType;
 use App\View\Shared\BaseView;
 use App\View\Shared\Categories;

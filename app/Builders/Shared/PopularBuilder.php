@@ -8,7 +8,7 @@ class PopularBuilder extends Builder
 {
     public function ofType(string $model)
     {
-        return $this->where('popularable_type', 'App\Models\Mall\\' . $model);
+        return $this->where('popularable_type', 'App\Models\\' . $model);
     }
 
     public function ofCategoryType(string $category_type)

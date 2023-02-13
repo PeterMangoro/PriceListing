@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shared;
 
+use App\Handlers\Shared\ModelHandler;
 use App\Handlers\Shared\SocialHandler;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\Social\CreateSocialRequest;
@@ -28,19 +29,19 @@ class SocialController extends Controller
 
     public function store(CreateSocialRequest $request)
     {
-        $this->handle()::store_social($request);
-        return redirect()->route('socials.index')->with('flash.banner', 'Social Added Successfully');
+        $this->handle()::store($request);
+        return to_route('socials.index')->with('flash.banner', 'Social Added Successfully');
     }
 
     public function update(UpdateSocialRequest $request, Social $social)
     {
-        $this->handle()::update_social($request, $social);
+        $this->handle()::update($request, $social);
         return back();
     }
 
     public function destroy(Social $social)
     {
-        $this->handle()::delete_social($social);
+       ModelHandler::delete($social);
         return back()->with('flash.banner', 'Social Deleted Successfully');
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Mall\Service;
+namespace App\Http\Controllers\Service;
 
 use Inertia\Inertia;
 use App\Models\Service;
@@ -19,14 +19,14 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Mall/Service/show', [
+        return Inertia::render('Service/show', [
             'data' => new ServiceIndexProps(),
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Mall/Service/add', [
+        return Inertia::render('Service/add', [
             'data' => new ServiceCreateProps(),
         ]);
     }
@@ -39,7 +39,7 @@ class ServiceController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Mall/Service/edit', [
+        return Inertia::render('Service/edit', [
             'data' => new ServiceEditProps($uuid),
         ]);
     }

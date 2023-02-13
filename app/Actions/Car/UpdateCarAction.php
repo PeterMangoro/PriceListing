@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Mall\Car;
+namespace App\Actions\Car;
 
 class UpdateCarAction
 {

@@ -7,7 +7,7 @@ use App\DataObjects\Category\CategoryTypeData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeCarHandler;
 use App\Models\Categories\CarCategory;
-use App\Models\Mall\Car;
+use App\Models\Car;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;
 

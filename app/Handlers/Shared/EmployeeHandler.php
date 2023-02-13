@@ -12,10 +12,11 @@ use App\Http\Requests\Shared\Employee\EmployeeUpdateRequest;
 
 
 
+
 class EmployeeHandler
 {   
 
-    public static function create(EmployeeCreateRequest $request)
+    public static function store(EmployeeCreateRequest $request)
     {
         $validated_object = EmployeeCreateData::fromRequest($request);
         CreatingEmployee::dispatch($validated_object);

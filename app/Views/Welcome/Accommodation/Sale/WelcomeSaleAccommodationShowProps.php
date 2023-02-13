@@ -8,7 +8,7 @@ use App\Handlers\Accommodation\AccommodationHandler;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Model\ModelHandler;
 use App\Models\Categories\AccommodationCategory;
-use App\Models\Mall\Accommodation;
+use App\Models\Accommodation;
 use App\View\Shared\BaseView;
 
 class WelcomeSaleAccommodationShowProps extends BaseView

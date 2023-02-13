@@ -2,8 +2,10 @@
 
 namespace App\Services\Accommodation;
 
-use App\Actions\Accommodation\Room\AddRoom;
 use Illuminate\Database\Eloquent\Model;
+use App\Actions\Accommodation\Room\AddRoom;
+
+
 
 class RoomService
 {

@@ -8,7 +8,7 @@ use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Service\ServiceHandler;
 use App\Models\Categories\ServiceCategory;
-use App\Models\Mall\Service;
+use App\Models\Service;
 use App\ValueObjects\CategoryType;
 use App\View\Shared\BaseView;
 use App\View\Shared\Categories;

@@ -2,8 +2,10 @@
 
 namespace App\Services\Service;
 
-use App\Actions\Mall\Service\CreateServiceAction;
-use App\Actions\Mall\Service\UpdateServiceAction;
+use App\Actions\Service\CreateServiceAction;
+use App\Actions\Service\UpdateServiceAction;
+
+
 
 
 class ServiceService

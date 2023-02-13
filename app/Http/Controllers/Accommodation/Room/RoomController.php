@@ -16,14 +16,14 @@ class RoomController extends Controller
 {
     public function index(Accommodation $accommodation)
     {
-        return Inertia::render('Mall/Accommodation/Room/Index', [
+        return Inertia::render('Accommodation/Room/Index', [
             'data' => new RoomIndexProps($accommodation),
         ]);
     }
 
     public function create(Accommodation $accommodation)
     {
-        return Inertia::render('Mall/Accommodation/Room/Create', [
+        return Inertia::render('Accommodation/Room/Create', [
             'data' => new RoomCreateProps($accommodation),
         ]);
     }

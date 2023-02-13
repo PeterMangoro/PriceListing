@@ -3,7 +3,7 @@
 namespace App\Views\Transports;
 
 use App\Handlers\Car\CarHandler;
-use App\Listeners\Mall\Model\ModelEditListener;
+use App\Listeners\Model\ModelEditListener;
 use App\View\Shared\BaseView;
 use App\View\Shared\CarMakes;
 use App\View\Shared\Teams;

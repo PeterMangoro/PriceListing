@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Mall;
+namespace App\Http\Controllers\Shared;
 
 use App\Http\Controllers\Controller;
 use App\Views\MallDashboardProps;
@@ -10,6 +10,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Mall/Dashboard', new MallDashboardProps());
+        return Inertia::render('Dashboard', new MallDashboardProps());
     }
 }

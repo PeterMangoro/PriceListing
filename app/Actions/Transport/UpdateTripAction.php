@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Mall\Transport;
+namespace App\Actions\Transport;
 
 class UpdateTripAction
 {

@@ -5,7 +5,7 @@ namespace App\View\Welcome\Transport;
 use App\DataObjects\Transport\TransportDetailData;
 use App\Handlers\Model\ModelHandler;
 use App\Handlers\Transport\TransportHandler;
-use App\Models\Mall\Transport;
+use App\Models\Transport;
 use App\View\Shared\BaseView;
 
 class WelcomeTransportShowProps extends BaseView

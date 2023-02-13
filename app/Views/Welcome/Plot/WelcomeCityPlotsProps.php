@@ -4,7 +4,7 @@ namespace App\View\Welcome\Plot;
 
 use App\DataObjects\Plot\PlotDisplayData;
 use App\Handlers\Plot\PlotHandler;
-use App\Models\Mall\Plot;
+use App\Models\Plot;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;
 

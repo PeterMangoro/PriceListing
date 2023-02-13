@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Mall\Accommodation;
+namespace App\Actions\Accommodation;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;

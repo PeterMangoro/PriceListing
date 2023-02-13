@@ -2,13 +2,13 @@
 
 namespace App\Traits\User;
 
-use App\Models\Mall\Accommodation;
-use App\Models\Mall\Car;
-use App\Models\Mall\Plot;
-use App\Models\Mall\Product;
-use App\Models\Mall\Service;
-use App\Models\Mall\Transport;
-use App\Models\Mall\Vacancy;
+use App\Models\Accommodation;
+use App\Models\Car;
+use App\Models\Plot;
+use App\Models\Product;
+use App\Models\Service;
+use App\Models\Transport;
+use App\Models\Vacancy;
 use App\Models\Rating;
 use App\Models\School\School;
 use App\Models\Shared\Employee;

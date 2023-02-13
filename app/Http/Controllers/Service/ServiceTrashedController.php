@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Mall\Service;
+namespace App\Http\Controllers\Service;
 
-use App\Http\Controllers\Controller;
-use App\Models\Mall\Service;
-use App\Views\Services\ServiceTrashedIndexProps;
 use Inertia\Inertia;
+use App\Models\Service;
+use App\Http\Controllers\Controller;
+use App\Views\Services\ServiceTrashedIndexProps;
 
 class ServiceTrashedController extends Controller
 {
@@ -16,7 +16,7 @@ class ServiceTrashedController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Mall/Service/Trashed/show', [
+        return Inertia::render('Service/Trashed/show', [
             'data' => new ServiceTrashedIndexProps(),
         ]);
     }
@@ -29,14 +29,5 @@ class ServiceTrashedController extends Controller
         return to_route('services.edit', $service->uuid);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Mall\Service  $service
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Service $service)
-    {
-    }
+  
 }

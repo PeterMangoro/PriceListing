@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Mall\Accommodation;
+namespace App\Actions\Accommodation;
 
 class UpdateAccommodationAction
 {

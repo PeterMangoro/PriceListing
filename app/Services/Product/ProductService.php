@@ -2,8 +2,9 @@
 
 namespace App\Services\Product;
 
-use App\Actions\Mall\Product\CreateProductAction;
-use App\Actions\Mall\Product\UpdateProductAction;
+use App\Actions\Product\CreateProductAction;
+use App\Actions\Product\UpdateProductAction;
+
 
 
 class ProductService

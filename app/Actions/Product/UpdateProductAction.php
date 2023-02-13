@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Mall\Product;
+namespace App\Actions\Product;
 
 class UpdateProductAction
 {

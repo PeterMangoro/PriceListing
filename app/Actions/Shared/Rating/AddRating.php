@@ -12,14 +12,14 @@ class AddRating
         $product->ratings()->updateOrCreate(
             [
                 'ratingable_id' => $request->product_id,
-                'ratingable_type' => 'App\Models\Mall\Product',
+                'ratingable_type' => 'App\Models\Product',
                 'user_id' => $user,
             ],
             // then update
             [
                 'user_id' => $user,
                 'ratingable_id' => $request->product_id,
-                'ratingable_type' => 'App\Models\Mall\Product',
+                'ratingable_type' => 'App\Models\Product',
                 'rating' => $request->rating,
                 'comment' => $request->comment,
             ]

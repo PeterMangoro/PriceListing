@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Mall\Service;
+namespace App\Actions\Service;
 
 class UpdateServiceAction
 {

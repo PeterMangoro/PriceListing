@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Shared;
 
-use App\Handlers\Shared\EmployeeHandler;
+
+use Inertia\Inertia;
+use App\Models\Shared\Employee;
 use App\Http\Controllers\Controller;
+use App\Handlers\Shared\EmployeeHandler;
+use App\Handlers\Shared\ModelHandler;
+use App\Views\Shared\Employee\EmployeeIndexProps;
 use App\Http\Requests\Shared\Employee\EmployeeCreateRequest;
 use App\Http\Requests\Shared\Employee\EmployeeUpdateRequest;
-use App\Models\Shared\Employee;
-use App\View\Shared\Employee\EmployeeIndexProps;
-use Inertia\Inertia;
+
 
 class EmployeeController extends Controller
 {
@@ -26,19 +29,10 @@ class EmployeeController extends Controller
 
     public function store(EmployeeCreateRequest $request)
     {
-        EmployeeHandler::employ_worker_from_request($request);
+        EmployeeHandler::store($request);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Shared\Employee  $employee
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Employee $employee)
-    {
-    }
+  
 
     /**
      * Show the form for editing the specified resource.
@@ -62,21 +56,14 @@ class EmployeeController extends Controller
      */
     public function update(EmployeeUpdateRequest $request, Employee $employee)
     {
-        // dd($employee);
 
-        EmployeeHandler::update_employee($request, $employee);
+        EmployeeHandler::update($request, $employee);
         return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Shared\Employee  $employee
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Employee $employee)
+    public function destroy(Employee $employee):void
     {
-        $employee->delete();
+        ModelHandler::delete($employee);
+      
     }
 }

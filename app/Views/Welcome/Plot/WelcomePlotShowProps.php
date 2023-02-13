@@ -5,7 +5,7 @@ namespace App\View\Welcome\Plot;
 use App\DataObjects\Plot\PlotDetailData;
 use App\DataObjects\Plot\PlotDisplayData;
 use App\Handlers\Plot\PlotHandler;
-use App\Models\Mall\Plot;
+use App\Models\Plot;
 use App\View\Shared\BaseView;
 
 class WelcomePlotShowProps extends BaseView

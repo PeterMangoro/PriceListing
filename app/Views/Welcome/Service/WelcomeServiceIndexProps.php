@@ -9,7 +9,7 @@ use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeServiceHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Models\Feature;
-use App\Models\Mall\Service;
+use App\Models\Service;
 use App\Models\Popular;
 use App\Models\Shared\Discount;
 use App\View\Shared\BaseView;

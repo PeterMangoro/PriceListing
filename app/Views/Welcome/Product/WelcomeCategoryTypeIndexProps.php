@@ -8,7 +8,7 @@ use App\DataObjects\Product\ProductDisplayData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Product\ProductHandler;
 use App\Models\Categories\ProductCategory;
-use App\Models\Mall\Product;
+use App\Models\Product;
 use App\ValueObjects\CategoryType;
 use App\View\Shared\BaseView;
 use App\View\Shared\Categories;

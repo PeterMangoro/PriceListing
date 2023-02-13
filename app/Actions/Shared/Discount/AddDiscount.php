@@ -14,7 +14,7 @@ class AddDiscount
     ): void {
         $model->discount()->updateOrCreate(
             [
-                'discountable_type' => "'App\Models\Mall\'.{$type}",
+                'discountable_type' => "'App\Models\'.{$type}",
                 'discountable_id' => $model->id,
             ],
             $discount

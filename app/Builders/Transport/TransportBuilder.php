@@ -66,7 +66,7 @@ class TransportBuilder extends Builder
             [
                 'latest_image' => Attachment::select('path') #'attachment' gives the slot name where the query will be stored
                     ->whereColumn('attachmentable_id', 'car_id') #select where ids match (column in attachments table, column in desired table)  ->whereColumn('product_id','products.id')
-                    ->where('attachmentable_type', 'App\Models\Mall\Car')
+                    ->where('attachmentable_type', 'App\Models\Car')
                     ->orderByDesc('created_at') #order by latest pic
                     ->limit(1), #get just 1 attachment becoz sub queries only take 1
             ]

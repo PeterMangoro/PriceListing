@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Mall\Dashboard;
+namespace App\Actions\Dashboard;
 
 use App\Models\User;
 use Illuminate\Support\Collection;

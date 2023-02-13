@@ -2,7 +2,7 @@
 
 namespace App\View\Shared;
 
-use App\Actions\Mall\Car\CarInfoAction;
+use App\Actions\Car\CarInfoAction;
 
 class CarMakes
 {

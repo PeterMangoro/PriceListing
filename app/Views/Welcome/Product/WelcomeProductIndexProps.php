@@ -7,7 +7,7 @@ use App\DataObjects\Product\ProductDisplayData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeProductHandler;
 use App\Models\Categories\ProductCategory;
-use App\Models\Mall\Product;
+use App\Models\Product;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;
 

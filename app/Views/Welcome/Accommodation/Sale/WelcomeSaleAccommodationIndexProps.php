@@ -5,7 +5,7 @@ namespace App\View\Welcome\Accommodation\Sale;
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Mall\Accommodation;
+use App\Models\Accommodation;
 use App\Models\Shared\Discount;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;

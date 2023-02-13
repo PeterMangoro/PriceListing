@@ -7,7 +7,7 @@ use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeServiceHandler;
 use App\Models\Categories\ServiceCategory;
-use App\Models\Mall\Service;
+use App\Models\Service;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;
 

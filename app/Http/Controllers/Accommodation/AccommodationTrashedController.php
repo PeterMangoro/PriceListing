@@ -19,7 +19,7 @@ class AccommodationTrashedController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Mall/Accommodation/Trashed/show', [
+        return Inertia::render('Accommodation/Trashed/show', [
             'data' => new AccommodationTrashedIndexProps(),
         ]);
     }

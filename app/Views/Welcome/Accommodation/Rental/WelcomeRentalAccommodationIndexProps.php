@@ -4,7 +4,7 @@ namespace App\View\Welcome\Accommodation\Rental;
 
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Mall\Accommodation;
+use App\Models\Accommodation;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;
 

@@ -9,7 +9,7 @@ use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeCarHandler;
 use App\Models\Categories\CarCategory;
 use App\Models\Feature;
-use App\Models\Mall\Car;
+use App\Models\Car;
 use App\Models\Popular;
 use App\Models\Shared\Discount;
 use App\View\Shared\BaseView;

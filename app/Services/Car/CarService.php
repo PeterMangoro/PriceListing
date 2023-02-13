@@ -2,8 +2,9 @@
 
 namespace App\Services\Car;
 
-use App\Actions\Mall\Car\CreateCarAction;
-use App\Actions\Mall\Car\UpdateCarAction;
+use App\Actions\Car\CreateCarAction;
+use App\Actions\Car\UpdateCarAction;
+
 
 
 
