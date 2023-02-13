@@ -12,8 +12,7 @@ class ProductTrashedIndexProps extends BaseView
 {
     public function products()
     {
-        return
-         ProductDisplayData::toOwnerDisplay(
+        return ProductDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
                 Product::onlyTrashed()
                     ->belongsToAuthUser()

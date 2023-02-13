@@ -2,16 +2,14 @@
 
 namespace App\Views\Welcome\Accommodation\Lodge\TopTalks;
 
-use App\Views\Shared\Filters;
+use App\Actions\Shared\Popular\GetPopularModels;
+use App\DataObjects\Accommodation\AccommodationDisplayData;
+use App\DataObjects\Category\CategoryTypeData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\AccommodationCategory;
 use App\Models\Shared\Popular;
 use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Actions\Shared\Popular\GetPopularModels;
-use App\Models\Categories\AccommodationCategory;
-use App\DataObjects\Accommodation\AccommodationDisplayData;
-
-
+use App\Views\Shared\Filters;
 
 class WelcomeAccommodationTopTalksProps extends BaseView
 {

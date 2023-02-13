@@ -2,19 +2,17 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Models\Shared\Discount;
-use App\Views\Shared\Categories;
-use App\ValueObjects\CategoryType;
-use App\Handlers\Shared\ModelHandler;
+use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Category\CategoryData;
-use App\Models\Categories\ServiceCategory;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Service\ServiceDisplayData;
-use App\Actions\Shared\Feature\GetFeaturedModels;
-
-
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ServiceCategory;
+use App\Models\Shared\Discount;
+use App\ValueObjects\CategoryType;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Views\Shared\Filters;
 
 class WelcomeServiceDiscountedCategoryTypeProps extends BaseView
 {

@@ -2,16 +2,16 @@
 
 namespace App\Views\Welcome\Accommodation\Lodge;
 
-use App\Models\Accommodation;
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Views\Shared\Categories;
-use App\ValueObjects\CategoryType;
-use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Accommodation;
 use App\Models\Categories\AccommodationCategory;
-use App\DataObjects\Accommodation\AccommodationDisplayData;
+use App\ValueObjects\CategoryType;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
+use App\Views\Shared\Filters;
 
 class WelcomeCategoryTypeIndexProps extends BaseView
 {

@@ -2,21 +2,17 @@
 
 namespace App\Views\Welcome\Product;
 
+use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\DataObjects\Category\CategoryTypeData;
+use App\DataObjects\Product\ProductDisplayData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ProductCategory;
 use App\Models\Product;
-use App\Views\Shared\Filters;
+use App\Models\Shared\Discount;
 use App\Models\Shared\Feature;
 use App\Models\Shared\Popular;
 use App\Views\Shared\BaseView;
-use App\Models\Shared\Discount;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Categories\ProductCategory;
-use App\DataObjects\Category\CategoryTypeData;
-use App\DataObjects\Product\ProductDisplayData;
-use App\Actions\Shared\Feature\GetFeaturedModels;
-
-
-
-
+use App\Views\Shared\Filters;
 
 class WelcomeProductIndexProps extends BaseView
 {
@@ -31,9 +27,8 @@ class WelcomeProductIndexProps extends BaseView
 
     public function pool()
     {
-        $pool = ModelHandler::getUnPaginatedData(new Product(),50)
-        ->random(fn ($items) => min(20, count($items)));
-
+        $pool = ModelHandler::getUnPaginatedData(new Product(), 50)
+            ->random(fn ($items) => min(20, count($items)));
 
         $featured_products =
             GetFeaturedModels::withDisplayImageOfType(
@@ -65,8 +60,8 @@ class WelcomeProductIndexProps extends BaseView
 
         $recent_products = $pool->map(fn ($product) => [
             'latest_image' => collect($product)['latest_image']['path'],
-                'uuid' => $product->uuid,
-                ])->sortByDesc('created_at')->take(4);
+            'uuid' => $product->uuid,
+        ])->sortByDesc('created_at')->take(4);
 
         // $top_talks = $pool->map(fn ($product) => $product)->sortByDesc('page_visits')->take(4);
 

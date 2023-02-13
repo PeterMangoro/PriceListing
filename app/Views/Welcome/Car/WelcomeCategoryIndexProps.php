@@ -5,7 +5,6 @@ namespace App\Views\Welcome\Car;
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryData;
 use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Welcome\WelcomeCarHandler;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;

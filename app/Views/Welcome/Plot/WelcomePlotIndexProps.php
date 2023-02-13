@@ -2,12 +2,11 @@
 
 namespace App\Views\Welcome\Plot;
 
-use App\Models\Plot;
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Handlers\Plot\PlotHandler;
-use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Plot\PlotDisplayData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Plot;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomePlotIndexProps extends BaseView
 {

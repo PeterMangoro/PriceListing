@@ -2,14 +2,12 @@
 
 namespace App\Views\Welcome\Accommodation\Sale;
 
-use App\Models\Accommodation;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Categories\AccommodationCategory;
 use App\DataObjects\Accommodation\AccommodationDetailData;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-
-
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Accommodation;
+use App\Models\Categories\AccommodationCategory;
+use App\Views\Shared\BaseView;
 
 class WelcomeLodgeAccommodationShowProps extends BaseView
 {

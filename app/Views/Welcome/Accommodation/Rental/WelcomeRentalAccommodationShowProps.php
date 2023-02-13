@@ -2,12 +2,11 @@
 
 namespace App\Views\Welcome\Accommodation\Rental;
 
-use App\Models\Accommodation;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Accommodation\AccommodationDetailData;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Accommodation;
+use App\Views\Shared\BaseView;
 
 class WelcomeRentalAccommodationShowProps extends BaseView
 {
@@ -22,7 +21,6 @@ class WelcomeRentalAccommodationShowProps extends BaseView
                 new Accommodation(),
                 $uuid
             );
-      
     }
 
     public function accommodation()

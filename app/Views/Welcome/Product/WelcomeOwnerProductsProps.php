@@ -3,7 +3,6 @@
 namespace App\Views\Welcome\Product;
 
 use App\DataObjects\Product\ProductDisplayData;
-use App\Handlers\Product\ProductHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;

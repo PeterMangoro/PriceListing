@@ -2,11 +2,9 @@
 
 namespace App\Views\Welcome\Transport;
 
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
 use App\Handlers\Shared\ModelHandler;
-
-
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerTransportsProps extends BaseView
 {
@@ -17,9 +15,10 @@ class WelcomeOwnerTransportsProps extends BaseView
 
     public function transports()
     {
-        return
-        ModelHandler::getPaginatedData(
-            $this->owner->transports(), 18);
+        return ModelHandler::getPaginatedData(
+            $this->owner->transports(),
+            18
+        );
     }
 
     public function owner()

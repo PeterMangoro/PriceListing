@@ -2,17 +2,17 @@
 
 namespace App\Views\Welcome\Service;
 
+use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\DataObjects\Category\CategoryTypeData;
+use App\DataObjects\Service\ServiceDisplayData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ServiceCategory;
 use App\Models\Service;
-use App\Views\Shared\Filters;
+use App\Models\Shared\Discount;
 use App\Models\Shared\Feature;
 use App\Models\Shared\Popular;
 use App\Views\Shared\BaseView;
-use App\Models\Shared\Discount;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Categories\ServiceCategory;
-use App\DataObjects\Category\CategoryTypeData;
-use App\DataObjects\Service\ServiceDisplayData;
-use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\Views\Shared\Filters;
 
 class WelcomeServiceIndexProps extends BaseView
 {
@@ -27,9 +27,8 @@ class WelcomeServiceIndexProps extends BaseView
 
     public function pool()
     {
-        $pool = ModelHandler::getUnPaginatedData(new Service(),50)
-        ->random(fn ($items) => min(20, count($items)));
-
+        $pool = ModelHandler::getUnPaginatedData(new Service(), 50)
+            ->random(fn ($items) => min(20, count($items)));
 
         $featured_services =
             GetFeaturedModels::withDisplayImageOfType(
@@ -76,8 +75,6 @@ class WelcomeServiceIndexProps extends BaseView
             'for_you' => $for_you,
         ];
     }
-
- 
 
     public function category_types()
     {

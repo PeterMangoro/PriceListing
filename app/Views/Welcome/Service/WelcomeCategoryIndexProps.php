@@ -2,16 +2,16 @@
 
 namespace App\Views\Welcome\Service;
 
+use App\DataObjects\Category\CategoryData;
+use App\DataObjects\Category\CategoryTypeData;
+use App\DataObjects\Service\ServiceDisplayData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ServiceCategory;
 use App\Models\Service;
-use App\Views\Shared\Filters;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
-use App\Handlers\Shared\ModelHandler;
-use App\DataObjects\Category\CategoryData;
-use App\Models\Categories\ServiceCategory;
-use App\DataObjects\Category\CategoryTypeData;
-use App\DataObjects\Service\ServiceDisplayData;
+use App\Views\Shared\Filters;
 
 class WelcomeCategoryIndexProps extends BaseView
 {
@@ -24,8 +24,7 @@ class WelcomeCategoryIndexProps extends BaseView
     {
         return ServiceDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
-                Service::classifiedUnder( $this->category->slug)
-               
+                Service::classifiedUnder($this->category->slug)
             )
         );
     }

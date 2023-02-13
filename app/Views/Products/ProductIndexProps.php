@@ -14,8 +14,9 @@ class ProductIndexProps extends BaseView
     {
         return ProductDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
-            Product::belongsToAuthUser()
-        ));
+                Product::belongsToAuthUser()
+            )
+        );
     }
 
     public function filters()

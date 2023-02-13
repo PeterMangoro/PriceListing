@@ -3,7 +3,6 @@
 namespace App\Views\Shared\Room;
 
 use App\Actions\Shared\Payment\Accommodation\AccommodationPayment;
-use App\Actions\Shared\Room\GetRooms;
 use App\DataObjects\Accommodation\Room\AccommodationRoomDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\ValueObjects\Money;

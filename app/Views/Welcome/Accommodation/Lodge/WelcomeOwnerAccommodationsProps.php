@@ -2,11 +2,10 @@
 
 namespace App\Views\Welcome\Accommodation\Lodge;
 
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Welcome\WelcomeAccommodationHandler;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
+use App\Handlers\Shared\ModelHandler;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerAccommodationsProps extends BaseView
 {

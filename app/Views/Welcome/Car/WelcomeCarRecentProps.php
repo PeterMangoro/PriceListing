@@ -2,13 +2,13 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Models\Car\Car;
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Categories\CarCategory;
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryTypeData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Car\Car;
+use App\Models\Categories\CarCategory;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeCarRecentProps extends BaseView
 {

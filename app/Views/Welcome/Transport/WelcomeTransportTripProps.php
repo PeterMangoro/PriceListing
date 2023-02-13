@@ -2,12 +2,10 @@
 
 namespace App\Views\Welcome\Transport;
 
-use App\Models\Car\Transport;
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
 use App\Handlers\Shared\ModelHandler;
-
-
+use App\Models\Car\Transport;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeTransportTripProps extends BaseView
 {

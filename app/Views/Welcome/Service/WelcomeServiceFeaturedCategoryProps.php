@@ -2,18 +2,17 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\Views\Shared\Filters;
+use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\DataObjects\Category\CategoryData;
+use App\DataObjects\Category\CategoryTypeData;
+use App\DataObjects\Service\ServiceDisplayData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ServiceCategory;
 use App\Models\Shared\Feature;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
-use App\Handlers\Shared\ModelHandler;
-use App\DataObjects\Category\CategoryData;
-use App\Models\Categories\ServiceCategory;
-use App\DataObjects\Category\CategoryTypeData;
-use App\DataObjects\Service\ServiceDisplayData;
-use App\Actions\Shared\Feature\GetFeaturedModels;
-
+use App\Views\Shared\Filters;
 
 class WelcomeServiceFeaturedCategoryProps extends BaseView
 {

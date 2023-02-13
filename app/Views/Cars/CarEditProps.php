@@ -20,7 +20,10 @@ class CarEditProps extends BaseView
 
         $this->car = CarForUpdate::from(
             ModelHandler::getModelForEdit(
-                new Car(), $this->uuid));
+                new Car(),
+                $this->uuid
+            )
+        );
         $this->categories = $this->car->categories;
     }
 

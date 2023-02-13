@@ -2,14 +2,12 @@
 
 namespace App\Views\Welcome\Product;
 
-use App\Models\Product;
-use App\Views\Shared\BaseView;
-use App\ValueObjects\CategoryType;
-use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Product\ProductHandler;
 use App\DataObjects\Product\ProductDetailData;
 use App\DataObjects\Product\ProductDisplayData;
-
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Product;
+use App\ValueObjects\CategoryType;
+use App\Views\Shared\BaseView;
 
 class WelcomeProductShowProps extends BaseView
 {
@@ -24,7 +22,6 @@ class WelcomeProductShowProps extends BaseView
                 new Product(),
                 $uuid
             );
-       
     }
 
     public function product()

@@ -4,8 +4,6 @@ namespace App\ValueObjects;
 
 class SaleStatus
 {
-   
-
     public static function from(?bool $value): string
     {
         if ($value === false) {

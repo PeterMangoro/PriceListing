@@ -12,11 +12,10 @@ class ServiceTrashedIndexProps extends BaseView
 {
     public function services()
     {
-        return 
-        ServiceDisplayData::toOwnerDisplay(
+        return ServiceDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
                 Service::onlyTrashed()
-                ->belongsToAuthUser()
+                    ->belongsToAuthUser()
             )
         );
     }

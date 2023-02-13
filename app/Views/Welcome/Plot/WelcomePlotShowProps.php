@@ -4,7 +4,6 @@ namespace App\Views\Welcome\Plot;
 
 use App\DataObjects\Plot\PlotDetailData;
 use App\DataObjects\Plot\PlotDisplayData;
-use App\Handlers\Plot\PlotHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Plot;
 use App\Views\Shared\BaseView;

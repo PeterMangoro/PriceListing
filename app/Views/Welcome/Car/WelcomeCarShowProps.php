@@ -2,14 +2,11 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Models\Car\Car;
-use App\Views\Shared\BaseView;
-use App\Handlers\Car\CarHandler;
-use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Car\CarDetailData;
 use App\DataObjects\Car\CarDisplayData;
-
-
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Car\Car;
+use App\Views\Shared\BaseView;
 
 class WelcomeCarShowProps extends BaseView
 {
@@ -24,7 +21,6 @@ class WelcomeCarShowProps extends BaseView
                 Car::includeCarDetail(),
                 $uuid
             );
-    
     }
 
     public function car()
@@ -39,8 +35,6 @@ class WelcomeCarShowProps extends BaseView
 
     public function similar_cars()
     {
-        
-
         return CarDisplayData::collectionToWebPage(
             ModelHandler::getUnpaginatedData(
                 $this->car->carMake->cars()

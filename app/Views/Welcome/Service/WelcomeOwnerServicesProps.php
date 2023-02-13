@@ -2,12 +2,10 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Service\ServiceDisplayData;
-
-
+use App\Handlers\Shared\ModelHandler;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerServicesProps extends BaseView
 {

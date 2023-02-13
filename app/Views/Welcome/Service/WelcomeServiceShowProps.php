@@ -2,16 +2,13 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\Models\Service;
-use App\Views\Shared\BaseView;
-use App\ValueObjects\CategoryType;
-use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Service\ServiceHandler;
-use App\Models\Categories\ServiceCategory;
 use App\DataObjects\Service\ServiceDetailData;
 use App\DataObjects\Service\ServiceDisplayData;
-
-
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ServiceCategory;
+use App\Models\Service;
+use App\ValueObjects\CategoryType;
+use App\Views\Shared\BaseView;
 
 class WelcomeServiceShowProps extends BaseView
 {
@@ -26,10 +23,9 @@ class WelcomeServiceShowProps extends BaseView
                 $uuid
             );
         $this->category =
-         
+
                 ServiceCategory::whichHasService($this->service->id)->first();
-        }
-            
+    }
 
     public function service()
     {

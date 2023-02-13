@@ -2,15 +2,12 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\ValueObjects\CategoryType;
-use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryData;
-use App\DataObjects\Category\CategoryTypeData;
-
-
+use App\Handlers\Shared\ModelHandler;
+use App\ValueObjects\CategoryType;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeCategoryTypeIndexProps extends BaseView
 {

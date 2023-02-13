@@ -2,18 +2,16 @@
 
 namespace App\Views\Welcome\Accommodation;
 
+use App\DataObjects\Accommodation\AccommodationDisplayData;
+use App\DataObjects\Category\CategoryData;
+use App\DataObjects\Category\CategoryTypeData;
+use App\Handlers\Shared\ModelHandler;
 use App\Models\Accommodation;
-use App\Views\Shared\Filters;
+use App\Models\Categories\AccommodationCategory;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
-use App\Handlers\Shared\ModelHandler;
-use App\DataObjects\Category\CategoryData;
-use App\Handlers\Category\CategoryHandler;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Models\Categories\AccommodationCategory;
-use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\DataObjects\Accommodation\AccommodationDisplayData;
+use App\Views\Shared\Filters;
 
 class WelcomeCategoryIndexProps extends BaseView
 {
@@ -27,7 +25,7 @@ class WelcomeCategoryIndexProps extends BaseView
         return AccommodationDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
                 Accommodation::withAddress()
-                ->classifiedUnder($this->category->slug)
+                    ->classifiedUnder($this->category->slug)
             )
         );
     }

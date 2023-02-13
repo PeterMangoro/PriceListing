@@ -5,7 +5,6 @@ namespace App\Views\Welcome\Accommodation\Lodge\Discounted;
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\AccommodationCategory;
 use App\Models\Shared\Discount;

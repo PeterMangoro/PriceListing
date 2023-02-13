@@ -18,7 +18,10 @@ class ProductEditProps extends BaseView
         $this->uuid = $uuid;
         $this->product = ProductForUpdate::from(
             ModelHandler::getModelForEdit(
-                new Product(), $this->uuid));
+                new Product(),
+                $this->uuid
+            )
+        );
         $this->categories = $this->product->categories;
     }
 

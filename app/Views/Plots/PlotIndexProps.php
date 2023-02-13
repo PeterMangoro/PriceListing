@@ -14,8 +14,9 @@ class PlotIndexProps extends BaseView
     {
         return PlotDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
-            Plot::belongsToAuthUser()
-        ));
+                Plot::belongsToAuthUser()
+            )
+        );
     }
 
     public function filters()

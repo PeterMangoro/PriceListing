@@ -2,16 +2,14 @@
 
 namespace App\Views\Welcome\Accommodation\Lodge\Featured;
 
-use App\Views\Shared\Filters;
-use App\Models\Shared\Feature;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Models\Categories\AccommodationCategory;
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-
-
+use App\DataObjects\Category\CategoryTypeData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\AccommodationCategory;
+use App\Models\Shared\Feature;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeAccommodationFeaturedProps extends BaseView
 {

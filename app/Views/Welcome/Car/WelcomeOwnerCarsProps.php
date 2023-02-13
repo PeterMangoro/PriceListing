@@ -2,11 +2,10 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Car\CarDisplayData;
-
+use App\Handlers\Shared\ModelHandler;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeOwnerCarsProps extends BaseView
 {

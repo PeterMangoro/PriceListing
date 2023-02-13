@@ -5,8 +5,6 @@ namespace App\Views\Welcome\Product;
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Product\ProductDisplayData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Product\ProductHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Product;

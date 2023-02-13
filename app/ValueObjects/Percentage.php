@@ -4,7 +4,6 @@ namespace App\ValueObjects;
 
 class Percentage
 {
-
     public static function from(?float $value): string
     {
         if ($value === null) {

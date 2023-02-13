@@ -2,15 +2,14 @@
 
 namespace App\Views\Welcome\Product;
 
-use App\Views\Shared\Filters;
-use App\Models\Shared\Feature;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Categories\ProductCategory;
+use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Product\ProductDisplayData;
-use App\Actions\Shared\Feature\GetFeaturedModels;
-
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ProductCategory;
+use App\Models\Shared\Feature;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeProductFeaturedProps extends BaseView
 {

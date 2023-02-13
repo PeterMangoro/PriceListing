@@ -2,15 +2,13 @@
 
 namespace App\Views\Welcome\Accommodation\Lodge;
 
-use App\Models\Accommodation;
-use App\Views\Shared\Filters;
-use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Models\Categories\AccommodationCategory;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-
-
+use App\DataObjects\Category\CategoryTypeData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Accommodation;
+use App\Models\Categories\AccommodationCategory;
+use App\Views\Shared\BaseView;
+use App\Views\Shared\Filters;
 
 class WelcomeAccommodationRecentProps extends BaseView
 {

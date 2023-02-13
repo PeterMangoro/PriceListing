@@ -2,13 +2,10 @@
 
 namespace App\Views\Welcome\Transport;
 
+use App\DataObjects\Transport\TransportDetailData;
+use App\Handlers\Shared\ModelHandler;
 use App\Models\Car\Transport;
 use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Transport\TransportHandler;
-use App\DataObjects\Transport\TransportDetailData;
-
-
 
 class WelcomeTransportShowProps extends BaseView
 {

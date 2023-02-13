@@ -17,7 +17,10 @@ class ServiceEditProps extends BaseView
         $this->uuid = $uuid;
         $this->service = ServiceForUpdate::from(
             ModelHandler::getModelForEdit(
-                new Service(), $this->uuid));
+                new Service(),
+                $this->uuid
+            )
+        );
     }
 
     public function service()

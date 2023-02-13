@@ -2,19 +2,17 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\Views\Shared\Filters;
+use App\Actions\Shared\Popular\GetPopularModels;
+use App\DataObjects\Category\CategoryData;
+use App\DataObjects\Category\CategoryTypeData;
+use App\DataObjects\Service\ServiceDisplayData;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ServiceCategory;
 use App\Models\Shared\Popular;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
-use App\Handlers\Shared\ModelHandler;
-use App\DataObjects\Category\CategoryData;
-use App\Models\Categories\ServiceCategory;
-use App\DataObjects\Category\CategoryTypeData;
-use App\DataObjects\Service\ServiceDisplayData;
-use App\Actions\Shared\Popular\GetPopularModels;
-
-
+use App\Views\Shared\Filters;
 
 class WelcomeServiceTopTalksCategoryProps extends BaseView
 {
