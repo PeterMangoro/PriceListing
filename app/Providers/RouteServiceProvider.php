@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
                 base_path('routes/Accommodation/welcome_accommodation_web.php'),
                 // base_path('routes/Admin/admin_web.php'),
                 base_path('routes/Footer/footer_web.php'),
-                base_path('routes/Mall/mall_web.php'),
+                base_path('routes/Trashed/trashed_web.php'),
                 base_path('routes/Payment/payment_web.php'),
                 base_path('routes/Rating/rating_web.php'),
                 // base_path('routes/School/school_web.php'),

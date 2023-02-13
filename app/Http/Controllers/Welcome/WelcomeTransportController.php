@@ -15,7 +15,7 @@ class WelcomeTransportController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Mall/Transport/Welcome/showAllTransports', [
+        return Inertia::render('Transport/Welcome/showAllTransports', [
             'data' => new WelcomeTransportIndexProps(),
         ]);
     }
@@ -23,21 +23,21 @@ class WelcomeTransportController extends Controller
     public function owner(User $owner)
     {
         // return new WelcomeOwnerTransportsProps($owner);
-        return Inertia::render('Mall/Transport/Welcome/showOwnerTransports', [
+        return Inertia::render('Transport/Welcome/showOwnerTransports', [
             'data' => new WelcomeOwnerTransportsProps($owner),
         ]);
     }
 
     public function show(string $uuid)
     {
-        return Inertia::render('Mall/Transport/Welcome/transportDetail', [
+        return Inertia::render('Transport/Welcome/transportDetail', [
             'data' => new WelcomeTransportShowProps($uuid),
         ]);
     }
 
     public function trip(string $departure, string $destination)
     {
-        return Inertia::render('Mall/Transport/Welcome/sameRoute', [
+        return Inertia::render('Transport/Welcome/sameRoute', [
             'data' => new WelcomeTransportTripProps($departure, $destination),
         ]);
     }

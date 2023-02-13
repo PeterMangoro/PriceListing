@@ -27,21 +27,21 @@ class WelcomeServiceController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Mall/Service/Welcome/showAllServices', [
+        return Inertia::render('Service/Welcome/showAllServices', [
             'data' => new WelcomeServiceIndexProps(),
         ]);
     }
 
     public function category(ServiceCategory $category)
     {
-        return Inertia::render('Mall/Service/Welcome/showCategoryServices', [
+        return Inertia::render('Service/Welcome/showCategoryServices', [
             'data' => new WelcomeCategoryIndexProps($category),
         ]);
     }
 
     public function category_type(string $category_type)
     {
-        return Inertia::render('Mall/Service/Welcome/showCategoryTypeServices', [
+        return Inertia::render('Service/Welcome/showCategoryTypeServices', [
             'data' => new WelcomeCategoryTypeIndexProps($category_type),
         ]);
     }
@@ -49,82 +49,82 @@ class WelcomeServiceController extends Controller
     public function owner(User $owner)
     {
         // return $owner->services()->whereActive()->limit(4)->get();
-        return Inertia::render('Mall/Service/Welcome/showOwnerServices', [
+        return Inertia::render('Service/Welcome/showOwnerServices', [
             'data' => new WelcomeOwnerServicesProps($owner),
         ]);
     }
 
     public function show(string $uuid)
     {
-        return Inertia::render('Mall/Service/Welcome/serviceDetail', [
+        return Inertia::render('Service/Welcome/serviceDetail', [
             'data' => new WelcomeServiceShowProps($uuid),
         ]);
     }
 
     public function recent()
     {
-        return Inertia::render('Mall/Service/Welcome/recentServices', [
+        return Inertia::render('Service/Welcome/recentServices', [
             'data' => new WelcomeServiceRecentProps(),
         ]);
     }
 
     public function top_talks()
     {
-        return Inertia::render('Mall/Service/Welcome/topTalksServices', [
+        return Inertia::render('Service/Welcome/topTalksServices', [
             'data' => new WelcomeServiceTopTalksProps(),
         ]);
     }
 
     public function top_talks_category_type(string $category_type)
     {
-        return Inertia::render('Mall/Service/Welcome/topTalksCategoryTypeServices', [
+        return Inertia::render('Service/Welcome/topTalksCategoryTypeServices', [
             'data' => new WelcomeServiceTopTalksCategoryTypeProps($category_type),
         ]);
     }
 
     public function top_talks_category(ServiceCategory $category)
     {
-        return Inertia::render('Mall/Service/Welcome/topTalksCategoryServices', [
+        return Inertia::render('Service/Welcome/topTalksCategoryServices', [
             'data' => new WelcomeServiceTopTalksCategoryProps($category),
         ]);
     }
 
     public function featured()
     {
-        return Inertia::render('Mall/Service/Welcome/Featured/featuredServices', [
+        return Inertia::render('Service/Welcome/Featured/featuredServices', [
             'data' => new WelcomeServiceFeaturedProps(),
         ]);
     }
     public function featured_category_type(string $category_type)
     {
-        return Inertia::render('Mall/Service/Welcome/Featured/featuredCategoryTypeServices', [
+        return Inertia::render('Service/Welcome/Featured/featuredCategoryTypeServices', [
             'data' => new WelcomeServiceFeaturedCategoryTypeProps($category_type),
         ]);
     }
 
     public function featured_category(ServiceCategory $category)
     {
-        return Inertia::render('Mall/Service/Welcome/Featured/featuredCategoryServices', [
+        return Inertia::render('Service/Welcome/Featured/featuredCategoryServices', [
             'data' => new WelcomeServiceFeaturedCategoryProps($category),
         ]);
     }
 
     public function discounted()
     {
-        return Inertia::render('Mall/Service/Welcome/Discounted/discountedServices', [
+        return Inertia::render('Service/Welcome/Discounted/discountedServices', [
             'data' => new WelcomeServiceDiscountedProps(),
         ]);
     }
     public function discounted_category_type(string $category_type)
     {
-        return Inertia::render('Mall/Service/Welcome/Discounted/discountedCategoryTypeServices', [
+        return Inertia::render('Service/Welcome/Discounted/discountedCategoryTypeServices', [
             'data' => new WelcomeServiceDiscountedCategoryTypeProps($category_type),
         ]);
     }
 
     public function discounted_category(ServiceCategory $category)
     {
-        return Inertia::render('Mall/Service/Welcome/Discounted/discountedCategoryServices', [
+        return Inertia::render('Service/Welcome/Discounted/discountedCategoryServices', [
             'data' => new WelcomeServiceDiscountedCategoryProps($category),
         ]);
     }

@@ -29,21 +29,21 @@ class WelcomeSaleAccommodationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/showAllAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/showAllAccommodations', [
             'data' => new WelcomeSaleAccommodationIndexProps(),
         ]);
     }
 
     // public function category(AccommodationCategory $category)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/showCategoryAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/showCategoryAccommodations', [
     //         'data' => new WelcomeCategoryIndexProps($category),
     //     ]);
     // }
 
     // public function category_type(string $category_type)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/showCategoryTypeAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/showCategoryTypeAccommodations', [
     //         'data' => new WelcomeCategoryTypeIndexProps($category_type)
     //     ]);
     // }
@@ -51,91 +51,91 @@ class WelcomeSaleAccommodationController extends Controller
     public function owner(User $owner)
     {
         // return $owner->accommodations()->whereActive()->limit(4)->get();
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/showOwnerAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/showOwnerAccommodations', [
             'data' => new WelcomeOwnerAccommodationsProps($owner),
         ]);
     }
 
     public function show(string $uuid)
     {
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/accommodationDetail', [
+        return Inertia::render('Accommodation/Welcome/Sale/accommodationDetail', [
             'data' => new WelcomeAccommodationShowProps($uuid),
         ]);
     }
 
     public function recent()
     {
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/Recent/recentAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/Recent/recentAccommodations', [
             'data' => new WelcomeAccommodationRecentProps(),
         ]);
     }
 
     public function top_talks()
     {
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/TopTalks/topTalksAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/TopTalks/topTalksAccommodations', [
             'data' => new WelcomeAccommodationTopTalksProps(),
         ]);
     }
 
     public function discounted()
     {
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/Discounted/discountedAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/Discounted/discountedAccommodations', [
             'data' => new WelcomeAccommodationDiscountedProps(),
         ]);
     }
 
     public function featured()
     {
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/Featured/featuredAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/Featured/featuredAccommodations', [
             'data' => new WelcomeAccommodationFeaturedProps(),
         ]);
     }
 
     public function location(Address $city)
     {
-        return Inertia::render('Mall/Accommodation/Welcome/Sale/SameLocation', [
+        return Inertia::render('Accommodation/Welcome/Sale/SameLocation', [
             'data' => new WelcomeSameLocationAccommodationIndexProps($city),
         ]);
     }
 
     // public function top_talks_category_type(string $category_type)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/TopTalks/topTalksCategoryTypeAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/TopTalks/topTalksCategoryTypeAccommodations', [
     //         'data' => new WelcomeAccommodationTopTalksCategoryTypeProps($category_type)
     //     ]);
     // }
 
     // public function top_talks_category(AccommodationCategory $category)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/TopTalks/topTalksCategoryAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/TopTalks/topTalksCategoryAccommodations', [
     //         'data' => new WelcomeAccommodationTopTalksCategoryProps($category)
     //     ]);
     // }
 
     // public function featured_category_type(string $category_type)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/Featured/featuredCategoryTypeAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/Featured/featuredCategoryTypeAccommodations', [
     //         'data' => new WelcomeAccommodationFeaturedCategoryTypeProps($category_type)
     //     ]);
     // }
 
     // public function featured_category(AccommodationCategory $category)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/Featured/featuredCategoryAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/Featured/featuredCategoryAccommodations', [
     //         'data' => new WelcomeAccommodationFeaturedCategoryProps($category)
     //     ]);
     // }
 
     // public function discounted_category_type(string $category_type)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/Discounted/discountedCategoryTypeAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/Discounted/discountedCategoryTypeAccommodations', [
     //         'data' => new WelcomeAccommodationDiscountedCategoryTypeProps($category_type)
     //     ]);
     // }
 
     // public function discounted_category(AccommodationCategory $category)
     // {
-    //     return Inertia::render('Mall/Accommodation/Welcome/Sale/Discounted/discountedCategoryAccommodations', [
+    //     return Inertia::render('Accommodation/Welcome/Sale/Discounted/discountedCategoryAccommodations', [
     //         'data' => new WelcomeAccommodationDiscountedCategoryProps($category)
     //     ]);
     // }
