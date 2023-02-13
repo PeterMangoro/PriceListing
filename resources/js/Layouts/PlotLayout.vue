@@ -1,13 +1,13 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-r from-indigo-900 via-violet-800 to-violet-900 text-slate-500"
+    class="flex-row min-h-screen  bg-gradient-to-r from-farm-green-light via-farm-green to-farm-green-light"
   >
     <Head :title="title" />
 
     <!-- <left-sidebar  /> -->
 
     <jet-banner />
-    <nav class="sticky top-0 py-1 bg-blue-charcoal-900   text-slate-100">
+    <nav class="sticky top-0 py-1 bg-farm-green-light">
       <!-- Primary Navigation Menu -->
       <div class="px-4 mx-auto sm:px-6 lg:px-8">
         <div class="flex justify-between">
@@ -15,7 +15,7 @@
             <!-- Logo -->
             <div class="flex items-center shrink-0">
               <Link :href="route('home')">
-                <ApplicationLogo class="block w-auto m-auto" />
+                <ApplicationLogo class="block w-auto h-9" />
                 <!-- Home -->
               </Link>
             </div>
@@ -23,83 +23,38 @@
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
               <JetNavLink
                 class=""
-                :href="route('welcome.products.index')"
-                :active="route().current('welcome.products.index')"
-                enter-active-class=""
-              >
-                Store
-              </JetNavLink>
-
-              <JetNavLink
-                class=""
-                :href="route('welcome.cars.index')"
-                :active="route().current('welcome.cars.index')"
-                enter-active-class=""
-              >
-                CarSale
-              </JetNavLink>
-
-              <JetNavLink
-                class=""
-                :href="route('welcome.accommodations.index')"
-                :active="route().current('welcome.accommodations.index')"
-                enter-active-class=""
-              >
-                Accommodations
-              </JetNavLink>
-
-              <JetNavLink
-                class=""
-                :href="route('welcome.services.index')"
-                :active="route().current('welcome.services.index')"
-                enter-active-class=""
-              >
-                Services
-              </JetNavLink>
-
-              <!-- <JetNavLink
-                class=""
-                :href="route('welcome.transports.index')"
-                :active="route().current('welcome.transports.index')"
-                enter-active-class=""
-              >
-                Travel
-              </JetNavLink> -->
-
-              <!-- <JetNavLink
-                  class=" "
-                  :href="route('welcome.vacancy')"
-                  :active="route().current('welcome.vacancy')"
-                  enter-active-class=""
-                >
-                  Vacancy Portal
-                </JetNavLink> -->
-
-              <JetNavLink
-                class=""
                 :href="route('welcome.plots.index')"
                 :active="route().current('welcome.plots.index')"
                 enter-active-class=""
               >
-                Plots & Farms
+                Sales
               </JetNavLink>
-
-              <!-- <span class="flex flex-wrap px-3 py-2 text-sm border border-indigo-500 rounded-2xl" @click="show_search">
-                  <magnifying-glass-icon class="w-5 h-5 text-indigo-600"  />
-                  Search anything...
-                  
-                </span> -->
             </div>
           </div>
 
           <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
             <!-- <JetNavLink
+                class=""
+                :href="route('teams.index')"
+                :active="route().current('teams.index')"
+              >
+                Teams
+              </JetNavLink> -->
+            <JetNavLink
               class=""
-              :href="route('teams.index')"
-              :active="route().current('teams.index')"
+              :href="route('plots.create')"
+              :active="route().current('plots.create')"
             >
-              Teams
-            </JetNavLink> -->
+              Upload Your Land
+            </JetNavLink>
+
+            <JetNavLink
+              class=""
+              :href="route('plots.index')"
+              :active="route().current('plots.index')"
+            >
+              Manage Your Land
+            </JetNavLink>
 
             <JetNavLink
               v-if="$page.props.is_SuperAdmin"
@@ -117,7 +72,7 @@
                   <template #trigger>
                     <button
                       v-if="$page.props.jetstream.managesProfilePhotos"
-                      class="flex text-sm transition bg-transparent border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300"
+                      class="flex text-sm transition bg-transparent border-2 border-transparent rounded-full  focus:outline-none focus:border-gray-300"
                     >
                       <img
                         class="object-cover w-8 h-8 rounded-full"
@@ -129,7 +84,7 @@
                     <span v-else class="inline-flex rounded-md">
                       <button
                         type="button"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-transparent bg-white border border-transparent rounded-md  hover:text-gray-700 focus:outline-none"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-transparent bg-white border border-transparent rounded-md   hover:text-gray-700 focus:outline-none"
                       >
                         {{ $page.props.user.name }}
 
@@ -182,7 +137,7 @@
               <div v-else>
                 <Link
                   :href="route('login')"
-                  class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600"
+                  class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md  hover:bg-blue-600"
                 >
                   Login
                 </Link>
@@ -193,7 +148,7 @@
           <!-- Hamburger -->
           <div class="flex items-center -mr-2 sm:hidden">
             <button
-              class="inline-flex items-center justify-center p-2 text-gray-400 transition rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
+              class="inline-flex items-center justify-center p-2 text-gray-400 transition rounded-md  hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
               @click="showingNavigationDropdown = !showingNavigationDropdown"
             >
               <svg
@@ -239,43 +194,19 @@
         <div class="pt-2 pb-3 space-y-1">
           <JetResponsiveNavLink
             class=""
-            :href="route('welcome.products.index')"
-            :active="route().current('welcome.products.index')"
+            :href="route('welcome.plots.index')"
+            :active="route().current('welcome.plots.index')"
           >
-            Store
-          </JetResponsiveNavLink>
-
-          <JetResponsiveNavLink
-            class=""
-            :href="route('welcome.transports.index')"
-            :active="route().current('welcome.transports.index')"
-          >
-            Travel
+            Sales
           </JetResponsiveNavLink>
 
           <!-- <JetResponsiveNavLink
               class=""
-              :href="route('welcome.vacancy')"
-              :active="route().current('welcome.vacancy')"
+              :href="route('teams.index')"
+              :active="route().current('teams.index')"
             >
-              Vacancy Portal
+              Team
             </JetResponsiveNavLink> -->
-
-          <JetResponsiveNavLink
-            class=""
-            :href="route('welcome.plots.index')"
-            :active="route().current('welcome.plots.index')"
-          >
-            Plots & Farms
-          </JetResponsiveNavLink>
-
-          <!-- <JetResponsiveNavLink
-            class=""
-            :href="route('teams.index')"
-            :active="route().current('teams.index')"
-          >
-            Team
-          </JetResponsiveNavLink> -->
           <JetResponsiveNavLink
             v-if="$page.props.is_SuperAdmin"
             class=""
@@ -402,10 +333,8 @@
     </nav>
 
     <!-- Page Heading -->
-    <header v-if="$slots.header" class="bg-white shadow">
-      <div
-        class="px-4 py-6 mx-auto sm:px-6 lg:px-8 bg-gradient-to-r from-sky-100 via-green-100 to-slate-100"
-      >
+    <header v-if="$slots.header" class="mb-2 shadow">
+      <div class="px-4 py-6 mx-auto sm:px-6 lg:px-8">
         <slot name="header" />
       </div>
     </header>
@@ -416,7 +345,9 @@
     </main>
   </div>
 
-   <footer-nav />
+  <!-- <footer-nav  /> -->
+
+  <footer-nav />
 </template>
 
 <script setup>

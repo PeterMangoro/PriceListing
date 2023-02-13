@@ -1,13 +1,13 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-r from-indigo-900 via-violet-800 to-violet-900 text-slate-500"
+    class="min-h-screen bg-gradient-to-r from-sky-100 via-blue-200 to-slate-100"
   >
     <Head :title="title" />
 
     <!-- <left-sidebar  /> -->
 
     <jet-banner />
-    <nav class="sticky top-0 py-1 bg-blue-charcoal-900   text-slate-100">
+    <nav class="sticky top-0 py-1 bg-sky-100">
       <!-- Primary Navigation Menu -->
       <div class="px-4 mx-auto sm:px-6 lg:px-8">
         <div class="flex justify-between">
@@ -15,7 +15,7 @@
             <!-- Logo -->
             <div class="flex items-center shrink-0">
               <Link :href="route('home')">
-                <ApplicationLogo class="block w-auto m-auto" />
+                <ApplicationLogo class="block w-auto h-9" />
                 <!-- Home -->
               </Link>
             </div>
@@ -23,83 +23,30 @@
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
               <JetNavLink
                 class=""
-                :href="route('welcome.products.index')"
-                :active="route().current('welcome.products.index')"
-                enter-active-class=""
-              >
-                Store
-              </JetNavLink>
-
-              <JetNavLink
-                class=""
-                :href="route('welcome.cars.index')"
-                :active="route().current('welcome.cars.index')"
-                enter-active-class=""
-              >
-                CarSale
-              </JetNavLink>
-
-              <JetNavLink
-                class=""
-                :href="route('welcome.accommodations.index')"
-                :active="route().current('welcome.accommodations.index')"
-                enter-active-class=""
-              >
-                Accommodations
-              </JetNavLink>
-
-              <JetNavLink
-                class=""
                 :href="route('welcome.services.index')"
                 :active="route().current('welcome.services.index')"
                 enter-active-class=""
               >
-                Services
+                Sales
               </JetNavLink>
-
-              <!-- <JetNavLink
-                class=""
-                :href="route('welcome.transports.index')"
-                :active="route().current('welcome.transports.index')"
-                enter-active-class=""
-              >
-                Travel
-              </JetNavLink> -->
-
-              <!-- <JetNavLink
-                  class=" "
-                  :href="route('welcome.vacancy')"
-                  :active="route().current('welcome.vacancy')"
-                  enter-active-class=""
-                >
-                  Vacancy Portal
-                </JetNavLink> -->
-
-              <JetNavLink
-                class=""
-                :href="route('welcome.plots.index')"
-                :active="route().current('welcome.plots.index')"
-                enter-active-class=""
-              >
-                Plots & Farms
-              </JetNavLink>
-
-              <!-- <span class="flex flex-wrap px-3 py-2 text-sm border border-indigo-500 rounded-2xl" @click="show_search">
-                  <magnifying-glass-icon class="w-5 h-5 text-indigo-600"  />
-                  Search anything...
-                  
-                </span> -->
             </div>
           </div>
 
           <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-            <!-- <JetNavLink
+            <JetNavLink
               class=""
-              :href="route('teams.index')"
-              :active="route().current('teams.index')"
+              :href="route('services.create')"
+              :active="route().current('services.create')"
             >
-              Teams
-            </JetNavLink> -->
+              Upload A Service
+            </JetNavLink>
+            <JetNavLink
+              class=""
+              :href="route('services.index')"
+              :active="route().current('services.index')"
+            >
+              Manage Your Services
+            </JetNavLink>
 
             <JetNavLink
               v-if="$page.props.is_SuperAdmin"
@@ -239,43 +186,19 @@
         <div class="pt-2 pb-3 space-y-1">
           <JetResponsiveNavLink
             class=""
-            :href="route('welcome.products.index')"
-            :active="route().current('welcome.products.index')"
+            :href="route('welcome.services.index')"
+            :active="route().current('welcome.services.index')"
           >
-            Store
-          </JetResponsiveNavLink>
-
-          <JetResponsiveNavLink
-            class=""
-            :href="route('welcome.transports.index')"
-            :active="route().current('welcome.transports.index')"
-          >
-            Travel
+            Sales
           </JetResponsiveNavLink>
 
           <!-- <JetResponsiveNavLink
               class=""
-              :href="route('welcome.vacancy')"
-              :active="route().current('welcome.vacancy')"
+              :href="route('teams.index')"
+              :active="route().current('teams.index')"
             >
-              Vacancy Portal
+              Team
             </JetResponsiveNavLink> -->
-
-          <JetResponsiveNavLink
-            class=""
-            :href="route('welcome.plots.index')"
-            :active="route().current('welcome.plots.index')"
-          >
-            Plots & Farms
-          </JetResponsiveNavLink>
-
-          <!-- <JetResponsiveNavLink
-            class=""
-            :href="route('teams.index')"
-            :active="route().current('teams.index')"
-          >
-            Team
-          </JetResponsiveNavLink> -->
           <JetResponsiveNavLink
             v-if="$page.props.is_SuperAdmin"
             class=""
@@ -402,9 +325,9 @@
     </nav>
 
     <!-- Page Heading -->
-    <header v-if="$slots.header" class="bg-white shadow">
+    <header v-if="$slots.header" class="mb-2 shadow">
       <div
-        class="px-4 py-6 mx-auto sm:px-6 lg:px-8 bg-gradient-to-r from-sky-100 via-green-100 to-slate-100"
+        class="px-4 py-6 mx-auto sm:px-6 lg:px-8 bg-gradient-to-r from-sky-100 via-blue-200 to-slate-100"
       >
         <slot name="header" />
       </div>
@@ -416,7 +339,9 @@
     </main>
   </div>
 
-   <footer-nav />
+  <!-- <footer-nav  /> -->
+
+  <footer-nav />
 </template>
 
 <script setup>

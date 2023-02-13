@@ -8,6 +8,7 @@ use App\Http\Controllers\Accommodation\Room\RoomBookingController;
 use App\Http\Controllers\Accommodation\AccommodationTrashedController;
 use App\Http\Controllers\Shared\Payment\Accommodation\AccommodationRoomPaymentController;
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
