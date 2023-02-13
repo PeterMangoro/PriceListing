@@ -2,19 +2,22 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\DataObjects\Service\ServiceDetailData;
-use App\DataObjects\Service\ServiceDisplayData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Model\ModelHandler;
+use App\Models\Service;
+use App\Views\Shared\BaseView;
+use App\ValueObjects\CategoryType;
+use App\Handlers\Shared\ModelHandler;
 use App\Handlers\Service\ServiceHandler;
 use App\Models\Categories\ServiceCategory;
-use App\Models\Service;
-use App\ValueObjects\CategoryType;
-use App\Views\Shared\BaseView;
+use App\DataObjects\Service\ServiceDetailData;
+use App\DataObjects\Service\ServiceDisplayData;
+
+
 
 class WelcomeServiceShowProps extends BaseView
 {
-    public function __construct(string $uuid)
+    public object $category;
+    public object $service;
+    public function __construct(public string $uuid)
     {
         $this->uuid = $uuid;
         $this->service =
@@ -23,10 +26,10 @@ class WelcomeServiceShowProps extends BaseView
                 $uuid
             );
         $this->category =
-            CategoryHandler::get_category(
-                ServiceCategory::whichHasService($this->service->id)
-            );
-    }
+         
+                ServiceCategory::whichHasService($this->service->id)->first();
+        }
+            
 
     public function service()
     {
@@ -41,7 +44,7 @@ class WelcomeServiceShowProps extends BaseView
     public function similar_services()
     {
         return ServiceDisplayData::collectionToWebPage(
-            ServiceHandler::get_unpaginated_services(
+            ModelHandler::getUnPaginatedData(
                 $this->category->services()
                     ->dontInclude($this->service->id),
                 9
@@ -52,7 +55,7 @@ class WelcomeServiceShowProps extends BaseView
     public function owner_services()
     {
         return ServiceDisplayData::collectionToWebPage(
-            ServiceHandler::get_unpaginated_services(
+            ModelHandler::getUnPaginatedData(
                 Service::belongsToOwner($this->service->user->id)
                     ->dontInclude($this->service->id),
                 9

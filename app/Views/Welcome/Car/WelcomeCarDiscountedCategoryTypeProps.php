@@ -2,17 +2,19 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Models\Shared\Discount;
+use App\Views\Shared\Categories;
+use App\ValueObjects\CategoryType;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\CarCategory;
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
-use App\Models\Categories\CarCategory;
-use App\Models\Shared\Discount;
-use App\ValueObjects\CategoryType;
-use App\Views\Shared\BaseView;
-use App\Views\Shared\Categories;
-use App\Views\Shared\Filters;
+use App\Actions\Shared\Feature\GetFeaturedModels;
+
+
 
 class WelcomeCarDiscountedCategoryTypeProps extends BaseView
 {

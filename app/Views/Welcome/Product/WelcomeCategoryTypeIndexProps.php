@@ -7,6 +7,7 @@ use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Product\ProductDisplayData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Product\ProductHandler;
+use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Product;
 use App\ValueObjects\CategoryType;
@@ -24,7 +25,7 @@ class WelcomeCategoryTypeIndexProps extends BaseView
     public function products()
     {
         return ProductDisplayData::toWebPage(
-            ProductHandler::get_paginated_products(
+            ModelHandler::getPaginatedData(
                 Product::ofCategoryType($this->category_type),
                 18
             )

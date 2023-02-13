@@ -2,25 +2,24 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\Models\Service;
+use App\Views\Shared\Filters;
+use App\Models\Shared\Feature;
+use App\Models\Shared\Popular;
+use App\Views\Shared\BaseView;
+use App\Models\Shared\Discount;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ServiceCategory;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Service\ServiceDisplayData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Welcome\WelcomeServiceHandler;
-use App\Models\Categories\ServiceCategory;
-use App\Models\Feature;
-use App\Models\Popular;
-use App\Models\Service;
-use App\Models\Shared\Discount;
-use App\Views\Shared\BaseView;
-use App\Views\Shared\Filters;
+use App\Actions\Shared\Feature\GetFeaturedModels;
 
 class WelcomeServiceIndexProps extends BaseView
 {
     public function services()
     {
         return ServiceDisplayData::toWebPage(
-            WelcomeServiceHandler::get_all_services(
+            ModelHandler::getPaginatedData(
                 new Service()
             )
         );
@@ -28,7 +27,9 @@ class WelcomeServiceIndexProps extends BaseView
 
     public function pool()
     {
-        $pool = WelcomeServiceHandler::get_featured_services();
+        $pool = ModelHandler::getUnPaginatedData(new Service(),50)
+        ->random(fn ($items) => min(20, count($items)));
+
 
         $featured_services =
             GetFeaturedModels::withDisplayImageOfType(
@@ -76,36 +77,7 @@ class WelcomeServiceIndexProps extends BaseView
         ];
     }
 
-    // public function fashion_services()
-    // {
-
-    //     return WelcomeServiceHandler::get_grouped_services('fashion_&_uniforms');
-    // }
-
-    // public function electrical_services()
-    // {
-    //     return WelcomeServiceHandler::get_grouped_services('electrical');
-    // }
-
-    // public function health_services()
-    // {
-    //     return WelcomeServiceHandler::get_grouped_services('health');
-    // }
-
-    // public function hardware_services()
-    // {
-    //     return WelcomeServiceHandler::get_grouped_services('hardware');
-    // }
-
-    // public function agriculture_services()
-    // {
-    //     return WelcomeServiceHandler::get_grouped_services('agriculture');
-    // }
-
-    // public function baby_services()
-    // {
-    //     return WelcomeServiceHandler::get_grouped_services('baby_accessories');
-    // }
+ 
 
     public function category_types()
     {

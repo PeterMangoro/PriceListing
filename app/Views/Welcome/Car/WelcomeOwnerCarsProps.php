@@ -2,10 +2,11 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\DataObjects\Car\CarDisplayData;
-use App\Handlers\Car\CarHandler;
-use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Car\CarDisplayData;
+
 
 class WelcomeOwnerCarsProps extends BaseView
 {
@@ -17,7 +18,7 @@ class WelcomeOwnerCarsProps extends BaseView
     public function cars()
     {
         return CarDisplayData::toWebPage(
-            CarHandler::get_paginated_cars(
+            ModelHandler::getPaginatedData(
                 $this->owner->cars(),
                 18
             )

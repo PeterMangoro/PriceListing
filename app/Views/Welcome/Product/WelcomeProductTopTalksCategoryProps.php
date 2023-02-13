@@ -2,17 +2,19 @@
 
 namespace App\Views\Welcome\Product;
 
-use App\Actions\Shared\Popular\GetPopularModels;
-use App\DataObjects\Category\CategoryData;
-use App\DataObjects\Category\CategoryTypeData;
-use App\DataObjects\Product\ProductDisplayData;
-use App\Handlers\Category\CategoryHandler;
-use App\Models\Categories\ProductCategory;
-use App\Models\Popular;
+use App\Views\Shared\Filters;
+use App\Models\Shared\Popular;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
-use App\Views\Shared\Filters;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Category\CategoryData;
+use App\Models\Categories\ProductCategory;
+use App\DataObjects\Category\CategoryTypeData;
+use App\DataObjects\Product\ProductDisplayData;
+use App\Actions\Shared\Popular\GetPopularModels;
+
+
 
 class WelcomeProductTopTalksCategoryProps extends BaseView
 {

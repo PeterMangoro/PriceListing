@@ -2,20 +2,22 @@
 
 namespace App\Views\Welcome\Accommodation\Sale;
 
+use App\Models\Accommodation;
+use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Models\Shared\Discount;
+use App\Handlers\Shared\ModelHandler;
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Accommodation;
-use App\Models\Shared\Discount;
-use App\Views\Shared\BaseView;
-use App\Views\Shared\Filters;
+
+
 
 class WelcomeSaleAccommodationIndexProps extends BaseView
 {
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            WelcomeAccommodationHandler::get_paginated_display_accommodations(
+            ModelHandler::getPaginatedData(
                 Accommodation::whereActive()
             )
         );
@@ -23,7 +25,9 @@ class WelcomeSaleAccommodationIndexProps extends BaseView
 
     public function pool()
     {
-        $pool = WelcomeAccommodationHandler::get_featured_accommodations();
+       $pool = ModelHandler::getUnPaginatedData(new Accommodation(),50)
+        ->random(fn ($items) => min(20, count($items)));
+
 
         $discounted_accommodations =
             GetFeaturedModels::withDisplayImageOfType(

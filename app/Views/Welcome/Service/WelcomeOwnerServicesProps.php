@@ -2,14 +2,16 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\DataObjects\Service\ServiceDisplayData;
-use App\Handlers\Service\ServiceHandler;
-use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Service\ServiceDisplayData;
+
+
 
 class WelcomeOwnerServicesProps extends BaseView
 {
-    public function __construct(object $owner)
+    public function __construct(public object $owner)
     {
         $this->owner = $owner;
     }
@@ -17,7 +19,7 @@ class WelcomeOwnerServicesProps extends BaseView
     public function services()
     {
         return ServiceDisplayData::toWebPage(
-            ServiceHandler::get_paginated_services(
+            ModelHandler::getPaginatedData(
                 $this->owner->services(),
                 18
             )

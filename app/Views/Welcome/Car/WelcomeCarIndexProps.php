@@ -2,25 +2,26 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\Models\Car\Car;
+use App\Views\Shared\Filters;
+use App\Models\Shared\Feature;
+use App\Models\Shared\Popular;
+use App\Views\Shared\BaseView;
+use App\Models\Shared\Discount;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\CarCategory;
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Welcome\WelcomeCarHandler;
-use App\Models\Car;
-use App\Models\Categories\CarCategory;
-use App\Models\Feature;
-use App\Models\Popular;
-use App\Models\Shared\Discount;
-use App\Views\Shared\BaseView;
-use App\Views\Shared\Filters;
+use App\Actions\Shared\Feature\GetFeaturedModels;
+
+
 
 class WelcomeCarIndexProps extends BaseView
 {
     public function cars()
     {
         return CarDisplayData::toWebPage(
-            WelcomeCarHandler::get_all_cars(
+            ModelHandler::getPaginatedData(
                 new Car()
             )
         );
@@ -28,7 +29,9 @@ class WelcomeCarIndexProps extends BaseView
 
     public function pool()
     {
-        $pool = WelcomeCarHandler::get_featured_cars();
+       $pool = ModelHandler::getUnPaginatedData(new Car(),50)
+        ->random(fn ($items) => min(20, count($items)));
+;
 
         $featured_cars =
             GetFeaturedModels::withDisplayImageOfType(

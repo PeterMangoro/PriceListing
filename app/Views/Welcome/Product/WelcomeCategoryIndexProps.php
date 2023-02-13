@@ -2,15 +2,17 @@
 
 namespace App\Views\Welcome\Product;
 
-use App\DataObjects\Category\CategoryData;
-use App\DataObjects\Category\CategoryTypeData;
-use App\DataObjects\Product\ProductDisplayData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Welcome\WelcomeProductHandler;
-use App\Models\Categories\ProductCategory;
+use App\Models\Product;
+use App\Views\Shared\Filters;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
-use App\Views\Shared\Filters;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Category\CategoryData;
+use App\Models\Categories\ProductCategory;
+use App\DataObjects\Category\CategoryTypeData;
+use App\DataObjects\Product\ProductDisplayData;
+
+
 
 class WelcomeCategoryIndexProps extends BaseView
 {
@@ -22,8 +24,9 @@ class WelcomeCategoryIndexProps extends BaseView
     public function products()
     {
         return ProductDisplayData::toWebPage(
-            WelcomeProductHandler::get_category_products(
-                $this->category->slug
+            ModelHandler::getPaginatedData(
+                Product::classifiedUnder($this->category->slug)
+                
             )
         );
     }

@@ -2,21 +2,20 @@
 
 namespace App\Views\Welcome\Accommodation\Sale;
 
-use App\DataObjects\Accommodation\AccommodationDisplayData;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Welcome\WelcomeAccommodationHandler;
 use App\Models\Accommodation;
-use App\Models\Categories\AccommodationCategory;
-use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Category\CategoryTypeData;
+use App\Models\Categories\AccommodationCategory;
+use App\DataObjects\Accommodation\AccommodationDisplayData;
 
 class WelcomeAccommodationRecentProps extends BaseView
 {
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            WelcomeAccommodationHandler::get_all_accommodations(
+            ModelHandler::getPaginatedData(
                 Accommodation::latest('id')->withAddress()
             )
         );

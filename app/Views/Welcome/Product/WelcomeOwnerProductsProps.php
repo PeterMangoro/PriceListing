@@ -4,6 +4,7 @@ namespace App\Views\Welcome\Product;
 
 use App\DataObjects\Product\ProductDisplayData;
 use App\Handlers\Product\ProductHandler;
+use App\Handlers\Shared\ModelHandler;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
 
@@ -17,7 +18,7 @@ class WelcomeOwnerProductsProps extends BaseView
     public function products()
     {
         return ProductDisplayData::toWebPage(
-            ProductHandler::get_paginated_products(
+            ModelHandler::getPaginatedData(
                 $this->owner->products(),
                 18
             )

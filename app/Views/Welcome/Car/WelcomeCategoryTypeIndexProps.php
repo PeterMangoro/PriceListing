@@ -2,12 +2,15 @@
 
 namespace App\Views\Welcome\Car;
 
+use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\ValueObjects\CategoryType;
+use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryData;
-use App\Handlers\Car\CarHandler;
-use App\ValueObjects\CategoryType;
-use App\Views\Shared\BaseView;
-use App\Views\Shared\Filters;
+use App\DataObjects\Category\CategoryTypeData;
+
+
 
 class WelcomeCategoryTypeIndexProps extends BaseView
 {
@@ -20,7 +23,7 @@ class WelcomeCategoryTypeIndexProps extends BaseView
     public function cars()
     {
         return CarDisplayData::toWebPage(
-            CarHandler::get_paginated_cars(
+            ModelHandler::getPaginatedData(
                 $this->car_make->cars(),
                 18
             )

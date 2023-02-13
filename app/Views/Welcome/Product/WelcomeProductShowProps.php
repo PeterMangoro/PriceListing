@@ -2,15 +2,14 @@
 
 namespace App\Views\Welcome\Product;
 
+use App\Models\Product;
+use App\Views\Shared\BaseView;
+use App\ValueObjects\CategoryType;
+use App\Handlers\Shared\ModelHandler;
+use App\Handlers\Product\ProductHandler;
 use App\DataObjects\Product\ProductDetailData;
 use App\DataObjects\Product\ProductDisplayData;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Model\ModelHandler;
-use App\Handlers\Product\ProductHandler;
-use App\Models\Categories\ProductCategory;
-use App\Models\Product;
-use App\ValueObjects\CategoryType;
-use App\Views\Shared\BaseView;
+
 
 class WelcomeProductShowProps extends BaseView
 {
@@ -25,10 +24,7 @@ class WelcomeProductShowProps extends BaseView
                 new Product(),
                 $uuid
             );
-        $this->category =
-            CategoryHandler::get_category(
-                ProductCategory::whichHasProduct($this->product->id)
-            );
+       
     }
 
     public function product()
@@ -44,7 +40,7 @@ class WelcomeProductShowProps extends BaseView
     public function similar_products()
     {
         return ProductDisplayData::collectionToWebPage(
-            ProductHandler::get_unpaginated_products(
+            ModelHandler::getUnPaginatedData(
                 $this->category->products()
                     ->dontInclude($this->product->id),
                 9
@@ -55,7 +51,7 @@ class WelcomeProductShowProps extends BaseView
     public function owner_products()
     {
         return ProductDisplayData::collectionToWebPage(
-            ProductHandler::get_unpaginated_products(
+            ModelHandler::getUnPaginatedData(
                 Product::belongsToOwner($this->product->user->id)
                     ->dontInclude($this->product->id),
                 9

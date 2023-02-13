@@ -2,10 +2,12 @@
 
 namespace App\Views\Welcome\Transport;
 
-use App\Handlers\Transport\TransportHandler;
-use App\Models\Transport;
-use App\Views\Shared\BaseView;
+use App\Models\Car\Transport;
 use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Handlers\Shared\ModelHandler;
+
+
 
 class WelcomeTransportTripProps extends BaseView
 {
@@ -19,7 +21,7 @@ class WelcomeTransportTripProps extends BaseView
 
     public function transports()
     {
-        return TransportHandler::get_paginated_transports(Transport::travelingSameRoute($this->departure, $this->destination), 18);
+        return ModelHandler::getPaginatedData(Transport::travelingSameRoute($this->departure, $this->destination), 18);
     }
 
     public function trip()

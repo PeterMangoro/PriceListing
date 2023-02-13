@@ -2,14 +2,14 @@
 
 namespace App\Views\Welcome\Accommodation\Sale;
 
+use App\Models\Accommodation;
+use App\Views\Shared\BaseView;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\AccommodationCategory;
 use App\DataObjects\Accommodation\AccommodationDetailData;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-use App\Handlers\Accommodation\AccommodationHandler;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Model\ModelHandler;
-use App\Models\Accommodation;
-use App\Models\Categories\AccommodationCategory;
-use App\Views\Shared\BaseView;
+
+
 
 class WelcomeLodgeAccommodationShowProps extends BaseView
 {
@@ -25,7 +25,7 @@ class WelcomeLodgeAccommodationShowProps extends BaseView
                 $uuid
             );
         $this->city =
-            CategoryHandler::get_category(
+            ModelHandler::getUnPaginatedData(
                 AccommodationCategory::whichHasAccommodation($this->accommodation->id)
             );
     }

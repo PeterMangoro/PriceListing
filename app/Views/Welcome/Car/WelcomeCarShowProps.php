@@ -2,14 +2,14 @@
 
 namespace App\Views\Welcome\Car;
 
+use App\Models\Car\Car;
+use App\Views\Shared\BaseView;
+use App\Handlers\Car\CarHandler;
+use App\Handlers\Shared\ModelHandler;
 use App\DataObjects\Car\CarDetailData;
 use App\DataObjects\Car\CarDisplayData;
-use App\Handlers\Car\CarHandler;
-use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Model\ModelHandler;
-use App\Models\Car;
-use App\Models\Categories\CarCategory;
-use App\Views\Shared\BaseView;
+
+
 
 class WelcomeCarShowProps extends BaseView
 {
@@ -24,10 +24,7 @@ class WelcomeCarShowProps extends BaseView
                 Car::includeCarDetail(),
                 $uuid
             );
-        $this->category =
-            CategoryHandler::get_category(
-                CarCategory::whichHasCar($this->car->id)
-            );
+    
     }
 
     public function car()
@@ -42,10 +39,10 @@ class WelcomeCarShowProps extends BaseView
 
     public function similar_cars()
     {
-        // dd($this->car->carMake->cars()->limit(8)->get());
+        
 
         return CarDisplayData::collectionToWebPage(
-            CarHandler::get_unpaginated_cars(
+            ModelHandler::getUnpaginatedData(
                 $this->car->carMake->cars()
                     ->dontInclude($this->car->id)
                     ->includeCarDetail(),
@@ -57,7 +54,7 @@ class WelcomeCarShowProps extends BaseView
     public function owner_cars()
     {
         return CarDisplayData::collectionToWebPage(
-            CarHandler::get_unpaginated_cars(
+            ModelHandler::getUnpaginatedData(
                 Car::belongsToOwner($this->car->user->id)
                     ->dontInclude($this->car->id),
                 9

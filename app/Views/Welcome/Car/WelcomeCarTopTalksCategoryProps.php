@@ -2,17 +2,18 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Actions\Shared\Popular\GetPopularModels;
-use App\DataObjects\Car\CarDisplayData;
-use App\DataObjects\Category\CategoryData;
-use App\DataObjects\Category\CategoryTypeData;
-use App\Handlers\Category\CategoryHandler;
-use App\Models\Categories\CarCategory;
-use App\Models\Popular;
+use App\Views\Shared\Filters;
+use App\Models\Shared\Popular;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
-use App\Views\Shared\Filters;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\CarCategory;
+use App\DataObjects\Car\CarDisplayData;
+use App\DataObjects\Category\CategoryData;
+use App\DataObjects\Category\CategoryTypeData;
+use App\Actions\Shared\Popular\GetPopularModels;
+
 
 class WelcomeCarTopTalksCategoryProps extends BaseView
 {

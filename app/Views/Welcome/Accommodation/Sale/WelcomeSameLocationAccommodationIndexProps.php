@@ -2,11 +2,12 @@
 
 namespace App\Views\Welcome\Accommodation\Sale;
 
-use App\DataObjects\Accommodation\AccommodationDisplayData;
-use App\Handlers\Welcome\WelcomeAccommodationHandler;
 use App\Models\Accommodation;
-use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
+use App\Views\Shared\BaseView;
+use App\Handlers\Shared\ModelHandler;
+use App\DataObjects\Accommodation\AccommodationDisplayData;
+
 
 class WelcomeSameLocationAccommodationIndexProps extends BaseView
 {
@@ -20,7 +21,7 @@ class WelcomeSameLocationAccommodationIndexProps extends BaseView
     public function accommodations()
     {
         return AccommodationDisplayData::toWebPage(
-            WelcomeAccommodationHandler::get_paginated_display_accommodations(
+            ModelHandler::getPaginatedData(
                 Accommodation::fromSameCity($this->city)
                     ->whereActive()
             )

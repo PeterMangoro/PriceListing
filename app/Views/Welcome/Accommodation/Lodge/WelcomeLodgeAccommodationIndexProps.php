@@ -2,16 +2,15 @@
 
 namespace App\Views\Welcome\Accommodation\Lodge;
 
+use App\Models\Accommodation;
+use App\Views\Shared\Filters;
+use App\Models\Shared\Feature;
+use App\Models\Shared\Popular;
+use App\Views\Shared\BaseView;
+use App\Models\Shared\Discount;
+use App\Handlers\Shared\ModelHandler;
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
-use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Accommodation;
-use App\Models\Feature;
-use App\Models\Popular;
-use App\Models\Shared\Discount;
-use App\Views\Shared\BaseView;
-use App\Views\Shared\Filters;
 
 class WelcomeLodgeAccommodationIndexProps extends BaseView
 {
@@ -26,7 +25,8 @@ class WelcomeLodgeAccommodationIndexProps extends BaseView
 
     public function pool()
     {
-        $pool = WelcomeAccommodationHandler::get_featured_accommodations();
+        $pool = ModelHandler::getUnPaginatedData(new Accommodation(),50)
+        ->random(fn ($items) => min(20, count($items)));
 
         $featured_accommodations =
             GetFeaturedModels::withDisplayImageOfType(
