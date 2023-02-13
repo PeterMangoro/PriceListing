@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\SharedModel;
+use App\ValueObjects\Category;
 use App\Builders\Plot\PlotBuilder;
 
 class Plot extends SharedModel

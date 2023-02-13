@@ -1,35 +1,32 @@
 <?php
 
-use Illuminate\Foundation\Application;
+
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\Shared\SocialController;
+use App\Http\Controllers\Shared\ProfileController;
+use App\Http\Controllers\Shared\EmployeeController;
+use App\Http\Controllers\Shared\AttachmentController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// Route::get('practice', [PracticeController::class, 'index'])->name('practice');
+// Forgot Password
+// Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+// Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+// Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+// Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+// password end
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::group(['middleware' => 'role:SuperAdmin'], function () {
+// });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-});
+Route::delete('attachment/{attachment}/', [AttachmentController::class, 'destroy'])->name('attachments.destroy');
+Route::post('restore/{attachment}/', [AttachmentController::class, 'update'])->name('attachment.restore');
+Route::get('file/{attachment:uuid}', [AttachmentController::class, 'show'])->name('attachments.show');
+
+Route::get('{user:username}', [ProfileController::class,'show'])->name('company_profile.show');
+Route::post('company/profile', [ProfileController::class, 'update'])->name('company_profile.update');
+Route::get('{user:username}/team', [ProfileController::class,'team'])->name('company_profile.team');
+
+Route::resource('employees', EmployeeController::class)->except('show');
+Route::resource('socials', SocialController::class)->except('show');
+
+// Route::get('editor', [BlogController::class,'index']);
