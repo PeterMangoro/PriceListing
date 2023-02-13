@@ -8,30 +8,27 @@ use App\DataObjects\Accommodation\Partials\AccommodationUserDisplay;
 class AccommodationDisplayData
 {
     public static function toWebPage(
-        object $accommodations, 
-        ?string $morph = null)
-    {
-        return 
-        $accommodations->through(
-            fn ($accommodation) => 
-            AccommodationClientDisplay::data($accommodation, $morph));
+        object $accommodations,
+        ?string $morph = null
+    ) {
+        return $accommodations->through(
+            fn ($accommodation) => AccommodationClientDisplay::data($accommodation, $morph)
+        );
     }
 
     public static function collectionToWebPage(
         $accommodations,
-         ?string $morph = null)
-    {
-        return 
-        $accommodations->map(
-            fn ($accommodation) => 
-            AccommodationClientDisplay::data($accommodation, $morph));
+        ?string $morph = null
+    ) {
+        return $accommodations->map(
+            fn ($accommodation) => AccommodationClientDisplay::data($accommodation, $morph)
+        );
     }
 
     public static function toOwnerDisplay($accommodations)
     {
-        return 
-        $accommodations->through(
-            fn ($accommodation) => 
-            AccommodationUserDisplay::data($accommodation));
+        return $accommodations->through(
+            fn ($accommodation) => AccommodationUserDisplay::data($accommodation)
+        );
     }
 }

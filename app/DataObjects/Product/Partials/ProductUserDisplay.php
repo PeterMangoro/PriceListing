@@ -19,7 +19,6 @@ class ProductUserDisplay
         public  readonly string $ratings,
         public  readonly int $id,
     ) {
-        
     }
     public static function data($product)
     {

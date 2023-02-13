@@ -24,7 +24,7 @@ class WelcomeProductFeaturedCategoryProps extends BaseView
     public function products()
     {
         // dd('hie');
-        return ProductDisplayData::to_web_page(
+        return ProductDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Feature::ofCategory($this->category->slug)->orderByRating(),
                 'Product'

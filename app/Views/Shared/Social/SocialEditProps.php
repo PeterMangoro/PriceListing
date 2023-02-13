@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views\Socials;
+namespace App\Views\Shared\Social;
 
 use App\DataObjects\Social\SocialForUpdate;
 use App\View\Shared\BaseView;

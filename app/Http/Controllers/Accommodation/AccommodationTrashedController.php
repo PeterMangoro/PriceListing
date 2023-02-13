@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Accommodation;
 
 use App\Handlers\Shared\ModelHandler;
-use Inertia\Inertia;
-use App\Models\Accommodation;
 use App\Http\Controllers\Controller;
+use App\Models\Accommodation;
 use App\Views\Accommodations\AccommodationTrashedIndexProps;
-
-
+use Inertia\Inertia;
 
 class AccommodationTrashedController extends Controller
 {
@@ -26,9 +24,7 @@ class AccommodationTrashedController extends Controller
 
     public function show(int $id)
     {
-        $accommodation = ModelHandler::restore(new Accommodation(),$id);
+        $accommodation = ModelHandler::restore(new Accommodation(), $id);
         return to_route('accommodations.edit', $accommodation->uuid);
     }
-
-    
 }

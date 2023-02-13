@@ -2,7 +2,6 @@
 
 namespace App\Builders\Car;
 
-
 use App\Models\Car\CarMake;
 use App\Models\Car\CarModel;
 use Illuminate\Database\Eloquent\Builder;

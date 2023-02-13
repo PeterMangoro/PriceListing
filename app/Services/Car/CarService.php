@@ -5,9 +5,6 @@ namespace App\Services\Car;
 use App\Actions\Car\CreateCarAction;
 use App\Actions\Car\UpdateCarAction;
 
-
-
-
 class CarService
 {
     public static function create(object $request)

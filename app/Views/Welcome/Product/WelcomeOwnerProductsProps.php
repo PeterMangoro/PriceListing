@@ -16,7 +16,7 @@ class WelcomeOwnerProductsProps extends BaseView
 
     public function products()
     {
-        return ProductDisplayData::to_web_page(
+        return ProductDisplayData::toWebPage(
             ProductHandler::get_paginated_products(
                 $this->owner->products(),
                 18

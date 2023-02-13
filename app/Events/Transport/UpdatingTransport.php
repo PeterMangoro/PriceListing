@@ -3,13 +3,10 @@
 namespace App\Events\Transport;
 
 use App\Models\Car\Transport;
-use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class UpdatingTransport
 {
@@ -21,7 +18,7 @@ class UpdatingTransport
      *
      * @return void
      */
-    public function __construct(public object $validated_request,public string $uuid)
+    public function __construct(public object $validated_request, public string $uuid)
     {
         $transport = Transport::where('uuid', $uuid)->first();
         $this->transport = $transport;

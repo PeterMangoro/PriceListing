@@ -2,15 +2,13 @@
 
 namespace App\Listeners\Accommodation;
 
-use Illuminate\Support\Facades\DB;
-use App\Services\Shared\AddressService;
-use App\Services\Shared\CategoryService;
-use App\Services\Shared\DiscountService;
-use Illuminate\Queue\InteractsWithQueue;
-use App\Services\Shared\AttachmentService;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Events\Accommodation\UpdatingAccommodation;
 use App\Services\Accommodation\AccommodationService;
+use App\Services\Shared\AddressService;
+use App\Services\Shared\AttachmentService;
+use App\Services\Shared\CategoryService;
+use App\Services\Shared\DiscountService;
+use Illuminate\Support\Facades\DB;
 
 class UpdateAccommodation
 {
@@ -21,13 +19,13 @@ class UpdateAccommodation
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Accommodation\UpdatingAccommodation  $event
+     *
      * @return void
      */
     public function handle(UpdatingAccommodation $event)
@@ -38,13 +36,13 @@ class UpdateAccommodation
         DB::transaction(function () use ($request, $accommodation) {
             AccommodationService::update($request, $accommodation);
             AddressService::updateForModel($accommodation, $request->location);
-            $request->categories ? 
+            $request->categories ?
             CategoryService::forModel($accommodation, $request->categories) : null;
-            $request->discount['price'] ? 
+            $request->discount['price'] ?
             DiscountService::forModel($accommodation, $request->discount, 'Accommodation') : null;
-            $request->images ? 
+            $request->images ?
             AttachmentService::addImages($request->images, $accommodation, 'accommodation', 300) : null;
-            $request->document ? 
+            $request->document ?
             AttachmentService::addDocument($request->document, $accommodation, 'accommodation') : null;
         });
     }

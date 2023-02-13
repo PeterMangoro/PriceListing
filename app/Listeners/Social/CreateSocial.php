@@ -4,8 +4,6 @@ namespace App\Listeners\Social;
 
 use App\Events\Social\CreatingSocial;
 use App\Services\Shared\SocialService;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class CreateSocial
 {
@@ -16,13 +14,13 @@ class CreateSocial
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Social\CreatingSocial  $event
+     *
      * @return void
      */
     public function handle(CreatingSocial $event)

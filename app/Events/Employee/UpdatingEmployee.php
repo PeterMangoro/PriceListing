@@ -3,13 +3,10 @@
 namespace App\Events\Employee;
 
 use App\Models\Shared\Employee;
-use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class UpdatingEmployee
 {
@@ -22,8 +19,8 @@ class UpdatingEmployee
      */
     public function __construct(
         public object $request,
-         public Employee $employee)
-    {
+        public Employee $employee
+    ) {
         $this->request = $request;
         $this->employee = $employee;
     }

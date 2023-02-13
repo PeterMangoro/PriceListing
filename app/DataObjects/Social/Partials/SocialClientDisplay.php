@@ -9,7 +9,6 @@ class SocialClientDisplay
         public readonly string $handle,
         public readonly string $username,
     ) {
-        
     }
 
     public static function data(object $social)

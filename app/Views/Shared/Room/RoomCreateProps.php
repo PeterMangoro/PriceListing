@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Shared\Room;
+namespace App\Views\Shared\Room;
 
 use App\View\Shared\BaseView;
 

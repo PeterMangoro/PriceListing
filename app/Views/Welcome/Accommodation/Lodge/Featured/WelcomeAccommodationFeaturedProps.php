@@ -15,7 +15,7 @@ class WelcomeAccommodationFeaturedProps extends BaseView
 {
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Feature::orderByRating(),
                 'Accommodation',

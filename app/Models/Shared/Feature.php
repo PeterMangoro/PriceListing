@@ -3,11 +3,9 @@
 namespace App\Models\Shared;
 
 use App\Builders\Shared\FeatureBuilder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-
 
 class Feature extends Model
 {

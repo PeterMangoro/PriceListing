@@ -22,7 +22,7 @@ class WelcomeCategoryIndexProps extends BaseView
 
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             WelcomeAccommodationHandler::get_category_accommodations(
                 $this->category->slug
             )

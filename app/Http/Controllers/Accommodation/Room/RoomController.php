@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Accommodation\Room;
 
-use Inertia\Inertia;
-use App\Models\Accommodation;
-use App\Http\Controllers\Controller;
-use App\View\Shared\Room\RoomIndexProps;
-use App\View\Shared\Room\RoomCreateProps;
 use App\Handlers\Accommodation\RoomHandler;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Accommodation\Room\CreateRoomRequest;
-
-
+use App\Models\Accommodation;
+use App\View\Shared\Room\RoomCreateProps;
+use App\View\Shared\Room\RoomIndexProps;
+use Inertia\Inertia;
 
 class RoomController extends Controller
 {
@@ -33,9 +31,8 @@ class RoomController extends Controller
         RoomHandler::store($accommodation, $request);
         return to_route(
             'accommodations.rooms.index',
-             $accommodation->uuid)
-             ->with('flash.banner', 'Room Added Successfully');
+            $accommodation->uuid
+        )
+            ->with('flash.banner', 'Room Added Successfully');
     }
-
-   
 }

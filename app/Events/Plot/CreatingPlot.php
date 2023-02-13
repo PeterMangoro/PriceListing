@@ -2,11 +2,8 @@
 
 namespace App\Events\Plot;
 
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -21,7 +18,7 @@ class CreatingPlot
      */
     public function __construct(public object $validated_request)
     {
-        $this->validated_request=$validated_request;
+        $this->validated_request = $validated_request;
     }
 
     /**

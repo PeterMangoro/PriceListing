@@ -16,7 +16,6 @@ class TransportDisplayData
         public readonly  ?string $price,
         public readonly  ?string $uuid,
     ) {
-        
     }
 
     public static function toWebPage($transport)

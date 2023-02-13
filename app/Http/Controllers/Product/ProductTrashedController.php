@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Product;
 
-use Inertia\Inertia;
-use App\Models\Product;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Views\Products\ProductTrashedIndexProps;
-
+use Inertia\Inertia;
 
 class ProductTrashedController extends Controller
 {

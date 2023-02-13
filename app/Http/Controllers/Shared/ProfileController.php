@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Shared;
 
-use App\Models\User;
-use Inertia\Inertia;
-use App\Http\Controllers\Controller;
 use App\Handlers\Shared\UserProfileHandler;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Shared\Profile\ProfileUpdateRequest;
+use App\Models\User;
 use App\View\Shared\Profile\ProfileShowProps;
 use App\View\Shared\Profile\ProfileTeamProps;
-use App\Http\Requests\Shared\Profile\ProfileUpdateRequest;
-
+use Inertia\Inertia;
 
 class ProfileController extends Controller
 {

@@ -18,7 +18,6 @@ class ServiceForUpdate
         public readonly  bool $sale_status,
         public  readonly string $title,
     ) {
-        
     }
 
     public static function from(object $service)

@@ -2,14 +2,12 @@
 
 namespace App\Views\Accommodations\Payment\Room;
 
-use Carbon\Carbon;
-use App\Support\Collection;
-use App\View\Shared\Filters;
-use App\Models\Accommodation;
-use App\View\Shared\BaseView;
 use App\DataObjects\Accommodation\Room\Payment\RoomPaymentDisplayData;
-
-
+use App\Models\Accommodation;
+use App\Support\Collection;
+use App\View\Shared\BaseView;
+use App\View\Shared\Filters;
+use Carbon\Carbon;
 
 class AccommodationRoomPaymentTodayProps extends BaseView
 {

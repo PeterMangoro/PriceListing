@@ -5,10 +5,6 @@ namespace App\Services\Transport;
 use App\Actions\Transport\CreateTripAction;
 use App\Actions\Transport\UpdateTripAction;
 
-
-
-
-
 class TransportService
 {
     public function create(object $request, ?int $new_car_id = null)

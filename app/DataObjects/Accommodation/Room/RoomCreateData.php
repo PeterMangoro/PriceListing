@@ -11,7 +11,6 @@ class RoomCreateData
         public readonly  string $type,
         public  readonly float $price,
     ) {
-       
     }
     public static function fromRequest($request)
     {

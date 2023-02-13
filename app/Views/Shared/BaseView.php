@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Shared;
+namespace App\Views\Shared;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Str;

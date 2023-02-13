@@ -4,7 +4,7 @@ namespace App\Actions\Product;
 
 class UpdateProductAction
 {
-    public static function handle(object $validated_request, object $product):void
+    public static function handle(object $validated_request, object $product): void
     {
         $product->title = $validated_request->title;
         $product->price = $validated_request->price;

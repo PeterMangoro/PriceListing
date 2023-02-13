@@ -24,7 +24,7 @@ class WelcomeTransportShowProps extends BaseView
 
     public function transport()
     {
-        return TransportDetailData::to_web_page($this->transport);
+        return TransportDetailData::toWebPage($this->transport);
         // return $this->transport;
     }
 

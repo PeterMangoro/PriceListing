@@ -26,7 +26,6 @@ class TransportDetailData
         public  readonly string $username,
         public  readonly Collection $contact,
     ) {
-        
     }
     public static function toWebPage($transport)
     {

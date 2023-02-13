@@ -21,7 +21,7 @@ class WelcomePlotShowProps extends BaseView
 
     public function plot()
     {
-        return PlotDetailData::to_web_page($this->plot);
+        return PlotDetailData::toWebPage($this->plot);
     }
 
     public function similar_plots()

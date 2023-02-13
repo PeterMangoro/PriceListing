@@ -9,7 +9,6 @@ class EmployeeForUpdate
         public readonly string $position,
         public readonly ?array $avatar
     ) {
-       
     }
 
     public static function fromRequest($request)

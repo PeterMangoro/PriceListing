@@ -2,15 +2,13 @@
 
 namespace App\Listeners\Accommodation;
 
-use App\Models\Accommodation;
-use Illuminate\Support\Facades\DB;
-use App\Services\Shared\AddressService;
-use App\Services\Shared\CategoryService;
-use Illuminate\Queue\InteractsWithQueue;
-use App\Services\Shared\AttachmentService;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Events\Accommodation\CreatingAccommodation;
+use App\Models\Accommodation;
 use App\Services\Accommodation\AccommodationService;
+use App\Services\Shared\AddressService;
+use App\Services\Shared\AttachmentService;
+use App\Services\Shared\CategoryService;
+use Illuminate\Support\Facades\DB;
 
 class CreateAccommodation
 {
@@ -21,13 +19,13 @@ class CreateAccommodation
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Accommodation\CreatingAccommodation  $event
+     *
      * @return void
      */
     public function handle(CreatingAccommodation $event)

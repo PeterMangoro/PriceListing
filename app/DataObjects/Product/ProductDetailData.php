@@ -26,10 +26,9 @@ class ProductDetailData
         public  readonly ?object $ratings,
         public  readonly ?object $discount,
     ) {
-       
     }
     public static function toWebPage($product)
-    {        
+    {
         $price = $product->price;
 
         if ($product->discount === null) {

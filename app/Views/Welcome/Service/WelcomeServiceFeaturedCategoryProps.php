@@ -24,7 +24,7 @@ class WelcomeServiceFeaturedCategoryProps extends BaseView
     public function services()
     {
         // dd('hie');
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Feature::ofCategory($this->category->slug)->orderByRating(),
                 'Service'

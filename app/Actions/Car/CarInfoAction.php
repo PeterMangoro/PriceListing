@@ -2,7 +2,6 @@
 
 namespace App\Actions\Car;
 
-
 use App\Models\Car\CarMake;
 use Illuminate\Support\Collection;
 

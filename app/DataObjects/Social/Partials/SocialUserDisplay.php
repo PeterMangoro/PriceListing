@@ -10,12 +10,10 @@ class SocialUserDisplay
         public  readonly string $handle,
         public  readonly string $username,
     ) {
-        
     }
 
     public static function data(object $social)
     {
-        
         return new self(
             $social->id,
             $social->title,

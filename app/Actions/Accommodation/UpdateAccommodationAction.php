@@ -5,9 +5,9 @@ namespace App\Actions\Accommodation;
 class UpdateAccommodationAction
 {
     public static function handle(
-        object $validated_request, 
-        object $accommodation):void
-    {        
+        object $validated_request,
+        object $accommodation
+    ): void {
         $location = $validated_request->location;
         $accommodation->a_rooms = $validated_request->a_rooms;
         $accommodation->price = $validated_request->price;

@@ -21,7 +21,7 @@ class WelcomeCategoryIndexProps extends BaseView
 
     public function products()
     {
-        return ProductDisplayData::to_web_page(
+        return ProductDisplayData::toWebPage(
             WelcomeProductHandler::get_category_products(
                 $this->category->slug
             )

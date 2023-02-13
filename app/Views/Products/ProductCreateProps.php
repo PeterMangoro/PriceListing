@@ -3,9 +3,8 @@
 namespace App\Views\Products;
 
 use App\Handlers\Shared\ModelHandler;
-use App\View\Shared\BaseView;
 use App\Models\Categories\ProductCategory;
-
+use App\View\Shared\BaseView;
 
 class ProductCreateProps extends BaseView
 {

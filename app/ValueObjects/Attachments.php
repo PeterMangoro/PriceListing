@@ -6,20 +6,21 @@ class Attachments
 {
     public static function imagesFrom(object $value)
     {
-        return 
-        count($value) > 0
+        return count($value) > 0
             ? $value->map(
                 fn ($image) => [
-                    'path' => str_replace('public/', '/storage/', $image->path)])
+                    'path' => str_replace('public/', '/storage/', $image->path),
+                ]
+            )
             :
              [
-                ['path' => '/storage/no-thumbnail/no-thumbnail.webp']];
+                 ['path' => '/storage/no-thumbnail/no-thumbnail.webp'],
+             ];
     }
 
     public static function documentsFrom(object $value)
     {
-        return 
-        count($value) > 0
+        return count($value) > 0
             ? $value->map(fn ($document) => [
                 'path' => $document->path,
                 'name' => $document->title,
@@ -34,8 +35,7 @@ class Attachments
 
     public static function imagesForEdit(object $value)
     {
-        return
-         count($value) > 0
+        return count($value) > 0
             ? $value->map(fn ($image) => [
                 'path' => $image->path,
                 'id' => $image->id,
@@ -57,16 +57,14 @@ class Attachments
             : null;
     }
 
-    public static function imagesForDisplay(object $value):string
+    public static function imagesForDisplay(object $value): string
     {
         if ((collect($value)['latest_image'])) {
-            return 
-            str_replace('public/', '/storage/', collect($value)['latest_image']['path']);
+            return str_replace('public/', '/storage/', collect($value)['latest_image']['path']);
         }
 
         if ($value->featurable) {
-            return 
-            collect($value)['featurable']['latest_image']['path'];
+            return collect($value)['featurable']['latest_image']['path'];
         }
         return '/storage/no-thumbnail/no-thumbnail.webp';
     }

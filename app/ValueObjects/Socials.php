@@ -10,10 +10,10 @@ class Socials
     {
         return $value->map(
             fn ($contact) => [
-            'account' => $contact->title,
-            'username' => $contact->username,
-            'handle' => $contact->value,
-        ]
+                'account' => $contact->title,
+                'username' => $contact->username,
+                'handle' => $contact->value,
+            ]
         );
     }
 }

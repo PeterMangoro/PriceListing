@@ -20,10 +20,9 @@ class AccommodationUserDisplay
         public  readonly object $address,
         public  readonly int $id,
     ) {
-        
     }
     public static function data($accommodation)
-    {        
+    {
         return new self(
             collect($accommodation)['latest_image']['path'] ??
                 collect($accommodation)['featurable']['latest_image']['path'] ??

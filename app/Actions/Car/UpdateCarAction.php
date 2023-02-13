@@ -5,9 +5,9 @@ namespace App\Actions\Car;
 class UpdateCarAction
 {
     public static function handle(
-        object $validated_request, 
-        object $car):void
-    {
+        object $validated_request,
+        object $car
+    ): void {
         $car->car_make_id = $validated_request->car_make_id;
         $car->car_model_id = $validated_request->car_model_id;
         $car->sale_status = $validated_request->sale_status;

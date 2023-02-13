@@ -17,11 +17,10 @@ class TransportData
         public readonly  string $departure,
         public  readonly string $destination,
         public readonly  ?string $choice,
-        public  readonly string  $date,
+        public  readonly string $date,
         public  readonly float $price,
         public readonly  int $passengers,
     ) {
-        
     }
     public static function fromRequest($request)
     {

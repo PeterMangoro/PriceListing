@@ -2,14 +2,12 @@
 
 namespace App\Listeners\Product;
 
-use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 use App\Events\Product\CreatingProduct;
+use App\Models\Product;
 use App\Services\Product\ProductService;
-use App\Services\Shared\CategoryService;
-use Illuminate\Queue\InteractsWithQueue;
 use App\Services\Shared\AttachmentService;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Services\Shared\CategoryService;
+use Illuminate\Support\Facades\DB;
 
 class CreateProduct
 {
@@ -20,13 +18,13 @@ class CreateProduct
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Product\CreatingProduct  $event
+     *
      * @return void
      */
     public function handle(CreatingProduct $event)
@@ -35,9 +33,9 @@ class CreateProduct
         DB::transaction(function () use ($request) {
             $product_id = ProductService::create($request);
             $product = Product::find($product_id);
-            AttachmentService::addImages($request->images, $product, 'product', 300);           
+            AttachmentService::addImages($request->images, $product, 'product', 300);
             CategoryService::forModel($product, $request->categories);
-            $request->document ? 
+            $request->document ?
             AttachmentService::addDocument($request->document, $product, 'product') : null;
         });
     }

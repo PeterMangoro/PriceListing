@@ -1,10 +1,9 @@
 <?php
 
-namespace App\View\Shared\Social;
+namespace App\Views\Shared\Social;
 
 use App\DataObjects\Social\SocialDisplayData;
 use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Shared\SocialHandler;
 use App\Models\Shared\Social;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;

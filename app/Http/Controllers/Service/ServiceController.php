@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Service;
 
-use Inertia\Inertia;
-use App\Models\Service;
-use App\Http\Controllers\Controller;
 use App\Handlers\Service\ServiceHandler;
 use App\Handlers\Shared\ModelHandler;
-use App\Views\Services\ServiceEditProps;
-use App\Views\Services\ServiceIndexProps;
-use App\Views\Services\ServiceCreateProps;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Service\CreateServiceRequest;
 use App\Http\Requests\Service\UpdateServiceRequest;
-
-
+use App\Models\Service;
+use App\Views\Services\ServiceCreateProps;
+use App\Views\Services\ServiceEditProps;
+use App\Views\Services\ServiceIndexProps;
+use Inertia\Inertia;
 
 class ServiceController extends Controller
 {

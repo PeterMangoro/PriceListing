@@ -9,8 +9,8 @@ use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeServiceHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Models\Feature;
-use App\Models\Service;
 use App\Models\Popular;
+use App\Models\Service;
 use App\Models\Shared\Discount;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;
@@ -19,7 +19,7 @@ class WelcomeServiceIndexProps extends BaseView
 {
     public function services()
     {
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             WelcomeServiceHandler::get_all_services(
                 new Service()
             )

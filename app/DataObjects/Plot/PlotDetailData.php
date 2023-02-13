@@ -21,7 +21,6 @@ class PlotDetailData
         public readonly   Collection|array|null $images,
         public readonly   Collection|array|null $documents,
     ) {
-        
     }
     public static function toWebPage($plot)
     {

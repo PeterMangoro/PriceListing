@@ -15,7 +15,7 @@ class WelcomeCarDiscountedProps extends BaseView
 {
     public function cars()
     {
-        return CarDisplayData::to_web_page(
+        return CarDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Discount::orderByExpDate(),
                 'Car'

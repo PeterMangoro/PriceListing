@@ -14,7 +14,6 @@ class ProductUpdateData
         public readonly bool $sale_status,
         public readonly ?array $discount,
     ) {
-        
     }
     public static function fromRequest($request)
     {

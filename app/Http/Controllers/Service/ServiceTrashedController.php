@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Service;
 
-use Inertia\Inertia;
-use App\Models\Service;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use App\Views\Services\ServiceTrashedIndexProps;
+use Inertia\Inertia;
 
 class ServiceTrashedController extends Controller
 {
@@ -28,6 +28,4 @@ class ServiceTrashedController extends Controller
 
         return to_route('services.edit', $service->uuid);
     }
-
-  
 }

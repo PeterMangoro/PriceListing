@@ -9,7 +9,6 @@ class SocialUpdateData
         public readonly string $value,
         public readonly string $username
     ) {
-        
     }
 
     public static function fromRequest($request)

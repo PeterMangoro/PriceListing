@@ -7,9 +7,9 @@ use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeCarHandler;
+use App\Models\Car;
 use App\Models\Categories\CarCategory;
 use App\Models\Feature;
-use App\Models\Car;
 use App\Models\Popular;
 use App\Models\Shared\Discount;
 use App\View\Shared\BaseView;
@@ -19,7 +19,7 @@ class WelcomeCarIndexProps extends BaseView
 {
     public function cars()
     {
-        return CarDisplayData::to_web_page(
+        return CarDisplayData::toWebPage(
             WelcomeCarHandler::get_all_cars(
                 new Car()
             )

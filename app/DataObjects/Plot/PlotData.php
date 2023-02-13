@@ -12,7 +12,6 @@ class PlotData
         public  readonly array $location,
         public  readonly float $price,
     ) {
-        
     }
     public static function fromRequest($request)
     {

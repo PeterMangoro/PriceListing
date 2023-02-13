@@ -15,7 +15,7 @@ class WelcomeServiceRecentProps extends BaseView
 {
     public function services()
     {
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             WelcomeServiceHandler::get_all_services(
                 Service::latest('id')
             )

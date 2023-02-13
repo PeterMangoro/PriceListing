@@ -26,7 +26,6 @@ class AccommodationDetailData
         public readonly  ?object $ratings,
         public readonly  ?object $discount,
     ) {
-        
     }
     public static function toWebPage($accommodation)
     {

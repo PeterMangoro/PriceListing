@@ -6,7 +6,6 @@ use Illuminate\Support\Str;
 
 trait UUID
 {
-
     // Tells the database not to auto-increment this field
     public function getIncrementing()
     {

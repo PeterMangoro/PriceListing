@@ -16,11 +16,10 @@ class DeleteModelAction
         $model->forceDelete();
     }
 
-    public static function restore(object $model,int $id): Model
+    public static function restore(object $model, int $id): Model
     {
-       $Model =  $model->onlyTrashed()->find($id);
+        $Model = $model->onlyTrashed()->find($id);
         $Model->restore();
         return $Model;
-
     }
 }

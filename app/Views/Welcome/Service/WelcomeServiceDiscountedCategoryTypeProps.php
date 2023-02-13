@@ -23,7 +23,7 @@ class WelcomeServiceDiscountedCategoryTypeProps extends BaseView
 
     public function services()
     {
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Discount::ofCategoryType($this->category_type)->orderByExpDate(),
                 'Service'

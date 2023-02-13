@@ -2,16 +2,11 @@
 
 namespace App\Models\Car;
 
-use App\Models\Car\Car;
-use App\Models\Car\CarMake;
-use App\Models\SharedModel;
-use App\Models\Car\CarModel;
 use App\Builders\Transport\TransportBuilder;
 use App\Models\Categories\TransportCategory;
+use App\Models\SharedModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-
 
 class Transport extends SharedModel
 {

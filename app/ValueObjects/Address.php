@@ -10,12 +10,10 @@ class Address
         public  readonly ?string $town,
         public  readonly ?string $street,
     ) {
-       
     }
 
     public static function from(?object $value = null)
     {
-       
         return new self(
             $value->country ?? null,
             $value->city ?? null,
@@ -23,6 +21,4 @@ class Address
             $value->street ?? null,
         );
     }
-
-   
 }

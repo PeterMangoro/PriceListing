@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Shared\Profile;
+namespace App\Views\Shared\Profile;
 
 use App\DataObjects\Employee\EmployeeDisplayData;
 use App\Models\User;
@@ -8,6 +8,7 @@ use App\View\Shared\BaseView;
 
 class ProfileTeamProps extends BaseView
 {
+    public User $company;
     public function __construct(
         public User $user
     ) {
@@ -16,8 +17,7 @@ class ProfileTeamProps extends BaseView
 
     public function employees()
     {
-        return 
-        EmployeeDisplayData::toWebPage(
+        return EmployeeDisplayData::toWebPage(
             $this->company->employees()
                 ->withDisplayImage()
                 ->paginate(12)

@@ -23,7 +23,7 @@ class WelcomeProductTopTalksCategoryTypeProps extends BaseView
 
     public function products()
     {
-        return ProductDisplayData::to_web_page(
+        return ProductDisplayData::toWebPage(
             GetPopularModels::for_paginated_display_of_type(
                 Popular::ofCategoryType($this->category_type)->orderByPageVisits(),
                 'Product'

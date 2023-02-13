@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Car;
 
 use App\Handlers\Shared\ModelHandler;
-use Inertia\Inertia;
-use App\Models\Car\Car;
 use App\Http\Controllers\Controller;
+use App\Models\Car\Car;
 use App\Views\Cars\CarTrashedIndexProps;
-
+use Inertia\Inertia;
 
 class CarTrashedController extends Controller
 {
@@ -25,7 +24,7 @@ class CarTrashedController extends Controller
 
     public function show(int $id)
     {
-        $car =ModelHandler::restore(new Car(),$id);
+        $car = ModelHandler::restore(new Car(), $id);
 
         return to_route('cars.edit', $car->uuid);
     }
@@ -37,5 +36,4 @@ class CarTrashedController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
 }

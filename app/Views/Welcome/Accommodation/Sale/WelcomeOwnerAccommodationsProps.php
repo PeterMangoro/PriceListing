@@ -16,7 +16,7 @@ class WelcomeOwnerAccommodationsProps extends BaseView
 
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             WelcomeAccommodationHandler::get_paginated_display_accommodations(
                 $this->owner->accommodations()
                     ->whereActive()

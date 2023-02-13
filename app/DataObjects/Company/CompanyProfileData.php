@@ -16,7 +16,6 @@ class CompanyProfileData
         public  readonly ?string $date,
         public readonly  Collection|array|null $documents,
     ) {
-        
     }
 
     public static function of(?object $company)

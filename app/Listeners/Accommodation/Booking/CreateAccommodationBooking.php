@@ -2,11 +2,9 @@
 
 namespace App\Listeners\Accommodation\Booking;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Events\Accommodation\Booking\CreatingAccommodationBooking;
 use App\Actions\Shared\Payment\Accommodation\CreateAccommodationRoomPayment;
+use App\Events\Accommodation\Booking\CreatingAccommodationBooking;
+use Illuminate\Support\Facades\DB;
 
 class CreateAccommodationBooking
 {
@@ -17,13 +15,13 @@ class CreateAccommodationBooking
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Accommodation\Booking\CreatingAccommodationBooking  $event
+     *
      * @return void
      */
     public function handle(CreatingAccommodationBooking $event)

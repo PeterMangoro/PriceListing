@@ -12,7 +12,7 @@ class WelcomeRentalAccommodationIndexProps extends BaseView
 {
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             WelcomeAccommodationHandler::get_paginated_display_accommodations(
                 Accommodation::forRental()
             )

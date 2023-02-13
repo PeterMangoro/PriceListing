@@ -41,7 +41,7 @@ class SocialController extends Controller
 
     public function destroy(Social $social)
     {
-       ModelHandler::delete($social);
+        ModelHandler::delete($social);
         return back()->with('flash.banner', 'Social Deleted Successfully');
     }
 

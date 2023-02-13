@@ -9,7 +9,6 @@ class EmployeeClientDisplay
         public readonly  string $position,
         public  readonly string $image,
     ) {
-        
     }
 
     public static function data(object $employee)
@@ -17,7 +16,7 @@ class EmployeeClientDisplay
         return new self(
             $employee->name,
             $employee->position,
-            collect($employee)['attachments'][0]['path'] ?: 
+            collect($employee)['attachments'][0]['path'] ?:
             '/storage/no-thumbnail/No_image_available.svg',
         );
     }

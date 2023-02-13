@@ -2,12 +2,11 @@
 
 namespace App\Models\Categories;
 
-use App\Models\Product;
-use Illuminate\Database\Eloquent\Model;
 use App\Builders\Product\ProductCategoryBuilder;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
 
 class ProductCategory extends Model
 {

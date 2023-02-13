@@ -2,10 +2,10 @@
 
 namespace App\Views\Plots;
 
-use App\Models\Plot;
-use App\View\Shared\BaseView;
 use App\DataObjects\Plot\Partials\PlotForUpdate;
 use App\Handlers\Shared\ModelHandler;
+use App\Models\Plot;
+use App\View\Shared\BaseView;
 
 class PlotEditProps extends BaseView
 {
@@ -18,8 +18,9 @@ class PlotEditProps extends BaseView
     {
         return PlotForUpdate::from(
             ModelHandler::getModelForEdit(
-                new Plot(), $this->uuid));
+                new Plot(),
+                $this->uuid
+            )
+        );
     }
-
-   
 }

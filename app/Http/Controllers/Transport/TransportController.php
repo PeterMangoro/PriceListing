@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Transport;
 
 use App\Handlers\Shared\ModelHandler;
-use Inertia\Inertia;
-use App\Models\Car\Transport;
-
-use App\Http\Controllers\Controller;
 use App\Handlers\Transport\TransportHandler;
-use App\Views\Transports\TransportEditProps;
-use App\Views\Transports\TransportIndexProps;
-use App\Views\Transports\TransportCreateProps;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Transport\CreateTransportRequest;
 use App\Http\Requests\Transport\UpdateTransportRequest;
+use App\Models\Car\Transport;
+use App\Views\Transports\TransportCreateProps;
+use App\Views\Transports\TransportEditProps;
+use App\Views\Transports\TransportIndexProps;
+use Inertia\Inertia;
 
 class TransportController extends Controller
 {

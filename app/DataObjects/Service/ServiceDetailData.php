@@ -22,7 +22,6 @@ class ServiceDetailData
         public  readonly ?Collection $contact,
         public  readonly ?object $ratings,
     ) {
-        
     }
     public static function toWebPage($service)
     {

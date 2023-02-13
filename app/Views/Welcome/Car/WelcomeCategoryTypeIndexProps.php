@@ -19,7 +19,7 @@ class WelcomeCategoryTypeIndexProps extends BaseView
 
     public function cars()
     {
-        return CarDisplayData::to_web_page(
+        return CarDisplayData::toWebPage(
             CarHandler::get_paginated_cars(
                 $this->car_make->cars(),
                 18

@@ -22,7 +22,6 @@ class ProductForUpdate
         public readonly  bool $sale_status,
         public  readonly string $title,
     ) {
-        
     }
 
     public static function from(object $product)
@@ -34,9 +33,9 @@ class ProductForUpdate
             Attachments::documentsForEdit($product->documents),
             Attachments::documentsForEdit($product->trashed_documents),
             (object) $product->categories,
-            $product->discount ? 
+            $product->discount ?
             $product->discount->price : null,
-            $product->discount ? 
+            $product->discount ?
             Carbon::parse($product->discount->exp_date)->format('Y-m-d\TH:i') : null,
             $product->detail,
             $product->id,

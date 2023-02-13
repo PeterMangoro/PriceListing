@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Accommodation;
 
-use Inertia\Inertia;
-use App\Models\Accommodation;
-use App\Http\Controllers\Controller;
 use App\Handlers\Accommodation\AccommodationHandler;
 use App\Handlers\Shared\ModelHandler;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Accommodation\CreateAccommodationRequest;
+use App\Http\Requests\Accommodation\UpdateAccommodationRequest;
+use App\Models\Accommodation;
 use App\Views\Accommodations\AccommodationCreateProps;
 use App\Views\Accommodations\AccommodationEditProps;
 use App\Views\Accommodations\AccommodationIndexProps;
-use App\Http\Requests\Accommodation\UpdateAccommodationRequest;
-use App\Http\Requests\Accommodation\CreateAccommodationRequest;
-
-
+use Inertia\Inertia;
 
 class AccommodationController extends Controller
 {
@@ -35,7 +33,8 @@ class AccommodationController extends Controller
     {
         $this->handle()::store($request);
         return to_route(
-            'accommodations.index')
+            'accommodations.index'
+        )
             ->with('flash.banner', 'Accommodation Added Successfully');
     }
 
@@ -56,7 +55,7 @@ class AccommodationController extends Controller
     {
         ModelHandler::delete($accommodation);
         return back()
-        ->with('flash.banner', 'Accommodation Deleted Successfully');
+            ->with('flash.banner', 'Accommodation Deleted Successfully');
     }
 
     private function handle(): AccommodationHandler

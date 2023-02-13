@@ -2,10 +2,8 @@
 
 namespace App\Services\Shared;
 
-use App\Models\Product;
 use App\Actions\Shared\Rating\AddRating;
-
-
+use App\Models\Product;
 
 class RatingService
 {

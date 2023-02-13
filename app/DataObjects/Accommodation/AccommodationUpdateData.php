@@ -15,11 +15,9 @@ class AccommodationUpdateData
         public  readonly bool $sale_status,
         public readonly  ?array $discount,
     ) {
-       
     }
     public static function fromRequest($request)
     {
-       
         $location = [
             'street' => $request->street,
             'town' => $request->town,

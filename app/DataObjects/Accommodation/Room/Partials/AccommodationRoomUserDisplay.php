@@ -18,7 +18,6 @@ class AccommodationRoomUserDisplay
         public  readonly string $ratings,
         public  readonly int $id,
     ) {
-        
     }
     public static function data($room)
     {

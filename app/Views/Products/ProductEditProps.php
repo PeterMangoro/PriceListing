@@ -2,11 +2,11 @@
 
 namespace App\Views\Products;
 
-use App\Models\Product;
-use App\View\Shared\BaseView;
+use App\DataObjects\Product\Partials\ProductForUpdate;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ProductCategory;
-use App\DataObjects\Product\Partials\ProductForUpdate;
+use App\Models\Product;
+use App\View\Shared\BaseView;
 
 class ProductEditProps extends BaseView
 {
@@ -25,12 +25,11 @@ class ProductEditProps extends BaseView
         return $this->product;
     }
 
-    
-
     public function category_types()
     {
         return ModelHandler::getUnPaginatedData(
-            new ProductCategory())
+            new ProductCategory()
+        )
             ->sortBy('type')
             ->groupBy('type');
     }

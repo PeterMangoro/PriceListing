@@ -19,13 +19,12 @@ class CarUserDisplay
         public  readonly string $ratings,
         public  readonly int $id,
     ) {
-        
     }
     public static function data($car)
     {
         return new self(
-            collect($car)['latest_image']['path'] ?? 
-            collect($car)['featurable']['latest_image']['path'] ?? 
+            collect($car)['latest_image']['path'] ??
+            collect($car)['featurable']['latest_image']['path'] ??
             '/storage/no-thumbnail/No_image_available.svg',
             $car->car_make,
             $car->car_model,

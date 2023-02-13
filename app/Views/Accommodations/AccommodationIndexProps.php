@@ -2,11 +2,11 @@
 
 namespace App\Views\Accommodations;
 
-use App\View\Shared\Filters;
-use App\Models\Accommodation;
-use App\View\Shared\BaseView;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Shared\ModelHandler;
+use App\Models\Accommodation;
+use App\View\Shared\BaseView;
+use App\View\Shared\Filters;
 
 class AccommodationIndexProps extends BaseView
 {
@@ -15,7 +15,8 @@ class AccommodationIndexProps extends BaseView
         return AccommodationDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
                 Accommodation::belongsToAuthUser()
-                ->withAddress())
+                    ->withAddress()
+            )
         );
     }
 

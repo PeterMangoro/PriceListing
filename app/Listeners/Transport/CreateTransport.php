@@ -2,14 +2,12 @@
 
 namespace App\Listeners\Transport;
 
+use App\Events\Transport\CreatingTransport;
 use App\Models\Car\Car;
 use App\Services\Car\CarService;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Queue\InteractsWithQueue;
 use App\Services\Shared\AttachmentService;
-use App\Events\Transport\CreatingTransport;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Services\Transport\TransportService;
+use Illuminate\Support\Facades\DB;
 
 class CreateTransport
 {
@@ -20,13 +18,13 @@ class CreateTransport
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Transport\CreatingTransport  $event
+     *
      * @return void
      */
     public function handle(CreatingTransport $event)
@@ -39,10 +37,11 @@ class CreateTransport
         if ($request->choice === 'add_car') {
             //create a new car
             DB::transaction(function () use (
-                $carService, 
-                $transportService, 
-                $request, 
-                $attachmentService) {
+                $carService,
+                $transportService,
+                $request,
+                $attachmentService
+            ) {
                 $car_id = $carService->create($request);
                 $car = Car::find($car_id);
                 $attachmentService->addImages($request->images, $car, 'car', 300);

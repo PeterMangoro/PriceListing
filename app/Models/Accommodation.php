@@ -2,14 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Team;
-use App\Models\Shared\Room;
-use App\Models\SharedModel;
-use App\Models\Categories\AccommodationCategory;
 use App\Builders\Accommodation\AccommodationBuilder;
+use App\Models\Categories\AccommodationCategory;
+use App\Models\Shared\Room;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-
 
 class Accommodation extends SharedModel
 {
@@ -33,7 +29,6 @@ class Accommodation extends SharedModel
         return $this->belongsToMany(AccommodationCategory::class, 'accommodation_classifications');
     }
 
-  
   public function rooms()
   {
       return $this->morphMany(Room::class, 'roomable');

@@ -33,7 +33,7 @@ class WelcomeProductShowProps extends BaseView
 
     public function product()
     {
-        return ProductDetailData::to_web_page($this->product);
+        return ProductDetailData::toWebPage($this->product);
     }
 
     public function category_type()

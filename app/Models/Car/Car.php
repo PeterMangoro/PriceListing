@@ -2,14 +2,9 @@
 
 namespace App\Models\Car;
 
-use App\Models\Car\CarMake;
-use App\Models\SharedModel;
-use App\Models\Car\CarModel;
-use App\Models\Car\Transport;
 use App\Builders\Car\CarBuilder;
 use App\Models\Categories\CarCategory;
-
-
+use App\Models\SharedModel;
 
 class Car extends SharedModel
 {

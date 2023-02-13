@@ -23,7 +23,7 @@ class WelcomeProductDiscountedCategoryTypeProps extends BaseView
 
     public function products()
     {
-        return ProductDisplayData::to_web_page(
+        return ProductDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Discount::ofCategoryType($this->category_type)->orderByExpDate(),
                 'Product'

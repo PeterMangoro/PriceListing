@@ -23,7 +23,7 @@ class WelcomeAccommodationTopTalksCategoryTypeProps extends BaseView
 
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             GetPopularModels::for_paginated_display_of_type(
                 Popular::ofCategoryType($this->category_type)->orderByPageVisits(),
                 'Accommodation',

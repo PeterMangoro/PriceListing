@@ -23,7 +23,7 @@ class WelcomeAccommodationDiscountedCategoryProps extends BaseView
 
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Discount::OfCategory($this->category->slug)->orderByExpDate()->forLodges(),
                 'Accommodation'

@@ -12,7 +12,7 @@ class WelcomePlotIndexProps extends BaseView
 {
     public function plots()
     {
-        return PlotDisplayData::to_web_page(
+        return PlotDisplayData::toWebPage(
             PlotHandler::get_paginated_plots(
                 new Plot(),
                 15

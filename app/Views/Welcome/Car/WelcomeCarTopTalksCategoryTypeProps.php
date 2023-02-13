@@ -23,7 +23,7 @@ class WelcomeCarTopTalksCategoryTypeProps extends BaseView
 
     public function cars()
     {
-        return CarDisplayData::to_web_page(
+        return CarDisplayData::toWebPage(
             GetPopularModels::for_paginated_display_of_type(
                 Popular::ofCategoryType($this->category_type)->orderByPageVisits(),
                 'Car'

@@ -23,7 +23,6 @@ class PlotForUpdate
         public  readonly string $size,
         public  readonly object $address,
     ) {
-        
     }
 
     public static function from(object $plot)

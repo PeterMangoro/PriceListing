@@ -2,13 +2,11 @@
 
 namespace App\Models\Categories;
 
-use App\Models\Car\Car;
-use Illuminate\Database\Eloquent\Model;
 use App\Builders\Car\CarCategoryBuilder;
+use App\Models\Car\Car;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-
 
 class CarCategory extends Model
 {

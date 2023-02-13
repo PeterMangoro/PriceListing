@@ -27,7 +27,6 @@ class CarDetailData
         public readonly  ?object $ratings,
         public readonly  ?object $discount,
     ) {
-       
     }
     public static function toWebPage($car)
     {

@@ -25,7 +25,7 @@ class WelcomeAccommodationShowProps extends BaseView
 
     public function accommodation()
     {
-        return AccommodationDetailData::to_web_page($this->accommodation);
+        return AccommodationDetailData::toWebPage($this->accommodation);
     }
 
     public function similar_accommodations()

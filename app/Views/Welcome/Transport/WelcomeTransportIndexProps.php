@@ -12,7 +12,7 @@ class WelcomeTransportIndexProps extends BaseView
 {
     public function transports()
     {
-        return TransportDisplayData::to_web_page(
+        return TransportDisplayData::toWebPage(
             TransportHandler::get_paginated_transports(
                 new Transport(),
                 18

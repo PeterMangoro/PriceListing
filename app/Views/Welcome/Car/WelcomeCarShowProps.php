@@ -7,8 +7,8 @@ use App\DataObjects\Car\CarDisplayData;
 use App\Handlers\Car\CarHandler;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Model\ModelHandler;
-use App\Models\Categories\CarCategory;
 use App\Models\Car;
+use App\Models\Categories\CarCategory;
 use App\View\Shared\BaseView;
 
 class WelcomeCarShowProps extends BaseView
@@ -32,7 +32,7 @@ class WelcomeCarShowProps extends BaseView
 
     public function car()
     {
-        return CarDetailData::to_web_page($this->car);
+        return CarDetailData::toWebPage($this->car);
     }
 
     public function category_type()

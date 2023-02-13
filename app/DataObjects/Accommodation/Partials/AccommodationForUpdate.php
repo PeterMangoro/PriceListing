@@ -2,8 +2,8 @@
 
 namespace App\DataObjects\Accommodation\Partials;
 
-use Carbon\Carbon;
 use App\ValueObjects\Attachments;
+use Carbon\Carbon;
 
 class AccommodationForUpdate
 {
@@ -23,7 +23,6 @@ class AccommodationForUpdate
         public  readonly bool $sale_status,
         public  readonly int $a_rooms,
     ) {
-       
     }
 
     public static function from(object $accommodation)
@@ -36,9 +35,9 @@ class AccommodationForUpdate
             Attachments::documentsForEdit($accommodation->documents),
             Attachments::documentsForEdit($accommodation->trashed_documents),
             (object) $accommodation->categories,
-            $accommodation->discount ? 
+            $accommodation->discount ?
             $accommodation->discount->price : null,
-            $accommodation->discount ? 
+            $accommodation->discount ?
             Carbon::parse($accommodation->discount->exp_date)->format('Y-m-d\TH:i') : null,
             $accommodation->detail,
             $accommodation->id,

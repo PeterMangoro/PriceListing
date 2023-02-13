@@ -23,7 +23,7 @@ class WelcomeCarFeaturedCategoryTypeProps extends BaseView
 
     public function products()
     {
-        return CarDisplayData::to_web_page(
+        return CarDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Feature::ofCategoryType($this->category_type)->orderByRating(),
                 'Car'

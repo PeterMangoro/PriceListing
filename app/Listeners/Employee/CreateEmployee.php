@@ -2,13 +2,11 @@
 
 namespace App\Listeners\Employee;
 
-use App\Models\Shared\Employee;
-use Illuminate\Support\Facades\DB;
-use App\Services\Shared\EmployeeService;
-use Illuminate\Queue\InteractsWithQueue;
 use App\Events\Employee\CreatingEmployee;
+use App\Models\Shared\Employee;
 use App\Services\Shared\AttachmentService;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Services\Shared\EmployeeService;
+use Illuminate\Support\Facades\DB;
 
 class CreateEmployee
 {
@@ -19,13 +17,13 @@ class CreateEmployee
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Employee\CreatingEmployee  $event
+     *
      * @return void
      */
     public function handle(CreatingEmployee $event)

@@ -2,10 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\SharedModel;
 use App\Builders\Plot\PlotBuilder;
-
-
 
 class Plot extends SharedModel
 {

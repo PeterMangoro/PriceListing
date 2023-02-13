@@ -6,11 +6,11 @@ class CategoryData
 {
     public static function forDisplay(object $categories)
     {
-        return 
-        $categories->map(
+        return $categories->map(
             fn ($category) => [
-            'title' => $category->title,
-            'type' => $category->slug ?: $category->title,
-        ]);
+                'title' => $category->title,
+                'type' => $category->slug ?: $category->title,
+            ]
+        );
     }
 }

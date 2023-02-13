@@ -3,13 +3,10 @@
 namespace App\Events\Product;
 
 use App\Models\Product;
-use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class UpdatingProduct
 {
@@ -27,7 +24,6 @@ class UpdatingProduct
         $this->validated_request = $validated_request;
         $this->product = $product;
     }
-
 
     /**
      * Get the channels the event should broadcast on.

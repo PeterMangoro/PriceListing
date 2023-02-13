@@ -2,14 +2,11 @@
 
 namespace App\Models\Shared;
 
-use App\Models\SharedModel;
-use App\Models\Shared\RoomUser;
 use App\Builders\Accommodation\RoomBuilder;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
+use App\Models\SharedModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Room extends SharedModel
 {

@@ -2,13 +2,11 @@
 
 namespace App\Models\Categories;
 
-use App\Models\Service;
-use Illuminate\Database\Eloquent\Model;
 use App\Builders\Service\ServiceCategoryBuilder;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-
 
 class ServiceCategory extends Model
 {

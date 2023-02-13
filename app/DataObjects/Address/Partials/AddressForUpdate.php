@@ -10,7 +10,6 @@ class AddressForUpdate
         public readonly string $city,
         public readonly ?string $country,
     ) {
-        
     }
 
     public static function from(object $address)

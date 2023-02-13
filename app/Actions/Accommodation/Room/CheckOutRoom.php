@@ -6,7 +6,7 @@ use App\Models\Shared\Room;
 
 class CheckOutRoom
 {
-    public static function from(Room $room):void
+    public static function from(Room $room): void
     {
         $room->guest->delete();
     }

@@ -5,8 +5,6 @@ namespace App\Services\Product;
 use App\Actions\Product\CreateProductAction;
 use App\Actions\Product\UpdateProductAction;
 
-
-
 class ProductService
 {
     public static function create(object $request)

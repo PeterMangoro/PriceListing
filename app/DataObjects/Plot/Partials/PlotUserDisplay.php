@@ -17,7 +17,6 @@ class PlotUserDisplay
         public  readonly string $detail,
         public  readonly string $status,
     ) {
-        
     }
     public static function data($plot)
     {

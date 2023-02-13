@@ -8,30 +8,27 @@ use App\DataObjects\Social\Partials\SocialUserDisplay;
 class SocialDisplayData
 {
     public static function toWebPage(
-        object $socials, 
-        ?string $morph = null)
-    {
-        return 
-        $socials->through(
-            fn ($social) => 
-            SocialClientDisplay::data($social, $morph));
+        object $socials,
+        ?string $morph = null
+    ) {
+        return $socials->through(
+            fn ($social) => SocialClientDisplay::data($social, $morph)
+        );
     }
 
     public static function collectionToWebPage(
-        $socials, 
-        ?string $morph = null)
-    {
-        return 
-        $socials->map(
-            fn ($social) => 
-            SocialClientDisplay::data($social, $morph));
+        $socials,
+        ?string $morph = null
+    ) {
+        return $socials->map(
+            fn ($social) => SocialClientDisplay::data($social, $morph)
+        );
     }
 
     public static function toOwnerDisplay($socials)
     {
-        return 
-        $socials->through(
-            fn ($social) => 
-            SocialUserDisplay::data($social));
+        return $socials->through(
+            fn ($social) => SocialUserDisplay::data($social)
+        );
     }
 }

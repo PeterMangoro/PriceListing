@@ -60,8 +60,8 @@ class ModelService
         DeleteModelAction::destroy($model);
     }
 
-    public static function restore(object $model,int $id): Model
+    public static function restore(object $model, int $id): Model
     {
-        return DeleteModelAction::restore($model,$id);
+        return DeleteModelAction::restore($model, $id);
     }
 }

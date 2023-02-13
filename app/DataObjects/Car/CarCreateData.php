@@ -17,7 +17,6 @@ class CarCreateData
         public readonly ?bool $sale_status,
         public readonly ?bool $rent_status,
     ) {
-       
     }
     public static function fromRequest($request)
     {

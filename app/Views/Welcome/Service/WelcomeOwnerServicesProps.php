@@ -16,7 +16,7 @@ class WelcomeOwnerServicesProps extends BaseView
 
     public function services()
     {
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             ServiceHandler::get_paginated_services(
                 $this->owner->services(),
                 18

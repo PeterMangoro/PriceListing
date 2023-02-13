@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Shared\Profile;
+namespace App\Views\Shared\Profile;
 
 use App\DataObjects\Company\CompanyData;
 use App\DataObjects\Company\CompanyProfileData;
@@ -28,8 +28,9 @@ class ProfileShowProps extends BaseView
     {
         return CompanyProfileData::of(
             $this->company->profile()
-            ->with('documents')
-            ->first());
+                ->with('documents')
+                ->first()
+        );
     }
 
     public function contacts()
@@ -55,28 +56,21 @@ class ProfileShowProps extends BaseView
     public function counts()
     {
         return [
-            'accommodations' => 
-            $this->company->accommodations()
-            ->whereActive()
-            ->count(),
-            
-            'cars' => 
-            $this->company->cars()
-            ->whereActive()->count(),
-            'products' => 
-            $this->company->products()
-            ->whereActive()->count(),
-            'products' => 
-            $this->company->products()
-            ->whereActive()->count(),
-            'services' => 
-            $this->company->services()
-            ->whereActive()->count(),
-            'plots' => 
-            $this->company->plots()
-            ->whereActive()->count(),
-            'employees' => 
-            $this->company->employees()->count(),
+            'accommodations' => $this->company->accommodations()
+                ->whereActive()
+                ->count(),
+
+            'cars' => $this->company->cars()
+                ->whereActive()->count(),
+            'products' => $this->company->products()
+                ->whereActive()->count(),
+            'products' => $this->company->products()
+                ->whereActive()->count(),
+            'services' => $this->company->services()
+                ->whereActive()->count(),
+            'plots' => $this->company->plots()
+                ->whereActive()->count(),
+            'employees' => $this->company->employees()->count(),
 
         ];
     }

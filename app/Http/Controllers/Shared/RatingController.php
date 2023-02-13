@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Shared;
 
-use App\Http\Controllers\Controller;
 use App\Handlers\Shared\RatingHandler;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\RatingRequest;
 
 class RatingController extends Controller

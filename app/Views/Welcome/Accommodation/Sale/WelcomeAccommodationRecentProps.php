@@ -6,8 +6,8 @@ use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Categories\AccommodationCategory;
 use App\Models\Accommodation;
+use App\Models\Categories\AccommodationCategory;
 use App\View\Shared\BaseView;
 use App\View\Shared\Filters;
 
@@ -15,7 +15,7 @@ class WelcomeAccommodationRecentProps extends BaseView
 {
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             WelcomeAccommodationHandler::get_all_accommodations(
                 Accommodation::latest('id')->withAddress()
             )

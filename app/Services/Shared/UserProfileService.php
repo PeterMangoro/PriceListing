@@ -2,13 +2,9 @@
 
 namespace App\Services\Shared;
 
-use Illuminate\Support\Facades\Auth;
-use App\Services\Shared\AddressService;
-use App\Services\Shared\AttachmentService;
 use App\Actions\Shared\Profile\UpdateProfile;
 use App\Http\Requests\Shared\Profile\ProfileUpdateRequest;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class UserProfileService
 {

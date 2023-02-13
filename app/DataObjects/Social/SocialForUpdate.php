@@ -9,7 +9,6 @@ class SocialForUpdate
         public  readonly string $handle,
         public  readonly string $username
     ) {
-        
     }
 
     public static function fromRequest($request)

@@ -5,10 +5,6 @@ namespace App\Services\Plot;
 use App\Actions\Plot\CreatePlotAction;
 use App\Actions\Plot\UpdatePlotAction;
 
-
-
-
-
 class PlotService
 {
     public static function create(object $request): int

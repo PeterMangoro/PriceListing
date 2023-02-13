@@ -2,13 +2,11 @@
 
 namespace App\Models\Categories;
 
-use App\Models\Accommodation;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Builders\Accommodation\AccommodationCategoryBuilder;
-
-
+use App\Models\Accommodation;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class AccommodationCategory extends Model
 {
@@ -16,8 +14,7 @@ class AccommodationCategory extends Model
 
     public function accommodations(): BelongsToMany
     {
-        return 
-        $this->belongsToMany(Accommodation::class, 'accommodation_classifications');
+        return $this->belongsToMany(Accommodation::class, 'accommodation_classifications');
     }
 
     public function newEloquentBuilder($query): AccommodationCategoryBuilder

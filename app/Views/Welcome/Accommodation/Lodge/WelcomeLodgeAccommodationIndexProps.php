@@ -5,8 +5,8 @@ namespace App\View\Welcome\Accommodation\Lodge;
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Feature;
 use App\Models\Accommodation;
+use App\Models\Feature;
 use App\Models\Popular;
 use App\Models\Shared\Discount;
 use App\View\Shared\BaseView;
@@ -16,7 +16,7 @@ class WelcomeLodgeAccommodationIndexProps extends BaseView
 {
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             WelcomeAccommodationHandler::get_paginated_display_accommodations(
                 Accommodation::forLodges()
             )

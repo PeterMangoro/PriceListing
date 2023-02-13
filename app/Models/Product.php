@@ -2,12 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\SharedModel;
 use App\Builders\Product\ProductBuilder;
 use App\Models\Categories\ProductCategory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-
 
 class Product extends SharedModel
 {

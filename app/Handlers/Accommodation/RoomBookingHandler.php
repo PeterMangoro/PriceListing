@@ -2,12 +2,11 @@
 
 namespace App\Handlers\Accommodation;
 
-use App\Models\Shared\Room;
 use App\Actions\Accommodation\Room\CheckOutRoom;
 use App\DataObjects\Accommodation\Booking\CheckInData;
 use App\Events\Accommodation\Booking\CreatingAccommodationBooking;
 use App\Http\Requests\Accommodation\Room\CreateAccommodationBookingRequest;
-
+use App\Models\Shared\Room;
 
 class RoomBookingHandler
 {

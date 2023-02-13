@@ -16,13 +16,11 @@ class ServiceUserDisplay
         public readonly  string $ratings,
         public readonly  int $id,
     ) {
-       
     }
     public static function data($service)
     {
-        
         return new self(
-            collect($service)['latest_image']['path'] ?? 
+            collect($service)['latest_image']['path'] ??
             collect($service)['featurable']['latest_image']['path'] ??
              '/storage/no-thumbnail/No_image_available.svg',
             $service->title,

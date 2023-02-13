@@ -11,7 +11,6 @@ class ServiceCreateData
         public  readonly string $detail,
         public  readonly array $categories,
     ) {
-       
     }
     public static function fromRequest($request)
     {

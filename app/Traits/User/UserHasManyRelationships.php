@@ -6,15 +6,15 @@ use App\Models\Accommodation;
 use App\Models\Car;
 use App\Models\Plot;
 use App\Models\Product;
-use App\Models\Service;
-use App\Models\Transport;
-use App\Models\Vacancy;
 use App\Models\Rating;
 use App\Models\School\School;
+use App\Models\Service;
 use App\Models\Shared\Employee;
 use App\Models\Shared\RoomUser;
 use App\Models\Shared\Social;
 use App\Models\Team;
+use App\Models\Transport;
+use App\Models\Vacancy;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait UserHasmanyRelationships

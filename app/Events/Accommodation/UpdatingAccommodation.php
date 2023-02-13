@@ -3,13 +3,10 @@
 namespace App\Events\Accommodation;
 
 use App\Models\Accommodation;
-use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class UpdatingAccommodation
 {
@@ -23,8 +20,8 @@ class UpdatingAccommodation
      */
     public function __construct(
         public object $validated_request,
-    public string $uuid)
-    {
+        public string $uuid
+    ) {
         $accommodation = Accommodation::whereUUIDmatches($uuid)->first();
         $this->validated_request = $validated_request;
         $this->accommodation = $accommodation;

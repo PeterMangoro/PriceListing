@@ -7,8 +7,8 @@ use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Welcome\WelcomeAccommodationHandler;
-use App\Models\Categories\AccommodationCategory;
 use App\Models\Accommodation;
+use App\Models\Categories\AccommodationCategory;
 use App\ValueObjects\CategoryType;
 use App\View\Shared\BaseView;
 use App\View\Shared\Categories;
@@ -23,7 +23,7 @@ class WelcomeCategoryTypeIndexProps extends BaseView
 
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             WelcomeAccommodationHandler::get_paginated_display_accommodations(
                 Accommodation::ofCategoryType($this->category_type)->withAddress(),
                 18

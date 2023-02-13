@@ -2,14 +2,12 @@
 
 namespace App\Listeners\Plot;
 
-use App\Models\Plot;
 use App\Events\Plot\CreatingPlot;
+use App\Models\Plot;
 use App\Services\Plot\PlotService;
-use Illuminate\Support\Facades\DB;
 use App\Services\Shared\AddressService;
-use Illuminate\Queue\InteractsWithQueue;
 use App\Services\Shared\AttachmentService;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\DB;
 
 class CreatePlot
 {
@@ -20,13 +18,13 @@ class CreatePlot
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Plot\CreatingPlot  $event
+     *
      * @return void
      */
     public function handle(CreatingPlot $event)
@@ -36,13 +34,18 @@ class CreatePlot
             $plot_id = PlotService::create($validated_request);
             $plot = Plot::find($plot_id);
             AddressService::addForModel(
-                $plot,$validated_request->location);
-            $validated_request->images ? 
+                $plot,
+                $validated_request->location
+            );
+            $validated_request->images ?
             AttachmentService::addImages(
-                $validated_request->images, $plot, 'plot', 300) : null;
-            $validated_request->document ? 
-            AttachmentService::addDocument
-            ($validated_request->document, $plot, 'plot') : null;
+                $validated_request->images,
+                $plot,
+                'plot',
+                300
+            ) : null;
+            $validated_request->document ?
+            AttachmentService::addDocument($validated_request->document, $plot, 'plot') : null;
         });
     }
 }

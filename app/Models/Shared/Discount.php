@@ -2,12 +2,10 @@
 
 namespace App\Models\Shared;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Builders\Shared\DiscountBuilder;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Discount extends Model
 {

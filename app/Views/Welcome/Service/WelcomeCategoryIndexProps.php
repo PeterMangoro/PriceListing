@@ -22,7 +22,7 @@ class WelcomeCategoryIndexProps extends BaseView
 
     public function services()
     {
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             WelcomeServiceHandler::get_category_services(
                 $this->category->slug
             )

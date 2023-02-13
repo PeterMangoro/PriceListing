@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Shared\Payment\Accommodation;
 
-use Inertia\Inertia;
-use App\Models\Accommodation;
 use App\Http\Controllers\Controller;
-use App\Views\Accommodations\Payment\Room\AccommodationRoomPaymentWeekProps;
-use App\Views\Accommodations\Payment\Room\AccommodationRoomPaymentYearProps;
+use App\Models\Accommodation;
 use App\Views\Accommodations\Payment\Room\AccommodationRoomPaymentIndexProps;
 use App\Views\Accommodations\Payment\Room\AccommodationRoomPaymentMonthProps;
 use App\Views\Accommodations\Payment\Room\AccommodationRoomPaymentTodayProps;
-
+use App\Views\Accommodations\Payment\Room\AccommodationRoomPaymentWeekProps;
+use App\Views\Accommodations\Payment\Room\AccommodationRoomPaymentYearProps;
+use Inertia\Inertia;
 
 class AccommodationRoomPaymentController extends Controller
 {

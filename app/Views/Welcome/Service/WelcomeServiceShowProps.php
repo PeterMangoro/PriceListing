@@ -30,7 +30,7 @@ class WelcomeServiceShowProps extends BaseView
 
     public function service()
     {
-        return ServiceDetailData::to_web_page($this->service);
+        return ServiceDetailData::toWebPage($this->service);
     }
 
     public function category_type()

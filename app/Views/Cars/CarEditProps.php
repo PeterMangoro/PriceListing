@@ -2,13 +2,12 @@
 
 namespace App\Views\Cars;
 
+use App\DataObjects\Car\Partials\CarForUpdate;
+use App\Handlers\Shared\ModelHandler;
 use App\Models\Car\Car;
-use App\Models\Accommodation;
+use App\Models\Categories\CarCategory;
 use App\View\Shared\BaseView;
 use App\View\Shared\CarMakes;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Categories\CarCategory;
-use App\DataObjects\Car\Partials\CarForUpdate;
 
 class CarEditProps extends BaseView
 {
@@ -19,7 +18,7 @@ class CarEditProps extends BaseView
     ) {
         $this->uuid = $uuid;
 
-        $this->car = CarForUpdate::from(ModelHandler::getModelForEdit(new Car(),$this->uuid));
+        $this->car = CarForUpdate::from(ModelHandler::getModelForEdit(new Car(), $this->uuid));
         $this->categories = $this->car->categories;
     }
 
@@ -28,8 +27,6 @@ class CarEditProps extends BaseView
         return $this->car;
     }
 
-    
-
     public function carMakes()
     {
         return (new CarMakes())->carMakes();
@@ -37,9 +34,9 @@ class CarEditProps extends BaseView
 
     public function category_types()
     {
-        return 
-        ModelHandler::getUnPaginatedData(
-            new CarCategory())
+        return ModelHandler::getUnPaginatedData(
+            new CarCategory()
+        )
             ->sortBy('type')
             ->groupBy('type');
     }

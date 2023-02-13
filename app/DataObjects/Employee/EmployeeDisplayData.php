@@ -8,23 +8,21 @@ use App\DataObjects\Employee\Partials\EmployeeUserDisplay;
 class EmployeeDisplayData
 {
     public static function toWebPage(
-        object $employees, 
-        ?string $morph = null)
-    {
-        return 
-        $employees->through(
-            fn ($employee) => 
-            EmployeeClientDisplay::data($employee, $morph));
+        object $employees,
+        ?string $morph = null
+    ) {
+        return $employees->through(
+            fn ($employee) => EmployeeClientDisplay::data($employee, $morph)
+        );
     }
 
     public static function collectionToWebPage(
-        $employees, 
-        ?string $morph = null)
-    {
-        return 
-        $employees->map(
-            fn ($employee) => 
-            EmployeeClientDisplay::data($employee, $morph));
+        $employees,
+        ?string $morph = null
+    ) {
+        return $employees->map(
+            fn ($employee) => EmployeeClientDisplay::data($employee, $morph)
+        );
     }
 
     public static function toOwnerDisplay($employees)

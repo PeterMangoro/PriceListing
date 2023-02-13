@@ -2,24 +2,23 @@
 
 namespace App\Http\Controllers\Plot;
 
-use App\Models\Plot;
-use Inertia\Inertia;
 use App\Handlers\Plot\PlotHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Http\Controllers\Controller;
-use App\Views\Plots\PlotEditProps;
-use App\Views\Plots\PlotIndexProps;
 use App\Http\Requests\Plot\CreatePlotRequest;
 use App\Http\Requests\Plot\UpdatePlotRequest;
-
-
+use App\Models\Plot;
+use App\Views\Plots\PlotEditProps;
+use App\Views\Plots\PlotIndexProps;
+use Inertia\Inertia;
 
 class PlotController extends Controller
 {
     public function index()
     {
         return Inertia::render('Plot/show', [
-            'data' => new PlotIndexProps()]);
+            'data' => new PlotIndexProps(),
+        ]);
     }
 
     public function create()
@@ -31,20 +30,21 @@ class PlotController extends Controller
     {
         $this->handle()::store($request);
         return to_route('plots.index')
-        ->with('flash.banner', 'Plot Added Successfully');
+            ->with('flash.banner', 'Plot Added Successfully');
     }
 
     public function edit(string $uuid)
     {
         return Inertia::render('Plot/edit', [
-            'data' => new PlotEditProps($uuid)]);
+            'data' => new PlotEditProps($uuid),
+        ]);
     }
 
     public function update(UpdatePlotRequest $request, string $uuid)
     {
         $this->handle()::update($request, $uuid);
         return back()
-        ->with('flash.banner', 'Plot update successful');
+            ->with('flash.banner', 'Plot update successful');
     }
 
     public function destroy(Plot $plot)

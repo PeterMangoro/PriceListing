@@ -14,7 +14,7 @@ class Ratings
         $this->comments = $comments;
     }
 
-    public static function from(object $ratings):self
+    public static function from(object $ratings): self
     {
         return new self(
             AvgRating::of($ratings),

@@ -15,7 +15,7 @@ class WelcomeProductFeaturedProps extends BaseView
 {
     public function products()
     {
-        return ProductDisplayData::to_web_page(
+        return ProductDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Feature::orderByRating(),
                 'Product'

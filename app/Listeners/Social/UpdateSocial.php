@@ -4,8 +4,6 @@ namespace App\Listeners\Social;
 
 use App\Events\Social\UpdatingSocial;
 use App\Services\Shared\SocialService;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class UpdateSocial
 {
@@ -16,13 +14,13 @@ class UpdateSocial
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Social\UpdatingSocial  $event
+     *
      * @return void
      */
     public function handle(UpdatingSocial $event)

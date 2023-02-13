@@ -3,13 +3,10 @@
 namespace App\Events\Car;
 
 use App\Models\Car\Car;
-use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class UpdatingCar
 {
@@ -22,9 +19,9 @@ class UpdatingCar
      * @return void
      */
     public function __construct(
-        public object $validated_request, 
-        public string $uuid)
-    {
+        public object $validated_request,
+        public string $uuid
+    ) {
         $car = Car::whereUUIDmatches($uuid)->first();
         $this->validated_request = $validated_request;
         $this->car = $car;

@@ -2,10 +2,8 @@
 
 namespace App\Handlers\Shared;
 
-use App\Services\Shared\UserProfileService;
 use App\Http\Requests\Shared\Profile\ProfileUpdateRequest;
-
-
+use App\Services\Shared\UserProfileService;
 
 class UserProfileHandler
 {

@@ -2,15 +2,13 @@
 
 namespace App\Listeners\Car;
 
-use App\Models\Car\Car;
 use App\Events\Car\CreatingCar;
+use App\Models\Car\Car;
 use App\Services\Car\CarService;
-use Illuminate\Support\Facades\DB;
 use App\Services\Shared\AddressService;
-use App\Services\Shared\CategoryService;
-use Illuminate\Queue\InteractsWithQueue;
 use App\Services\Shared\AttachmentService;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Services\Shared\CategoryService;
+use Illuminate\Support\Facades\DB;
 
 class CreateCar
 {
@@ -21,13 +19,13 @@ class CreateCar
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Car\CreatingCar  $event
+     *
      * @return void
      */
     public function handle(CreatingCar $event)
@@ -38,9 +36,9 @@ class CreateCar
             $car = Car::find($car_id);
             AttachmentService::addImages($request->images, $car, 'car', 300);
             AddressService::addForModel($car, $request->location);
-            $request->categories ? 
+            $request->categories ?
             CategoryService::forModel($car, $request->categories) : null;
-            $request->document ? 
+            $request->document ?
             AttachmentService::addDocument($request->document, $car, 'car') : null;
         });
     }

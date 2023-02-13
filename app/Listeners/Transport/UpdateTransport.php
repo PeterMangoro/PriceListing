@@ -2,13 +2,11 @@
 
 namespace App\Listeners\Transport;
 
-use App\Models\Car\Car;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Queue\InteractsWithQueue;
-use App\Services\Shared\AttachmentService;
 use App\Events\Transport\UpdatingTransport;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Models\Car\Car;
+use App\Services\Shared\AttachmentService;
 use App\Services\Transport\TransportService;
+use Illuminate\Support\Facades\DB;
 
 class UpdateTransport
 {
@@ -19,13 +17,13 @@ class UpdateTransport
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
      * @param  \App\Events\Transport\UpdatingTransport  $event
+     *
      * @return void
      */
     public function handle(UpdatingTransport $event)
@@ -39,10 +37,11 @@ class UpdateTransport
 
         DB::transaction(function () use (
             $transportService,
-             $request, 
-             $car_id,
-              $transport, 
-              $attachmentService) {
+            $request,
+            $car_id,
+            $transport,
+            $attachmentService
+        ) {
             $car = Car::find($car_id);
             $transportService->update($request, $transport);
 

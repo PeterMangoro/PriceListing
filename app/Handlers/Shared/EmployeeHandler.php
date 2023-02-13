@@ -2,20 +2,16 @@
 
 namespace App\Handlers\Shared;
 
-use App\Models\Shared\Employee;
+use App\DataObjects\Employee\EmployeeCreateData;
+use App\DataObjects\Employee\EmployeeForUpdate;
 use App\Events\Employee\CreatingEmployee;
 use App\Events\Employee\UpdatingEmployee;
-use App\DataObjects\Employee\EmployeeForUpdate;
-use App\DataObjects\Employee\EmployeeCreateData;
 use App\Http\Requests\Shared\Employee\EmployeeCreateRequest;
 use App\Http\Requests\Shared\Employee\EmployeeUpdateRequest;
-
-
-
+use App\Models\Shared\Employee;
 
 class EmployeeHandler
-{   
-
+{
     public static function store(EmployeeCreateRequest $request)
     {
         $validated_object = EmployeeCreateData::fromRequest($request);

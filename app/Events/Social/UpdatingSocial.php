@@ -3,13 +3,10 @@
 namespace App\Events\Social;
 
 use App\Models\Shared\Social;
-use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class UpdatingSocial
 {
@@ -22,8 +19,8 @@ class UpdatingSocial
      */
     public function __construct(
         public object $validated_request,
-         public Social $social)
-    {       
+        public Social $social
+    ) {
         $this->validated_request = $validated_request;
         $this->social = $social;
     }

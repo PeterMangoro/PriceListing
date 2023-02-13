@@ -3,8 +3,8 @@
 namespace App\Views\Services;
 
 use App\Handlers\Shared\ModelHandler;
-use App\View\Shared\BaseView;
 use App\Models\Categories\ServiceCategory;
+use App\View\Shared\BaseView;
 
 class ServiceCreateProps extends BaseView
 {

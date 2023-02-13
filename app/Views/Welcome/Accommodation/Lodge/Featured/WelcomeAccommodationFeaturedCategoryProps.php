@@ -23,7 +23,7 @@ class WelcomeAccommodationFeaturedCategoryProps extends BaseView
 
     public function accommodations()
     {
-        return AccommodationDisplayData::to_web_page(
+        return AccommodationDisplayData::toWebPage(
             GetFeaturedModels::for_paginated_display_of_type(
                 Feature::ofCategory($this->category->slug)
                     ->orderByRating(),

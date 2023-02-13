@@ -7,8 +7,8 @@ use App\DataObjects\Accommodation\AccommodationDisplayData;
 use App\Handlers\Accommodation\AccommodationHandler;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Model\ModelHandler;
-use App\Models\Categories\AccommodationCategory;
 use App\Models\Accommodation;
+use App\Models\Categories\AccommodationCategory;
 use App\View\Shared\BaseView;
 
 class WelcomeLodgeAccommodationShowProps extends BaseView
@@ -32,7 +32,7 @@ class WelcomeLodgeAccommodationShowProps extends BaseView
 
     public function accommodation()
     {
-        return AccommodationDetailData::to_web_page($this->accommodation);
+        return AccommodationDetailData::toWebPage($this->accommodation);
     }
 
     public function similar_accommodations()

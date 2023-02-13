@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Shared;
 
-
-use Inertia\Inertia;
-use App\Models\Shared\Employee;
-use App\Http\Controllers\Controller;
 use App\Handlers\Shared\EmployeeHandler;
 use App\Handlers\Shared\ModelHandler;
-use App\Views\Shared\Employee\EmployeeIndexProps;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\Employee\EmployeeCreateRequest;
 use App\Http\Requests\Shared\Employee\EmployeeUpdateRequest;
-
+use App\Models\Shared\Employee;
+use App\Views\Shared\Employee\EmployeeIndexProps;
+use Inertia\Inertia;
 
 class EmployeeController extends Controller
 {
@@ -31,8 +29,6 @@ class EmployeeController extends Controller
     {
         EmployeeHandler::store($request);
     }
-
-  
 
     /**
      * Show the form for editing the specified resource.
@@ -56,14 +52,12 @@ class EmployeeController extends Controller
      */
     public function update(EmployeeUpdateRequest $request, Employee $employee)
     {
-
         EmployeeHandler::update($request, $employee);
         return back();
     }
 
-    public function destroy(Employee $employee):void
+    public function destroy(Employee $employee): void
     {
         ModelHandler::delete($employee);
-      
     }
 }

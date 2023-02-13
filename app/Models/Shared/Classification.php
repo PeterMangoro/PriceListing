@@ -2,21 +2,19 @@
 
 namespace App\Models\Shared;
 
+use App\Models\Accommodation;
 use App\Models\Car\Car;
+use App\Models\Car\Transport;
 use App\Models\Product;
 use App\Models\Service;
-use App\Models\Accommodation;
-use App\Models\Car\Transport;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 
 class Classification extends Model
 {
     use HasFactory;
 
-   
     public function accommodation(): BelongsTo
     {
         return $this->belongsTo(Accommodation::class);

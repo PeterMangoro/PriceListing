@@ -14,12 +14,10 @@ class ProfileData
         public readonly  ?object $documents,
         public  readonly ?object $trashed_documents,
     ) {
-        
     }
 
     public static function for_edit(?object $data)
     {
-      
         if ($data === null) {
             return new self(
                 null,
@@ -35,9 +33,9 @@ class ProfileData
             $data ? $data->vision : null,
             $data ? $data->company_values : null,
             $data ? $data->history : null,
-            $data->documents ? 
+            $data->documents ?
             Attachments::documentsForEdit($data->documents) : null,
-            $data->trashed_documents ? 
+            $data->trashed_documents ?
             Attachments::documentsForEdit($data->trashed_documents) : null,
         );
     }

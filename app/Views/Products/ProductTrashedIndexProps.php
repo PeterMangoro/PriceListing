@@ -2,12 +2,11 @@
 
 namespace App\Views\Products;
 
-use App\Models\Product;
-use App\View\Shared\Filters;
-use App\View\Shared\BaseView;
-use App\Handlers\Product\ProductHandler;
 use App\DataObjects\Product\ProductDisplayData;
 use App\Handlers\Shared\ModelHandler;
+use App\Models\Product;
+use App\View\Shared\BaseView;
+use App\View\Shared\Filters;
 
 class ProductTrashedIndexProps extends BaseView
 {
@@ -16,7 +15,7 @@ class ProductTrashedIndexProps extends BaseView
         return ProductDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
                 Product::onlyTrashed()
-                ->belongsToAuthUser()
+                    ->belongsToAuthUser()
             )
         );
     }

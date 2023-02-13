@@ -18,7 +18,7 @@ class WelcomeCategoryIndexProps extends BaseView
 
     public function cars()
     {
-        return CarDisplayData::to_web_page(
+        return CarDisplayData::toWebPage(
             WelcomeCarHandler::get_all_cars(
                 $this->car_model->cars()
             )

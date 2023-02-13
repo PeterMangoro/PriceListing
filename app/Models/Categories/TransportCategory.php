@@ -3,11 +3,9 @@
 namespace App\Models\Categories;
 
 use App\Models\Car\Transport;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-
 
 class TransportCategory extends Model
 {
@@ -15,7 +13,6 @@ class TransportCategory extends Model
 
     public function transports(): BelongsToMany
     {
-        return 
-        $this->belongsToMany(Transport::class, 'transport_classifications');
+        return $this->belongsToMany(Transport::class, 'transport_classifications');
     }
 }

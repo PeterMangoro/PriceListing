@@ -2,11 +2,11 @@
 
 namespace App\Views\Accommodations;
 
-use App\Models\Accommodation;
-use App\View\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Categories\AccommodationCategory;
 use App\DataObjects\Accommodation\Partials\AccommodationForUpdate;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Accommodation;
+use App\Models\Categories\AccommodationCategory;
+use App\View\Shared\BaseView;
 
 class AccommodationEditProps extends BaseView
 {
@@ -17,7 +17,8 @@ class AccommodationEditProps extends BaseView
     ) {
         $this->uuid = $uuid;
         $this->accommodation = AccommodationForUpdate::from(
-            ModelHandler::getModelForEdit(new Accommodation(),$this->uuid));
+            ModelHandler::getModelForEdit(new Accommodation(), $this->uuid)
+        );
         $this->categories = $this->accommodation->categories;
     }
 
@@ -25,8 +26,6 @@ class AccommodationEditProps extends BaseView
     {
         return $this->accommodation;
     }
-
- 
 
     public function category_types()
     {

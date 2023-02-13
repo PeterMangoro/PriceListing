@@ -14,13 +14,12 @@ class RoomPaymentDisplay
         public  readonly string $date,
         public  readonly string $service,
     ) {
-        
     }
 
     public static function data($payment)
     {
         $room_name = $payment->load('payable')->payable->title;
-       
+
         return new self(
             $room_name,
             $payment->guest,

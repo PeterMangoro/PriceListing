@@ -5,9 +5,9 @@ namespace App\Actions\Transport;
 class UpdateTripAction
 {
     public static function handle(
-        object $validated_request, 
-        object $trip):void
-    {
+        object $validated_request,
+        object $trip
+    ): void {
         $trip->car_id = $validated_request->car_id;
         $trip->destination = $validated_request->destination;
         $trip->departure = $validated_request->departure;

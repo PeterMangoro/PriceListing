@@ -2,11 +2,11 @@
 
 namespace App\Views\Services;
 
-use App\Models\Service;
-use App\View\Shared\Filters;
-use App\View\Shared\BaseView;
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Shared\ModelHandler;
+use App\Models\Service;
+use App\View\Shared\BaseView;
+use App\View\Shared\Filters;
 
 class ServiceTrashedIndexProps extends BaseView
 {

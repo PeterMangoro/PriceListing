@@ -16,36 +16,35 @@ class AccommodationClientDisplay
         public readonly string $town,
         public readonly ?object $discount,
     ) {
-        
     }
     public static function data(
-        object $accommodation, 
-        ?string $morph = null)
-    {
-        $price = $accommodation->price ?? 
+        object $accommodation,
+        ?string $morph = null
+    ) {
+        $price = $accommodation->price ??
         $accommodation->$morph->price;
 
         if ($accommodation->discount === null) {
             $discount = null;
         } else {
-            $accommodation->discount ? 
-            $discount = Discount::from($accommodation->discount, $price) : 
+            $accommodation->discount ?
+            $discount = Discount::from($accommodation->discount, $price) :
             $discount = Discount::from($accommodation->$morph->discount, $price);
         }
 
         return new self(
-            $accommodation->$morph->a_rooms ?? 
+            $accommodation->$morph->a_rooms ??
             $accommodation->a_rooms,
-            $accommodation->price ? 
-            Money::from($accommodation->price) : 
+            $accommodation->price ?
+            Money::from($accommodation->price) :
             Money::from($accommodation->$morph->price),
             $accommodation->uuid ?? $accommodation->$morph->uuid,
-            collect($accommodation)['latest_image']['path'] ?? 
-            collect($accommodation)[$morph]['latest_image']['path'] 
+            collect($accommodation)['latest_image']['path'] ??
+            collect($accommodation)[$morph]['latest_image']['path']
             ?? '/storage/no-thumbnail/No_image_available.svg',
-            $accommodation->address->city ?? 
+            $accommodation->address->city ??
             $accommodation->$morph->address->city,
-            $accommodation->address->town ?? 
+            $accommodation->address->town ??
             $accommodation->$morph->address->town,
             $discount
         );

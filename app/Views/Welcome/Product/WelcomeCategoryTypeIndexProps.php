@@ -23,7 +23,7 @@ class WelcomeCategoryTypeIndexProps extends BaseView
 
     public function products()
     {
-        return ProductDisplayData::to_web_page(
+        return ProductDisplayData::toWebPage(
             ProductHandler::get_paginated_products(
                 Product::ofCategoryType($this->category_type),
                 18

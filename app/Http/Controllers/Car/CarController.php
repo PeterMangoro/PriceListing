@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Car;
 
-use Inertia\Inertia;
-use App\Models\Car\Car;
 use App\Handlers\Car\CarHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Http\Controllers\Controller;
-use App\Views\Cars\CarEditProps;
-use App\Views\Cars\CarIndexProps;
-use App\Views\Cars\CarCreateProps;
 use App\Http\Requests\Car\CreateCarRequest;
 use App\Http\Requests\Car\UpdateCarRequest;
-
-
+use App\Models\Car\Car;
+use App\Views\Cars\CarCreateProps;
+use App\Views\Cars\CarEditProps;
+use App\Views\Cars\CarIndexProps;
+use Inertia\Inertia;
 
 class CarController extends Controller
 {

@@ -12,16 +12,14 @@ class CarUpdateData
         public  readonly ?string $num_plate,
         public  readonly string $detail,
         public  readonly array $location,
-        public  readonly float $price,       
+        public  readonly float $price,
         public  readonly ?bool $sale_status,
         public  readonly ?bool $rent_status,
         public  readonly ?array $discount,
     ) {
-       
     }
     public static function fromRequest($request)
     {
-       
         $location = [
             'street' => $request->street,
             'town' => $request->town,

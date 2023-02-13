@@ -4,7 +4,7 @@ namespace App\ValueObjects;
 
 class SaleStatus
 {
-    public readonly bool $value;
+   
 
     public static function from(?bool $value): string
     {

@@ -13,7 +13,6 @@ class AccommodationCreateData
         public  readonly float $price,
         public  readonly array $categories,
     ) {
-       
     }
     public static function fromRequest($request)
     {

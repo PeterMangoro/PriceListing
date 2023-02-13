@@ -8,7 +8,6 @@ class CheckInData
         public readonly string $guest,
         public readonly string $service,
     ) {
-        
     }
 
     public static function fromRequest(object $request)

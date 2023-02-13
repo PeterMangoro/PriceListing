@@ -15,7 +15,7 @@ class WelcomeServiceTopTalksProps extends BaseView
 {
     public function services()
     {
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             GetPopularModels::for_paginated_display_of_type(
                 Popular::orderByPageVisits(),
                 'Service'

@@ -23,7 +23,7 @@ class WelcomeServiceTopTalksCategoryProps extends BaseView
 
     public function services()
     {
-        return ServiceDisplayData::to_web_page(
+        return ServiceDisplayData::toWebPage(
             GetPopularModels::for_paginated_display_of_type(
                 Popular::ofCategory($this->category->slug)->orderByPageVisits(),
                 'Service'

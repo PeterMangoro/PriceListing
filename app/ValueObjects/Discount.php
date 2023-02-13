@@ -14,7 +14,7 @@ class Discount
         $this->percent = $percent;
     }
 
-    public static function from(?object $discount, int $old_price):self
+    public static function from(?object $discount, int $old_price): self
     {
         if ($discount === null) {
             return null;
