@@ -64,7 +64,7 @@
 </template>
 <script setup>
 import { ref } from "vue";
-import { useForm } from "@inertiajs/inertia-vue3";
+import { useForm } from "@inertiajs/vue3";
 import JetActionSection from "@/Components/ActionSection.vue";
 import CheckInModal from "@/Components/Shared/Room/CheckInModal.vue"
 import JetSuccessButton from "@/Components/SuccessButton.vue";

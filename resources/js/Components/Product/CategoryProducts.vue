@@ -102,7 +102,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import SearchTable from "@/Components/Shared/Table/SearchTable.vue";
-import Pagination from "@/Components/Partials/Pagination.vue";
+import Pagination from "@/Components/Shared/Pagination.vue";
 import ProductList from "@/Components/Product/Partials/ProductList.vue";
 
 const props = defineProps({

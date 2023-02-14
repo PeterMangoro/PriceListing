@@ -4,7 +4,7 @@
       <div
         v-if="link.url === null"
         v-html="link.label"
-        class="px-4 py-3 mb-1 mr-1 text-sm leading-4 text-black border rounded "
+        class="px-4 py-3 mb-1 mr-1 text-sm leading-4 text-slate-100 border rounded "
       ></div>
       <Link
       

@@ -54,8 +54,8 @@
 </template>
 
 <script setup>
-import { useForm } from "@inertiajs/inertia-vue3";
-import BreadCrumb from "@/Components/Partials/breadCrumb.vue";
+import { useForm } from "@inertiajs/vue3";
+import BreadCrumb from "@/Components/Shared/BreadCrumb.vue";
 import formCard from "@/Components/Shared/Form/formCard.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";

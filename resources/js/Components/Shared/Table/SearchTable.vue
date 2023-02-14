@@ -1,5 +1,5 @@
 <template>
-  <div class="flex space-x-2">
+  <div class="flex space-x-2 shadow-violet-600">
     <label for="search" class="hidden">Search</label>
     <jet-input
       id="search"
@@ -25,6 +25,7 @@
         border-gray-300
         rounded-md
         shadow-sm
+        shadow-violet-600
         focus:border-indigo-300
         focus:ring
         focus:ring-indigo-200
@@ -78,14 +79,14 @@ export default defineComponent({
   methods: {
     searchMethod: _.debounce(function () {
       this.$inertia.get(
-        route(this.routeName, this.routeParameter),
+        this.currentUrl = window.location.href,
         { search: this.search, per_page: this.per_page },
         { preserveState: true, replace: true, preserveScroll: true }
       );
     }, 500),
     per_pageMethod: _.debounce(function () {
       this.$inertia.get(
-        route(this.routeName),
+        this.currentUrl = window.location.href,
         { search: this.search, per_page: this.per_page },
         { preserveState: true, replace: true }
       );

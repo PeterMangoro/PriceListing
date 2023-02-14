@@ -24,7 +24,7 @@
 
 <script setup>
 import OwnerContacts from "@/Components/Shared/Owner/OwnerContacts.vue";
-import DocumentList from "@/Components/Partials/DocumentList.vue";
+import DocumentList from "@/Components/Shared/DocumentList.vue";
 const props = defineProps({
     heading:String,
     username:String,

@@ -17,7 +17,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Product/show', [
+        return Inertia::render('Product/Index', [
             'data' => new ProductIndexProps(),
         ]);
     }

@@ -63,7 +63,7 @@ class GetDataAction
         $paginate = request('per_page') ?: $per_page;
         return $model
             ->whereActive()
-            ->selectMinAttributes()
+            // ->selectMinAttributes()
             ->withDisplayImage()
             ->withActiveDiscountPrice()
             ->withAddress()

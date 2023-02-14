@@ -327,7 +327,7 @@
     <!-- Page Heading -->
     <header v-if="$slots.header" class="mb-2 shadow">
       <div
-        class="px-4 py-6 mx-auto  sm:px-6 lg:px-8 bg-gradient-to-r from-sky-100 via-blue-200 to-slate-100"
+        class="px-4 py-6 mx-auto  sm:px-6 lg:px-8 "
       >
         <slot name="header" />
       </div>

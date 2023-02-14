@@ -1,9 +1,9 @@
 <template> 
-  <check-out-modal
+  <JetConfirmationModal
     :show="confirmingItemDeletion"
     @close="confirmingItemDeletion = false"
   >
-    <template #title> Confirm Checking Out </template>
+    <template #title> Delete Item </template>
 
     <template #content>
      {{message}}
@@ -18,19 +18,19 @@
         class="ml-3"
         :class="{ 'opacity-25': form.processing }"
         :disabled="form.processing"
-        @click="[checkOut(itemToBeDeleted),$emit('close')]"
+        @click="[deleteItem(itemToBeDeleted),$emit('close')]"
         
       >
-        Check-Out
+        Delete Item
       </JetDangerButton>
     </template>
-  </check-out-modal>
+  </JetConfirmationModal>
 </template>
 <script setup>
 import { ref } from "vue";
 import { useForm } from "@inertiajs/vue3";
 import JetActionSection from "@/Components/ActionSection.vue";
-import CheckOutModal from "@/Components/Shared/Room/CheckOutModal.vue"
+import JetConfirmationModal from "@/Components/ConfirmationModal.vue";
 import JetDangerButton from "@/Components/DangerButton.vue";
 import JetSecondaryButton from "@/Components/SecondaryButton.vue";
 
@@ -44,9 +44,9 @@ const confirmingItemDeletion = ref(true);
 
 const form = useForm();
 
-function checkOut(item) {
-  form.delete(route('accommodation.room.check_out',[props.item.id]), {
-    errorBag: "checkOut",
+function deleteItem(item) {
+  form.delete(route(props.path,props.item), {
+    errorBag: "deleteItem",
        });
  
   
