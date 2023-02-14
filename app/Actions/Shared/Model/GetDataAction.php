@@ -71,4 +71,20 @@ class GetDataAction
             ->paginate($paginate)
             ->withQueryString();
     }
+
+    public static function fetchNoneAdvertModels($data, ?int $pagination = 10)
+    {
+        $paginate = request('per_page') ?: $pagination;
+        return $data
+            ->belongsToAuthUser()
+            ->search(request('search'))
+            ->sort()
+            ->selectDetailAttributes()
+            ->withDisplayImage()
+            ->withRatings()
+            // ->withAddress()
+            ->latest('updated_at', 'created_at')
+            ->paginate($paginate)
+            ->withQueryString();
+    }
 }

@@ -402,9 +402,9 @@
     </nav>
 
     <!-- Page Heading -->
-    <header v-if="$slots.header" class="bg-white shadow">
+    <header v-if="$slots.header" class=" shadow">
       <div
-        class="px-4 py-6 mx-auto sm:px-6 lg:px-8 bg-gradient-to-r from-sky-100 via-green-100 to-slate-100"
+        class="px-4 py-6 mx-auto sm:px-6 lg:px-8 "
       >
         <slot name="header" />
       </div>

@@ -39,14 +39,14 @@
          more_tip = 'Click to view all your uploaded accommodations'
          /> -->
 
-          <!-- <dashboard-card 
+          <dashboard-card 
          title="Cars"
          :total=counts.car_count
          add_path = 'cars.create'
          more_path = 'cars.index'
          add_tip = 'Click to Add a new Car to advertise'
          more_tip = 'Click to view all your uploaded cars'
-         /> -->
+         />
 
           <dashboard-card
             title="Plots & Farms"

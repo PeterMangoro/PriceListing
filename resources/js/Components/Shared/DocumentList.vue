@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="pt-2 font-semibold text-slate-100 underline">
+    <h1 class="pt-2 font-semibold  underline">
      <span v-if="heading"> {{ heading}} </span>
      <span v-else> Product Documents</span>
      

@@ -26,7 +26,8 @@ Route::get('{user:username}', [ProfileController::class,'show'])->name('company_
 Route::post('company/profile', [ProfileController::class, 'update'])->name('company_profile.update');
 Route::get('{user:username}/team', [ProfileController::class,'team'])->name('company_profile.team');
 
-Route::resource('employees', EmployeeController::class)->except('show');
+
+Route::resource('company/employees', EmployeeController::class)->except('show');
 Route::resource('socials', SocialController::class)->except('show');
 
 // Route::get('editor', [BlogController::class,'index']);

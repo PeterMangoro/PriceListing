@@ -50,6 +50,11 @@ class ModelService
         );
     }
 
+    public static function getNoneAdvertModels($data, ?int $pagination = 10)
+    {
+        return GetDataAction::fetchNoneAdvertModels($data, $pagination);
+    }
+
     public static function delete(object $model): void
     {
         DeleteModelAction::delete($model);

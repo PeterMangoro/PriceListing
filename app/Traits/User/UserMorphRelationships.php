@@ -2,11 +2,13 @@
 
 namespace App\Traits\User;
 
-use App\Models\Attachment;
 use App\Models\Shared\Address;
 use App\Models\Shared\Payment;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
+use App\Models\Shared\Attachment;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+
+/*  */
 
 trait UserMorphRelationships
 {

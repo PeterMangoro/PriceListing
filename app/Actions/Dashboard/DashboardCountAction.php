@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardCountAction
 {
-    public function handle(): int
+    public function handle(): object
     {
         // $owner = User::where('id', Auth::user()->id)->first();
 
-        $counts =
+        
         // [
         //     'accommodation_count' => $owner->accommodations()->count(),
         //     'car_count' => $owner->cars()->count(),
@@ -26,7 +26,7 @@ class DashboardCountAction
         // return $counts;
 
         $owner_id = Auth::user()->id;
-        DB::select("SELECT
+        $counts = DB::select("SELECT
         (SELECT COUNT('id') FROM accommodations WHERE `user_id`= {$owner_id} ) as accommodation_count,
         (SELECT COUNT('id') FROM cars WHERE `transport` <> 1 AND `user_id`= {$owner_id} ) as car_count,
         (SELECT COUNT('id') FROM plots WHERE `user_id`= {$owner_id} ) as plot_count,
