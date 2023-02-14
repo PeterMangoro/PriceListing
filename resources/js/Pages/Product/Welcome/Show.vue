@@ -12,7 +12,7 @@
         </div>
         <div class="sm:w-1/3">
           <owner-section
-          class="text-slate-100"
+          class="text-slate-100 "
             heading="This product Belongs To"
             :username="data.product.username"
             :owner="data.product.owner"

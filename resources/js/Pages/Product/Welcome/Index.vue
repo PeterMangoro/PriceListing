@@ -41,7 +41,7 @@
           </div>
   
           <div id="products" v-if="data.products.data">
-            <p class="text-2xl font-extrabold text-sky-500 border-b-4">
+            <p class="text-2xl font-extrabold text-slate-50 border-b-4">
               All Available Products
             </p>
             <div v-if="data.products.data.length ">

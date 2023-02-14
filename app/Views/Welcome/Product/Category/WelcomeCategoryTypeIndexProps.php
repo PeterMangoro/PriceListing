@@ -5,6 +5,7 @@ namespace App\Views\Welcome\Product\Category;
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Product\ProductDisplayData;
+use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Product;
@@ -48,7 +49,7 @@ class WelcomeCategoryTypeIndexProps extends BaseView
     public function category_types()
     {
         return CategoryTypeData::forDisplay(
-            ModelHandler::getUnPaginatedData(
+            CategoryHandler::getCategoryTypes(
                 ProductCategory::whereNot('type', $this->category_type)
             )
         );

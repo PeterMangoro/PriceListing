@@ -1,6 +1,6 @@
 <template>
   <div class="mb-2 border-b-2">
-    <h1 class="text-2xl font-bold text-sky-200">{{ product.title }}</h1>
+    <h1 class="text-2xl font-bold text-slate-100">{{ product.title }}</h1>
     <rating :rating="rating" />
     <price :item="product"  />
     <item-details :details="product.detail" class="text-slate-100" />

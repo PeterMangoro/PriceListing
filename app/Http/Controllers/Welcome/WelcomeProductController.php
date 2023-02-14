@@ -35,14 +35,14 @@ class WelcomeProductController extends Controller
 
     public function category(ProductCategory $category)
     {
-        return Inertia::render('Product/Welcome/showCategoryProducts', [
+        return Inertia::render('Product/Welcome/Category/CategoryProducts', [
             'data' => new WelcomeCategoryIndexProps($category),
         ]);
     }
 
     public function category_type(string $category_type)
     {
-        return Inertia::render('Product/Welcome/showCategoryTypeProducts', [
+        return Inertia::render('Product/Welcome/Category/CategoryTypeProducts', [
             'data' => new WelcomeCategoryTypeIndexProps($category_type),
         ]);
     }

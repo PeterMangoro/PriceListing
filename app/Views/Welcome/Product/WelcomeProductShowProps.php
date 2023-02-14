@@ -37,7 +37,7 @@ class WelcomeProductShowProps extends BaseView
 
     public function category_type()
     {
-        return CategoryType::from($this->category->type);
+        return ($this->category->type);
     }
 
     public function similar_products()
