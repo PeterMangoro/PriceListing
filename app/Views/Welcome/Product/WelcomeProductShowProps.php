@@ -2,12 +2,14 @@
 
 namespace App\Views\Welcome\Product;
 
+use App\Models\Product;
+use App\Views\Shared\BaseView;
+use App\ValueObjects\CategoryType;
+use App\Handlers\Shared\ModelHandler;
+use App\Handlers\Category\CategoryHandler;
+use App\Models\Categories\ProductCategory;
 use App\DataObjects\Product\ProductDetailData;
 use App\DataObjects\Product\ProductDisplayData;
-use App\Handlers\Shared\ModelHandler;
-use App\Models\Product;
-use App\ValueObjects\CategoryType;
-use App\Views\Shared\BaseView;
 
 class WelcomeProductShowProps extends BaseView
 {
@@ -21,6 +23,10 @@ class WelcomeProductShowProps extends BaseView
             ModelHandler::getModelForDisplay(
                 new Product(),
                 $uuid
+            );
+            $this->category =
+            CategoryHandler::getCategory(
+                ProductCategory::whichHasProduct($this->product->id)
             );
     }
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="pt-2 font-semibold text-black underline">
+    <h1 class="pt-2 font-semibold text-slate-100 underline">
      <span v-if="heading"> {{ heading}} </span>
      <span v-else> Product Documents</span>
      
@@ -8,7 +8,7 @@
     <span
       v-for="document in documents"
       :key="document.id"
-      class="flex flex-wrap justify-between gap-2 hover:cursor-pointer hover:scale-105 hover:text-black hover:duration-300"
+      class="flex flex-wrap justify-between gap-2 hover:cursor-pointer hover:scale-105 hover:text-sky-400 hover:duration-300"
     >
       <a :href="route(path, document.uuid)" target="_blank"
         >📃{{ document.name }}</a

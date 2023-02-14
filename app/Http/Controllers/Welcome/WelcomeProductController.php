@@ -57,7 +57,7 @@ class WelcomeProductController extends Controller
 
     public function show(string $uuid)
     {
-        return Inertia::render('Product/Welcome/productDetail', [
+        return Inertia::render('Product/Welcome/Show', [
             'data' => new WelcomeProductShowProps($uuid),
         ]);
     }

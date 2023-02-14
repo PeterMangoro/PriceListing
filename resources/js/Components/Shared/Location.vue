@@ -2,7 +2,7 @@
     <p class="flex gap-2 py-2">
       <span 
       :class="{ [`hidden`]: tag==false }"
-      class="font-medium text-slate-800">Location: </span>
+      class="font-medium text-slate-300">Location: </span>
       {{ location.street }} <br />
       {{ location.town }} <br />
       {{ location.city }}

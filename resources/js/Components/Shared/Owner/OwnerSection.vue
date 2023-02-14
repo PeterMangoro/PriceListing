@@ -1,9 +1,9 @@
 <template>
   <div>
-        <p>{{heading}}</p>
+        <p class="slate-50">{{heading}}</p>
 
         <span
-          class="text-lg font-medium text-black underline hover:text-slate-700 hover:font-bold hover:duration-200"
+          class="text-lg font-medium text-slate-100 underline hover:text-sky-400 hover:font-bold hover:duration-200"
         >
           <Link :href="route('company_profile.show', username)">
             {{ owner }}
