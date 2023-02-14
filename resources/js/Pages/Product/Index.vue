@@ -55,7 +55,13 @@
             <TableData>{{ product.title }}</TableData>
             <TableData>{{ product.ratings }}</TableData>
             <TableData class="w-2/6">
-              <span class="line-clamp-3">{{ product.detail }}</span></TableData
+              <p
+              v-for="(point, index) in product.detail"
+              :key="index"
+              class="flex gap-1 line-clamp-1"
+            >
+              <span v-if="index < 3"> - {{ point }} </span>
+            </p></TableData
             >
             <TableData
               ><img class="w-20 h-20 rounded" :src="product.latest_image"

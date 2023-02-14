@@ -12,7 +12,7 @@ class AttachmentController extends Controller
     public function update(int $attachment)
     {
         ModelHandler::restore(new Attachment(), $attachment);
-        return back()->with('flash.banner', 'Attachment deleted');
+        return back()->with('flash.banner', 'Attachment successfully restored');
     }
 
     public function destroy(Attachment $attachment)

@@ -52,8 +52,7 @@
 
       <JetDangerButton
         class="ml-3"
-        :class="{ 'opacity-25': form.processing }"
-        :disabled="form.processing"
+        
         @click="deleteDocument(documentToBeDeleted)"
       >
         Delete Document
@@ -64,7 +63,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { useForm } from "@inertiajs/vue3";
+import { router } from "@inertiajs/vue3";
 import JetActionSection from "@/Components/ActionSection.vue";
 import JetConfirmationModal from "@/Components/ConfirmationModal.vue";
 import JetDangerButton from "@/Components/DangerButton.vue";
@@ -78,7 +77,7 @@ const props = defineProps({
 
 const confirmingDocumentDeletion = ref(false);
 const documentToBeDeleted = ref(null);
-const form = useForm();
+
 
 function confirmDocumentDeletion(document) {
   confirmingDocumentDeletion.value = true;
@@ -86,7 +85,7 @@ function confirmDocumentDeletion(document) {
 }
 
 function deleteDocument(document) {
-  form.delete(route("attachments.destroy", document), {
+  router.delete(route("attachments.destroy", document), {
     errorBag: "deleteDocument",
     preserveScroll: true,
   });
@@ -94,7 +93,7 @@ function deleteDocument(document) {
 }
 
 function restoreDocument(document) {
-  form.post(route("attachment.restore", document), {
+  router.post(route("attachment.restore", document), {
     errorBag: "restoreDocument",
     preserveScroll: true,
   });

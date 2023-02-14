@@ -43,8 +43,7 @@
 
       <JetDangerButton
         class="ml-3"
-        :class="{ 'opacity-25': form.processing }"
-        :disabled="form.processing"
+       
         @click="deleteImage(imageToBeDeleted)"
       >
         Delete Image
@@ -52,9 +51,10 @@
     </template>
   </JetConfirmationModal>
 </template>
+
 <script setup>
 import { ref } from "vue";
-import { useForm } from "@inertiajs/vue3";
+import { router } from "@inertiajs/vue3";
 import JetActionSection from "@/Components/ActionSection.vue";
 import JetConfirmationModal from "@/Components/ConfirmationModal.vue";
 import JetDangerButton from "@/Components/DangerButton.vue";
@@ -66,7 +66,7 @@ const props = defineProps({
 
 const confirmingImageDeletion = ref(false);
 const imageToBeDeleted = ref(null);
-const form = useForm();
+
 
 function confirmImageDeletion(image) {
   confirmingImageDeletion.value = true;
@@ -74,7 +74,7 @@ function confirmImageDeletion(image) {
 }
 
 function deleteImage(image) {
-  form.delete(route("attachments.destroy", image), {
+  router.delete(route("attachments.destroy", image), {
     errorBag: "deleteImage",
     preserveScroll: true,
   });
@@ -82,7 +82,7 @@ function deleteImage(image) {
 }
 
 function restoreImage(image) {
-  form.post(route("attachment.restore", image), {
+  router.post(route("attachment.restore", image), {
     errorBag: "restoreImage",
     preserveScroll: true,
   });

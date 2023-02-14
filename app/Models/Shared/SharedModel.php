@@ -14,6 +14,7 @@ use App\Models\Shared\Popular;
 use App\Models\Shared\Discount;
 use App\Models\Shared\Attachment;
 use App\Builders\Shared\SharedScopes;
+use App\Casts\MakePointsCast;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
@@ -31,6 +32,7 @@ class SharedModel extends Model
 
     protected $casts = [
         'sale_status' => 'boolean',
+        'detail' =>MakePointsCast::class,
     ];
 
     protected $hidden = [

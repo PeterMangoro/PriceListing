@@ -37,7 +37,7 @@ class ProductController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Product/edit', [
+        return Inertia::render('Product/Edit', [
             'data' => new ProductEditProps($uuid),
         ]);
     }
