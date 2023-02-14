@@ -24,7 +24,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        return Inertia::render('Product/add', [
+        return Inertia::render('Product/Add', [
             'data' => new ProductCreateProps(),
         ]);
     }

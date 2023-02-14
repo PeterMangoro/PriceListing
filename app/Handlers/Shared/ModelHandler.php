@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelHandler
 {
-    public static function getPaginatedData(Model $model, ?int $pagination = 15)
+    public static function getPaginatedData(object $model, ?int $pagination = 15)
     {
         return ModelService::getPaginatedData($model, $pagination);
     }
 
-    public static function getUnPaginatedData(Model $model, ?int $limit = 15)
+    public static function getUnPaginatedData(object $model, ?int $limit = 15)
     {
         return ModelService::getUnPaginatedData($model, $limit);
     }

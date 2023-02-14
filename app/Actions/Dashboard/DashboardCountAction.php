@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardCountAction
 {
-    public function handle(): Collection
+    public function handle(): int
     {
         // $owner = User::where('id', Auth::user()->id)->first();
 

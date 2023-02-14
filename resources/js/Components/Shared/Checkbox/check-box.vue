@@ -64,8 +64,37 @@ const handleClick = () => {
     @click="handleClick"
   >
     <span :class="iconClass">
-      <Square v-if="!props.checked" />
-      <CheckedSquare v-if="props.checked" />
+      <!-- <Square v-if="!props.checked" /> -->
+      <p v-if="!props.checked">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-square"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        </svg>
+      </p>
+      <p v-else>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-check-square"
+        >
+          <polyline points="9 11 12 14 22 4" />
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+        </svg>
+      </p>
+      <!-- <CheckedSquare v-if="props.checked" /> -->
     </span>
     <span :id="`label-${props.id}`" class="label">
       {{ props.label }}
