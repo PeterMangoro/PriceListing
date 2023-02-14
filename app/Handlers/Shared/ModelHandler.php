@@ -27,6 +27,10 @@ class ModelHandler
         return ModelService::getDisplayModel($model, $uuid);
     }
 
+    public static function getPaginatedNoneAdvertModels(object $data, ?int $pagination = 10)
+    {
+        return ModelService::getNoneAdvertModels($data, $pagination);
+    }
     public static function delete(object $model)
     {
         return ModelService::delete($model);

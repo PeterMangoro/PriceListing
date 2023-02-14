@@ -14,7 +14,7 @@
     </template>
     <!-- <bread-crumb :routes="routes" /> -->
     <div v-if="showForm">
-      <social-input-form path="socials.store" social="add" />
+      <social-input-form path="socials.store" social="add" @close="closeForm" />
     </div>
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- Table -->
@@ -172,21 +172,20 @@
 
 <script setup>
 import { ref } from "vue";
-import { Inertia } from "@inertiajs/inertia";
 import AppLayout from "@/Layouts/AppLayout.vue";
-import BreadCrumb from "@/Components/Partials/breadCrumb.vue";
+// import BreadCrumb from "@/Components/Shared/breadCrumb.vue";
 import Table from "@/Components/Shared/Table/Table.vue";
 import TableData from "@/Components/Shared/Table/TableData.vue";
 import TableHead from "@/Components/Shared/Table/TableHead.vue";
 import TableRow from "@/Components/Shared/Table/TableRow.vue";
 import ButtonLink from "@/Components/Shared/Table/ButtonLink.vue";
 import JetInput from "@/Components/TextInput.vue";
-import DeleteConfirmation from "@/Components/Partials/DeleteConfirmation.vue";
+import DeleteConfirmation from "@/Components/Shared/DeleteConfirmation.vue";
 import SearchTable from "@/Components/Shared/Table/SearchTable.vue";
 import Location from "@/Components/Shared/Location.vue";
-import { useSort } from "@/Pages/Composables/sort.js";
+import { useSort } from "@/Composables/sort.js";
 import SubmitButton from "@/Components/Shared/Form/SubmitButton.vue";
-import { useForm } from "@inertiajs/vue3";
+import { useForm,router } from "@inertiajs/vue3";
 import SocialInputForm from "@/Pages/Profile/Social/SocialInputForm.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
@@ -207,6 +206,11 @@ function show_delete_confirmation(social) {
   show.value = true;
   social_to_be_deleted.value = social;
 }
+
+function closeForm() {
+  showForm.value=false
+}
+
 function sort(column) {
   useSort(column, "socials.index");
 }

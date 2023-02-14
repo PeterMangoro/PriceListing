@@ -49,6 +49,7 @@
 
         <div class="flex items-center justify-end mt-4">
           <submit-button
+          
             id="submit"
             class="ml-4"
             :class="{ 'opacity-25': form.processing }"
@@ -82,8 +83,15 @@ const form = useForm({
   remember: true,
 });
 
+const emit = defineEmits(['close'])
+
 function submit() {
-  form.post(route(props.path));
+  form.post(route(props.path),{
+  onSuccess: () => {
+     emit('close');
+    },
+  }
+  );
 }
 </script>
 

@@ -80,9 +80,7 @@ class GetDataAction
             ->search(request('search'))
             ->sort()
             ->selectDetailAttributes()
-            ->withDisplayImage()
-            ->withRatings()
-            // ->withAddress()
+          
             ->latest('updated_at', 'created_at')
             ->paginate($paginate)
             ->withQueryString();

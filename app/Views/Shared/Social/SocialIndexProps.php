@@ -13,7 +13,7 @@ class SocialIndexProps extends BaseView
     public function socials()
     {
         return SocialDisplayData::toOwnerDisplay(
-            ModelHandler::getPaginatedData(
+            ModelHandler::getPaginatedNoneAdvertModels(
                 Social::belongsToAuthUser(),
                 12
             )

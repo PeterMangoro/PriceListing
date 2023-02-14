@@ -13,8 +13,8 @@ class EmployeeIndexProps extends BaseView
     public function employees()
     {
         return EmployeeDisplayData::toOwnerDisplay(
-            EmployeeHandler::getAllEmployees(
-                Employee::belongsToAuthUser(),
+            ModelHandler::getPaginatedNoneAdvertModels(
+                Employee::belongsToAuthUser()->withDisplayImage(),
                 12
             )
         );

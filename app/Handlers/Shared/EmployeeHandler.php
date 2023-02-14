@@ -25,9 +25,6 @@ class EmployeeHandler
         UpdatingEmployee::dispatch($validated_object, $employee);
     }
 
-    public static function getAllEmployees(object $data, ?int $pagination = 10)
-    {
-        return ModelService::getNoneAdvertModels($data, $pagination);
-    }
+    
 
 }
