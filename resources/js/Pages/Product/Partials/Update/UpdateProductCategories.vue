@@ -1,7 +1,7 @@
 
 <template>
   <form-section @submitted="updateProductDetail">
-    <template #title> <p class="text-sky-500"> Category Selection </p></template>
+    <template #title> <p class="text-slate-100"> Category Selection </p></template>
 
     <template #description>
       <p class="text-slate-100">
@@ -124,6 +124,7 @@ import {
   CheckCircleIcon,
 } from "@heroicons/vue/24/solid";
 import { InformationCircleIcon } from "@heroicons/vue/24/outline";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const detailInput = ref(null);
 const productInput = ref(null);
@@ -136,7 +137,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.product.price,
-  detail: props.product.detail,
+  detail: pointConverter(props.product.detail),
   categories: [],
   product_id: props.product.id,
   sale_status: props.product.sale_status,

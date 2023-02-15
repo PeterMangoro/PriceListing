@@ -1,7 +1,7 @@
 
 <template>
   <form-section @submitted="updateProductDetail">
-    <template #title> <p class="text-sky-500">  Update Product Documents</p> </template>
+    <template #title> <p class="text-slate-100">  Update Product Documents</p> </template>
 
     <template #description>
       <p class="text-slate-50">  Upload Product related documents eg. User Manuals</p>
@@ -102,6 +102,7 @@ import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import EditImageCard from "@/Components/Shared/EditImageCard.vue";
 import EditDocumentList from "@/Components/Shared/EditDocumentList.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const props = defineProps({
   product: Object,
@@ -111,7 +112,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.product.price,
-  detail: props.product.detail,
+  detail: pointConverter(props.product.detail),
   category: null,
   product_id: props.product.id,
   sale_status: props.product.sale_status,

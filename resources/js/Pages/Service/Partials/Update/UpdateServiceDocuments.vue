@@ -1,7 +1,7 @@
 
 <template>
   <form-section @submitted="updateServiceDetail">
-    <template #title> <p class="text-sky-500">  Update Service Documents</p> </template>
+    <template #title> <p class="text-slate-100">  Update Service Documents</p> </template>
 
     <template #description>
       <p class="text-slate-50">  Upload Service related documents eg. User Manuals</p>
@@ -102,7 +102,7 @@ import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import EditImageCard from "@/Components/Shared/EditImageCard.vue";
 import EditDocumentList from "@/Components/Shared/EditDocumentList.vue";
-
+import { pointConverter } from "@/Composables/pointConverter";
 const props = defineProps({
   service: Object,
 });
@@ -111,7 +111,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.service.price,
-  detail: props.service.detail,
+  detail:  pointConverter(props.service.detail),
   category: null,
   service_id: props.service.id,
   sale_status: props.service.sale_status,

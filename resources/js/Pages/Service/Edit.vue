@@ -8,10 +8,10 @@
           <update-service-information :service="data.service"  />
           <JetSectionBorder />
         </div>
-        <div >
+        <!-- <div >
           <update-service-price :service="data.service" :date = props.data.date />
           <JetSectionBorder />
-        </div>
+        </div> -->
         <div>
           <update-service-categories :service="data.service" :category_types= props.data.category_types />
           <JetSectionBorder />
@@ -32,7 +32,7 @@
 import ServiceLayout from "@/Layouts/ServiceLayout.vue";
 import { router  } from "@inertiajs/vue3";
 import UpdateServiceInformation from "@/Pages/Service/Partials/Update/UpdateServiceInformation.vue";
-import UpdateServicePrice from "@/Pages/Service/Partials/Update/UpdateServicePrice.vue";
+// import UpdateServicePrice from "@/Pages/Service/Partials/Update/UpdateServicePrice.vue";
 import UpdateServiceCategories from "@/Pages/Service/Partials/Update/UpdateServiceCategories.vue";
 import UpdateServiceImages from "@/Pages/Service/Partials/Update/UpdateServiceImages.vue";
 import UpdateServiceDocuments from "@/Pages/Service/Partials/Update/UpdateServiceDocuments.vue";

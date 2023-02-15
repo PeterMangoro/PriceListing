@@ -1,7 +1,7 @@
 
 <template>
   <form-section @submitted="updateProductDetail">
-    <template #title> <p class="text-sky-500"> Update Pricing</p>  </template>
+    <template #title> <p class="text-slate-100"> Update Pricing</p>  </template>
 
     <template #description>
       <p class="text-slate-100">Change the price by updating the current price field . </p>
@@ -137,6 +137,7 @@ import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const detailInput = ref(null);
 const productPrice = ref(null);
@@ -153,7 +154,7 @@ const form = useForm({
   price: props.product.price,
   discount: props.product.discount_price,
   date: props.product.discount_exp_date,
-  detail: props.product.detail,
+  detail: pointConverter(props.product.detail),
   category: null,
   product_id: props.product.id,
   sale_status: props.product.sale_status,

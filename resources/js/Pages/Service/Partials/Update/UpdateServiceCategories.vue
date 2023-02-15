@@ -1,14 +1,15 @@
 
 <template>
   <form-section @submitted="updateServiceDetail">
-    <template #title> <p class="text-sky-500"> Category Selection </p></template>
+    <template #title>
+      <p class="text-slate-100">Category Selection</p></template
+    >
 
     <template #description>
       <p class="text-slate-100">
         Categories are helpful in grouping your services according to client
-      preferences
+        preferences
       </p>
-     
     </template>
 
     <template #form>
@@ -56,34 +57,31 @@
               text-sm
               font-medium
               text-black
-             
               capitalize
               hover:cursor-pointer
             "
           >
-            {{ type }} 
+            {{ type }}
             <!-- <chevron-double-right-icon class="w-4 h-4 text-red-600" /> -->
           </h1>
 
           <span v-if="type === categoryType">
             <span class="flex gap-2">
-              : 
+              :
               <span>
                 <check-box-group
-              v-for="category in category_type"
-              :key="category.id"
-              :items="[
-                {
-                  label: category.title,
-                  id: category.id,
-                },
-              ]"
-              @on-change="onChange"
-            />
+                  v-for="category in category_type"
+                  :key="category.id"
+                  :items="[
+                    {
+                      label: category.title,
+                      id: category.id,
+                    },
+                  ]"
+                  @on-change="onChange"
+                />
               </span>
-              
             </span>
-            
           </span>
         </span>
       </div>
@@ -124,7 +122,7 @@ import {
   CheckCircleIcon,
 } from "@heroicons/vue/24/solid";
 import { InformationCircleIcon } from "@heroicons/vue/24/outline";
-
+import { pointConverter } from "@/Composables/pointConverter";
 const detailInput = ref(null);
 const serviceInput = ref(null);
 const props = defineProps({
@@ -136,7 +134,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.service.price,
-  detail: props.service.detail,
+  detail: pointConverter(props.service.detail),
   categories: [],
   service_id: props.service.id,
   sale_status: props.service.sale_status,

@@ -1,7 +1,7 @@
 
 <template>
   <form-section @submitted="updateProductDetail">
-    <template #title> <p class="text-sky-500">  Update Product Images</p> </template>
+    <template #title> <p class="text-slate-100">  Update Product Images</p> </template>
 
     <template #description>
       <p class="text-slate-50 mt-2">Please resize your image ,size should not Exceed 2mb.</p>
@@ -109,6 +109,7 @@ import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import EditImageCard from "@/Components/Shared/EditImageCard.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const props = defineProps({
   product: Object,
@@ -118,7 +119,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.product.price,
-  detail: props.product.detail,
+  detail: pointConverter(props.product.detail),
   category: null,
   product_id: props.product.id,
   sale_status: props.product.sale_status,

@@ -11,17 +11,21 @@ use App\Views\Shared\BaseView;
 
 class ServiceEditProps extends BaseView
 {
-    public Service $service;
+    
 
-    public function __construct(public string $uuid)
-    {
+    public function __construct(
+        public string $uuid,
+        public ?object $service = null,
+        public ?object $categories = null
+    ) {
         $this->uuid = $uuid;
-        $this->service = ServiceForUpdate::from(
+        $this->service = serviceForUpdate::from(
             ModelHandler::getModelForEdit(
-                new Service(),
+                new service(),
                 $this->uuid
             )
         );
+        $this->categories = $this->service->categories;
     }
 
     public function service()
@@ -31,7 +35,7 @@ class ServiceEditProps extends BaseView
 
     public function category_types()
     {
-        return CategoryHandler::getCategoryTypes(
+        return CategoryHandler::getAllCategories(
             new ServiceCategory()
         )
             ->sortBy('type')

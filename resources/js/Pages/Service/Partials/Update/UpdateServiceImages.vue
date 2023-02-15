@@ -1,7 +1,7 @@
 
 <template>
   <form-section @submitted="updateServiceDetail">
-    <template #title> <p class="text-sky-500">  Update Service Images</p> </template>
+    <template #title> <p class="text-slate-100">  Update Service Images</p> </template>
 
     <template #description>
       <p class="text-slate-50 mt-2">Please resize your image ,size should not Exceed 2mb.</p>
@@ -108,17 +108,19 @@ import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 import EditImageCard from "@/Components/Shared/EditImageCard.vue";
-
+const detailInput = ref(null);
+const serviceInput = ref(null);
 const props = defineProps({
   service: Object,
 });
+
 const form = useForm({
   title: props.service.title,
   images: null,
-  groups: [],
-  price: props.service.price,
-  detail: props.service.detail,
+  groups: [],  
+  detail: pointConverter(props.service.detail),
   category: null,
   service_id: props.service.id,
   sale_status: props.service.sale_status,

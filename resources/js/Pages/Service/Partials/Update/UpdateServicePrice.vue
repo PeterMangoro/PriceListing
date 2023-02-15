@@ -1,12 +1,12 @@
 
 <template>
-  <form-section @submitted="updateProductDetail">
-    <template #title> <p class="text-sky-500"> Update Pricing</p>  </template>
+  <form-section @submitted="updateServiceDetail">
+    <template #title> <p class="text-slate-100"> Update Pricing</p>  </template>
 
     <template #description>
       <p class="text-slate-100">Change the price by updating the current price field . </p>
       <p class="text-slate-100">You can also add
-      Discount Price to your product</p>
+      Discount Price to your service</p>
       
     </template>
 
@@ -34,7 +34,7 @@
           >
           <text-input
             id="price"
-            ref="productPrice"
+            ref="servicePrice"
             v-model="form.price"
             type="number"
             step="0.01"
@@ -69,7 +69,7 @@
           >
           <text-input
             id="discount"
-            ref="productDiscountPrice"
+            ref="serviceDiscountPrice"
             v-model="form.discount"
             type="number"
             step="0.01"
@@ -137,26 +137,26 @@ import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
-
+import { pointConverter } from "@/Composables/pointConverter";
 const detailInput = ref(null);
-const productPrice = ref(null);
-const productDiscountPrice = ref(null);
+const servicePrice = ref(null);
+const serviceDiscountPrice = ref(null);
 
 const props = defineProps({
-  product: Object,
+  service: Object,
 });
 
 const form = useForm({
-  title: props.product.title,
+  title: props.service.title,
   images: null,
   groups: [],
-  price: props.product.price,
-  discount: props.product.discount_price,
-  date: props.product.discount_exp_date,
-  detail: props.product.detail,
+  price: props.service.price,
+  discount: props.service.discount_price,
+  date: props.service.discount_exp_date,
+  detail:  pointConverter(props.service.detail),
   category: null,
-  product_id: props.product.id,
-  sale_status: props.product.sale_status,
+  service_id: props.service.id,
+  sale_status: props.service.sale_status,
   remember: true,
 });
 
@@ -179,9 +179,9 @@ function saleStatus() {
   } else return "Currently Inactive";
 }
 
-const updateProductDetail = () => {
-  form.put(route("products.update", props.product.uuid), {
-    errorBag: "updateProductDetail",
+const updateServiceDetail = () => {
+  form.put(route("services.update", props.service.uuid), {
+    errorBag: "updateServiceDetail",
     preserveScroll: true,
   });
 };
