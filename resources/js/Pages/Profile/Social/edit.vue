@@ -87,7 +87,7 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { useForm } from "@inertiajs/vue3";
-import BreadCrumb from "@/Components/Partials/breadCrumb.vue";
+
 import formCard from "@/Components/Shared/Form/formCard.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";

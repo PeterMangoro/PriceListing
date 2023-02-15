@@ -3,6 +3,7 @@
 namespace App\Views\Services;
 
 use App\DataObjects\Service\Partials\ServiceForUpdate;
+use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Models\Service;
@@ -30,7 +31,7 @@ class ServiceEditProps extends BaseView
 
     public function category_types()
     {
-        return ModelHandler::getUnPaginatedData(
+        return CategoryHandler::getCategoryTypes(
             new ServiceCategory()
         )
             ->sortBy('type')

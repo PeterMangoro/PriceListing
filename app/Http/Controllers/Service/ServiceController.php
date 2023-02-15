@@ -17,14 +17,14 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Service/show', [
+        return Inertia::render('Service/Index', [
             'data' => new ServiceIndexProps(),
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Service/add', [
+        return Inertia::render('Service/Create', [
             'data' => new ServiceCreateProps(),
         ]);
     }
@@ -37,7 +37,7 @@ class ServiceController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Service/edit', [
+        return Inertia::render('Service/Edit', [
             'data' => new ServiceEditProps($uuid),
         ]);
     }

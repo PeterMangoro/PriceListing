@@ -13,7 +13,7 @@ class ServiceForUpdate
         public  readonly ?object $documents,
         public  readonly ?object $trashed_documents,
         public  readonly object $categories,
-        public  readonly string $detail,
+        public  readonly array $detail,
         public readonly  int $id,
         public readonly  bool $sale_status,
         public  readonly string $title,

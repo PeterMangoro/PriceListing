@@ -13,7 +13,7 @@
       <p class="text-slate-50 mt-2">If your product has a manual, you can upload it as a document</p>
       <p class="text-slate-50 mt-2">Documents require the name of the document</p>
       <p class="text-red-500 mt-2">
-        Document upload is not required and can be skipped
+        Document upload is optional and can be skipped
       </p>
       <p class="text-slate-50 mt-2">
         Categories are helpful in grouping your products according to client

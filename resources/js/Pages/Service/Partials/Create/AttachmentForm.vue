@@ -1,7 +1,7 @@
 
 <template>
-  <form-section @submitted="createProduct">
-    <template #title> <p class="text-slate-50 underline"> Upload Product Attachments</p> </template>
+  <form-section @submitted="createService">
+    <template #title> <p class="text-slate-50 underline"> Upload Service Attachments</p> </template>
 
     <template #description>
      
@@ -10,12 +10,15 @@
         Visit <a class="underline" href="https://tinypng.com/" target="_blank">tinypng.com</a> for
         free image resizing.
       </p>
-      <p class="text-slate-50 mt-2">If your product has a manual, you can upload it as a document</p>
+      <p class="text-slate-50 mt-2">If your service has a manual, you can upload it as a document</p>
       <p class="text-slate-50 mt-2">Documents require the name of the document</p>
-      <p class="text-slate-900 mt-2">
+      <p class="text-red-500 mt-2">
         Document upload is optional and can be skipped
       </p>
-      
+      <p class="text-slate-50 mt-2">
+        Categories are helpful in grouping your services according to client
+        preferences
+      </p>
     </template>
 
     <template #form>
@@ -146,16 +149,42 @@
               </label>
             </div>
            
-            
+            <InputError class="mt-2" :message="form.errors.document" />
           </div>
         </div>
       </div>
 
-      <div class="col-span-6 sm:col-span-3">
+      <div class="col-span-6 sm:col-span-6">
+        <InputLabel for="categories" value="Select Service Categories" />
+        <InputError class="mt-2" :message="form.errors.categories" />
+        <span v-for="(category_type, type) in category_types" :key="type">
+          <h1
+            @click="showCategoryType(type)"
+            class="
+              py-1
+              text-sm
+              capitalize
+              hover:font-semibold hover:cursor-pointer
+            "
+          >
+            {{ type }}
+          </h1>
 
-        <InputError v-for="error in form.errors" :key="error" class="mt-2" :message="error" />
-            </div>
-     
+          <span v-if="type === categoryType">
+            <CheckBoxGroup
+              v-for="category in category_type"
+              :key="category.id"
+              :items="[
+                {
+                  label: category.title,
+                  id: category.id,
+                },
+              ]"
+              @on-change="onChange"
+            />
+          </span>
+        </span>
+      </div>
     </template>
 
     <template #actions>
@@ -198,41 +227,42 @@ import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import CheckBoxGroup from "@/Components/Shared/Checkbox/check-box-group.vue";
 import { useStorage } from "@/Composables/useStorage";
 
-const price =  useStorage("price");
-const detail = useStorage("detail");
-const rent_status = useStorage("rent_status");
-const sale_status = useStorage("sale_status");
-const car_make_id = useStorage("car_make_id");
-const car_model_id = useStorage("car_model_id");
-const street = useStorage("street");
-const town =  useStorage("town");
-const city = useStorage("city");
-const country = useStorage("country");
+const title = useStorage("title");
+const price = useStorage("price");
+let detail = useStorage("detail");
 
-
-
-const form = useForm({
-  car_make_id: car_make_id.value,
-  images: null,
-  document: null,
-  document_title: null,
-  price: price.value,
-  detail: detail.value,
-  street: street.value,
-  town: town.value,
-  city: city.value,
-  country: country.value,
-  categories: [],
-  car_model_id: car_model_id.value,
-  car_make_id: car_make_id.value,
-  num_plate: null,
-  rent_status: rent_status.value,
-  sale_status: sale_status.value,
-  remember: true,
+const props = defineProps({
+  category_types: Object,
 });
 
+const form = useForm({
+  title: title.value,
+  images: null,
+  price: price.value,
+  detail: detail.value,
+  categories: [],
+  document: null,
+  document_title: null,
+  remember: true,
+  
+});
+
+const onChange = (val) => {
+  console.log(val);
+  val[0].checked === true
+    ? form.categories.push(val[0].id)
+    : form.categories.pop(val[0].id);
+};
+
+const categoryType = ref(null);
+
+function showCategoryType(type) {
+  categoryType.value = type;
+}
 
 const emit = defineEmits(["prev"]);
+
+
 
 const back = () => {
   emit("prev");
@@ -240,21 +270,14 @@ const back = () => {
 
 
 
-const createProduct = () => {
-  form.post(route("cars.store"), {
-    errorBag: "createProduct",
+const createService = () => {
+  form.post(route("services.store"), {
+    errorBag: "createService",
     preserveScroll: true,
     onSuccess: () => {
+      localStorage.removeItem("title");
       localStorage.removeItem("price");
       localStorage.removeItem("detail");
-      localStorage.removeItem("rent_status");
-      localStorage.removeItem("sale_status");
-      localStorage.removeItem("car_make_id");
-      localStorage.removeItem("car_model_id");
-      localStorage.removeItem("street");
-      localStorage.removeItem("town");
-      localStorage.removeItem("city");
-      localStorage.removeItem("country");
     },
   });
 };

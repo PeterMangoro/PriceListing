@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Views\Welcome\Service;
+namespace App\Views\Welcome\Service\Category;
 
-use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
-use App\Models\Shared\Discount;
+use App\Models\Service;
 use App\ValueObjects\CategoryType;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
 use App\Views\Shared\Filters;
 
-class WelcomeServiceDiscountedCategoryTypeProps extends BaseView
+class WelcomeCategoryTypeIndexProps extends BaseView
 {
     public function __construct(public string $category_type)
     {
@@ -24,19 +23,19 @@ class WelcomeServiceDiscountedCategoryTypeProps extends BaseView
     public function services()
     {
         return ServiceDisplayData::toWebPage(
-            GetFeaturedModels::forPaginatedDisplayOfType(
-                Discount::ofCategoryType($this->category_type)->orderByExpDate(),
-                'Service'
-            ),
-            'discountable'
+            ModelHandler::getPaginatedData(
+                Service::ofCategoryType($this->category_type),
+                18
+            )
         );
     }
 
-    public function category_types()
+    public function categories()
     {
-        return CategoryTypeData::forDisplay(
-            ModelHandler::getUnPaginatedData(
-                new ServiceCategory()
+        return CategoryData::forDisplay(
+            Categories::getCategoriesOfType(
+                new ServiceCategory(),
+                $this->category_type
             )
         );
     }
@@ -46,12 +45,11 @@ class WelcomeServiceDiscountedCategoryTypeProps extends BaseView
         return CategoryType::from($this->category_type);
     }
 
-    public function categories()
+    public function category_types()
     {
-        return CategoryData::forDisplay(
-            Categories::getCategoriesOfType(
-                new ServiceCategory(),
-                $this->category_type
+        return CategoryTypeData::forDisplay(
+            ModelHandler::getUnPaginatedData(
+                ServiceCategory::whereNot('type', $this->category_type)
             )
         );
     }

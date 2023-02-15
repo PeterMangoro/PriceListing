@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views\Welcome\Service;
+namespace App\Views\Welcome\Service\Discount;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Category\CategoryData;
@@ -8,13 +8,13 @@ use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
-use App\Models\Shared\Feature;
+use App\Models\Shared\Discount;
 use App\ValueObjects\CategoryType;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
 use App\Views\Shared\Filters;
 
-class WelcomeServiceFeaturedCategoryTypeProps extends BaseView
+class WelcomeServiceDiscountedCategoryTypeProps extends BaseView
 {
     public function __construct(public string $category_type)
     {
@@ -25,10 +25,10 @@ class WelcomeServiceFeaturedCategoryTypeProps extends BaseView
     {
         return ServiceDisplayData::toWebPage(
             GetFeaturedModels::forPaginatedDisplayOfType(
-                Feature::ofCategoryType($this->category_type)->orderByRating(),
+                Discount::ofCategoryType($this->category_type)->orderByExpDate(),
                 'Service'
             ),
-            'featurable'
+            'discountable'
         );
     }
 

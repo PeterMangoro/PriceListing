@@ -9,39 +9,40 @@ use App\Http\Controllers\Controller;
 use App\Models\Categories\ServiceCategory;
 use App\Views\Welcome\Service\WelcomeServiceShowProps;
 use App\Views\Welcome\Service\WelcomeServiceIndexProps;
-use App\Views\Welcome\Service\WelcomeCategoryIndexProps;
 use App\Views\Welcome\Service\WelcomeOwnerServicesProps;
 use App\Views\Welcome\Service\WelcomeServiceRecentProps;
-use App\Views\Welcome\Service\WelcomeServiceFeaturedProps;
-use App\Views\Welcome\Service\WelcomeServiceTopTalksProps;
-use App\Views\Welcome\Service\WelcomeCategoryTypeIndexProps;
-use App\Views\Welcome\Service\WelcomeServiceDiscountedProps;
-use App\Views\Welcome\Service\WelcomeServiceFeaturedCategoryProps;
-use App\Views\Welcome\Service\WelcomeServiceTopTalksCategoryProps;
-use App\Views\Welcome\Service\WelcomeServiceDiscountedCategoryProps;
-use App\Views\Welcome\Service\WelcomeServiceFeaturedCategoryTypeProps;
-use App\Views\Welcome\Service\WelcomeServiceTopTalksCategoryTypeProps;
-use App\Views\Welcome\Service\WelcomeServiceDiscountedCategoryTypeProps;
+use App\Views\Welcome\Service\Category\WelcomeCategoryIndexProps;
+use App\Views\Welcome\Service\Feature\WelcomeServiceFeaturedProps;
+use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksProps;
+use App\Views\Welcome\Service\Category\WelcomeCategoryTypeIndexProps;
+use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedProps;
+use App\Views\Welcome\Service\Feature\WelcomeServiceFeaturedCategoryProps;
+use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksCategoryProps;
+use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedCategoryProps;
+use App\Views\Welcome\Service\Feature\WelcomeServiceFeaturedCategoryTypeProps;
+use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksCategoryTypeProps;
+use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedCategoryTypeProps;
+
 
 class WelcomeServiceController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Service/Welcome/showAllServices', [
+        return Inertia::render('Service/Welcome/Index', [
             'data' => new WelcomeServiceIndexProps(),
         ]);
     }
 
     public function category(ServiceCategory $category)
     {
-        return Inertia::render('Service/Welcome/showCategoryServices', [
+        return Inertia::render('Service/Welcome/CategoryCategoryServices', [
             'data' => new WelcomeCategoryIndexProps($category),
         ]);
     }
 
     public function category_type(string $category_type)
     {
-        return Inertia::render('Service/Welcome/showCategoryTypeServices', [
+        return Inertia::render('Service/Welcome/Category/CategoryTypeServices', [
             'data' => new WelcomeCategoryTypeIndexProps($category_type),
         ]);
     }
@@ -49,21 +50,21 @@ class WelcomeServiceController extends Controller
     public function owner(User $owner)
     {
         // return $owner->services()->whereActive()->limit(4)->get();
-        return Inertia::render('Service/Welcome/showOwnerServices', [
+        return Inertia::render('Service/Welcome/OwnerServices', [
             'data' => new WelcomeOwnerServicesProps($owner),
         ]);
     }
 
     public function show(string $uuid)
     {
-        return Inertia::render('Service/Welcome/serviceDetail', [
+        return Inertia::render('Service/Welcome/Show', [
             'data' => new WelcomeServiceShowProps($uuid),
         ]);
     }
 
     public function recent()
     {
-        return Inertia::render('Service/Welcome/recentServices', [
+        return Inertia::render('Service/Welcome/Recent/recentServices', [
             'data' => new WelcomeServiceRecentProps(),
         ]);
     }

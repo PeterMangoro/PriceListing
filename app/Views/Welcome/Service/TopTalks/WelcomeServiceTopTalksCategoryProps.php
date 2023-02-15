@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Views\Welcome\Service;
+namespace App\Views\Welcome\Service\TopTalks;
 
-use App\Actions\Shared\Feature\GetFeaturedModels;
+use App\Actions\Shared\Popular\GetPopularModels;
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
-use App\Models\Shared\Feature;
+use App\Models\Shared\Popular;
 use App\ValueObjects\Category;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
 use App\Views\Shared\Filters;
 
-class WelcomeServiceFeaturedCategoryProps extends BaseView
+class WelcomeServiceTopTalksCategoryProps extends BaseView
 {
     public function __construct(public object $category)
     {
@@ -24,11 +24,10 @@ class WelcomeServiceFeaturedCategoryProps extends BaseView
     public function services()
     {
         return ServiceDisplayData::toWebPage(
-            GetFeaturedModels::forPaginatedDisplayOfType(
-                Feature::ofCategory($this->category->slug)->orderByRating(),
+            GetPopularModels::forPaginatedDisplayOfType(
+                Popular::ofCategory($this->category->slug)->orderByPageVisits(),
                 'Service'
-            ),
-            'featurable'
+            )
         );
     }
 

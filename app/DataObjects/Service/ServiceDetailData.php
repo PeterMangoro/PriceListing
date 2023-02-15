@@ -15,7 +15,7 @@ class ServiceDetailData
         public  readonly  Collection|array $images,
         public  readonly  Collection|array|null $documents,
         public  readonly string $title,
-        public  readonly string $detail,
+        public  readonly array $detail,
         public  readonly object $location,
         public  readonly string $owner,
         public  readonly string $username,

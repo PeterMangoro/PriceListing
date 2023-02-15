@@ -14,7 +14,7 @@ class ServiceIndexProps extends BaseView
     {
         return ServiceDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
-                Service::belongsToOwner()
+                Service::belongsToAuthUser()
             )
         );
     }

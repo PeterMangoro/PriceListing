@@ -2,6 +2,7 @@
 
 namespace App\Views\Services;
 
+use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Views\Shared\BaseView;
@@ -10,7 +11,7 @@ class ServiceCreateProps extends BaseView
 {
     public function category_types()
     {
-        return ModelHandler::getUnPaginatedData(
+        return CategoryHandler::getAllCategories(
             new ServiceCategory()
         )
             ->sortBy('type')

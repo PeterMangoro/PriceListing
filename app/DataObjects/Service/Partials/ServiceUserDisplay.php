@@ -11,7 +11,7 @@ class ServiceUserDisplay
         public readonly  string $latest_image,
         public  readonly string $title,
         public  readonly string $uuid,
-        public  readonly string $detail,
+        public  readonly array $detail,
         public readonly  string $status,
         public readonly  string $ratings,
         public readonly  int $id,

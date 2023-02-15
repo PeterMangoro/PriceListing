@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views\Welcome\Service;
+namespace App\Views\Welcome\Service\Category;
 
 use App\DataObjects\Category\CategoryData;
 use App\DataObjects\Category\CategoryTypeData;

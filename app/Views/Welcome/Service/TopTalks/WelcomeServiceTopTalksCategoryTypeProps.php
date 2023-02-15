@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views\Welcome\Service;
+namespace App\Views\Welcome\Service\TopTalks;
 
 use App\Actions\Shared\Popular\GetPopularModels;
 use App\DataObjects\Category\CategoryData;
@@ -9,40 +9,26 @@ use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Models\Shared\Popular;
-use App\ValueObjects\Category;
+use App\ValueObjects\CategoryType;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;
 use App\Views\Shared\Filters;
 
-class WelcomeServiceTopTalksCategoryProps extends BaseView
+class WelcomeServiceTopTalksCategoryTypeProps extends BaseView
 {
-    public function __construct(public object $category)
+    public function __construct(public string $category_type)
     {
-        $this->category = $category;
+        $this->category_type = $category_type;
     }
 
     public function services()
     {
         return ServiceDisplayData::toWebPage(
             GetPopularModels::forPaginatedDisplayOfType(
-                Popular::ofCategory($this->category->slug)->orderByPageVisits(),
+                Popular::ofCategoryType($this->category_type)->orderByPageVisits(),
                 'Service'
             )
         );
-    }
-
-    public function categories()
-    {
-        return CategoryData::forDisplay(
-            Categories::getAllCategories(
-                new ServiceCategory()
-            )
-        );
-    }
-
-    public function category()
-    {
-        return Category::from($this->category);
     }
 
     public function category_types()
@@ -50,6 +36,21 @@ class WelcomeServiceTopTalksCategoryProps extends BaseView
         return CategoryTypeData::forDisplay(
             ModelHandler::getUnPaginatedData(
                 new ServiceCategory()
+            )
+        );
+    }
+
+    public function category_type()
+    {
+        return CategoryType::from($this->category_type);
+    }
+
+    public function categories()
+    {
+        return CategoryData::forDisplay(
+            Categories::getCategoriesOfType(
+                new ServiceCategory(),
+                $this->category_type
             )
         );
     }

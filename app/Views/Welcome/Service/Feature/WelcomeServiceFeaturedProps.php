@@ -1,25 +1,26 @@
 <?php
 
-namespace App\Views\Welcome\Service;
+namespace App\Views\Welcome\Service\Feature;
 
-use App\Actions\Shared\Popular\GetPopularModels;
+use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
-use App\Models\Shared\Popular;
+use App\Models\Shared\Feature;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
 
-class WelcomeServiceTopTalksProps extends BaseView
+class WelcomeServiceFeaturedProps extends BaseView
 {
     public function services()
     {
         return ServiceDisplayData::toWebPage(
-            GetPopularModels::forPaginatedDisplayOfType(
-                Popular::orderByPageVisits(),
+            GetFeaturedModels::forPaginatedDisplayOfType(
+                Feature::orderByRating(),
                 'Service'
-            )
+            ),
+            'featurable'
         );
     }
 
