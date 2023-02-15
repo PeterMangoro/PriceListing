@@ -1,13 +1,13 @@
 <template>
   <div
-    class="flex-row min-h-screen bg-gradient-to-r from-slate-200 via-slate-400 to-slate-200"
+    class="bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-600 text-slate-500"
   >
     <Head :title="title" />
 
     <!-- <left-sidebar  /> -->
 
     <jet-banner />
-    <nav class="sticky top-0 py-1 bg-slate-200">
+    <nav class="sticky top-0 py-1 bg-blue-charcoal-900   text-slate-100">
       <!-- Primary Navigation Menu -->
       <div class="px-4 mx-auto sm:px-6 lg:px-8">
         <div class="flex justify-between">
@@ -15,7 +15,7 @@
             <!-- Logo -->
             <div class="flex items-center shrink-0">
               <Link :href="route('home')">
-                <ApplicationLogo class="block w-auto h-9" />
+                <ApplicationLogo class="block w-auto m-auto" />
                 <!-- Home -->
               </Link>
             </div>
@@ -30,6 +30,14 @@
                 Sales
               </JetNavLink>
 
+              <JetNavLink
+                class=""
+                :href="route('welcome.cars.index')"
+                :active="route().current('welcome.cars.index')"
+                enter-active-class=""
+              >
+                Rentals
+              </JetNavLink>
              
 
              

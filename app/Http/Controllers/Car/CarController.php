@@ -17,14 +17,14 @@ class CarController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Car/show', [
+        return Inertia::render('Car/Index', [
             'data' => new CarIndexProps(),
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Car/add', [
+        return Inertia::render('Car/Create', [
             'data' => new CarCreateProps(),
         ]);
     }
@@ -37,7 +37,7 @@ class CarController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Car/edit', [
+        return Inertia::render('Car/Edit', [
             'data' => new CarEditProps($uuid),
         ]);
     }

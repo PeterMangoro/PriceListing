@@ -16,6 +16,8 @@ class CarIndexProps extends BaseView
             ModelHandler::getPaginatedData(
                 Car::forSale()
                     ->belongsToAuthUser()
+                    ->IncludeCarDetail()
+                    ->search(request('search'))->sort()
             )
         );
     }

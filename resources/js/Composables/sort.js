@@ -1,13 +1,13 @@
 import { reactive, watch } from "vue";
 import { pickBy,throttle } from "lodash";
-import { usePage } from '@inertiajs/vue3'
-import { router } from "@inertiajs/vue3";
+import { usePage,router } from '@inertiajs/vue3'
+
 
 export function useSort(column,routeName) {
 
    const sort_table = reactive({
-        column: usePage().props.value.data.filters.column,
-        direction: usePage().props.value.data.filters.direction,
+        column: usePage().props.data.filters.column,
+        direction: usePage().props.data.filters.direction,
       })
 
     function sort(column) {

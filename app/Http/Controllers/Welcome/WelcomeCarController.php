@@ -29,7 +29,7 @@ class WelcomeCarController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Car/Welcome/showAllCars', [
+        return Inertia::render('Car/Welcome/Index', [
             'data' => new WelcomeCarIndexProps(),
         ]);
     }

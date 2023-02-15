@@ -14,7 +14,7 @@ class CarUserDisplay
         public readonly  string $car_model,
         public readonly  string $price,
         public  readonly string $uuid,
-        public  readonly string $detail,
+        public  readonly array $detail,
         public  readonly string $status,
         public  readonly string $ratings,
         public  readonly int $id,

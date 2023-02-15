@@ -79,7 +79,7 @@
     </template>
 
     <template #actions>
-      <div class="flex justify-between w-full">
+      <div class="flex justify-end w-full">
         <submit-button
           :class="{ 'opacity-25': processing }"
           :disabled="processing"

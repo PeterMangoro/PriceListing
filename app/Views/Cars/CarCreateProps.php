@@ -2,6 +2,7 @@
 
 namespace App\Views\Cars;
 
+use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\CarCategory;
 use App\Views\Shared\BaseView;
@@ -14,12 +15,5 @@ class CarCreateProps extends BaseView
         return (new CarMakes())->carMakes();
     }
 
-    public function category_types()
-    {
-        return ModelHandler::getUnPaginatedData(
-            new CarCategory()
-        )
-            ->sortBy('type')
-            ->groupBy('type');
-    }
+    
 }

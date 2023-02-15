@@ -18,7 +18,7 @@ class CarDetailData
         public readonly   Collection|array|null $documents,
         public  readonly string $car_make,
         public  readonly string $car_model,
-        public  readonly string $detail,
+        public  readonly array $detail,
         public  readonly object $location,
         public  readonly string $price,
         public  readonly string $owner,

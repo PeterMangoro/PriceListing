@@ -37,12 +37,5 @@ class CarEditProps extends BaseView
         return (new CarMakes())->carMakes();
     }
 
-    public function category_types()
-    {
-        return ModelHandler::getUnPaginatedData(
-            new CarCategory()
-        )
-            ->sortBy('type')
-            ->groupBy('type');
-    }
+   
 }
