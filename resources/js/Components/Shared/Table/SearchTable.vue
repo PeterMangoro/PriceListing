@@ -1,5 +1,5 @@
 <template>
-  <div class="flex space-x-2 shadow-violet-600">
+  <div class="flex space-x-2 shadow-sm shadow-violet-400">
     <label for="search" class="hidden">Search</label>
     <jet-input
       id="search"

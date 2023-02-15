@@ -19,7 +19,6 @@
 
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import BranchSection from "@/Components/Welcome/BranchSection.vue";
 import AuthSection from "@/Components/Welcome/AuthSection.vue";
 import HiringSection from "@/Components/Welcome/HiringSection.vue";
 import ProfileDetails from "@/Components/Company/ProfileDetails.vue";

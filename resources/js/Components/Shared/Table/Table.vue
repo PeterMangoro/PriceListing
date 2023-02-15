@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-indigo-900 rounded-lg shadow-xl shadow-violet-600">
-    <div class="bg-indigo-900 rounded-lg overflow-display">
+  <div class="bg-violet-300 rounded-lg shadow-xl shadow-indigo-600">
+    <div class="rounded-lg overflow-display">
       <div class="col-span-6 pt-4 sm:col-span-2">
         <div class="mx-auto max-w-7xl sm:px-2 lg:px-2">
           <div class="flex flex-col">
@@ -10,7 +10,7 @@
               >
                 <div class="overflow-display">
                   <div class="overflow-display">
-                    <h1 class="px-10 font-bold underline text-slate-100">
+                    <h1 class="px-10 font-bold underline text-slate-900">
                       {{ heading }}
 
                       <span v-if="path"
@@ -46,12 +46,12 @@
                   <table class="w-full">
                     <thead>
                       <tr
-                        class="font-semibold tracking-wide text-left text-gray-900 bg-indigo-900 border-b "
+                        class="font-semibold tracking-wide text-left text-gray-900  border-b border-indigo-400"
                       >
                         <slot name="tableHead"></slot>
                       </tr>
                     </thead>
-                    <tbody class="bg-indigo-900">
+                    <tbody class="">
                       <slot />
                     </tbody>
                   </table>

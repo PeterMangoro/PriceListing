@@ -12,7 +12,7 @@
         <div class="mt-5 md:mt-0 md:col-span-2">
             <form @submit.prevent="$emit('submitted')">
                 <div
-                    class="px-4 py-5 bg-white shadow sm:p-6"
+                    class="px-4 py-5 bg-violet-100 shadow sm:p-6"
                     :class="hasActions ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-md'"
                 >
                     <div class="grid grid-cols-6 gap-6">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div v-if="hasActions" class="flex items-center justify-end px-4 py-3 text-right shadow bg-gray-50 sm:px-6 sm:rounded-bl-md sm:rounded-br-md">
+                <div v-if="hasActions" class="flex items-center justify-end px-4 py-3 text-right shadow bg-violet-100 sm:px-6 sm:rounded-bl-md sm:rounded-br-md">
                     <slot name="actions" />
                 </div>
             </form>
