@@ -26,6 +26,7 @@ class WelcomeCategoryIndexProps extends BaseView
             ModelHandler::getPaginatedData(
                 Accommodation::withAddress()
                     ->classifiedUnder($this->category->slug)
+                    ->whereActive()
             )
         );
     }

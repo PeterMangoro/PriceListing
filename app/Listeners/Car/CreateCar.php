@@ -34,7 +34,7 @@ class CreateCar
         DB::transaction(function () use ($request) {
             $car_id = CarService::create($request);
             $car = Car::find($car_id);
-            AttachmentService::addImages($request->images, $car, 'car', 300);
+            AttachmentService::addImages($request->images, $car, 'car', 600);
             AddressService::addForModel($car, $request->location);
             $request->categories ?
             CategoryService::forModel($car, $request->categories) : null;

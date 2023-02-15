@@ -65,6 +65,7 @@ Route::prefix('welcome')
                 Route::get('car_model/{model:title}', 'car_model')->name('category');
                 Route::get('owner/{owner:username}', 'owner')->name('owner');
                 Route::get('recent', 'recent')->name('recent');
+                Route::get('hiring', 'hiring')->name('hiring');
                 Route::get('top_talks', 'top_talks')->name('top_talks');
                 Route::get('top_talks/category_type/{category:type}', 'top_talks_category_type')->name('top_talks.category_type');
                 Route::get('top_talks/category/{category:slug}', 'top_talks_category')->name('top_talks.category');
@@ -75,7 +76,7 @@ Route::prefix('welcome')
                 Route::get('discounted/category_type/{category:type}', 'discounted_category_type')->name('discounted.category_type');
                 Route::get('discounted/category/{category:slug}', 'discounted_category')->name('discounted.category');
             });
-        Route::resource('cars', WelcomeCarController::class)->only('index', 'show');
+        Route::resource('cars', WelcomeCarController::class)->only('index', 'show')->scoped(['cars'=>'uuid']);
 
         //Transports
         Route::controller(WelcomeTransportController::class)

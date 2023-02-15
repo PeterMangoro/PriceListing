@@ -32,11 +32,11 @@
 
               <JetNavLink
                 class=""
-                :href="route('welcome.cars.index')"
-                :active="route().current('welcome.cars.index')"
+                :href="route('welcome.cars.hiring')"
+                :active="route().current('welcome.cars.hiring')"
                 enter-active-class=""
               >
-                Rentals
+                Hiring
               </JetNavLink>
              
 

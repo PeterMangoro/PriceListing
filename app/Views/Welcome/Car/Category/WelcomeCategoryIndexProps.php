@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views\Welcome\Car;
+namespace App\Views\Welcome\Car\Category;
 
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryData;
@@ -20,7 +20,7 @@ class WelcomeCategoryIndexProps extends BaseView
     {
         return CarDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
-                $this->car_model->cars()
+                $this->car_model->cars()->IncludeCarDetail(),
             )
         );
     }

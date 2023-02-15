@@ -9,7 +9,7 @@
         overflow-hidden
         border
         shadow-xl
-        bg-slate-100
+        bg-violet-100
         sm:py-1 sm:px-6
         lg:max-w-7xl lg:px-8
         max-w-7xl

@@ -39,7 +39,7 @@ class UpdateCar
             $request->discount['price'] ?
             DiscountService::forModel($car, $request->discount, 'Car') : null;
             $request->images ?
-            AttachmentService::addImages($request->images, $car, 'car', 300) : null;
+            AttachmentService::addImages($request->images, $car, 'car', 600) : null;
             $request->document ?
             AttachmentService::addDocument($request->document, $car, 'car') : null;
         });

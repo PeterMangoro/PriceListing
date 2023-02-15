@@ -34,7 +34,7 @@ class CreateAccommodation
         DB::transaction(function () use ($request) {
             $accommodation_id = AccommodationService::create($request);
             $accommodation = Accommodation::find($accommodation_id);
-            AttachmentService::addImages($request->images, $accommodation, 'accommodation', 300);
+            AttachmentService::addImages($request->images, $accommodation, 'accommodation', 600);
             AddressService::addForModel($accommodation, $request->location);
             CategoryService::forModel($accommodation, $request->categories);
             $request->document ? AttachmentService::addDocument($request->document, $accommodation, 'accommodation') : null;

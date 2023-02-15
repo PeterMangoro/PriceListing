@@ -24,7 +24,9 @@ class WelcomeCategoryTypeIndexProps extends BaseView
     {
         return AccommodationDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
-                Accommodation::ofCategoryType($this->category_type)->withAddress(),
+                Accommodation::ofCategoryType($this->category_type)
+                ->withAddress()
+                ->whereActive(),
                 18
             )
         );

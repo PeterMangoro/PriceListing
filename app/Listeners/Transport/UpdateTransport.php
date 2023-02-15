@@ -47,7 +47,7 @@ class UpdateTransport
 
             if ($request->images) {
                 // dd($car_id);
-                $attachmentService->addImages($request->images, $car, 'car', 300);
+                $attachmentService->addImages($request->images, $car, 'car', 600);
             }
         });
     }

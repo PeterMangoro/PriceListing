@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views\Welcome\Car;
+namespace App\Views\Welcome\Car\Discount;
 
 use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Car\CarDisplayData;

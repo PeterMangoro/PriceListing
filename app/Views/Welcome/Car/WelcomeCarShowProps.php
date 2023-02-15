@@ -18,13 +18,13 @@ class WelcomeCarShowProps extends BaseView
         $this->uuid = $uuid;
         $this->car =
             ModelHandler::getModelForDisplay(
-                Car::includeCarDetail(),
+                Car::IncludeCarDetail(),
                 $uuid
             );
     }
 
     public function car()
-    {
+    {        
         return CarDetailData::toWebPage($this->car);
     }
 
@@ -32,7 +32,6 @@ class WelcomeCarShowProps extends BaseView
     {
         return $this->car()->car_make;
     }
-
     public function similar_cars()
     {
         return CarDisplayData::collectionToWebPage(
@@ -50,7 +49,8 @@ class WelcomeCarShowProps extends BaseView
         return CarDisplayData::collectionToWebPage(
             ModelHandler::getUnpaginatedData(
                 Car::belongsToOwner($this->car->user->id)
-                    ->dontInclude($this->car->id),
+                    ->dontInclude($this->car->id)
+                    ->includeCarDetail(),
                 9
             )
         );

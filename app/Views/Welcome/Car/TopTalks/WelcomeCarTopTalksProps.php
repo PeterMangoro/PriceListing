@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views\Welcome\Car;
+namespace App\Views\Welcome\Car\TopTalks;
 
 use App\Actions\Shared\Popular\GetPopularModels;
 use App\DataObjects\Car\CarDisplayData;

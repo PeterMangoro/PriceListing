@@ -9,21 +9,24 @@ use App\Models\Car\CarMake;
 use App\Models\Car\CarModel;
 use App\Http\Controllers\Controller;
 use App\Models\Categories\CarCategory;
+use App\Views\Welcome\Car\WelcomeCarHireProps;
 use App\Views\Welcome\Car\WelcomeCarShowProps;
 use App\Views\Welcome\Car\WelcomeCarIndexProps;
 use App\Views\Welcome\Car\WelcomeCarRecentProps;
 use App\Views\Welcome\Car\WelcomeOwnerCarsProps;
-use App\Views\Welcome\Car\WelcomeCarFeaturedProps;
-use App\Views\Welcome\Car\WelcomeCarTopTalksProps;
-use App\Views\Welcome\Car\WelcomeCarDiscountedProps;
-use App\Views\Welcome\Car\WelcomeCategoryIndexProps;
-use App\Views\Welcome\Car\WelcomeCategoryTypeIndexProps;
-use App\Views\Welcome\Car\WelcomeCarFeaturedCategoryProps;
-use App\Views\Welcome\Car\WelcomeCarTopTalksCategoryProps;
-use App\Views\Welcome\Car\WelcomeCarDiscountedCategoryProps;
-use App\Views\Welcome\Car\WelcomeCarFeaturedCategoryTypeProps;
-use App\Views\Welcome\Car\WelcomeCarTopTalksCategoryTypeProps;
-use App\Views\Welcome\Car\WelcomeCarDiscountedCategoryTypeProps;
+use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedProps;
+use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksProps;
+use App\Views\Welcome\Car\Category\WelcomeCategoryIndexProps;
+use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedProps;
+use App\Views\Welcome\Car\Category\WelcomeCategoryTypeIndexProps;
+use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedCategoryProps;
+use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksCategoryProps;
+use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedCategoryProps;
+use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedCategoryTypeProps;
+use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksCategoryTypeProps;
+use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedCategoryTypeProps;
+
+
 
 class WelcomeCarController extends Controller
 {
@@ -34,31 +37,38 @@ class WelcomeCarController extends Controller
         ]);
     }
 
+    public function hiring()
+    {
+        return Inertia::render('Car/Welcome/Index', [
+            'data' => new WelcomeCarHireProps(),
+        ]);
+    }
+
+
     public function car_model(CarModel $model)
     {
-        return Inertia::render('Car/Welcome/showCategoryCars', [
+        return Inertia::render('Car/Welcome/Category/CategoryCars', [
             'data' => new WelcomeCategoryIndexProps($model),
         ]);
     }
 
     public function car_make(CarMake $make)
     {
-        return Inertia::render('Car/Welcome/showCategoryTypeCars', [
+        return Inertia::render('Car/Welcome/Category/CategoryTypeCars', [
             'data' => new WelcomeCategoryTypeIndexProps($make),
         ]);
     }
 
     public function owner(User $owner)
     {
-        // return $owner->cars()->whereActive()->limit(4)->get();
-        return Inertia::render('Car/Welcome/showOwnerCars', [
+        return Inertia::render('Car/Welcome/OwnerCars', [
             'data' => new WelcomeOwnerCarsProps($owner),
         ]);
     }
 
     public function show(string $uuid)
     {
-        return Inertia::render('Car/Welcome/carDetail', [
+        return Inertia::render('Car/Welcome/Show', [
             'data' => new WelcomeCarShowProps($uuid),
         ]);
     }

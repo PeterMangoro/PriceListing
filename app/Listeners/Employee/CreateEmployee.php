@@ -32,7 +32,7 @@ class CreateEmployee
         DB::transaction(function () use ($request) {
             $employee_id = EmployeeService::create($request);
             $employee = Employee::find($employee_id);
-            AttachmentService::addImages($request->avatar, $employee, 'employee', 300);
+            AttachmentService::addImages($request->avatar, $employee, 'employee', 600);
         });
     }
 }

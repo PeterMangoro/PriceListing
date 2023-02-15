@@ -18,7 +18,7 @@ class WelcomeOwnerCarsProps extends BaseView
     {
         return CarDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
-                $this->owner->cars(),
+                $this->owner->cars()->IncludeCarDetail(),
                 18
             )
         );

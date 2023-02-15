@@ -15,7 +15,7 @@ use App\Models\Shared\Popular;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
 
-class WelcomeCarIndexProps extends BaseView
+class WelcomeCarHireProps extends BaseView
 {
     public function cars()
     {
@@ -23,7 +23,7 @@ class WelcomeCarIndexProps extends BaseView
             ModelHandler::getPaginatedData(
                 Car::selectMinAttributes()
                 ->IncludeCarDetail()
-                ->whereActive()
+                ->forHire()
                 
 
             )

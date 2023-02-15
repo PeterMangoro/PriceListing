@@ -41,7 +41,7 @@ class UpdateAccommodation
             $request->discount['price'] ?
             DiscountService::forModel($accommodation, $request->discount, 'Accommodation') : null;
             $request->images ?
-            AttachmentService::addImages($request->images, $accommodation, 'accommodation', 300) : null;
+            AttachmentService::addImages($request->images, $accommodation, 'accommodation', 600) : null;
             $request->document ?
             AttachmentService::addDocument($request->document, $accommodation, 'accommodation') : null;
         });

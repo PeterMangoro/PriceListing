@@ -44,7 +44,7 @@ class CreateTransport
             ) {
                 $car_id = $carService->create($request);
                 $car = Car::find($car_id);
-                $attachmentService->addImages($request->images, $car, 'car', 300);
+                $attachmentService->addImages($request->images, $car, 'car', 600);
                 $transportService->create($request, $car_id);
             });
         }

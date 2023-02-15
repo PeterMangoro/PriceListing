@@ -47,6 +47,11 @@ class CarBuilder extends Builder
         return $this->whereNot('transport', '1');
     }
 
+    public function forHire(): self
+    {
+        return $this->where('rent_status', '1');
+    }
+
     public function dontInclude($id)
     {
         return $this->whereNot('cars.id', $id);

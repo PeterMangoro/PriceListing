@@ -22,7 +22,7 @@ class ModelHandler
         return ModelService::getEditModel($model, $uuid);
     }
 
-    public static function getModelForDisplay(Model $model, string $uuid)
+    public static function getModelForDisplay(object $model, string $uuid)
     {
         return ModelService::getDisplayModel($model, $uuid);
     }

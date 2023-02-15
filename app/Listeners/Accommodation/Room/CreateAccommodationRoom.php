@@ -35,7 +35,7 @@ class CreateAccommodationRoom
             $room = RoomService::addRoomForModel($accommodation, $request);
             $room = Room::whereUUIDmatches($room->uuid)->first();
             $request->images ?
-            AttachmentService::addImages($request->images, $room, 'room', 300) : null;
+            AttachmentService::addImages($request->images, $room, 'room', 600) : null;
             PriceService::addPriceForModel($room, $request->price);
         });
     }

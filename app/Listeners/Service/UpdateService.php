@@ -36,7 +36,7 @@ class UpdateService
             $request->categories ?
             CategoryService::forModel($service, $request->categories) : null;
             $request->images ?
-            AttachmentService::addImages($request->images, $service, 'service', 300) : null;
+            AttachmentService::addImages($request->images, $service, 'service', 600) : null;
             $request->document ?
             AttachmentService::addDocument($request->document, $service, 'service') : null;
         });

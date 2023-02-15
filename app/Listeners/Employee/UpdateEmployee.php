@@ -33,7 +33,7 @@ class UpdateEmployee
         DB::transaction(function () use ($request, $employee) {
             EmployeeService::update($request, $employee);
             $request->avatar ?
-            AttachmentService::addEmployeeImage($request->avatar, $employee, 'employee', 300) : null;
+            AttachmentService::addEmployeeImage($request->avatar, $employee, 'employee', 600) : null;
         });
     }
 }

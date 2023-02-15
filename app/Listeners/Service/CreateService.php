@@ -33,7 +33,7 @@ class CreateService
         DB::transaction(function () use ($request) {
             $service_id = ServiceService::create($request);
             $service = Service::find($service_id);
-            AttachmentService::addImages($request->images, $service, 'service', 300);
+            AttachmentService::addImages($request->images, $service, 'service', 600);
             CategoryService::forModel($service, $request->categories);
             $request->document ?
             AttachmentService::addDocument($request->document, $service, 'service') : null;

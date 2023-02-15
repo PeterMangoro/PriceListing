@@ -33,7 +33,7 @@ class CreateProduct
         DB::transaction(function () use ($request) {
             $product_id = ProductService::create($request);
             $product = Product::find($product_id);
-            AttachmentService::addImages($request->images, $product, 'product', 300);
+            AttachmentService::addImages($request->images, $product, 'product', 600);
             CategoryService::forModel($product, $request->categories);
             $request->document ?
             AttachmentService::addDocument($request->document, $product, 'product') : null;

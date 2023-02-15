@@ -40,7 +40,7 @@ class UpdateProduct
             $request->discount['price'] ?
             DiscountService::forModel($product, $request->discount, 'Product') : null;
             $request->images ?
-             AttachmentService::addImages($request->images, $product, 'product', 300) : null;
+             AttachmentService::addImages($request->images, $product, 'product', 600) : null;
             $request->document ?
             AttachmentService::addDocument($request->document, $product, 'product') : null;
         });
