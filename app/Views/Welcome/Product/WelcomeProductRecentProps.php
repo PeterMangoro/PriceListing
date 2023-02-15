@@ -4,6 +4,7 @@ namespace App\Views\Welcome\Product;
 
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Product\ProductDisplayData;
+use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ProductCategory;
 use App\Models\Product;
@@ -24,7 +25,7 @@ class WelcomeProductRecentProps extends BaseView
     public function category_types()
     {
         return CategoryTypeData::forDisplay(
-            ModelHandler::getUnPaginatedData(
+            CategoryHandler::getCategoryTypes(
                 new ProductCategory()
             )
         );

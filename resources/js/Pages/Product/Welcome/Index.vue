@@ -2,7 +2,7 @@
     <product-layout>
       <div class="p-4">
         <div class="px-2">
-          <div id="products" class="flex flex-wrap px-20 justify-evenly">
+          <!-- <div id="products" class="flex flex-wrap px-20 justify-evenly">
             <div v-if="data.pool.recent_products.length ">
               <featured-products
                 heading="Recent Arrivals 📦"
@@ -38,7 +38,7 @@
                 show_more="welcome.products.discounted"
               />
             </div>
-          </div>
+          </div> -->
   
           <div id="products" v-if="data.products.data">
             <p class="text-2xl font-extrabold text-slate-50 border-b-4">

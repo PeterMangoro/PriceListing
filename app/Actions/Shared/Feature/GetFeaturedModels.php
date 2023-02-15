@@ -2,6 +2,7 @@
 
 namespace App\Actions\Shared\Feature;
 
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 class GetFeaturedModels
@@ -36,7 +37,7 @@ class GetFeaturedModels
         object $data,
         string $model,
         ?int $paginate = 18
-    ): Collection {
+    ): LengthAwarePaginator {
         return $data
             ->ofType($model)
             ->withRelatedDisplayImage()

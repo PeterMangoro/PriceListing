@@ -49,8 +49,7 @@ class WelcomeProductController extends Controller
 
     public function owner(User $owner)
     {
-        // return $owner->products()->whereActive()->limit(4)->get();
-        return Inertia::render('Product/Welcome/showOwnerProducts', [
+        return Inertia::render('Product/Welcome/OwnerProducts', [
             'data' => new WelcomeOwnerProductsProps($owner),
         ]);
     }
@@ -64,7 +63,7 @@ class WelcomeProductController extends Controller
 
     public function recent()
     {
-        return Inertia::render('Product/Welcome/recentProducts', [
+        return Inertia::render('Product/Welcome/RecentProducts', [
             'data' => new WelcomeProductRecentProps(),
         ]);
     }
@@ -112,20 +111,20 @@ class WelcomeProductController extends Controller
 
     public function discounted()
     {
-        return Inertia::render('Product/Welcome/Discounted/discountedProducts', [
+        return Inertia::render('Product/Welcome/Discounted/DiscountedProducts', [
             'data' => new WelcomeProductDiscountedProps(),
         ]);
     }
     public function discounted_category_type(string $category_type)
     {
-        return Inertia::render('Product/Welcome/Discounted/discountedCategoryTypeProducts', [
+        return Inertia::render('Product/Welcome/Discounted/DiscountedCategoryTypeProducts', [
             'data' => new WelcomeProductDiscountedCategoryTypeProps($category_type),
         ]);
     }
 
     public function discounted_category(ProductCategory $category)
     {
-        return Inertia::render('Product/Welcome/Discounted/discountedCategoryProducts', [
+        return Inertia::render('Product/Welcome/Discounted/DiscountedCategoryProducts', [
             'data' => new WelcomeProductDiscountedCategoryProps($category),
         ]);
     }
