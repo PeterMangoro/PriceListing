@@ -17,7 +17,7 @@
       "
     >
       <div class="flex">
-        <h2
+        <!-- <h2
           class="
             p-4
             text-2xl
@@ -28,7 +28,7 @@
           "
         >
           {{ heading }}
-        </h2>
+        </h2> -->
 
         <div class="p-2">
           <Link
@@ -59,7 +59,7 @@
           <div
             class="
               overflow-hidden
-              border
+              
               rounded
               shadow-xl
               hover:shadow-2xl hover:-translate-y-1

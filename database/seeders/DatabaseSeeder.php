@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         //         ]);
         // User::factory(100000)->create();
         // Car::factory(100000)->create();
-        Product::factory(100)->create();
+        // Product::factory(100)->create();
         // Transport::factory(100000)->create();
         // Service::factory(100000)->create();
         // Accommodation::factory(100000)->create();
@@ -64,12 +64,12 @@ class DatabaseSeeder extends Seeder
         // Address::factory(10)->create();
 
         $this->call([
-            // CarMakeSeeder::class,
-            // CarModelSeeder::class,
-            AttachmentSeeder::class,
+            CarMakeSeeder::class,
+            CarModelSeeder::class,
+            // AttachmentSeeder::class,
             // BranchSeeder::class,
             // RatingSeeder::class,
-            // CategorySeeder::class,
+            CategorySeeder::class,
             // ClassificationSeeder::class,
             // AddressesSeeder::class,
             // DiscountSeeder::class,

@@ -106,12 +106,18 @@ const disableTwoFactorAuthentication = () => {
 <template>
     <ActionSection>
         <template #title>
-            Two Factor Authentication
+            <p class="text-slate-50">
+                Two Factor Authentication
+            </p>
+            
         </template>
 
         <template #description>
-            Add additional security to your account using two factor authentication.
-        </template>
+            <p class="text-slate-50">
+                Add additional security to your account using two factor authentication.
+
+            </p>
+                   </template>
 
         <template #content>
             <h3 v-if="twoFactorEnabled && ! confirming" class="text-lg font-medium text-gray-900">

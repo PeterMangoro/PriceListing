@@ -75,7 +75,7 @@
               <div class="w-full">
                 <span
                   @click="show_write_comment"
-                  class="inline-flex justify-center px-8 py-2 text-sm font-medium text-slate-50 capitalize border border-transparent rounded hover:cursor-pointer hover:border-green-500"
+                  class="inline-flex justify-center px-8 py-2 text-sm font-medium text-black capitalize border border-transparent rounded hover:cursor-pointer hover:border-green-500"
                 >
                   add Comment
                 </span>

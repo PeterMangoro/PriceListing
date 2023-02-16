@@ -1,38 +1,61 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue';
+import JetSectionBorder from '@/Components/SectionBorder.vue';
 import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue';
-import SectionBorder from '@/Components/SectionBorder.vue';
 import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue';
 import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue';
+import UpdateCompanyProfileInformationForm from '@/Pages/Profile/Partials/UpdateCompanyProfileInformationForm.vue';
+import UpdateProfileDocuments from '@/Pages/Profile/Partials/UpdateProfileDocuments.vue';
+import UpdateCompanyAddressForm from '@/Pages/Profile/Partials/UpdateCompanyAddressForm.vue';
 
 defineProps({
     confirmsTwoFactorAuthentication: Boolean,
     sessions: Array,
+    profile:Object,
+    address:Object,
 });
 </script>
-
+ 
 <template>
     <AppLayout title="Profile">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="text-xl font-semibold leading-tight text-gray-800">
                 Profile
             </h2>
         </template>
 
         <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div v-if="$page.props.jetstream.canUpdateProfileInformation">
                     <UpdateProfileInformationForm :user="$page.props.user" />
 
-                    <SectionBorder />
+                    <JetSectionBorder />
+                </div>
+
+                <div >
+                    <UpdateCompanyProfileInformationForm :profile="$page.props.profile" />
+
+                    <JetSectionBorder />
+                </div>
+
+                  <div >
+                    <UpdateCompanyAddressForm :address="$page.props.address" />
+
+                    <JetSectionBorder />
+                </div>
+                
+                <div >
+                    <UpdateProfileDocuments :company="$page.props.profile" />
+
+                    <JetSectionBorder />
                 </div>
 
                 <div v-if="$page.props.jetstream.canUpdatePassword">
                     <UpdatePasswordForm class="mt-10 sm:mt-0" />
 
-                    <SectionBorder />
+                    <JetSectionBorder />
                 </div>
 
                 <div v-if="$page.props.jetstream.canManageTwoFactorAuthentication">
@@ -41,13 +64,13 @@ defineProps({
                         class="mt-10 sm:mt-0" 
                     />
 
-                    <SectionBorder />
+                    <JetSectionBorder />
                 </div>
 
                 <LogoutOtherBrowserSessionsForm :sessions="sessions" class="mt-10 sm:mt-0" />
 
                 <template v-if="$page.props.jetstream.hasAccountDeletionFeatures">
-                    <SectionBorder />
+                    <JetSectionBorder />
 
                     <DeleteUserForm class="mt-10 sm:mt-0" />
                 </template>

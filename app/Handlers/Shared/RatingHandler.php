@@ -6,8 +6,8 @@ use App\Services\Shared\RatingService;
 
 class RatingHandler
 {
-    public static function forProduct(object $request)
+    public static function forModel(object $request,object $model,string $model_name)
     {
-        RatingService::forProduct($request);
+        RatingService::forModel($request,$model,$model_name);
     }
 }

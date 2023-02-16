@@ -7,9 +7,9 @@ use App\Models\Product;
 
 class RatingService
 {
-    public static function forProduct(object $request): void
+    public static function forModel(object $request,object $model,string $model_name): void
     {
-        $product = Product::find($request->product_id);
-        AddRating::forProduct($product, $request);
+        $Model = $model->find($request->product_id);
+        AddRating::forModel($Model,$model_name, $request);
     }
 }

@@ -14,6 +14,7 @@ Route::controller(RatingController::class)
     ])
     ->group(function () {
     //    Transport Comments
-        Route::post('ratings', [RatingController::class,'product'])->name('product');
-        Route::post('ratings', [RatingController::class,'product'])->name('product');
+        Route::post('ratings/product', [RatingController::class,'product'])->name('product');
+        Route::post('ratings/car', [RatingController::class,'car'])->name('car');
+        Route::post('ratings/service', [RatingController::class,'service'])->name('service');
     });
