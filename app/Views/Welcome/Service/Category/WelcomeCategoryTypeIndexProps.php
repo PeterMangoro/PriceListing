@@ -49,7 +49,7 @@ class WelcomeCategoryTypeIndexProps extends BaseView
     public function category_types()
     {
         return CategoryTypeData::forDisplay(
-            ModelHandler::getUnPaginatedData(
+            CategoryHandler::getCategoryTypes(
                 ServiceCategory::whereNot('type', $this->category_type)
             )
         );

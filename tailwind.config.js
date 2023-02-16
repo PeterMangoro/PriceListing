@@ -19,7 +19,7 @@ module.exports = {
             backgroundImage: {
                 'product': "url('/storage/background/product2.webp')",
                 'construction2': "url('/storage/landing/construction2.jpg')",
-                'wood': "url('/storage/background/wood3.jpg')",
+                'wood': "url('/storage/background/wood4.jpg')",
               },
 
             colors: {

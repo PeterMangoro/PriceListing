@@ -35,7 +35,7 @@ class WelcomeServiceController extends Controller
 
     public function category(ServiceCategory $category)
     {
-        return Inertia::render('Service/Welcome/CategoryCategoryServices', [
+        return Inertia::render('Service/Welcome/Category/CategoryServices', [
             'data' => new WelcomeCategoryIndexProps($category),
         ]);
     }
