@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 mx-auto rounded shadow bg-violet-100 max-w-7xl">
+  <div class="p-2 mx-auto rounded shadow bg-slate-100 max-w-7xl">
     <h2
       v-if="heading"
       class="

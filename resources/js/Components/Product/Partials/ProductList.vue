@@ -10,9 +10,10 @@
         class="
           overflow-hidden
           border
+          
           rounded
           shadow-sm
-          w-28
+          w-72
           hover:shadow-2xl hover:-translate-y-1
         "
         :class="{
@@ -24,22 +25,22 @@
           v-if="item.latest_image"
           :src="item.latest_image"
           :alt="item.title"
-          class="object-cover w-28 h-28 hover:scale-110 hover:duration-500"
+          class="object-cover w-72 h-72 hover:scale-110 hover:duration-500"
         />
 
-        <h3 class="px-2 mt-2 text-sm text-black break-words truncate w-28">
+        <h3 class="px-2 mt-2 text-sm text-black break-words truncate w-72">
           {{ item.title }}
         </h3>
 
         <p
           v-if="item.discount"
-          class="px-2 mt-2 text-sm font-semibold text-black break-words w-28"
+          class="px-2 mt-2 text-sm font-semibold text-black break-words w-72"
         >
           {{ item.discount.price }} ⏰
         </p>
         <p
           v-else
-          class="px-2 mt-2 text-sm font-semibold text-black break-words w-28"
+          class="px-2 mt-2 text-sm font-semibold text-black break-words w-72"
         >
           {{ item.price }}
         </p>

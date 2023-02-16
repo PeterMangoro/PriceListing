@@ -7,12 +7,10 @@
         py-1
         mx-auto
         overflow-hidden
-        border
+        
         shadow-xl
-        bg-violet-100
-        sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
-        max-w-7xl
+        
+       
         sm:rounded-lg
       "
     >

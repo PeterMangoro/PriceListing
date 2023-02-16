@@ -1,46 +1,46 @@
 <template>
-  <app-layout>
+  <app-layout>  
    
-    <div class="grid  gap-4 place-content-center min-h-screen ">
-
-      <div class="flex flex-wrap w-auto gap-3 m-auto justify-evenly   ">
+    <div class="">
+      <landing-page :images="images2" class="mb-3"/>
+      <div class="flex flex-wrap w-auto gap-3 justify-evenly m-2  ">
       <welcome-card
-        emoji="🛍"
+        image="/storage/landing/clothes.jpg"
         heading="Marketplace"
         detail="Shop from different suppliers at the cheapest price for the highest quality"
         path="welcome.products.index"
       />
 
       <welcome-card
-        emoji=" 🚘"
+        image="/storage/landing/cars.webp"
         heading="Car Sale"
         detail="Find the best car deals and drive the car of your dreams"
         path="welcome.cars.index"
       />
 
       <welcome-card
-        emoji="  🏢"
+        image="/storage/landing/house.jpeg"
         heading="Accommodation"
         detail="Find the place you will call home "
         path="welcome.accommodations.index"
       />
 
       <welcome-card
-        emoji="   🏞"
+        image="/storage/landing/farm.webp"
         heading="Real Estate"
         detail="Purchase land for your projects at good strategic locations "
         path="welcome.plots.index"
       />
 
       <welcome-card
-        emoji="   ⏳"
+        image="/storage/landing/construction.jpg"
         heading="Services"
-        detail="Check out Service provided ranging from fashion design, media, entertainment, car servicing and ..."
+        detail="Check out Services provided ranging from fashion design, media, entertainment, car servicing and ..."
         path="welcome.services.index"
       />
 
       <!-- <welcome-card
-        emoji="    🛣"
+        image="    🛣"
         heading="Travel & Transport"
         detail="Purchase land for your projects at good strategic locations "
         path="welcome.transports.index"
@@ -54,10 +54,52 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import WelcomeCard from "@/Components/Welcome/WelcomeCard.vue";
+import LandingPage from "@/Components/Shared/Gallery/LandingPage.vue";
 // import CallToAction from "@/Components/Welcome/CallToAction.vue";
 const props = defineProps({
   data: Object,
 });
+
+
+
+const images = [
+  'construction.jpg',
+   'car.jpg',
+ 'construction2.jpg',
+  
+
+]
+
+const images2 = [
+  {
+    path:'/storage/landing/construction.jpg'
+  }
+  ,
+  {
+    path:'/storage/landing/car.jpg'
+  }
+   ,
+   {
+    path:'/storage/landing/construction2.jpg',
+  }
+ 
+  
+
+]
+
+setInterval(getPath, 1000 * 3);
+
+function getPath() {
+  // console.log('Hello world');
+  return 'url('+'/storage/landing/'+ random_item(images)+')'  ;
+ 
+}
+function random_item(images)
+{
+  
+return images[Math.floor(Math.random()*images.length)];
+     
+}
 </script>
 
 <style></style>

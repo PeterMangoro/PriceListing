@@ -16,6 +16,12 @@ module.exports = {
                 sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
             },
 
+            backgroundImage: {
+                'product': "url('/storage/background/product2.webp')",
+                'construction2': "url('/storage/landing/construction2.jpg')",
+                'wood': "url('/storage/background/wood3.jpg')",
+              },
+
             colors: {
                 'blue-charcoal': {
                     '50': '#eff2ff',
@@ -34,5 +40,5 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'),require('@tailwindcss/line-clamp'),],
 };

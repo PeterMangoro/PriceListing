@@ -29,7 +29,7 @@ class BranchSeeder extends Seeder
 
                 [
                     'title'=>'Plots',
-                    'image'=>' Plots & Farms  🌽🌦🚜'
+                    'image'=>' Estate  🌽🌦🚜'
                 ],
 
 

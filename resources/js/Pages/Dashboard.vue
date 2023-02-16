@@ -49,7 +49,7 @@
          />
 
           <dashboard-card
-            title="Plots & Farms"
+            title="Estate"
             :total="counts.plot_count"
             add_path="plots.create"
             more_path="plots.index"

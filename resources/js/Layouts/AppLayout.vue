@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-600 text-slate-500"
+    class="min-h-screen  bg-slate-200 text-slate-500 bg-wood  bg-cover bg-no-repeat"
   >
     <Head :title="title" />
 
@@ -81,7 +81,7 @@
                 :active="route().current('welcome.plots.index')"
                 enter-active-class=""
               >
-                Plots & Farms
+                Estate
               </JetNavLink>
 
               <!-- <span class="flex flex-wrap px-3 py-2 text-sm border border-indigo-500 rounded-2xl" @click="show_search">
@@ -266,7 +266,7 @@
             :href="route('welcome.plots.index')"
             :active="route().current('welcome.plots.index')"
           >
-            Plots & Farms
+            Estate
           </JetResponsiveNavLink>
 
           <!-- <JetResponsiveNavLink
@@ -411,7 +411,7 @@
     </header>
 
     <!-- Page Content -->
-    <main class="min-h-screen px-6">
+    <main class="min-h-screen ">
       <slot />
     </main>
   </div>

@@ -53,7 +53,7 @@
             <span>{{ counts.cars }}</span>
           </Link>
           <Link v-if="counts.plots > 0" class="flex justify-between gap-5 transition duration-300 ease-in-out border-b hover:scale-105" :href="route('welcome.plots.owner',username)">
-            <span>Plots & Farms:</span>
+            <span>Estate:</span>
             <span>{{ counts.plots }}</span>
           </Link>
            <document-list

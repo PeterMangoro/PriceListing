@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-600 text-slate-500"
+    class="min-h-screen bg-wood  text-slate-500 bg-cover bg-no-repeat"
   >
     <Head :title="title" />
 
