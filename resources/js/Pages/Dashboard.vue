@@ -2,7 +2,7 @@
   <app-layout>
     <section class="py-8 grid place-content-center min-h-screen">
       <div class="container px-4 mx-auto">
-        <div class="flex flex-wrap justify-evenly">
+        <div class="flex flex-wrap justify-evenly gap-4">
           <dashboard-card
             title="Employees"
             :total="counts.employee_count"
@@ -21,14 +21,14 @@
             more_tip="Click to view all your available contact details"
           />
 
-          <dashboard-card
+          <!-- <dashboard-card
             title="Accommodation Sales"
             :total="counts.accommodation_count"
             add_path="accommodations.create"
             more_path="accommodations.index"
             add_tip="Click to Add a new Accommodation"
             more_tip="Click to view all your uploaded accommodations"
-          />
+          /> -->
 
           <!-- <dashboard-card 
          title="Accommodation Services"
@@ -48,14 +48,14 @@
          more_tip = 'Click to view all your uploaded cars'
          />
 
-          <dashboard-card
+          <!-- <dashboard-card
             title="Estate"
             :total="counts.plot_count"
             add_path="plots.create"
             more_path="plots.index"
             add_tip="Click to Add a new plot or farm or land"
             more_tip="Click to view all your uploaded lands"
-          />
+          /> -->
 
           <dashboard-card
             title="Products"

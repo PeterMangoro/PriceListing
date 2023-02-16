@@ -9,7 +9,7 @@
       <div
         class="
           overflow-hidden
-          border
+          
           
           rounded
           shadow-sm
@@ -28,19 +28,19 @@
           class="object-cover w-72 h-72 hover:scale-110 hover:duration-500"
         />
 
-        <h3 class="px-2 mt-2 text-sm text-black break-words truncate w-72">
+        <h3 class="px-2 mt-2 text-sm text-slate-50 break-words truncate w-72">
           {{ item.title }}
         </h3>
 
         <p
           v-if="item.discount"
-          class="px-2 mt-2 text-sm font-semibold text-black break-words w-72"
+          class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-72"
         >
           {{ item.discount.price }} ⏰
         </p>
         <p
           v-else
-          class="px-2 mt-2 text-sm font-semibold text-black break-words w-72"
+          class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-72"
         >
           {{ item.price }}
         </p>

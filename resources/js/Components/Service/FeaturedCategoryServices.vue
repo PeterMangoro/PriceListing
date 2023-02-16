@@ -9,7 +9,7 @@
         overflow-hidden
         border
         shadow-xl
-        bg-slate-100
+       
         sm:py-1
         lg:max-w-7xl
         max-w-7xl
@@ -17,7 +17,7 @@
       "
     >
       <div class="">
-        <h2 class="py-2 text-xl font-extrabold tracking-tight text-black">
+        <h2 class="py-2 text-xl font-extrabold tracking-tight text-slate-50">
           {{ heading }}
         </h2>
       </div>
@@ -66,7 +66,7 @@
             py-2
             text-sm
             font-medium
-            text-black
+            text-slate-50
             border border-transparent
             rounded
             hover:border-green-500

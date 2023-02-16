@@ -15,7 +15,7 @@
       "
     >
       <div class="flex flex-wrap">
-        <h2
+        <!-- <h2
           v-if="heading"
           class="
             items-start
@@ -42,7 +42,7 @@
           "
         >
           List of all Products
-        </h2>
+        </h2> -->
 
         <search-table
           v-if="!hide_search"
@@ -53,11 +53,14 @@
         />
       </div>
 
-      <category-links
+      <div  v-if="categories" >
+        <category-links
         :categories="categories"
         :route_type="route_type"
         class="shadow-none"
       />
+      </div>
+      
 
       <product-list :items="items" />
       <!-- PAGINATION START -->

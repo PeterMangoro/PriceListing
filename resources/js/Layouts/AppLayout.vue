@@ -39,14 +39,14 @@
                 CarSale
               </JetNavLink>
 
-              <JetNavLink
+              <!-- <JetNavLink
                 class=""
                 :href="route('welcome.accommodations.index')"
                 :active="route().current('welcome.accommodations.index')"
                 enter-active-class=""
               >
                 Accommodations
-              </JetNavLink>
+              </JetNavLink> -->
 
               <JetNavLink
                 class=""
@@ -75,14 +75,14 @@
                   Vacancy Portal
                 </JetNavLink> -->
 
-              <JetNavLink
+              <!-- <JetNavLink
                 class=""
                 :href="route('welcome.plots.index')"
                 :active="route().current('welcome.plots.index')"
                 enter-active-class=""
               >
                 Estate
-              </JetNavLink>
+              </JetNavLink> -->
 
               <!-- <span class="flex flex-wrap px-3 py-2 text-sm border border-indigo-500 rounded-2xl" @click="show_search">
                   <magnifying-glass-icon class="w-5 h-5 text-indigo-600"  />
@@ -261,13 +261,13 @@
               Vacancy Portal
             </JetResponsiveNavLink> -->
 
-          <JetResponsiveNavLink
+          <!-- <JetResponsiveNavLink
             class=""
             :href="route('welcome.plots.index')"
             :active="route().current('welcome.plots.index')"
           >
             Estate
-          </JetResponsiveNavLink>
+          </JetResponsiveNavLink> -->
 
           <!-- <JetResponsiveNavLink
             class=""

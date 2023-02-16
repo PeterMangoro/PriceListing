@@ -7,9 +7,9 @@
         py-1
         mx-auto
         overflow-hidden
-        border
+       
         shadow-xl
-        bg-slate-100
+       
         sm:py-1 sm:px-6
         lg:max-w-7xl lg:px-8
         max-w-7xl
@@ -26,7 +26,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >
@@ -40,7 +40,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >
@@ -57,7 +57,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >
@@ -71,7 +71,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >
@@ -113,7 +113,7 @@
               class="object-cover w-28 h-28 hover:scale-110 hover:duration-500"
             />
 
-            <h3 class="p-2 mt-4 text-sm text-black break-words truncate w-28">
+            <h3 class="p-2 mt-4 text-sm text-slate-50 break-words truncate w-28">
               {{ item.title }}
             </h3>
             <p
@@ -123,7 +123,7 @@
                 mt-2
                 text-sm
                 font-semibold
-                text-black
+                text-slate-50
                 break-words
                 w-28
               "
@@ -137,7 +137,7 @@
                 mt-2
                 text-sm
                 font-semibold
-                text-black
+                text-slate-50
                 break-words
                 w-28
               "

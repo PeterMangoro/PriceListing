@@ -23,7 +23,7 @@
       </div>
   
       <div>
-        <p class="text-2xl font-extrabold text-black border-b-4">
+        <p class="text-2xl font-extrabold text-slate-50 border-b-4">
           Similar Products
         </p>
         <div id="products" v-if="data.similar_products.length">
@@ -42,7 +42,7 @@
       </div>
   
       <div>
-        <p class="text-2xl font-extrabold text-black border-b-4">
+        <p class="text-2xl font-extrabold text-slate-50 border-b-4">
           From the Same Supplier
         </p>
         <div id="products" v-if="data.owner_products.length">
@@ -61,7 +61,7 @@
       </div>
   
       <div>
-        <p class="text-2xl font-extrabold text-black capitalize border-b-4">
+        <p class="text-2xl font-extrabold text-slate-50 capitalize border-b-4">
           What Others have to say
         </p>
         <div class="p-3">
@@ -75,7 +75,7 @@
               <div class="w-full">
                 <span
                   @click="show_write_comment"
-                  class="inline-flex justify-center px-8 py-2 text-sm font-medium text-black capitalize border border-transparent rounded hover:cursor-pointer hover:border-green-500"
+                  class="inline-flex justify-center px-8 py-2 text-sm font-medium text-slate-50 capitalize border border-transparent rounded hover:cursor-pointer hover:border-green-500"
                 >
                   add Comment
                 </span>
@@ -94,7 +94,7 @@
               <div class="w-full">
                 <span
                   @click="show_write_comment"
-                  class="inline-flex justify-center px-8 py-2 text-sm font-medium text-black capitalize border border-transparent rounded hover:cursor-pointer hover:border-green-500"
+                  class="inline-flex justify-center px-8 py-2 text-sm font-medium text-slate-50 capitalize border border-transparent rounded hover:cursor-pointer hover:border-green-500"
                 >
                   add Comment
                 </span>

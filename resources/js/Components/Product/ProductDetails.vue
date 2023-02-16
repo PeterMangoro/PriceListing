@@ -3,7 +3,7 @@
     <h1 class="text-2xl font-bold text-slate-100">{{ product.title }}</h1>
     <rating :rating="rating" />
     <price :item="product"  />
-    <item-details :details="product.detail" class="text-slate-100" />
+    <item-details :details="product.detail" class="text-slate-100" /> 
     <location :location="product.location" class="text-slate-100" />
   </div>
 </template>

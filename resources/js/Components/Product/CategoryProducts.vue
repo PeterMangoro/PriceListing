@@ -7,7 +7,7 @@
         py-1
         mx-auto
         overflow-hidden
-        border
+        
         shadow-xl
         bg-slate-100
         sm:py-1 sm:px-6
@@ -26,7 +26,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >
@@ -40,7 +40,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >
@@ -57,7 +57,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >
@@ -71,7 +71,7 @@
               text-2xl
               font-extrabold
               tracking-tight
-              text-black
+              text-slate-50
               capitalize
             "
           >

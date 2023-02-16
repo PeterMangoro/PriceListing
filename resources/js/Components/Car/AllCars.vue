@@ -7,11 +7,11 @@
         py-1
         mx-auto
         overflow-hidden
-        border
+      
         shadow-xl
-        bg-slate-100
+        
         sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
+      
         max-w-7xl
         sm:rounded-lg
       "
@@ -25,13 +25,13 @@
             text-2xl
             font-extrabold
             tracking-tight
-            text-black
+            text-slate-50
             capitalize
           "
         >
           {{ heading }}
         </h2>
-        <h2
+        <!-- <h2
           v-else
           class="
             items-start
@@ -39,12 +39,12 @@
             text-2xl
             font-extrabold
             tracking-tight
-            text-black
+            text-slate-50
             capitalize
           "
         >
           List of all Cars
-        </h2>
+        </h2> -->
 
         <search-table
           v-if="!hide_search"
@@ -55,11 +55,14 @@
         />
       </div>
 
-      <category-links
+      <div v-if="categories">
+        <category-links
         :categories="categories"
         :route_type="route_type"
         class="shadow-none"
       />
+      </div>
+      
 
       <div class="flex flex-wrap justify-around space-x-0.51">
         <Link
@@ -71,10 +74,10 @@
           <div
             class="
               overflow-hidden
-              border
+             
               rounded
-              shadow-sm
-              w-28
+              shadow-xl
+              w-56
               hover:shadow-2xl hover:-translate-y-1
             "
             :class="{
@@ -86,13 +89,13 @@
               v-if="item.latest_image"
               :src="item.latest_image"
               :alt="item.car_make"
-              class="object-cover w-28 h-28 hover:scale-110 hover:duration-500"
+              class="object-cover w-56 h-56 hover:scale-110 hover:duration-500"
             />
 
-            <h3 class="px-2 mt-2 text-sm text-black break-words truncate w-28">
+            <h3 class="px-2 mt-2 text-sm text-slate-50 break-words truncate w-56">
               {{ item.car_make }}
             </h3>
-            <h3 class="px-2 mt-2 text-sm text-black break-words truncate w-28">
+            <h3 class="px-2 mt-2 text-sm text-slate-50 break-words truncate w-56">
               {{ item.car_model }}
             </h3>
 
@@ -103,9 +106,9 @@
                 mt-2
                 text-sm
                 font-semibold
-                text-black
+                text-slate-50
                 break-words
-                w-28
+                w-56
               "
             >
               {{ item.discount.price }} ⏰
@@ -117,9 +120,9 @@
                 mt-2
                 text-sm
                 font-semibold
-                text-black
+                text-slate-50
                 break-words
-                w-28
+                w-56
               "
             >
               {{ item.price }}

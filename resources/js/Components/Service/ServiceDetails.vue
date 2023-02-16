@@ -1,26 +1,22 @@
 <template>
   <div class="mb-2 border-b-2">
     <h1 class="text-2xl font-bold text-slate-100">{{ service.title }}</h1>
-    <span v-if="rating" class="flex space-x-1">
-      <heart-icon class="w-4 h-4 text-slate-100" />
-      <p class="text-sm text-slate-100">{{ rating }}</p>    </span>
+    <rating :rating="rating" />
     
        
     
     
-    <p class="py-2 border-t-2 border-b-2 text-slate-100">{{ service.detail }}</p>
+      <item-details :details="service.detail" class="text-slate-100" />
     
-   <p class="flex gap-2 py-2">
-      <span class="font-medium text-slate-100">Location: </span>
-      {{ service.location.street }} <br>
-      {{ service.location.town }} <br>
-      {{ service.location.city }}
-      </p>
+      <location :location="service.location" class="text-slate-100" />
   </div>
 </template>
 
 <script setup>
 import { HeartIcon } from "@heroicons/vue/24/solid";
+import ItemDetails from "@/Components/Shared/ItemDetails.vue";
+import Location from "@/Components/Shared/Location.vue";
+import Rating from "@/Components/Shared/Rating.vue";
 
 const props = defineProps({
   service: Object,
