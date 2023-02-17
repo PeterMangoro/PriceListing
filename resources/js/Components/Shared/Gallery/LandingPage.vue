@@ -8,6 +8,7 @@
           <div>
             <div class=" rounded-lg ">
               <img
+              :key="image.id"
                 :src="image"
                 :alt="image"
                 class="object-cover object-center rounded  w-screen h-96 group-hover:opacity-75 transition delay-700 duration-300 "

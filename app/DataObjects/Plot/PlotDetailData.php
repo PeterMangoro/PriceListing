@@ -12,7 +12,7 @@ class PlotDetailData
 {
     public function __construct(
         public readonly  string $size,
-        public readonly  string $detail,
+        public readonly  array $detail,
         public readonly  object $location,
         public readonly  string $owner,
         public readonly  string $username,

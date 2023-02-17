@@ -15,6 +15,7 @@ class PlotIndexProps extends BaseView
         return PlotDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
                 Plot::belongsToAuthUser()
+                ->whereActive()
             )
         );
     }

@@ -16,28 +16,28 @@ class WelcomePlotController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Plot/Welcome/showAllPlots', [
+        return Inertia::render('Plot/Welcome/Index', [
             'data' => new WelcomePlotIndexProps(),
         ]);
     }
 
     public function owner(User $owner)
     {
-        return Inertia::render('Plot/Welcome/showOwnerPlots', [
+        return Inertia::render('Plot/Welcome/OwnerPlots', [
             'data' => new WelcomeOwnerPlotsProps($owner),
         ]);
     }
 
     public function show(Plot $plot)
     {
-        return Inertia::render('Plot/Welcome/plotDetail', [
+        return Inertia::render('Plot/Welcome/Show', [
             'data' => new WelcomePlotShowProps($plot),
         ]);
     }
 
     public function city(string $city)
     {
-        return Inertia::render('Plot/Welcome/sameCity', [
+        return Inertia::render('Plot/Welcome/SameCity', [
             'data' => new WelcomeCityPlotsProps($city),
         ]);
     }

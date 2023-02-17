@@ -12,25 +12,25 @@
           detail="Find the best car deals and drive the car of your dreams" path="welcome.cars.index" />
 
         <!-- <welcome-card image="/storage/landing/house.jpeg" heading="Accommodation"
-          detail="Find the place you will call home " path="welcome.accommodations.index" /> -->
+            detail="Find the place you will call home " path="welcome.accommodations.index" /> -->
 
-        <!-- <welcome-card image="/storage/landing/farm.webp" heading="Real Estate"
-          detail="Purchase land for your projects at good strategic locations " path="welcome.plots.index" /> -->
+        <welcome-card image="/storage/landing/farm.webp" heading="Real Estate"
+          detail="Purchase land for your projects at good strategic locations " path="welcome.plots.index" />
 
         <welcome-card image="/storage/landing/construction.jpg" heading="Services"
           detail="Check out Services provided ranging from fashion design, media, entertainment, car servicing and ..."
           path="welcome.services.index" />
 
         <!-- <welcome-card
-        image="    🛣"
-        heading="Travel & Transport"
-        detail="Purchase land for your projects at good strategic locations "
-        path="welcome.transports.index"
-      /> -->
+          image="    🛣"
+          heading="Travel & Transport"
+          detail="Purchase land for your projects at good strategic locations "
+          path="welcome.transports.index"
+        /> -->
       </div>
     </div>
 
-  </app-layout>
+</app-layout>
 </template>
 
 <script setup>
@@ -48,7 +48,7 @@ const images = [
   'car.jpg',
   'cars.webp',
   'clothes.jpg',
-  'construction.jpeg',  
+  'construction.jpeg',
   'construction.jpg',
   'construction2.jpg',
   'construction3.jpg',
@@ -69,67 +69,82 @@ const images = [
 ]
 
 const images2 = [
-{
+  {
+    id: 1,
     path: '/storage/landing/car.jpg'
   }
   ,
 
   {
+    id: 2,
     path: '/storage/landing/clothes.jpg'
   }
-  , 
-  
+  ,
+
   {
+    id: 3,
     path: '/storage/landing/construction.jpg'
   }
   ,
- 
- 
+
+
 
   {
+    id:4,
     path: '/storage/landing/construction4.jpg'
   }
   ,
   {
+    id:5,
     path: '/storage/landing/construction5.jpg'
   }
   ,
-  // {
-  //   path: '/storage/landing/estate.jpg'
-  // }
-  // ,
-  // {
-  //   path: '/storage/landing/estate2.jpg'
-  // },
-  // {
-  //   path: '/storage/landing/estate3.jpg'
-  // }
-  // ,
-  // {
-  //   path: '/storage/landing/farm.webp'
-  // }
-  // ,
   {
+    id:6,
+    path: '/storage/landing/estate.jpg'
+  }
+  ,
+  {
+    id:7,
+    path: '/storage/landing/estate2.jpg'
+  },
+  {
+    id:8,
+    path: '/storage/landing/estate3.jpg'
+  }
+  ,
+  {
+    id:9,
+    path: '/storage/landing/farm.webp'
+  }
+  ,
+  {
+    id:10,
     path: '/storage/landing/gadgets.jpg'
   }
   ,
   {
+    id:11,
     path: '/storage/landing/gadgets2.jpg'
   }
   ,
   {
+    id:12,
     path: '/storage/landing/gadgets3.jpg'
   }
   ,
   {
+    id:13,
     path: '/storage/landing/shop.jpg'
   }
   ,
   {
+    id:14,
     path: '/storage/landing/shop2.jpg'
   }
   ,
   {
+    id:15,
     path: '/storage/landing/shopping.jpg'
   }
   ,
@@ -149,6 +164,4 @@ function random_item(images) {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

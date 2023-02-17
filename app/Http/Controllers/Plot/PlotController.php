@@ -16,14 +16,14 @@ class PlotController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Plot/show', [
+        return Inertia::render('Plot/Index', [
             'data' => new PlotIndexProps(),
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Plot/add');
+        return Inertia::render('Plot/Create');
     }
 
     public function store(CreatePlotRequest $request)
@@ -35,7 +35,7 @@ class PlotController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Plot/edit', [
+        return Inertia::render('Plot/Edit', [
             'data' => new PlotEditProps($uuid),
         ]);
     }

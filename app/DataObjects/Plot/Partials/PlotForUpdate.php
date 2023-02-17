@@ -16,7 +16,7 @@ class PlotForUpdate
         public readonly  ?object $trashed_documents,
         public readonly  ?float $discount_price,
         public readonly  ?string $discount_exp_date,
-        public readonly  string $detail,
+        public readonly  array $detail,
         public readonly  int $id,
         public  readonly float $price,
         public  readonly bool $sale_status,
