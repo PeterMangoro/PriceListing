@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen text-slate-500 bg-wood bg-cover bg-no-repeat">
+  <div class="min-h-screen text-slate-100 bg-wood bg-cover bg-no-repeat">
     <Head :title="title" />
 
     <!-- <left-sidebar  /> -->
@@ -382,7 +382,7 @@
     </header>
 
     <!-- Page Content -->
-    <main class="min-h-screen px-6">
+    <main class=" px-6">
       <slot />
     </main>
   </div>
@@ -401,7 +401,7 @@ import JetDropdown from "@/Components/Dropdown.vue";
 import JetDropdownLink from "@/Components/DropdownLink.vue";
 import JetNavLink from "@/Components/NavLink.vue";
 import JetResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
-import footerNav from "@/Components/Shared/footer.vue";
+import footerNav from "@/Components/Footer/footer.vue";
 import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 
 defineProps({

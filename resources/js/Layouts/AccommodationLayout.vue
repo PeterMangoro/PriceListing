@@ -1,13 +1,11 @@
 <template>
-  <div
-    class="min-h-screen  text-slate-500 bg-wood  bg-cover bg-no-repeat "
-  >
+  <div class="min-h-screen text-slate-100 bg-wood bg-cover bg-no-repeat">
     <Head :title="title" />
 
     <!-- <left-sidebar  /> -->
 
     <jet-banner />
-    <nav class="sticky top-0 py-1 bg-blue-charcoal-900   text-slate-100">
+    <nav class="sticky top-0 py-1 bg-blue-charcoal-900 text-slate-100">
       <!-- Primary Navigation Menu -->
       <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div class="flex justify-between">
@@ -83,7 +81,15 @@
                   <template #trigger>
                     <button
                       v-if="$page.props.jetstream.managesProfilePhotos"
-                      class="flex text-sm transition bg-transparent border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300"
+                      class="
+                        flex
+                        text-sm
+                        transition
+                        bg-transparent
+                        border-2 border-transparent
+                        rounded-full
+                        focus:outline-none focus:border-gray-300
+                      "
                     >
                       <img
                         class="object-cover w-8 h-8 rounded-full"
@@ -95,7 +101,22 @@
                     <span v-else class="inline-flex rounded-md">
                       <button
                         type="button"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-transparent bg-white border border-transparent rounded-md  hover:text-gray-700 focus:outline-none"
+                        class="
+                          inline-flex
+                          items-center
+                          px-3
+                          py-2
+                          text-sm
+                          font-medium
+                          leading-4
+                          text-gray-500
+                          transition
+                          bg-transparent bg-white
+                          border border-transparent
+                          rounded-md
+                          hover:text-gray-700
+                          focus:outline-none
+                        "
                       >
                         {{ $page.props.user.name }}
 
@@ -148,7 +169,18 @@
               <div v-else>
                 <Link
                   :href="route('login')"
-                  class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600"
+                  class="
+                    flex
+                    items-center
+                    px-4
+                    py-2
+                    text-sm
+                    font-medium
+                    text-white
+                    bg-blue-500
+                    rounded-md
+                    hover:bg-blue-600
+                  "
                 >
                   Login
                 </Link>
@@ -159,7 +191,17 @@
           <!-- Hamburger -->
           <div class="flex items-center -mr-2 sm:hidden">
             <button
-              class="inline-flex items-center justify-center p-2 text-gray-400 transition rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
+              class="
+                inline-flex
+                items-center
+                justify-center
+                p-2
+                text-gray-400
+                transition
+                rounded-md
+                hover:text-gray-500 hover:bg-gray-100
+                focus:outline-none focus:bg-gray-100 focus:text-gray-500
+              "
               @click="showingNavigationDropdown = !showingNavigationDropdown"
             >
               <svg
@@ -361,15 +403,13 @@
 
     <!-- Page Heading -->
     <header v-if="$slots.header" class="mb-2 shadow">
-      <div
-        class="px-4 py-6 mx-auto sm:px-6 lg:px-8"
-      >
+      <div class="px-4 py-6 mx-auto sm:px-6 lg:px-8">
         <slot name="header" />
       </div>
     </header>
 
     <!-- Page Content -->
-    <main class="min-h-screen px-6">
+    <main class=" px-6">
       <slot />
     </main>
   </div>
@@ -382,13 +422,13 @@
 <script setup>
 import { ref } from "vue";
 
-import { Head, Link, router } from '@inertiajs/vue3';
+import { Head, Link, router } from "@inertiajs/vue3";
 import JetBanner from "@/Components/Banner.vue";
 import JetDropdown from "@/Components/Dropdown.vue";
 import JetDropdownLink from "@/Components/DropdownLink.vue";
 import JetNavLink from "@/Components/NavLink.vue";
 import JetResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
-import footerNav from "@/Components/Shared/footer.vue";
+import footerNav from "@/Components/Footer/footer.vue";
 import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 
 defineProps({

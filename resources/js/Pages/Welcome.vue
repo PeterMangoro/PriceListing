@@ -11,7 +11,7 @@
         <welcome-card image="/storage/landing/cars.webp" heading="Car Sale"
           detail="Find the best car deals and drive the car of your dreams" path="welcome.cars.index" />
 
-        <welcome-card image="/storage/landing/house.jpeg" heading="Accommodation"
+        <welcome-card image="/storage/landing/house.jpeg" heading="Accommodations"
             detail="Find the place you will call home " path="welcome.accommodations.index" />
 
         <welcome-card image="/storage/landing/farm.webp" heading="Real Estate"

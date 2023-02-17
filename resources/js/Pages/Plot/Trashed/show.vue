@@ -2,7 +2,7 @@
   <plot-layout>
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-black">
-        Plot Dashboard
+        Estate Dashboard
       </h2>
     </template>
     <!-- <bread-crumb :routes="routes" /> -->
@@ -10,20 +10,30 @@
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- Table -->
       <div class="flex flex-wrap justify-between">
-        <search-table class="pb-2" route-name="plots.trashed.index" placeholder="Search plots..." show_per_page="true" />
+        <search-table
+          class="pb-2"
+          route-name="plots.trashed.index"
+          placeholder="Search plots..."
+          show_per_page="true"
+        />
         <span class="my-auto">
           <button-link :link="route('plots.index')" class="pb-2 bg-blue-600">
-            Plots</button-link>
+            Plots</button-link
+          >
         </span>
       </div>
 
       <Table heading="Plot Table" :pagination="data.plots.links">
         <template #tableHead>
-          <TableHead class="cursor-pointer" @click="sort('title')" name="title">Title</TableHead>
+          <TableHead class="cursor-pointer" @click="sort('title')" name="title"
+            >Title</TableHead
+          >
           <TableHead>Rating</TableHead>
           <TableHead>Description</TableHead>
           <TableHead>Preview</TableHead>
-          <TableHead class="cursor-pointer" @click="sort('price')" name="price">Price</TableHead>
+          <TableHead class="cursor-pointer" @click="sort('price')" name="price"
+            >Price</TableHead
+          >
           <!-- <TableHead class="cursor-pointer" @click="sort('sale_status')" name='sale_status'>Status</TableHead> -->
 
           <TableHead class="text-center"></TableHead>
@@ -34,7 +44,9 @@
           <TableData class="w-2/6">
             <span class="line-clamp-3">{{ plot.detail }}</span>
           </TableData>
-          <TableData><img class="w-20 h-20 rounded" :src="plot.latest_image" /></TableData>
+          <TableData
+            ><img class="w-20 h-20 rounded" :src="plot.latest_image"
+          /></TableData>
 
           <TableData>{{ plot.price }}</TableData>
           <!-- <TableData>
@@ -44,8 +56,28 @@
           <TableData>
             <div class="flex space-x-1">
               <Button
-                class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:blue-red-500"
-                @click="restore_plot(plot.id)" as="button" type="button">Restore</Button>
+                class="
+                  inline-flex
+                  justify-center
+                  px-4
+                  py-2
+                  text-sm
+                  font-medium
+                  text-white
+                  bg-blue-600
+                  border border-transparent
+                  rounded-md
+                  shadow-sm
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-offset-2
+                  focus:blue-red-500
+                "
+                @click="restore_plot(plot.id)"
+                as="button"
+                type="button"
+                >Restore</Button
+              >
             </div>
           </TableData>
         </TableRow>
@@ -54,9 +86,14 @@
     </div>
 
     <div v-if="show">
-      <delete-confirmation :message="message" path="plots.destroy" :item="plot_to_be_deleted" @close="show = false" />
+      <delete-confirmation
+        :message="message"
+        path="plots.destroy"
+        :item="plot_to_be_deleted"
+        @close="show = false"
+      />
     </div>
-</plot-layout>
+  </plot-layout>
 </template>
 
 <script setup>

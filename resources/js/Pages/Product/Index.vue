@@ -1,8 +1,8 @@
 <template>
   <product-layout>
     <template #header>
-      <h2 class="text-xl font-semibold leading-tight text-slate-50">
-        Product Dashboard
+      <h2 class="text-xl font-semibold leading-tight text-sky-500">
+        Store Dashboard
       </h2>
     </template>
     <!-- <bread-crumb :routes="routes" /> -->
