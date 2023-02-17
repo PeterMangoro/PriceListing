@@ -1,6 +1,7 @@
 <template>
+  <div>
   <div
-    class="min-h-screen  text-slate-500 bg-wood  bg-cover bg-no-repeat"
+    class="min-h-screen  text-slate-500 bg-wood  bg-cover bg-no-repeat "
   >
     <Head :title="title" />
 
@@ -9,7 +10,7 @@
     <jet-banner />
     <nav class="sticky top-0 py-1 bg-blue-charcoal-900   text-slate-100">
       <!-- Primary Navigation Menu -->
-      <div class="px-4 mx-auto sm:px-6 lg:px-8">
+      <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div class="flex justify-between">
           <div class="flex">
             <!-- Logo -->
@@ -411,10 +412,11 @@
     </header>
 
     <!-- Page Content -->
-    <main class="min-h-screen ">
+    <main class="min-h-screen max-w-7xl mx-auto ">
       <slot />
     </main>
   </div>
+</div>
 
    <footer-nav />
 </template>

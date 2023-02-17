@@ -1,0 +1,38 @@
+<template>
+  <accommodation-layout>
+    <!-- <snack-bar :categories = data.categories /> -->
+    <div class="p-4">
+      <div class="px-2"></div>
+
+      <div id="accommodations" v-if="data.accommodations.data">
+        <!-- <p class="text-2xl font-extrabold text-black border-b-4">
+            Top 50 Gossiped About Accommodations
+          </p> -->
+        <all-accommodations
+          v-if="data.accommodations"
+          :items="data.accommodations.data"
+          :pagination="data.accommodations.links"
+          routes="welcome.accommodations.featured"
+          heading="Most Rated Accommodations of the week"
+          :categories="data.category_types"
+          route_type="welcome.accommodations.lodges.featured.category_type"
+        />
+      </div>
+    </div>
+  </accommodation-layout>
+</template>
+
+<script setup>
+import AccommodationLayout from "@/Layouts/AccommodationLayout.vue";
+import AllAccommodations from "@/Components/Accommodation/AllAccommodations.vue";
+import { provide } from "vue";
+
+provide("show_route", "welcome.accommodations.lodges.show");
+
+const props = defineProps({
+  data: Object,
+});
+</script>
+
+<style>
+</style>

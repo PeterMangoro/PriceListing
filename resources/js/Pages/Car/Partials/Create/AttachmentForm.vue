@@ -1,7 +1,7 @@
 
 <template>
   <form-section @submitted="createProduct">
-    <template #title> <p class="text-slate-50 underline"> Upload Product Attachments</p> </template>
+    <template #title> <p class="text-slate-50 underline"> Upload Vehicle Attachments</p> </template>
 
     <template #description>
      

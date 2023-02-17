@@ -1,8 +1,8 @@
 <template>
   <app-layout>
 
-    <div class="">
-      <landing-page :images="images2" class="mb-3" />
+    <div class="pb-3">
+      <landing-page :images="images2" class="pb-3" />
       <div class="flex flex-wrap w-auto gap-3 justify-evenly m-2  ">
         <welcome-card image="/storage/landing/clothes.jpg" heading="Marketplace"
           detail="Shop from different suppliers at the cheapest price for the highest quality"
@@ -11,8 +11,8 @@
         <welcome-card image="/storage/landing/cars.webp" heading="Car Sale"
           detail="Find the best car deals and drive the car of your dreams" path="welcome.cars.index" />
 
-        <!-- <welcome-card image="/storage/landing/house.jpeg" heading="Accommodation"
-            detail="Find the place you will call home " path="welcome.accommodations.index" /> -->
+        <welcome-card image="/storage/landing/house.jpeg" heading="Accommodation"
+            detail="Find the place you will call home " path="welcome.accommodations.index" />
 
         <welcome-card image="/storage/landing/farm.webp" heading="Real Estate"
           detail="Purchase land for your projects at good strategic locations " path="welcome.plots.index" />

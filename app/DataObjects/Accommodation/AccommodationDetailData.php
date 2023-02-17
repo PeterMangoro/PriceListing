@@ -17,7 +17,7 @@ class AccommodationDetailData
         public  readonly  Collection|array $images,
         public  readonly  Collection|array|null $documents,
         public  readonly int $a_rooms,
-        public readonly  string $detail,
+        public readonly  array $detail,
         public  readonly object $location,
         public  readonly string $price,
         public readonly  string $owner,

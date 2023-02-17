@@ -1,17 +1,19 @@
 
 <template >
   <form-section @submitted="addDetail">
-    <template #title> <p class="text-slate-50 underline">Service Description </p> </template>
+    <template #title>
+      <p class="text-slate-50 underline">Service Description</p>
+    </template>
 
     <template #description>
       <p class="text-slate-50">Tell us about your service</p>
-      <p class="text-slate-50">Prices ar tagged in USD</p>
+      <p class="text-slate-50">Prices are tagged in USD</p>
       <p class="pt-2 text-slate-50">
         For points, mark at the beginning of each point with
         <span class="text-lg font-medium text-slate-50">*</span> eg
       </p>
 
-      <p class="text-slate-50">* Sample point </p>
+      <p class="text-slate-50">* Sample point</p>
       <p class="text-slate-50">* Sample point two</p>
       <p class="text-slate-50">* Sample point three</p>
     </template>
@@ -110,7 +112,5 @@ const emit = defineEmits(["next", "prev"]);
 const addDetail = () => {
   emit("next");
 };
-
-
 </script>
   

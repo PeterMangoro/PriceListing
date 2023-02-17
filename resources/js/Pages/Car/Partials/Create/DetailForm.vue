@@ -1,11 +1,13 @@
 
 <template >
   <form-section @submitted="addDetail">
-    <template #title> <p class="text-slate-50 underline">Car Description </p> </template>
+    <template #title>
+      <p class="text-slate-50 underline">Car Description</p>
+    </template>
 
     <template #description>
-      <p class="text-slate-50">Tell us about your car</p> 
-      <p class="text-slate-50">Prices ar tagged in USD</p>
+      <p class="text-slate-50">Tell us about your car</p>
+      <p class="text-slate-50">Prices are tagged in USD</p>
       <p class="pt-2 text-slate-50">
         For points, mark at the beginning of each point with
         <span class="text-lg font-medium text-slate-50">*</span> eg
@@ -18,105 +20,131 @@
 
     <template #form>
       <div class="col-span-6 sm:col-span-6">
-                <fieldset>
-                  <div
-                    class="text-base font-medium text-black"
-                    aria-hidden="true"
-                  >
-                    Mark Appropriate Action For Your Vehicle
-                  </div>
-                  <div class="mt-4 space-y-4">
-                    <div class="flex items-start">
-                      <div class="flex items-center h-5">
-                        <input
-                          v-model="rent_status"
-                          id="rent_status"
-                          name="rent_status"
-                          type="checkbox"
-                          class="w-4 h-4 text-indigo-600 border-gray-300 rounded  focus:ring-indigo-500"
-                        />
-                      </div>
-
-                      <div class="ml-3 text-sm">
-                        <label for="comments" class="font-medium text-black"
-                          >Car Hire/Rent</label
-                        >
-                        <p class="text-black">Let your car be up for Hiring.</p>
-                      </div>
-                    </div>                    
-                    <div class="flex items-start">
-                      <div class="flex items-center h-5">
-                        <input
-                          v-model="sale_status"
-                          id="sale_status"
-                          name="sale_status"
-                          type="checkbox"
-                          class="w-4 h-4 text-indigo-600 border-gray-300 rounded  focus:ring-indigo-500"
-                        />
-                      </div>
-                      <div class="ml-3 text-sm">
-                        <label for="candidates" class="font-medium text-black"
-                          >Sale</label
-                        >
-                        <p class="text-black">
-                          Let your car be sold in the market.
-                        </p>
-                      </div>
-                    </div>
-                   
-                  </div>
-                </fieldset>
+        <fieldset>
+          <div class="text-base font-medium text-black" aria-hidden="true">
+            Mark Appropriate Action For Your Vehicle
+          </div>
+          <div class="mt-4 space-y-4">
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input
+                  v-model="rent_status"
+                  id="rent_status"
+                  name="rent_status"
+                  type="checkbox"
+                  class="
+                    w-4
+                    h-4
+                    text-indigo-600
+                    border-gray-300
+                    rounded
+                    focus:ring-indigo-500
+                  "
+                />
               </div>
-     
+
+              <div class="ml-3 text-sm">
+                <label for="comments" class="font-medium text-black"
+                  >Car Hire/Rent</label
+                >
+                <p class="text-black">Let your car be up for Hiring.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input
+                  v-model="sale_status"
+                  id="sale_status"
+                  name="sale_status"
+                  type="checkbox"
+                  class="
+                    w-4
+                    h-4
+                    text-indigo-600
+                    border-gray-300
+                    rounded
+                    focus:ring-indigo-500
+                  "
+                />
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="candidates" class="font-medium text-black"
+                  >Sale</label
+                >
+                <p class="text-black">Let your car be sold in the market.</p>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
       <div class="col-span-6 sm:col-span-3">
-                <label
-                  for="car_make"
-                  class="block text-sm font-medium text-black"
-                  >Car Make</label
-                >
-                <select
-                  v-model="car_make_id"
-                  id="car_make_id"
-                  required
-                  autocomplete="car_make_id"
-                  class="block w-full px-3 py-2 mt-1 bg-transparent border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                >
-                  <option
-                    class=""
-                    v-for="car in car_makes"
-                    :key="car.id"
-                    :value="car.id"
-                  >
-                    {{ car.title }}
-                  </option>
-                </select>
-              </div>
+        <label for="car_make" class="block text-sm font-medium text-black"
+          >Car Make</label
+        >
+        <select
+          v-model="car_make_id"
+          id="car_make_id"
+          required
+          autocomplete="car_make_id"
+          class="
+            block
+            w-full
+            px-3
+            py-2
+            mt-1
+            bg-transparent
+            border border-gray-300
+            rounded-md
+            shadow-sm
+            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+            sm:text-sm
+          "
+        >
+          <option
+            class=""
+            v-for="car in car_makes"
+            :key="car.id"
+            :value="car.id"
+          >
+            {{ car.title }}
+          </option>
+        </select>
+      </div>
 
-              <div class="col-span-6 sm:col-span-3">
-                <label
-                  for="country"
-                  class="block text-sm font-medium text-black"
-                  >Car Model</label
-                >
-                <select
-                  v-model="car_model_id"
-                  id="car_model_id"
-                  required
-                  autocomplete="car_model_id"
-                  class="block w-full px-3 py-2 mt-1 bg-transparent bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                >
-                  <option
-                    class=""
-                    v-for="carmodel in car_makes[car_make_id - 1]
-                      .car_models"
-                    :key="carmodel.id"
-                    :value="carmodel.id"
-                  >
-                    {{ carmodel.title }}
-                  </option>
-                </select>
-              </div>
+      <div class="col-span-6 sm:col-span-3">
+        <label for="country" class="block text-sm font-medium text-black"
+          >Car Model</label
+        >
+        <select
+          v-model="car_model_id"
+          id="car_model_id"
+          required
+          autocomplete="car_model_id"
+          class="
+            block
+            w-full
+            px-3
+            py-2
+            mt-1
+            bg-transparent bg-white
+            border border-gray-300
+            rounded-md
+            shadow-sm
+            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+            sm:text-sm
+          "
+        >
+          <option
+            class=""
+            v-for="carmodel in car_makes[car_make_id - 1].car_models"
+            :key="carmodel.id"
+            :value="carmodel.id"
+          >
+            {{ carmodel.title }}
+          </option>
+        </select>
+      </div>
       <div class="col-span-6 sm:col-span-4">
         <input-label for="price" value="Price" />
         <div class="flex">
@@ -167,11 +195,7 @@
 
     <template #actions>
       <div class="flex justify-end w-full">
-        <submit-button
-          
-        >
-          Next
-        </submit-button>
+        <submit-button> Next </submit-button>
       </div>
     </template>
   </form-section>
@@ -186,7 +210,7 @@ import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import { useStorage } from "@/Composables/useStorage";
 
-const price =  useStorage("price", null);
+const price = useStorage("price", null);
 const detail = useStorage("detail", null);
 const rent_status = useStorage("rent_status", null);
 const sale_status = useStorage("sale_status", true);
@@ -194,8 +218,8 @@ const car_make_id = useStorage("car_make_id", 1);
 const car_model_id = useStorage("car_model_id", null);
 
 const props = defineProps({
-  car_makes:Object
-})
+  car_makes: Object,
+});
 const emit = defineEmits(["next", "prev"]);
 
 const addDetail = () => {

@@ -17,14 +17,14 @@ class AccommodationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Accommodation/show', [
+        return Inertia::render('Accommodation/Index', [
             'data' => new AccommodationIndexProps(),
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Accommodation/add', [
+        return Inertia::render('Accommodation/Create', [
             'data' => new AccommodationCreateProps(),
         ]);
     }
@@ -40,7 +40,7 @@ class AccommodationController extends Controller
 
     public function edit(string $uuid)
     {
-        return Inertia::render('Accommodation/edit', [
+        return Inertia::render('Accommodation/Edit', [
             'data' => new AccommodationEditProps($uuid),
         ]);
     }

@@ -29,7 +29,7 @@ class WelcomeSaleAccommodationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Accommodation/Welcome/Sale/showAllAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/Index', [
             'data' => new WelcomeSaleAccommodationIndexProps(),
         ]);
     }
@@ -51,14 +51,14 @@ class WelcomeSaleAccommodationController extends Controller
     public function owner(User $owner)
     {
         // return $owner->accommodations()->whereActive()->limit(4)->get();
-        return Inertia::render('Accommodation/Welcome/Sale/showOwnerAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Sale/OwnerAccommodations', [
             'data' => new WelcomeOwnerAccommodationsProps($owner),
         ]);
     }
 
     public function show(string $uuid)
     {
-        return Inertia::render('Accommodation/Welcome/Sale/accommodationDetail', [
+        return Inertia::render('Accommodation/Welcome/Sale/Show', [
             'data' => new WelcomeAccommodationShowProps($uuid),
         ]);
     }

@@ -16,21 +16,21 @@ class WelcomeRentalAccommodationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Accommodation/Welcome/Rental/showAllAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Rental/Index', [
             'data' => new WelcomeRentalAccommodationIndexProps(),
         ]);
     }
 
     public function owner(User $owner)
     {
-        return Inertia::render('Accommodation/Welcome/Rental/showOwnerAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Rental/OwnerAccommodations', [
             'data' => new WelcomeOwnerAccommodationsProps($owner),
         ]);
     }
 
     public function show(string $uuid)
     {
-        return Inertia::render('Accommodation/Welcome/Rental/accommodationDetail', [
+        return Inertia::render('Accommodation/Welcome/Rental/Show', [
             'data' => new WelcomeAccommodationShowProps($uuid),
         ]);
     }

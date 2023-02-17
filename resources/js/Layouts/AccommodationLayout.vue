@@ -1,21 +1,21 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-r from-sky-100 via-blue-200 to-slate-100"
+    class="min-h-screen  text-slate-500 bg-wood  bg-cover bg-no-repeat "
   >
     <Head :title="title" />
 
     <!-- <left-sidebar  /> -->
 
     <jet-banner />
-    <nav class="sticky top-0 py-1 bg-sky-100">
+    <nav class="sticky top-0 py-1 bg-blue-charcoal-900   text-slate-100">
       <!-- Primary Navigation Menu -->
-      <div class="px-4 mx-auto sm:px-6 lg:px-8">
+      <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div class="flex justify-between">
           <div class="flex">
             <!-- Logo -->
             <div class="flex items-center shrink-0">
               <Link :href="route('home')">
-                <ApplicationLogo class="block w-auto h-9" />
+                <ApplicationLogo class="block w-auto m-auto" />
                 <!-- Home -->
               </Link>
             </div>

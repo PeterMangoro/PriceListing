@@ -1,11 +1,13 @@
 
 <template >
   <form-section @submitted="addDetail">
-    <template #title> <p class="text-slate-50 underline">Product Description </p> </template>
+    <template #title>
+      <p class="text-slate-50 underline">Product Description</p>
+    </template>
 
     <template #description>
       <p class="text-slate-50">Tell us about your product</p>
-      <p class="text-slate-50">Prices ar tagged in USD</p>
+      <p class="text-slate-50">Prices are tagged in USD</p>
       <p class="pt-2 text-slate-50">
         For points, mark at the beginning of each point with
         <span class="text-lg font-medium text-slate-50">*</span> eg
@@ -102,7 +104,7 @@ import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import { useStorage } from "@/Composables/useStorage";
 
 const title = useStorage("title", null);
-const price =  useStorage("price", null);
+const price = useStorage("price", null);
 let detail = ref(useStorage("detail", null));
 
 const emit = defineEmits(["next", "prev"]);

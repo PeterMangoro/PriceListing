@@ -7,7 +7,6 @@ use Inertia\Inertia;
 use App\Models\Shared\Address;
 use App\Http\Controllers\Controller;
 use App\Models\Categories\AccommodationCategory;
-
 use App\Views\Welcome\Accommodation\WelcomeCategoryIndexProps;
 use App\Views\Welcome\Accommodation\Lodge\WelcomeAccommodationShowProps;
 use App\Views\Welcome\Accommodation\Lodge\WelcomeCategoryTypeIndexProps;
@@ -31,29 +30,28 @@ class WelcomeLodgeAccommodationController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Accommodation/Welcome/Lodge/showAllAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Lodge/Index', [
             'data' => new WelcomeLodgeAccommodationIndexProps(),
         ]);
     }
 
     public function category(AccommodationCategory $category)
     {
-        return Inertia::render('Accommodation/Welcome/Lodge/showCategoryAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Lodge/CategoryAccommodations', [
             'data' => new WelcomeCategoryIndexProps($category),
         ]);
     }
 
     public function category_type(string $category_type)
     {
-        return Inertia::render('Accommodation/Welcome/Lodge/showCategoryTypeAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Lodge/CategoryTypeAccommodations', [
             'data' => new WelcomeCategoryTypeIndexProps($category_type),
         ]);
     }
 
     public function owner(User $owner)
     {
-        // return $owner->accommodations()->whereActive()->limit(4)->get();
-        return Inertia::render('Accommodation/Welcome/Lodge/showOwnerAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Lodge/OwnerAccommodations', [
             'data' => new WelcomeOwnerAccommodationsProps($owner),
         ]);
     }
@@ -67,7 +65,7 @@ class WelcomeLodgeAccommodationController extends Controller
 
     public function recent()
     {
-        return Inertia::render('Accommodation/Welcome/Lodge/Recent/recentAccommodations', [
+        return Inertia::render('Accommodation/Welcome/Lodge/Recent/RecentAccommodations', [
             'data' => new WelcomeAccommodationRecentProps(),
         ]);
     }
