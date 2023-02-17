@@ -7,80 +7,47 @@
       class="p-2"
     >
       <figure
-        class="
-          rounded
-          shadow-2xl
-          bg-slate-100
-          w-80
-          hover:scale-110 hover:duration-500
-          md:flex
-         
-        "
+        class="rounded bg-slate-600 shadow-2xl w-80 bg-opacity-60 flex hover:scale-105 hover:duration-500"
         :class="{
           [`shadow-red-600 hover:shadow-lg hover:shadow-red-600  shadow-lg`]:
             item.discount,
         }"
       >
-        <div class="flex items-center">
+        <div class="flex-none w-48 h-40">
           <img
-            class="object-cover w-32 h-32 rounded-l md:overflow-visible"
+            class="inset-0 w-full h-full object-cover rounded-l"
             :src="item.latest_image"
             :alt="item.uuid"
           />
-
-          <div
-            class="
-              p-2
-              text-center
-              bg-transparent
-              rounded-none
-              md:text-left
-             
-            "
+        </div>
+        <div class="p-2 text-left  rounded-r w-full m-auto ">
+          <h3
+            class="text-sm font-medium break-words text-slate-50 line-clamp-3"
           >
-            <h3
-              class="
-                text-sm
-                font-medium
-                break-words
-                text-slate-700
-                w-22
-                sm:w-44
-                line-clamp-3
-              "
-            >
-              {{ item.city }},
-            </h3>
-            <h3
-              class="
-                text-sm
-                break-words
-                text-slate-700
-                w-22
-                sm:w-44
-                line-clamp-3
-              "
-            >
-              {{ item.town }}
-            </h3>
+            {{ item.city }},
+          </h3>
+          <h3
+            class="text-sm break-words text-slate-50 line-clamp-3"
+          >
+            {{ item.town }}
+          </h3>
 
-            <figcaption class="font-medium">
-              <h3 class="text-sm text-slate-700">{{ item.a_rooms }} rooms,</h3>
+          <figcaption class="font-medium">
+            <h3 class="text-sm text-slate-50">{{ item.a_rooms }} rooms,</h3>
 
-              <p
-                v-if="item.discount"
-                class="px-2 mt-2 font-semibold text-black break-words w-28"
-              >
-                {{ item.discount.price }} ⏰
-              </p>
-              <p
-                v-else
-                class="px-2 mt-2 font-semibold text-black break-words w-28"
-              >
-                {{ item.price }}
-              </p>
-            </figcaption>
-          </div>
+            <p
+              v-if="item.discount"
+              class=" mt-2 font-semibold text-slate-50 break-words "
+            >
+              {{ item.discount.price }} ⏰
+            </p>
+            <p
+              v-else
+              class="pmt-2 font-semibold text-slate-50 break-words "
+            >
+              {{ item.price }}
+            </p>
+          </figcaption>
         </div>
       </figure>
     </Link>

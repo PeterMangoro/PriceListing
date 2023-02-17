@@ -58,7 +58,7 @@ class WelcomeLodgeAccommodationController extends Controller
 
     public function show(string $uuid)
     {
-        return Inertia::render('Accommodation/Welcome/Lodge/accommodationDetail', [
+        return Inertia::render('Accommodation/Welcome/Lodge/Show', [
             'data' => new WelcomeAccommodationShowProps($uuid),
         ]);
     }

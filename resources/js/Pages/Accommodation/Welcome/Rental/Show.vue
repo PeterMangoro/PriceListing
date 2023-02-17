@@ -162,10 +162,10 @@ import ImageDetailDisplay from "@/Components/Shared/Gallery/ImageDetailDisplay.v
 import OwnerContacts from "@/Components/Shared/Owner/OwnerContacts.vue";
 import AccommodationDetails from "@/Components/Accommodation/AccommodationDetails.vue";
 import GroupedAccommodations from "@/Components/Accommodation/GroupedAccommodations.vue";
-import CommentCard from "@/Components/Partials/Common/CommentCard.vue";
+import CommentCard from "@/Components/Shared/Comment/CommentCard.vue";
 import RatingForm from "@/Components/Shared/Form/RatingForm.vue";
-import DocumentList from "@/Components/Partials/DocumentList.vue";
-import NoResultDisplay from "@/Components/Partials/NoResultDisplay.vue";
+import DocumentList from "@/Components/Shared/DocumentList.vue";
+import NoResultDisplay from "@/Components/Shared/NoResultDisplay.vue";
 
 import { ref } from "vue";
 

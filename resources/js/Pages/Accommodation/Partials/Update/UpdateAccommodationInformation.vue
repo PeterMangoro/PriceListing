@@ -1,11 +1,18 @@
 
 <template>
   <form-section @submitted="updateAccommodationDetail">
-    <template #title> Update Accommodation </template>
+    <template #title>
+      <p class="text-slate-50">
+        Update Accommodation 
+      </p>
+      </template>
 
     <template #description>
-      Ensure your Accommodation is described in detail so that clients
+      <p class="text-slate-50">
+        Ensure your Accommodation is described in detail so that clients
       understand it better.
+      </p>
+     
     </template>
 
     <template #form>
@@ -137,6 +144,7 @@ import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const detailInput = ref(null);
 const accommodationInput = ref(null);
@@ -148,7 +156,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.accommodation.price,
-  detail: props.accommodation.detail,
+  detail: pointConverter(props.accommodation.detail),
   street: props.accommodation.address.street,
   town: props.accommodation.address.town,
   city: props.accommodation.address.city,

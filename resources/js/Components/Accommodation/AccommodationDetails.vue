@@ -1,9 +1,9 @@
 <template>
   <div class="mb-2 border-b-2 border-blue-600 ">
-    <h1 class="text-2xl font-bold text-black">{{ accommodation.a_rooms }} Available rooms</h1>
+    <h1 class="text-2xl font-bold text-slate-50">{{ accommodation.a_rooms }} Available rooms</h1>
      <rating class="mb-2 border-none " :rating="rating" />     
     <price class="mb-2 border-b-2 border-blue-600 " :item="accommodation" />
-    <div class="w-32 my-2">
+    <!-- <div class="w-32 my-2">
        <Link 
             href="route(add_path,add_parameter)"
             class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600">
@@ -14,10 +14,10 @@
                   :tip=add_tip
               />
             </Link>
-    </div>
+    </div> -->
   
     <item-details class="mb-2 border-b-2 border-blue-600 " :details="accommodation.detail" />
-    <location :location="accommodation.location" />
+    <location class="text-slate-50" :location="accommodation.location" />
   </div>
 </template>
 

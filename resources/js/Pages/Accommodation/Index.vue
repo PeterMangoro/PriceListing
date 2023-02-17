@@ -1,7 +1,7 @@
 <template>
   <accommodation-layout>
     <template #header>
-      <h2 class="text-xl font-semibold leading-tight text-black">
+      <h2 class="text-xl font-semibold leading-tight text-slate-50">
         Accommodation Dashboard
       </h2>
     </template>
@@ -57,10 +57,14 @@
           </TableData>
           <TableData>{{ accommodation.ratings }}</TableData>
           <TableData class="w-2/6">
-            <span class="line-clamp-3">{{
-              accommodation.detail
-            }}</span></TableData
-          >
+            <p
+              v-for="(point, index) in accommodation.detail"
+              :key="index"
+              class="flex gap-1 line-clamp-1"
+            >
+              <span v-if="index < 3"> - {{ point }} </span>
+            </p>
+          </TableData>
           <TableData
             ><img class="w-20 h-20 rounded" :src="accommodation.latest_image"
           /></TableData>

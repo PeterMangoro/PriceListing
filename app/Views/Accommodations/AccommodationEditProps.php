@@ -7,6 +7,7 @@ use App\Handlers\Shared\ModelHandler;
 use App\Models\Accommodation;
 use App\Models\Categories\AccommodationCategory;
 use App\Views\Shared\BaseView;
+use App\Views\Shared\Categories;
 
 class AccommodationEditProps extends BaseView
 {
@@ -29,7 +30,7 @@ class AccommodationEditProps extends BaseView
 
     public function category_types()
     {
-        return ModelHandler::getUnPaginatedData(
+        return Categories::getAllCategories(
             new AccommodationCategory()
         )
             ->sortBy('type')

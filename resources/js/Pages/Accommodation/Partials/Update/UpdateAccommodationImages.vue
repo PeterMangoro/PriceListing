@@ -1,11 +1,18 @@
 
 <template>
   <form-section @submitted="updateAccommodationDetail">
-    <template #title> Update Accommodation Images </template>
+    <template #title>
+      <p class="text-slate-50">
+        Update Accommodation Images
+      </p>
+      </template>
 
     <template #description>
-      For Best display crop your images to square before uploading.
-      <p class="pt-4">Deleted images are stored and can latter be restored.</p>
+      <p class="text-slate-50">
+        For Best display crop your images to square before uploading.
+      </p>
+      
+      <p class="pt-4 text-slate-50">Deleted images are stored and can latter be restored.</p>
     </template>
 
     <template #form>
@@ -104,7 +111,8 @@ import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
-import EditImageCard from "@/Components/Partials/EditImageCard.vue";
+import EditImageCard from "@/Components/Shared/EditImageCard.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const props = defineProps({
   accommodation: String,
@@ -114,7 +122,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.accommodation.price,
-  detail: props.accommodation.detail,
+  detail: pointConverter(props.accommodation.detail),
   street: props.accommodation.address.street,
   town: props.accommodation.address.town,
   city: props.accommodation.address.city,

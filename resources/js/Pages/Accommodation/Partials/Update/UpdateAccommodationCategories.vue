@@ -1,11 +1,17 @@
 
 <template>
   <form-section @submitted="updateAccommodationDetail">
-    <template #title> Category Selection </template>
+    <template #title>
+      <p class="text-slate-50">
+        Category Selection 
+      </p> </template>
 
     <template #description>
-      Categories are helpful in grouping your accommodations according to client
+      <p class="text-slate-50">
+        Categories are helpful in grouping your accommodations according to client
       preferences
+      </p>
+     
     </template>
 
     <template #form>
@@ -114,6 +120,7 @@ import {
   CheckCircleIcon,
 } from "@heroicons/vue/24/solid";
 import { InformationCircleIcon } from "@heroicons/vue/24/outline";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const detailInput = ref(null);
 const accommodationInput = ref(null);
@@ -126,7 +133,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.accommodation.price,
-  detail: props.accommodation.detail,
+  detail: pointConverter(props.accommodation.detail),
   street: props.accommodation.address.street,
   town: props.accommodation.address.town,
   city: props.accommodation.address.city,

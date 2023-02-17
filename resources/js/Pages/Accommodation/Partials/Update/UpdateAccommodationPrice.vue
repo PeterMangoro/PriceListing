@@ -1,11 +1,17 @@
 
 <template>
   <form-section @submitted="updateAccommodationDetail">
-    <template #title> Update Pricing </template>
+    <template #title>
+      <p class="text-slate-50">
+        Update Pricing
+      </p>  </template>
 
     <template #description>
-      change the price by updating the current price field . You can also add
+      <p class="text-slate-50">
+        change the price by updating the current price field . You can also add
       Discount Price to your accommodation
+      </p>
+     
     </template>
 
     <template #form>
@@ -135,6 +141,7 @@ import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const detailInput = ref(null);
 const accommodationPrice = ref(null);
@@ -151,7 +158,7 @@ const form = useForm({
   price: props.accommodation.price,
   discount: props.accommodation.discount_price,
   date: props.accommodation.discount_exp_date,
-  detail: props.accommodation.detail,
+  detail: pointConverter(props.accommodation.detail),
   street: props.accommodation.address.street,
   town: props.accommodation.address.town,
   city: props.accommodation.address.city,

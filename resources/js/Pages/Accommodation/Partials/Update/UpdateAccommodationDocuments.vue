@@ -1,11 +1,18 @@
 
 <template>
   <form-section @submitted="updateAccommodationDetail">
-    <template #title> Update Accommodation Documents </template>
+    <template #title> 
+      <p class="text-slate-50">
+        Update Accommodation Documents
+      </p>
+      </template>
 
     <template #description>
-      Upload Accommodation related documents eg. User Manuals
-      <p class="pt-4">
+      <p class="text-slate-50">
+        Upload Accommodation related documents eg. User Manuals
+      </p>
+     
+      <p class="pt-4 text-slate-50">
         Deleted documents are stored and can latter be restored.
       </p>
     </template>
@@ -101,8 +108,9 @@ import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import InputError from "@/Components/Shared/Form/InputError.vue";
 import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
-import EditImageCard from "@/Components/Partials/EditImageCard.vue";
-import EditDocumentList from "@/Components/Partials/EditDocumentList.vue";
+import EditImageCard from "@/Components/Shared/EditImageCard.vue";
+import EditDocumentList from "@/Components/Shared/EditDocumentList.vue";
+import { pointConverter } from "@/Composables/pointConverter";
 
 const props = defineProps({
   accommodation: String,
@@ -112,7 +120,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.accommodation.price,
-  detail: props.accommodation.detail,
+  detail: pointConverter(props.accommodation.detail),
   street: props.accommodation.address.street,
   town: props.accommodation.address.town,
   city: props.accommodation.address.city,

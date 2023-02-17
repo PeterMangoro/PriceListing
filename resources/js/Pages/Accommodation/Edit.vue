@@ -42,14 +42,13 @@
 </template>
 <script setup>
 import AccommodationLayout from "@/Layouts/AccommodationLayout.vue";
-import { useForm } from "@inertiajs/vue3";
-import { Inertia } from "@inertiajs/inertia";
+import { router } from "@inertiajs/vue3";
 
-import UpdateAccommodationInformation from "@/Pagesvue3/Accommodation/Partials/UpdateAccommodationInformation.vue";
-import UpdateAccommodationPrice from "@/Pagesvue3/Accommodation/Partials/UpdateAccommodationPrice.vue";
-import UpdateAccommodationCategories from "@/Pagesvue3/Accommodation/Partials/UpdateAccommodationCategories.vue";
-import UpdateAccommodationImages from "@/Pagesvue3/Accommodation/Partials/UpdateAccommodationImages.vue";
-import UpdateAccommodationDocuments from "@/Pagesvue3/Accommodation/Partials/UpdateAccommodationDocuments.vue";
+import UpdateAccommodationInformation from "@/Pages/Accommodation/Partials/Update/UpdateAccommodationInformation.vue";
+import UpdateAccommodationPrice from "@/Pages/Accommodation/Partials/Update/UpdateAccommodationPrice.vue";
+import UpdateAccommodationCategories from "@/Pages/Accommodation/Partials/Update/UpdateAccommodationCategories.vue";
+import UpdateAccommodationImages from "@/Pages/Accommodation/Partials/Update/UpdateAccommodationImages.vue";
+import UpdateAccommodationDocuments from "@/Pages/Accommodation/Partials/Update/UpdateAccommodationDocuments.vue";
 import JetSectionBorder from "@/Components/SectionBorder.vue";
 const props = defineProps({
   data: Object,
@@ -58,7 +57,7 @@ const props = defineProps({
 const deleteImage = (attachmentId) => {
   const result = confirm("Delete Image ?");
   if (result) {
-    Inertia.delete(route("attachment.delete", attachmentId), {
+    router.delete(route("attachment.delete", attachmentId), {
       preserveScroll: true,
     });
   }

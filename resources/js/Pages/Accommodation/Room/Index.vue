@@ -69,7 +69,7 @@ import { ref } from "vue";
 
 import SearchTable from "@/Components/Shared/Table/SearchTable.vue";
 import Location from "@/Components/Shared/Location.vue";
-import ShowRoomsTable from "@/Pagesvue3/Accommodation/Room/Partials/ShowRoomsTable.vue";
+import ShowRoomsTable from "@/Pages/Accommodation/Room/Partials/ShowRoomsTable.vue";
 
 const props = defineProps({
   data: Object,
