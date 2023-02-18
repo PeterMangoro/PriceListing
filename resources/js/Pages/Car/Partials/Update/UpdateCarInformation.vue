@@ -188,8 +188,9 @@ import InputLabel from "@/Components/Shared/Form/InputLabel.vue";
 import { pointConverter } from "@/Composables/pointConverter";
 const detailInput = ref(null);
 const carInput = ref(null);
+
 const props = defineProps({
-  car: String,
+  car: Object,
   car_makes: Object,
 });
 const form = useForm({
@@ -205,10 +206,11 @@ const form = useForm({
   category: null,
   car_id: props.car.id,
   sale_status: props.car.sale_status,
+  rent_status: props.car.rent_status,
   car_model_id: props.car.car_model_id,
   car_make_id: props.car.car_make_id,
   num_plate: props.car.num_plate,
-  rent_status: null,
+  
 
   remember: true,
 });

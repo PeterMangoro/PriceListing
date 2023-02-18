@@ -13,7 +13,7 @@
     <div class="sm:flex sm:items-center sm:justify-between">
       <span class="text-sm text-slate-100 sm:text-center"
         >© 2022
-        <Link :href="route('home')" class="hover:underline">MallVillage</Link>.
+        <Link :href="route('home')" class="hover:underline text-sky-500">Price-Listing</Link>.
         All Rights Reserved.
       </span>
       <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">

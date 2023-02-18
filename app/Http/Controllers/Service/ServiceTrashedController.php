@@ -16,7 +16,7 @@ class ServiceTrashedController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Service/Trashed/show', [
+        return Inertia::render('Service/Trashed/Index', [
             'data' => new ServiceTrashedIndexProps(),
         ]);
     }

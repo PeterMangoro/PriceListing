@@ -21,6 +21,7 @@ class CarForUpdate
         public  readonly int $id,
         public  readonly float $price,
         public  readonly ?bool $sale_status,
+        public  readonly ?bool $rent_status,
         public  readonly string $car_make_id,
         public readonly  string $car_model_id,
     ) {
@@ -42,6 +43,7 @@ class CarForUpdate
             $car->id,
             $car->price,
             $car->sale_status,
+            $car->rent_status,
             $car->car_make_id,
             $car->car_model_id,
         );

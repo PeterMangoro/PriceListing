@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-wood bg-cover min-h-screen bg-no-repeat text-slate-100">
+  <div class="bg-wood bg-cover min-h-screen bg-no-repeat text-slate-900">
     <Head :title="title" />
 
     <!-- <left-sidebar  /> -->

@@ -17,7 +17,7 @@ class CarTrashedController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Car/Trashed/show', [
+        return Inertia::render('Car/Trashed/Index', [
             'data' => new CarTrashedIndexProps(),
         ]);
     }

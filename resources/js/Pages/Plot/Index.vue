@@ -123,7 +123,7 @@ const props = defineProps({
   data: Object,
 });
 const message =
-  "Are you sure you want to delete this plot. Deleted plots will not be seen by customers, but can be found in the trash if you want to restore them";
+  "Are you sure you want to delete this property, and can not be restored";
 
 const show = ref(false);
 const plot_to_be_deleted = ref(null);

@@ -16,7 +16,7 @@ class ProductTrashedController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Product/Trashed/show', [
+        return Inertia::render('Product/Trashed/Index', [
             'data' => new ProductTrashedIndexProps(),
         ]);
     }

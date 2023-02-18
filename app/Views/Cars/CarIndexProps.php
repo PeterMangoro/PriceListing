@@ -17,7 +17,8 @@ class CarIndexProps extends BaseView
                 Car::forSale()
                     ->belongsToAuthUser()
                     ->IncludeCarDetail()
-                    ->search(request('search'))->sort()
+                    ->search(request('search'))
+                    ->sort()
             )
         );
     }
