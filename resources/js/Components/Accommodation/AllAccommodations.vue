@@ -58,12 +58,12 @@
       <category-links v-if="categories"
         :categories="categories"
         :route_type="route_type"
-        class="shadow-none"
+        class="shadow-none sm:flex hidden "
       />
       <accommodation-list :items="items" />
       <!-- PAGINATION START -->
       <div class="flex flex-wrap justify-center pb-1">
-        <div v-if="pagination" class="p-2 m-2">
+        <div v-if="pagination" class="p-2 w-full">
           <Pagination :links="pagination" />
         </div>
       </div>

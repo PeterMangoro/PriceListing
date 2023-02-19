@@ -7,9 +7,7 @@
         py-1
         mx-auto
         overflow-hidden
-       
         shadow-xl
-       
         sm:py-1 sm:px-6
         lg:max-w-7xl lg:px-8
         max-w-7xl
@@ -73,10 +71,12 @@
               v-if="item.latest_image"
               :src="item.latest_image"
               :alt="item.title"
-              class="object-cover w-28 h-28 hover:scale-110 hover:duration-500"
+              class="object-cover w-28 h-28 hover:scale-105 hover:duration-500"
             />
 
-            <h3 class="px-2 mt-2 text-sm text-slate-50 break-words truncate w-28">
+            <h3
+              class="px-2 mt-2 text-sm text-slate-50 break-words truncate w-28"
+            >
               {{ item.town }}
               <p>{{ item.city }}</p>
             </h3>

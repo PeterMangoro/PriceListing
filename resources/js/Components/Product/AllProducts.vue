@@ -53,7 +53,7 @@
         />
       </div>
 
-      <div  v-if="categories" >
+      <div  v-if="categories" class="hidden sm:flex" >
         <category-links
         :categories="categories"
         :route_type="route_type"

@@ -50,7 +50,7 @@
                 rounded
                 w-28
                 h-28
-                hover:scale-110 hover:duration-500
+                hover:scale-105 hover:duration-500
               "
             />
             <img
@@ -62,7 +62,7 @@
                 rounded
                 w-28
                 h-28
-                hover:scale-110 hover:duration-500
+                hover:scale-105 hover:duration-500
               "
             />
           </div>

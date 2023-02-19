@@ -12,7 +12,7 @@ class AddDiscount
         array $discount,
         string $type
     ): void {
-        $model->discount()->updateOrCreate(
+        $model->discount()->updateOrCreate( 
             [
                 'discountable_type' => "'App\Models\'.{$type}",
                 'discountable_id' => $model->id,
