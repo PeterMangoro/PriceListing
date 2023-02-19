@@ -23,14 +23,14 @@
       >
         <template #tableHead>
           <TableHead>Location</TableHead>
-          <TableHead class="cursor-pointer" @click="sort('size')" name="size"
+          <TableHead class="cursor-pointer hidden sm:table-cell" @click="sort('size')" name="size"
             >Size</TableHead
           >
-          <TableHead>Description</TableHead>
-          <TableHead class="cursor-pointer" @click="sort('price')" name="price"
+          <TableHead class="hidden sm:table-cell">Description</TableHead>
+          <TableHead class="cursor-pointer hidden sm:table-cell" @click="sort('price')" name="price"
             >Price</TableHead
           >
-          <TableHead>Status</TableHead>
+          <TableHead class="hidden sm:table-cell">Status</TableHead>
 
           <TableHead class="text-center"></TableHead>
         </template>
@@ -38,8 +38,8 @@
           <TableData>
             <location :location="plot.location" :tag="false" />
           </TableData>
-          <TableData>{{ plot.size }}</TableData>
-          <TableData class="w-2/6">
+          <TableData class="hidden sm:table-cell">{{ plot.size }}</TableData>
+          <TableData class="w-auto hidden sm:table-cell">
             <span class=""
               ><p
                 v-for="(point, index) in plot.detail"
@@ -51,8 +51,8 @@
             >
           </TableData>
 
-          <TableData>{{ plot.price }}</TableData>
-          <TableData>
+          <TableData class="hidden sm:table-cell">{{ plot.price }}</TableData>
+          <TableData class="hidden sm:table-cell">
             <span v-if="plot.status === 'For Sale'">Available</span>
             <span class="text-red-500" v-else>Not Available</span>
           </TableData>

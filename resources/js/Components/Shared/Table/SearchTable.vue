@@ -30,6 +30,7 @@
         focus:ring
         focus:ring-indigo-200
         focus:ring-opacity-50
+        hidden sm:flex
       "
     >
       <option value="5">5 Per Page</option>

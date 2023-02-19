@@ -9,7 +9,7 @@
 
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- Table -->
-      <div class="flex flex-wrap justify-between">
+      <div class="flex flex-wrap justify-between pb-2">
         <search-table
           class="pb-2"
           route-name="products.index"
@@ -19,7 +19,7 @@
         <span class="my-auto">
           <button-link
             :link="route('products.trashed.index')"
-            class="pb-2 bg-slate-600"
+            class=" bg-slate-600"
             >Deleted Products</button-link
           >
         </span>
@@ -35,10 +35,10 @@
           <TableHead class="cursor-pointer" @click="sort('title')" name="title"
             >Title</TableHead
           >
-          <TableHead>Rating</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead>Preview</TableHead>
-          <TableHead class="cursor-pointer" @click="sort('price')" name="price"
+          <TableHead class="hidden sm:table-cell">Rating</TableHead>
+          <TableHead class="hidden sm:table-cell">Description</TableHead>
+          <TableHead class="hidden sm:table-cell">Preview</TableHead>
+          <TableHead class="cursor-pointer hidden sm:table-cell" @click="sort('price')" name="price"
             >Price</TableHead
           >
           <TableHead
@@ -53,8 +53,8 @@
 
         <TableRow v-for="product in data.products.data" :key="product.id">
           <TableData>{{ product.title }}</TableData>
-          <TableData>{{ product.ratings }}</TableData>
-          <TableData class="w-2/6">
+          <TableData class="hidden sm:table-cell">{{ product.ratings }}</TableData>
+          <TableData class="w-auto hidden sm:table-cell">
             <p
               v-for="(point, index) in product.detail"
               :key="index"
@@ -63,12 +63,12 @@
               <span v-if="index < 3"> - {{ point }} </span>
             </p></TableData
           >
-          <TableData
+          <TableData class="hidden sm:table-cell"
             ><img class="w-20 h-20 rounded" :src="product.latest_image"
           /></TableData>
 
-          <TableData>{{ product.price }}</TableData>
-          <TableData>
+          <TableData class="hidden sm:table-cell">{{ product.price }}</TableData>
+          <TableData class="hidden sm:table-cell">
             <span v-if="product.status == 'For Sale'">Available</span>
             <span class="text-red-500" v-else>Not Available</span>
           </TableData>

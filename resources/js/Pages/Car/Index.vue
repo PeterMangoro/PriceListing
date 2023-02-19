@@ -9,7 +9,7 @@
 
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- Table -->
-      <div class="flex flex-wrap justify-between">
+      <div class="flex flex-wrap justify-between pb-2">
         <search-table
           class="pb-2"
           route-name="cars.index"
@@ -19,7 +19,7 @@
         <span class="my-auto">
           <button-link
             :link="route('cars.trashed.index')"
-            class="pb-2 bg-slate-600"
+            class=" bg-slate-600"
             >Deleted Cars</button-link
           >
         </span>
@@ -38,14 +38,14 @@
             name="car_make"
             >Title</TableHead
           >
-          <TableHead>Rating</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead>Preview</TableHead>
-          <TableHead class="cursor-pointer" @click="sort('price')" name="price"
+          <TableHead class="hidden sm:table-cell">Rating</TableHead>
+          <TableHead class="hidden sm:table-cell">Description</TableHead>
+          <TableHead class="hidden sm:table-cell">Preview</TableHead>
+          <TableHead class="cursor-pointer hidden sm:table-cell" @click="sort('price')" name="price"
             >Price</TableHead
           >
           <TableHead
-            class="cursor-pointer"
+            class="cursor-pointer hidden sm:table-cell"
             @click="sort('sale_status')"
             name="sale_status"
             >Status</TableHead
@@ -60,8 +60,8 @@
 
             {{ car.car_model }}
           </TableData>
-          <TableData>{{ car.ratings }}</TableData>
-          <TableData class="w-2/6">
+          <TableData class="hidden sm:table-cell">{{ car.ratings }}</TableData>
+          <TableData class="w-auto hidden sm:table-cell">
             <span class=""
               ><p
                 v-for="(point, index) in car.detail"
@@ -72,12 +72,12 @@
               </p></span
             ></TableData
           >
-          <TableData
+          <TableData class="hidden sm:table-cell"
             ><img class="w-20 h-20 rounded" :src="car.latest_image"
           /></TableData>
 
-          <TableData>{{ car.price }}</TableData>
-          <TableData>
+          <TableData class="hidden sm:table-cell">{{ car.price }}</TableData>
+          <TableData class="hidden sm:table-cell">
             <span v-if="car.status == 'For Sale'">Available</span>
             <span class="text-red-500" v-else>Not Available</span>
           </TableData>
@@ -90,7 +90,7 @@
                 class="
                   inline-flex
                   justify-center
-                  px-4
+                  px-3
                   py-2
                   text-sm
                   font-medium

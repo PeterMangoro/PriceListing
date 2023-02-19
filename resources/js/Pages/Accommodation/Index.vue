@@ -9,7 +9,7 @@
 
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- Table -->
-      <div class="flex flex-wrap justify-between">
+      <div class="flex flex-wrap justify-between pb-2">
         <search-table
           class="pb-2"
           route-name="accommodations.index"
@@ -19,7 +19,7 @@
         <span class="my-auto">
           <button-link
             :link="route('accommodations.trashed.index')"
-            class="pb-2 bg-slate-600"
+            class=" bg-slate-600"
             >Deleted Accommodations</button-link
           >
         </span>
@@ -33,14 +33,14 @@
       >
         <template #tableHead>
           <TableHead>Address</TableHead>
-          <TableHead>Rating</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead>Preview</TableHead>
-          <TableHead class="cursor-pointer" @click="sort('price')" name="price"
+          <TableHead class="hidden sm:table-cell">Rating</TableHead>
+          <TableHead class="hidden sm:table-cell">Description</TableHead>
+          <TableHead class="hidden sm:table-cell">Preview</TableHead>
+          <TableHead class="cursor-pointer hidden sm:table-cell" @click="sort('price')" name="price"
             >Price</TableHead
           >
           <TableHead
-            class="cursor-pointer"
+            class="cursor-pointer hidden sm:table-cell"
             @click="sort('sale_status')"
             name="sale_status"
             >Status</TableHead
@@ -55,8 +55,8 @@
           <TableData>
             <location :location="accommodation.address" :tag="false" />
           </TableData>
-          <TableData>{{ accommodation.ratings }}</TableData>
-          <TableData class="w-2/6">
+          <TableData class="hidden sm:table-cell">{{ accommodation.ratings }}</TableData>
+          <TableData class="w-auto hidden sm:table-cell">
             <p
               v-for="(point, index) in accommodation.detail"
               :key="index"
@@ -65,12 +65,12 @@
               <span v-if="index < 3"> - {{ point }} </span>
             </p>
           </TableData>
-          <TableData
+          <TableData class="hidden sm:table-cell"
             ><img class="w-20 h-20 rounded" :src="accommodation.latest_image"
           /></TableData>
 
-          <TableData>{{ accommodation.price }}</TableData>
-          <TableData>
+          <TableData  class="hidden sm:table-cell">{{ accommodation.price }}</TableData>
+          <TableData class="hidden sm:table-cell">
             <span v-if="accommodation.status == 'For Sale'">Available</span>
             <span class="text-red-500" v-else>Not Available</span>
           </TableData>
