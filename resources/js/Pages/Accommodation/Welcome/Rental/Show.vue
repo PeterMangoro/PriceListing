@@ -104,9 +104,10 @@
                   font-medium
                   text-black
                   capitalize
-                  border border-transparent
+                  border
                   rounded
-                  hover:cursor-pointer hover:border-green-500
+                  hover:cursor-pointer
+                  border-green-500
                 "
               >
                 add Comment
@@ -135,9 +136,10 @@
                   font-medium
                   text-black
                   capitalize
-                  border border-transparent
+                  border
                   rounded
-                  hover:cursor-pointer hover:border-green-500
+                  hover:cursor-pointer
+                  border-green-500
                 "
               >
                 add Comment
