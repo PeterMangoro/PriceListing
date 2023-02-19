@@ -29,7 +29,7 @@
             </p>
           </span>
         </div>
-        <p class="my-1 border-b-4"></p>
+        <p class="my-1 border-b-2"></p>
         <input-label
           for="categories"
           value="Select New Categories"

@@ -1,9 +1,6 @@
 <template>
   <car-layout>
-
     <div class="p-4">
-
-
       <div class="px-2">
         <!-- <div
           id="cars"
@@ -66,14 +63,18 @@
         </div> -->
 
         <div id="cars" v-if="data.cars.data">
-          <p class="text-2xl font-extrabold text-slate-50 border-b-4">
+          <p class="text-2xl font-extrabold text-slate-50 border-b-2">
             Available Cars
           </p>
-          <all-cars v-if="data.cars" :items="data.cars.data" :pagination="data.cars.links" routes="welcome.cars.index"
-            :categories="data.category_types" route_type="welcome.cars.category_type" />
+          <all-cars
+            v-if="data.cars"
+            :items="data.cars.data"
+            :pagination="data.cars.links"
+            routes="welcome.cars.index"
+            :categories="data.category_types"
+            route_type="welcome.cars.category_type"
+          />
         </div>
-
-
       </div>
     </div>
   </car-layout>
@@ -92,5 +93,4 @@ const props = defineProps({
 </script>
 
 <style>
-
 </style>

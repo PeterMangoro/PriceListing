@@ -15,42 +15,73 @@
             previously selected categories
           </h1>
           <span class="flex flex-wrap justify-evenly justify-self-start jus">
-            <p v-for="category in plot.categories" :key="category.id" class="flex">
+            <p
+              v-for="category in plot.categories"
+              :key="category.id"
+              class="flex"
+            >
               <check-circle-icon class="w-4 h-4 my-auto fill-green-500" />
               {{ category.title }}
             </p>
           </span>
         </div>
-        <p class="my-1 border-b-4"></p>
-        <input-label for="categories" value="Select New Categories" class="mt-2 text-base font-bold capitalize" />
+        <p class="my-1 border-b-2"></p>
+        <input-label
+          for="categories"
+          value="Select New Categories"
+          class="mt-2 text-base font-bold capitalize"
+        />
         <span class="gap-1">
           <p class="text-sm italic text-slate-800">
-            <information-circle-icon class="float-left w-4 h-4 mr-1" />previously selected categories will be replace with
-            new ones, so
+            <information-circle-icon
+              class="float-left w-4 h-4 mr-1"
+            />previously selected categories will be replace with new ones, so
             reselect all categories you want
           </p>
         </span>
         <p class="my-1 border-b-2"></p>
         <input-error class="mt-2" :message="form.errors.categories" />
-        <span v-for="(category_type, type) in category_types" :key="type" class="flex gap-2">
-          <h1 @click="showCategoryType(type)"
-            class="py-1 text-sm font-semibold text-black underline capitalize hover:cursor-pointer">
+        <span
+          v-for="(category_type, type) in category_types"
+          :key="type"
+          class="flex gap-2"
+        >
+          <h1
+            @click="showCategoryType(type)"
+            class="
+              py-1
+              text-sm
+              font-semibold
+              text-black
+              underline
+              capitalize
+              hover:cursor-pointer
+            "
+          >
             {{ type }}
             <!-- <chevron-double-right-icon class="w-4 h-4 text-red-600" /> -->
           </h1>
 
           <span v-if="type === categoryType">
-            <check-box-group v-for="category in category_type" :key="category.id" :items="[
-              {
-                label: category.title,
-                id: category.id,
-              },
-            ]" @on-change="onChange" />
+            <check-box-group
+              v-for="category in category_type"
+              :key="category.id"
+              :items="[
+                {
+                  label: category.title,
+                  id: category.id,
+                },
+              ]"
+              @on-change="onChange"
+            />
           </span>
         </span>
       </div>
-      <input-error v-if="form.errors.categories" class="mt-2 capitalize"
-        message="Error Found!! Please check the previous form" />
+      <input-error
+        v-if="form.errors.categories"
+        class="mt-2 capitalize"
+        message="Error Found!! Please check the previous form"
+      />
     </template>
 
     <template #actions>
@@ -58,11 +89,14 @@
         Saved.
       </action-message>
 
-      <submit-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+      <submit-button
+        :class="{ 'opacity-25': form.processing }"
+        :disabled="form.processing"
+      >
         Save
       </submit-button>
     </template>
-</form-section>
+  </form-section>
 </template>
 <script setup>
 import { ref } from "vue";

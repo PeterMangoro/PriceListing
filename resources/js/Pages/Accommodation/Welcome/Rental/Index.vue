@@ -9,7 +9,7 @@
               text-2xl
               font-extrabold
               text-slate-50
-              border-b-4 border-blue-600
+              border-b-2 border-blue-600
             "
           >
             Find The Best Rental Places at an Affordable Price

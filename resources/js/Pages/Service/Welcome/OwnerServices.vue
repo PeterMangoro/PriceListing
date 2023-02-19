@@ -20,12 +20,17 @@
 
       <div class="px-2">
         <div id="services" v-if="data.services.data">
-          <!-- <p class="text-2xl font-extrabold text-slate-50 border-b-4">
+          <!-- <p class="text-2xl font-extrabold text-slate-50 border-b-2">
             Available Services by {{ data.owner.name }}
           </p> -->
-          <all-services v-if="data.services" :heading="' Services Supplied by ' + data.owner.name"
-            :items="data.services.data" :pagination="data.services.links" routes="welcome.services.owner"
-            :route_parameter="data.owner.username" />
+          <all-services
+            v-if="data.services"
+            :heading="' Services Supplied by ' + data.owner.name"
+            :items="data.services.data"
+            :pagination="data.services.links"
+            routes="welcome.services.owner"
+            :route_parameter="data.owner.username"
+          />
         </div>
       </div>
     </div>
@@ -43,5 +48,4 @@ const props = defineProps({
 </script>
 
 <style>
-
 </style>

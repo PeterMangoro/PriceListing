@@ -2,7 +2,6 @@
   <plot-layout>
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
-
       <div class="px-2">
         <!-- <div
               id="plots"
@@ -25,20 +24,22 @@
                 />
               </div> -->
 
-
         <!-- </div> -->
 
         <div id="plots" v-if="data.plots.data">
-          <p class="text-2xl font-extrabold text-slate-50 border-b-4">
-           Available Plots
+          <p class="text-2xl font-extrabold text-slate-50 border-b-2">
+            Available Plots
           </p>
-          <all-plots v-if="data.plots" :items="data.plots.data" :pagination="data.plots.links"
-            routes="welcome.plots.index" />
+          <all-plots
+            v-if="data.plots"
+            :items="data.plots.data"
+            :pagination="data.plots.links"
+            routes="welcome.plots.index"
+          />
         </div>
-
       </div>
     </div>
-</plot-layout>
+  </plot-layout>
 </template>
 
 <script setup>
@@ -47,8 +48,7 @@ import PlotLayout from "@/Layouts/PlotLayout.vue";
 import AllPlots from "@/Components/Plot/AllPlots.vue";
 import GroupedPlots from "@/Components/Plot/GroupedPlots.vue";
 
-
-// Inertia.reload({ 
+// Inertia.reload({
 //   only: ['data.plots'],
 //   preserveScroll: true })
 

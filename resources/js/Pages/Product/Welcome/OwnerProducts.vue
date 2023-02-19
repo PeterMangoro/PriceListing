@@ -20,12 +20,17 @@
 
       <div class="px-2">
         <div id="products" v-if="data.products.data">
-          <!-- <p class="text-2xl font-extrabold text-slate-50 border-b-4">
+          <!-- <p class="text-2xl font-extrabold text-slate-50 border-b-2">
             Available Products by {{ data.owner.name }}
           </p> -->
-          <all-products v-if="data.products" :heading="' Products Supplied by ' + data.owner.name"
-            :items="data.products.data" :pagination="data.products.links" routes="welcome.products.owner"
-            :route_parameter="data.owner.username" />
+          <all-products
+            v-if="data.products"
+            :heading="' Products Supplied by ' + data.owner.name"
+            :items="data.products.data"
+            :pagination="data.products.links"
+            routes="welcome.products.owner"
+            :route_parameter="data.owner.username"
+          />
         </div>
       </div>
     </div>
@@ -43,5 +48,4 @@ const props = defineProps({
 </script>
 
 <style>
-
 </style>

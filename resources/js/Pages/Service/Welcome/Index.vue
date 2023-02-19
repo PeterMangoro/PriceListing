@@ -41,12 +41,17 @@
         </div> -->
 
         <div id="services" v-if="data.services.data">
-          <p class="text-2xl font-extrabold text-slate-50 border-b-4">
+          <p class="text-2xl font-extrabold text-slate-50 border-b-2">
             Available Services
           </p>
           <div v-if="data.services.data.length">
-            <all-services :items="data.services.data" :pagination="data.services.links" routes="welcome.services.index"
-              :categories="data.category_types" route_type="welcome.services.category_type" />
+            <all-services
+              :items="data.services.data"
+              :pagination="data.services.links"
+              routes="welcome.services.index"
+              :categories="data.category_types"
+              route_type="welcome.services.category_type"
+            />
           </div>
           <div v-else>
             <no-result-display />
@@ -69,5 +74,4 @@ const props = defineProps({
 </script>
 
 <style>
-
 </style>

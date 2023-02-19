@@ -378,22 +378,13 @@
 
     <!-- Page Heading -->
     <header v-if="$slots.header" class="mb-2 shadow">
-      <div
-        class="
-          px-4
-          py-6
-          mx-auto
-          sm:px-6
-          lg:px-8
-          
-        "
-      >
+      <div class="px-4 py-6 mx-auto sm:px-6 lg:px-8">
         <slot name="header" />
       </div>
     </header>
 
     <!-- Page Content -->
-    <main class=" px-6">
+    <main class="px-6">
       <slot />
     </main>
   </div>
@@ -434,7 +425,7 @@ const switchToTeam = (team) => {
 };
 
 const logout = () => {
-  route.post(route("logout"));
+  router.post(route("logout"));
 };
 
 function show_search() {

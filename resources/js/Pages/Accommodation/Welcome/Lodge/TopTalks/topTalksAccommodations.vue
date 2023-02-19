@@ -5,7 +5,7 @@
       <div class="px-2"></div>
 
       <div id="accommodations" v-if="data.accommodations.data">
-        <!-- <p class="text-2xl font-extrabold text-black border-b-4">
+        <!-- <p class="text-2xl font-extrabold text-black border-b-2">
             Top 50 Gossiped About Accommodations
           </p> -->
         <all-accommodations

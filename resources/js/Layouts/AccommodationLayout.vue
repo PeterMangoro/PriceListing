@@ -409,7 +409,7 @@
     </header>
 
     <!-- Page Content -->
-    <main class=" px-6">
+    <main class="px-6">
       <slot />
     </main>
   </div>
@@ -450,7 +450,7 @@ const switchToTeam = (team) => {
 };
 
 const logout = () => {
-  route.post(route("logout"));
+  router.post(route("logout"));
 };
 
 function show_search() {

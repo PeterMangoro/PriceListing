@@ -2,14 +2,19 @@
   <car-layout>
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
-
       <div class="px-2">
         <div id="cars" v-if="data.cars.data">
-          <!-- <p class="text-2xl font-extrabold text-slate-50 border-b-4">
+          <!-- <p class="text-2xl font-extrabold text-slate-50 border-b-2">
             Available Cars by {{ data.owner.name }}
           </p> -->
-          <all-cars v-if="data.cars" :heading="'Cars Supplied by ' + data.owner.name" :items="data.cars.data"
-            :pagination="data.cars.links" routes="welcome.cars.owner" :route_parameter="data.owner.username" />
+          <all-cars
+            v-if="data.cars"
+            :heading="'Cars Supplied by ' + data.owner.name"
+            :items="data.cars.data"
+            :pagination="data.cars.links"
+            routes="welcome.cars.owner"
+            :route_parameter="data.owner.username"
+          />
         </div>
       </div>
     </div>
@@ -29,5 +34,4 @@ const props = defineProps({
 </script>
 
 <style>
-
 </style>

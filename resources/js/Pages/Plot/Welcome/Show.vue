@@ -19,7 +19,7 @@
     </div>
 
     <div>
-      <p class="text-2xl font-extrabold text-slate-50 capitalize border-b-4">
+      <p class="text-2xl font-extrabold text-slate-50 capitalize border-b-2">
         From the same location
       </p>
       <div id="plots" v-if="data.similar_plots.length">
@@ -38,7 +38,7 @@
     </div>
 
     <div>
-      <p class="text-2xl font-extrabold text-slate-50 border-b-4">
+      <p class="text-2xl font-extrabold text-slate-50 border-b-2">
         From the Same Supplier
       </p>
       <div id="plots" v-if="data.owner_plots.length">

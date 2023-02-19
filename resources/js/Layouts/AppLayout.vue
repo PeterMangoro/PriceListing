@@ -494,7 +494,7 @@ const switchToTeam = (team) => {
 };
 
 const logout = () => {
-  route.post(route("logout"));
+  router.post(route("logout"));
 };
 
 function show_search() {

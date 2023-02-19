@@ -2,16 +2,14 @@
 <template>
   <form-section @submitted="updateAccommodationDetail">
     <template #title>
-      <p class="text-slate-50">
-        Category Selection 
-      </p> </template>
+      <p class="text-slate-50">Category Selection</p>
+    </template>
 
     <template #description>
       <p class="text-slate-50">
-        Categories are helpful in grouping your accommodations according to client
-      preferences
+        Categories are helpful in grouping your accommodations according to
+        client preferences
       </p>
-     
     </template>
 
     <template #form>
@@ -31,7 +29,7 @@
             </p>
           </span>
         </div>
-        <p class="my-1 border-b-4"></p>
+        <p class="my-1 border-b-2"></p>
         <input-label
           for="categories"
           value="Select New Categories"

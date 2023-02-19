@@ -12,6 +12,7 @@
       </div>
       <div class="sm:w-1/3">
         <owner-section
+        class="text-slate-50"
           heading="This accommodation Belongs To"
           :username="data.accommodation.username"
           :owner="data.accommodation.owner"
@@ -26,9 +27,9 @@
         class="
           text-2xl
           font-extrabold
-          text-black
+          text-slate-50
           capitalize
-          border-b-4 border-blue-600
+          border-b-2 border-blue-600
         "
       >
         More from {{ data.accommodation.location.city }}
@@ -49,7 +50,7 @@
     </div>
 
     <div>
-      <p class="text-2xl font-extrabold text-black border-b-4 border-blue-600">
+      <p class="text-2xl font-extrabold text-slate-50 border-b-2 border-blue-600">
         From the Same Supplier
       </p>
       <div id="accommodations" v-if="data.owner_accommodations.length">
@@ -72,9 +73,9 @@
         class="
           text-2xl
           font-extrabold
-          text-black
+          text-slate-50
           capitalize
-          border-b-4 border-blue-600
+          border-b-2 border-blue-600
         "
       >
         What Others have to say
@@ -99,9 +100,9 @@
                   font-medium
                   text-black
                   capitalize
-                  border border-transparent
+                  border 
                   rounded
-                  hover:cursor-pointer hover:border-green-500
+                  hover:cursor-pointer border-green-500
                 "
               >
                 add Comment
@@ -130,9 +131,9 @@
                   font-medium
                   text-black
                   capitalize
-                  border border-transparent
+                  border 
                   rounded
-                  hover:cursor-pointer hover:border-green-500
+                  hover:cursor-pointer border-green-500
                 "
               >
                 add Comment

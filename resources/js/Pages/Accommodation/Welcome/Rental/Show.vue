@@ -43,7 +43,7 @@
     </div>
 
     <div>
-      <p class="text-2xl font-extrabold text-black border-b-4">
+      <p class="text-2xl font-extrabold text-black border-b-2">
         Similar Accommodations
       </p>
       <div id="accommodations" v-if="data.owner_accommodations.length">
@@ -62,7 +62,7 @@
     </div>
 
     <div>
-      <p class="text-2xl font-extrabold text-black border-b-4">
+      <p class="text-2xl font-extrabold text-black border-b-2">
         From the Same Supplier
       </p>
       <div id="accommodations" v-if="data.owner_accommodations.length">
@@ -81,7 +81,7 @@
     </div>
 
     <div>
-      <p class="text-2xl font-extrabold text-black capitalize border-b-4">
+      <p class="text-2xl font-extrabold text-black capitalize border-b-2">
         What Others have to say
       </p>
       <div class="p-3">

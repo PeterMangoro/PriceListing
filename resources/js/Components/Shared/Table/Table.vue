@@ -63,7 +63,7 @@
       </div>
     </div>
    
-      <div v-if="pagination" class="p-2 m-2 flex justify-center  ">
+      <div v-if="pagination" class="p-2 flex justify-center  ">
       <Pagination :links="pagination"  class="text-center" />
     </div>
   
