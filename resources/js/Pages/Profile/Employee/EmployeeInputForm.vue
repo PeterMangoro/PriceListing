@@ -58,7 +58,6 @@
                     bg-transparent bg-white
                     rounded-md
                     cursor-pointer
-                   
                     hover:text-indigo-500
                     focus-within:outline-none
                     focus-within:ring-2
@@ -74,7 +73,7 @@
                   />
                 </label>
               </div>
-              <p class="text-xs text-black">PNG, JPG, GIF up to 10MB</p>
+              <p class="text-xs text-black">PNG, JPG, GIF up to 2MB</p>
 
               <InputError class="mt-2" :message="form.errors.avatar" />
             </div>

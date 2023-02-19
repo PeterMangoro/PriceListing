@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-violet-300 rounded-lg shadow-xl shadow-indigo-600">
+  <div class="bg-slate-50 bg-opacity-60 rounded-lg shadow-md shadow-indigo-600">
     <div class="rounded-lg overflow-display">
       <div class="col-span-6 pt-4 sm:col-span-2">
         <div class="mx-auto max-w-7xl sm:px-2 lg:px-2">
@@ -46,7 +46,7 @@
                   <table class="w-full">
                     <thead>
                       <tr
-                        class="font-semibold tracking-wide text-left text-gray-900  border-b border-indigo-400"
+                        class="font-semibold tracking-wide text-left text-gray-900  border-b border-black"
                       >
                         <slot name="tableHead"></slot>
                       </tr>
@@ -62,9 +62,12 @@
         </div>
       </div>
     </div>
-    <div v-if="pagination" class="p-2 m-2 ">
-      <Pagination :links="pagination"  class="" />
+   
+      <div v-if="pagination" class="p-2 m-2 flex justify-center  ">
+      <Pagination :links="pagination"  class="text-center" />
     </div>
+  
+    
   </div>
 </template>
 

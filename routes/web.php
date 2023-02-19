@@ -2,6 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Shared\SocialController;
 use App\Http\Controllers\Shared\ProfileController;
 use App\Http\Controllers\Shared\EmployeeController;
@@ -31,3 +32,7 @@ Route::resource('company/employees', EmployeeController::class)->except('show');
 Route::resource('company/socials', SocialController::class)->except('show');
 
 // Route::get('editor', [BlogController::class,'index']);
+Route::get('/symlink/a', function () {
+    // dd('hie');
+    Artisan::call('storage:link');
+});

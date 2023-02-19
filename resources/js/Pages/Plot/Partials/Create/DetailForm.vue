@@ -160,7 +160,7 @@
                 />
               </label>
             </div>
-            <p class="text-xs text-black">PNG, JPG, GIF up to 10MB</p>
+            <p class="text-xs text-black">PNG, JPG, GIF up to 2MB</p>
             <InputError
               class="mt-2"
               v-for="(error, image) in form.errors.images"

@@ -16,17 +16,16 @@
             </div>
           </div>
         </transition-group>
-        <div class="w-full">
+        <div class="w-full ">
           <div class="flex">
             <div
               class="flex justify-start gap-2 m-auto mt-2 overflow-x-auto rounded-lg "
             >
-              <img
+              <p
                 v-for="(image, index) in images"
-                :key="index.id"
-                :src="image.path"
-                :alt="image.path"
-                class="object-cover object-center w-2 h-2 rounded  group-hover:opacity-75 hover:cursor-pointer"
+                :key="index.id"               
+                class=" bg-white opacity-70 w-2 h-2 rounded  hover:cursor-pointer"
+               
                 @click="selectedImage(image.path)"
               />
             </div>

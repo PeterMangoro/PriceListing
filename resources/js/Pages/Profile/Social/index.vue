@@ -1,16 +1,19 @@
 <template>
   <app-layout>
     <template #header>
-      <div class="flex flex-wrap justify-between max-w-3xl mx-auto">
-        <h2 class="text-xl font-semibold leading-tight text-black">
+     
+        <h2 class="text-xl font-semibold leading-tight text-start text-sky-500">
           Social Dashboard
         </h2>
 
-        <submit-button @click="showForm = !showForm">
+        <div class="text-end">
+          <submit-button @click="showForm = !showForm" >
           <span v-if="showForm"> Close </span>
           <span v-else> Add Social Account </span>
         </submit-button>
-      </div>
+        </div>
+        
+     
     </template>
     <!-- <bread-crumb :routes="routes" /> -->
     <div v-if="showForm">

@@ -1,12 +1,16 @@
 
 <template>
   <form-section @submitted="updateCarDetail">
-    <template #title> <p class="text-slate-50"> Update Car Images </p>  </template>
+    <template #title> <p class="text-slate-50">Update Car Images</p> </template>
 
     <template #description>
-      <p class=" text-slate-50">  For Best display crop your images to square before uploading.</p>
-     
-      <p class="pt-4 text-slate-50">Deleted images are stored and can latter be restored.</p>
+      <p class="text-slate-50">
+        For Best display crop your images to square before uploading.
+      </p>
+
+      <p class="pt-4 text-slate-50">
+        Deleted images are stored and can latter be restored.
+      </p>
     </template>
 
     <template #form>
@@ -48,7 +52,6 @@
                     bg-transparent bg-white
                     rounded-md
                     cursor-pointer
-                   
                     hover:text-indigo-500
                     focus-within:outline-none
                     focus-within:ring-2
@@ -56,7 +59,6 @@
                     focus-within:ring-indigo-500
                   "
                 >
-                  
                   <input
                     id="images"
                     @input="form.images = $event.target.files"
@@ -67,7 +69,7 @@
                   />
                 </label>
               </div>
-              <p class="text-xs text-black">PNG, JPG, GIF up to 10MB</p>
+              <p class="text-xs text-black">PNG, JPG, GIF up to 2MB</p>
               <InputError
                 class="mt-2"
                 v-for="(error, image) in form.errors.images"
@@ -120,7 +122,7 @@ const form = useForm({
   images: null,
   groups: [],
   price: props.car.price,
-  detail:  pointConverter(props.car.detail),
+  detail: pointConverter(props.car.detail),
   street: props.car.address.street,
   town: props.car.address.town,
   city: props.car.address.city,

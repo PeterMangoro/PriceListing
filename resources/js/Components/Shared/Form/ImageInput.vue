@@ -47,7 +47,6 @@ const input = ref(null);
             bg-transparent bg-white
             rounded-md
             cursor-pointer
-           
             hover:text-indigo-500
             focus-within:outline-none
             focus-within:ring-2
@@ -64,7 +63,7 @@ const input = ref(null);
           />
         </label>
       </div>
-      <p class="text-xs text-black">PNG, JPG, GIF up to 10MB</p>
+      <p class="text-xs text-black">PNG, JPG, GIF up to 2MB</p>
     </div>
   </div>
 </template>

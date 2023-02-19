@@ -2,17 +2,17 @@
 <template>
   <form-section @submitted="updateAccommodationDetail">
     <template #title>
-      <p class="text-slate-50">
-        Update Accommodation Images
-      </p>
-      </template>
+      <p class="text-slate-50">Update Accommodation Images</p>
+    </template>
 
     <template #description>
       <p class="text-slate-50">
         For Best display crop your images to square before uploading.
       </p>
-      
-      <p class="pt-4 text-slate-50">Deleted images are stored and can latter be restored.</p>
+
+      <p class="pt-4 text-slate-50">
+        Deleted images are stored and can latter be restored.
+      </p>
     </template>
 
     <template #form>
@@ -72,7 +72,7 @@
                   />
                 </label>
               </div>
-              <p class="text-xs text-black">PNG, JPG, GIF up to 10MB</p>
+              <p class="text-xs text-black">PNG, JPG, GIF up to 2MB</p>
               <InputError
                 class="mt-2"
                 v-for="(error, image) in form.errors.images"

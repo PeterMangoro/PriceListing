@@ -17,7 +17,7 @@
         <welcome-card image="/storage/landing/farm.webp" heading="Real Estate"
           detail="Purchase land for your projects at good strategic locations " path="welcome.plots.index" />
 
-        <welcome-card image="/storage/landing/construction.jpg" heading="Services"
+        <welcome-card image="/storage/landing/construction2.jpg" heading="Services"
           detail="Check out Services provided ranging from fashion design, media, entertainment, car servicing and ..."
           path="welcome.services.index" />
 
@@ -74,6 +74,7 @@ const images2 = [
     path: '/storage/landing/car.jpg'
   }
   ,
+ 
 
   {
     id: 2,
@@ -82,72 +83,78 @@ const images2 = [
   ,
 
   {
-    id: 3,
-    path: '/storage/landing/construction.jpg'
-  }
-  ,
-
-
-
-  {
     id:4,
     path: '/storage/landing/construction4.jpg'
   }
+ 
   ,
   {
     id:5,
-    path: '/storage/landing/construction5.jpg'
-  }
-  ,
-  {
-    id:6,
     path: '/storage/landing/estate.jpg'
   }
   ,
   {
     id:7,
-    path: '/storage/landing/estate2.jpg'
-  },
-  {
-    id:8,
-    path: '/storage/landing/estate3.jpg'
-  }
-  ,
-  {
-    id:9,
     path: '/storage/landing/farm.webp'
   }
   ,
   {
-    id:10,
+    id:8,
     path: '/storage/landing/gadgets.jpg'
   }
+ 
+  
+  ,
+  {
+    id:9,
+    path: '/storage/landing/shop.jpg'
+  }
+
   ,
   {
     id:11,
-    path: '/storage/landing/gadgets2.jpg'
+    path: '/storage/landing/tyreFitting.jpg'
   }
+  
+
   ,
   {
-    id:12,
-    path: '/storage/landing/gadgets3.jpg'
+    id:10,
+    path: '/storage/landing/turbo.jpg'
   }
   ,
   {
     id:13,
-    path: '/storage/landing/shop.jpg'
+    path: '/storage/landing/drilling.jpg'
+  }
+,
+  {
+    id:14,
+    path: '/storage/landing/solar.jpg'
+  }
+  
+  ,
+  {
+    id:14,
+    path: '/storage/landing/mechanic.jpg'
+  }
+,
+  {
+    id:14,
+    path: '/storage/landing/mechanic2.jpg'
   }
   ,
   {
     id:14,
-    path: '/storage/landing/shop2.jpg'
+    path: '/storage/landing/camera.jpg'
   }
-  ,
+
+,
   {
-    id:15,
-    path: '/storage/landing/shopping.jpg'
+    id:14,
+    path: '/storage/landing/service.jpg'
   }
-  ,
+ 
 ]
 
 setInterval(getPath, 1000 * 3);
