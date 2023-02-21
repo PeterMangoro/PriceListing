@@ -75,9 +75,12 @@ const form = useForm({
   remember: true,
 });
 
+const emit = defineEmits(['close'])
+
 function submit() {
   form.post(route(props.path), {
     preserveScroll: true,
+    onSuccess: emit('close')
   });
 }
 </script>
