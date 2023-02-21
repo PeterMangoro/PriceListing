@@ -53,6 +53,7 @@ class GetDataAction
             ->withCategories()
             ->withAddress()
             ->withDiscountPrice()
+            ->belongsToAuthUser()
             ->first();
     }
 
