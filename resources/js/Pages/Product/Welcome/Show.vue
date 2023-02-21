@@ -1,5 +1,6 @@
-<template>
-  <product-layout>
+<template>  
+  <product-layout :title="data.product.title">
+    
     <show>
       <template #images>
         <image-detail-display :images="data.product.images" />
