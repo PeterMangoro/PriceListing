@@ -1,10 +1,10 @@
 <template>
   <div class="pt-4">
-    <div class="w-full p-3 bg-white rounded-lg">
+    <div class="w-full p-3 bg-white bg-opacity-60 rounded-lg">
       <div class="flex flex-wrap justify-between">
         <div>
           <span class="text-3xl font-bold text-black"> {{ company }}</span>
-          <p>Established:  {{profile.date}} </p>
+          <!-- <p>Established:  {{profile.date}} </p> -->
 
           <span>
             <h1 class="mt-4 text-xl font-semibold text-slate-700">Mission</h1>
