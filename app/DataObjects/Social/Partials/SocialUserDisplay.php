@@ -8,7 +8,7 @@ class SocialUserDisplay
         public readonly  int $id,
         public  readonly string $account,
         public  readonly string $handle,
-        public  readonly string $username,
+        public  readonly ?string $username,
     ) {
     }
 

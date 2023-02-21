@@ -32,7 +32,6 @@ Route::resource('company/employees', EmployeeController::class)->except('show');
 Route::resource('company/socials', SocialController::class)->except('show');
 
 // Route::get('editor', [BlogController::class,'index']);
-Route::get('/symlink/a', function () {
-    // dd('hie');
+Route::get('/symlink/a', function () {    
     Artisan::call('storage:link');
 });

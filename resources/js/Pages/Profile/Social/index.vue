@@ -32,12 +32,12 @@
           <TableHead class="cursor-pointer" @click="sort('title')" name="title"
             >Account</TableHead
           >
-          <TableHead
+          <!-- <TableHead
             class="cursor-pointer"
             @click="sort('username')"
             name="username"
-            >Username</TableHead
-          >
+            >Username</TableHead 
+          >-->
           <TableHead>Handle</TableHead>
 
           <TableHead class="text-center"></TableHead>
@@ -57,7 +57,7 @@
           <TableData v-else @click="showEditForm(social)">{{
             social.account
           }}</TableData>
-          <TableData v-if="edit && social.id == SocialId">
+          <!-- <TableData v-if="edit && social.id == SocialId">
             <text-input
               id="username"
               v-model="form.username"
@@ -70,7 +70,7 @@
           </TableData>
           <TableData v-else @click="showEditForm(social)">{{
             social.username
-          }}</TableData>
+          }}</TableData> -->
 
           <TableData v-if="edit && social.id == SocialId">
             <text-input

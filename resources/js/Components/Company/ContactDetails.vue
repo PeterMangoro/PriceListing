@@ -11,7 +11,7 @@
           class="flex flex-wrap justify-start gap-4"
         >
           <p class="font-medium">{{ contact.account }}:</p>
-          <p>@{{ contact.username }}</p>
+          <!-- <p>@{{ contact.username }}</p> -->
           <p>{{ contact.handle }}</p>
         </div>
       </span>

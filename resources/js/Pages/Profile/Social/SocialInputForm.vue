@@ -17,7 +17,7 @@
             <InputError class="mt-2" :message="form.errors.account" />
           </div>
 
-           <div class="col-span-6 sm:col-span-4">
+           <!-- <div class="col-span-6 sm:col-span-4">
             <InputLabel for="username" value="Username" />
             <TextInput
               id="username"
@@ -29,7 +29,7 @@
               autocomplete="username"
             />
             <InputError class="mt-2" :message="form.errors.username" />
-          </div>
+          </div> -->
 
           <div class="col-span-6 sm:col-span-4">
             <InputLabel for="handle" value="Handle/Number/Address" />
