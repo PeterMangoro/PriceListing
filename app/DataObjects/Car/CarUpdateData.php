@@ -11,7 +11,7 @@ class CarUpdateData
         public  readonly int $car_model_id,
         public  readonly ?string $num_plate,
         public  readonly string $detail,
-        public  readonly array $location,
+        // public  readonly array $location,
         public  readonly float $price,
         public  readonly ?bool $sale_status,
         public  readonly ?bool $rent_status,
@@ -20,12 +20,12 @@ class CarUpdateData
     }
     public static function fromRequest($request)
     {
-        $location = [
-            'street' => $request->street,
-            'town' => $request->town,
-            'city' => $request->city,
-            'country' => $request->country,
-        ];
+        // $location = [
+        //     'street' => $request->street,
+        //     'town' => $request->town,
+        //     'city' => $request->city,
+        //     'country' => $request->country,
+        // ];
 
         $discount = [
             'price' => $request->discount,
@@ -49,7 +49,7 @@ class CarUpdateData
             $request->car_model_id,
             $request->num_plate,
             $request->detail,
-            $location,
+            // $location,
             $request->price,
             $request->sale_status,
             $request->rent_stat,

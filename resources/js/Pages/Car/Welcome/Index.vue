@@ -1,5 +1,5 @@
 <template>
-  <car-layout>
+  <car-layout title="Garage">
     <div class="p-4">
       <div class="px-2">
         <!-- <div

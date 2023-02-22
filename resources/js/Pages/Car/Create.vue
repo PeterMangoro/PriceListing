@@ -1,5 +1,5 @@
 <template>
-    <car-layout>
+    <car-layout title="Car Create">
 
       <div>
       <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -7,13 +7,13 @@
           <detail-form @next="go_to_step_two" :car_makes="data.car_makes" />
         </div>
 
-        <div v-if="step_two">
+        <!-- <div v-if="step_two">
           <address-form @next="go_to_step_three"  @prev="go_to_step_one" />
-        </div>
+        </div> -->
 
-        <div v-if="step_three">
+        <div v-if="step_two">
           <attachment-form
-            @prev="go_to_step_two"
+            @prev="go_to_step_one"
            
           />
         </div>

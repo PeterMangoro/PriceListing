@@ -1,5 +1,5 @@
 <template>
-  <car-layout>
+  <car-layout title="Trashed Cars">
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-sky-500">
        Trashed Cars

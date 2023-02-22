@@ -11,7 +11,7 @@ class CarCreateData
         public readonly int $car_model_id,
         public readonly ?string $num_plate,
         public readonly string $detail,
-        public readonly array $location,
+        // public readonly ?array $location,
         public readonly float $price,
         public readonly ?array $categories,
         public readonly ?bool $sale_status,
@@ -20,12 +20,12 @@ class CarCreateData
     }
     public static function fromRequest($request)
     {
-        $location = [
-            'street' => $request->street,
-            'town' => $request->town,
-            'city' => $request->city,
-            'country' => $request->country,
-        ];
+        // $location = [
+        //     'street' => $request->street,
+        //     'town' => $request->town,
+        //     'city' => $request->city,
+        //     'country' => $request->country,
+        // ];
 
         if ($request->document) {
             $document = [
@@ -44,7 +44,7 @@ class CarCreateData
             $request->car_model_id,
             $request->num_plate,
             $request->detail,
-            $location,
+            // $location,
             $request->price,
             $request->categories,
             $request->sale_status,

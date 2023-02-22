@@ -1,5 +1,5 @@
 <template>
-  <car-layout>
+  <car-layout :title="data.owner.username +' Garage' ">
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
       <div class="px-2">

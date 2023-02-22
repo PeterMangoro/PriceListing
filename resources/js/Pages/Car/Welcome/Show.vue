@@ -1,5 +1,5 @@
 <template>  
-  <car-layout :title="data.car.car_make">
+  <car-layout :title="data.car.owner">
     
     <show>
       <template #images>

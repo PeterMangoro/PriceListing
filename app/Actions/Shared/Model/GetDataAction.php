@@ -33,7 +33,7 @@ class GetDataAction
             ->withUserSocialAccounts()
             ->withRatings()
             ->withActiveDiscountPrice()
-            ->withAddress()
+            // ->withAddress()
             ->withImages()
             ->withDocuments()
             ->first();

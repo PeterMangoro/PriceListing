@@ -15,7 +15,7 @@ class UserBuilder extends Builder
                 'id',
                 'user_id',
                 'title',
-                'username',
+                // 'username',
                 'value'
             )
             ->limit(6);

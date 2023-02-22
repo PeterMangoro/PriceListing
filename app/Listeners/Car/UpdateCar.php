@@ -34,7 +34,7 @@ class UpdateCar
 
         DB::transaction(function () use ($request, $car) {
             CarService::update($request, $car);
-            AddressService::updateForModel($car, $request->location);
+            // AddressService::updateForModel($car, $request->location);
             // $request->categories ? CategoryService::for_model($car,$request->categories):null;
             $request->discount['price'] ?
             DiscountService::forModel($car, $request->discount, 'Car') : null;

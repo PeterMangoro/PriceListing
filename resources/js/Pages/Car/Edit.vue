@@ -1,5 +1,5 @@
 <template>
-    <car-layout>
+    <car-layout title="Car Edit">
       <bread-crumb :id="data.car.id" :routes="routes" />
   
       <div>

@@ -9,7 +9,7 @@ class CarForUpdate
 {
     public function __construct(
         public  readonly string $uuid,
-        public readonly  object $address,
+        // public readonly  object $address,
         public  readonly ?object $attachments,
         public  readonly ?object $trashed_images,
         public  readonly ?object $documents,
@@ -31,7 +31,7 @@ class CarForUpdate
     {
         return new self(
             $car->uuid,
-            $car->address,
+            // $car->address,
             Attachments::imagesForEdit($car->attachments),
             Attachments::imagesForEdit($car->trashed_attachments),
             Attachments::documentsForEdit($car->documents),

@@ -44,7 +44,7 @@ class CarDetailData
             $car->car_make,
             $car->car_model,
             $car->detail,
-            Address::from($car->address),
+            Address::from($car->user->address),
             Money::from($car->price),
             $car->user->name,
             $car->user->username,
