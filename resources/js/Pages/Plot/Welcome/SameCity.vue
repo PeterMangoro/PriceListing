@@ -1,5 +1,5 @@
 <template>
-  <plot-layout>
+  <plot-layout :title="data.city">
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
       <div class="px-2">

@@ -1,5 +1,5 @@
 <template>
-  <plot-layout>
+  <plot-layout :title="data.plot.owner">
     <div class="flex flex-wrap p-10 justify-evenly">
       <div class="">
         <image-detail-display class="" :images="data.plot.images" />

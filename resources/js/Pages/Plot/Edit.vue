@@ -1,5 +1,5 @@
 <template>
-  <plot-layout>
+  <plot-layout title="Estate Edit">
     <bread-crumb :id="data.plot.id" :routes="routes" />
 
     <div>

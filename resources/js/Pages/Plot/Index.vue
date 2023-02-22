@@ -1,5 +1,5 @@
 <template>
-  <plot-layout>
+  <plot-layout title="Estate List">
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-sky-500">
         Estate Dashboard
