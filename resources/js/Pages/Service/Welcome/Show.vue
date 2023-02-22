@@ -1,16 +1,21 @@
-<template>
-  <service-layout>
-    <div class="flex flex-wrap p-10 justify-evenly">
-      <div class="">
-        <image-detail-display class="" :images="data.service.images" />
-      </div>
-      <div class="sm:w-1/3">
-        <service-details
-          :service="data.service"
+<template>  
+  <service-layout :title="data.service.title">
+    
+    <show>
+      <template #images>
+        <image-detail-display :images="data.service.images" />
+      </template>
+      <template #details>
+        <detail-section
+          :item="data.service"
           :rating="data.service.ratings.av_rating"
-        />
-      </div>
-      <div class="sm:w-1/3">
+        >
+          <template #heading>
+            {{ data.service.title }}
+          </template>
+        </detail-section>
+      </template>
+      <template #owner>
         <owner-section
           class="text-slate-100"
           heading="This service Belongs To"
@@ -19,8 +24,8 @@
           :contacts="data.service.contact"
           :documents="data.service.documents"
         />
-      </div>
-    </div>
+      </template>
+    </show>
 
     <div>
       <p class="text-2xl font-extrabold text-slate-50 border-b-2">
@@ -60,89 +65,22 @@
       </div>
     </div>
 
-    <div>
-      <p class="text-2xl font-extrabold text-slate-50 capitalize border-b-2">
-        What Others have to say
-      </p>
-      <div class="p-3">
-        <div
-          class="flex p-3 mx-auto rounded-lg shadow-xl bg-slate-50 max-w-7xl"
-        >
-          <div
-            v-if="data.service.ratings.comments.length"
-            class="flex flex-wrap w-full justify-evenly"
-          >
-            <div class="w-full">
-              <span
-                @click="show_write_comment"
-                class="
-                  inline-flex
-                  justify-center
-                  px-8
-                  py-2
-                  text-sm
-                  font-medium
-                  text-black
-                  capitalize
-                  border
-                  rounded
-                  hover:cursor-pointer
-                  border-green-500
-                "
-              >
-                add Comment
-              </span>
-            </div>
-            <comment-card
-              v-for="comment in data.service.ratings.comments"
-              :key="comment.id"
-              :comment="comment"
-            />
-          </div>
-          <div v-else class="flex justify-center w-full">
-            <div class="items-center w-full text-2xl font-semibold">
-              No Reviews yet
-            </div>
-
-            <div class="w-full">
-              <span
-                @click="show_write_comment"
-                class="
-                  inline-flex
-                  justify-center
-                  px-8
-                  py-2
-                  text-sm
-                  font-medium
-                  text-slate-50
-                  capitalize
-                  border
-                  rounded
-                  hover:cursor-pointer
-                  border-green-500
-                "
-              >
-                add Comment
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="write_comment" class="">
-          <rating-form path="ratings.add.service" :id="data.service.id" />
-        </div>
-      </div>
-    </div>
+    <comment-section 
+    :comments=data.service.ratings.comments 
+    :item_id="data.service.id"
+    comment_path="ratings.add.service"
+    />
+    
   </service-layout>
 </template>
   <script setup>
 import ServiceLayout from "@/Layouts/ServiceLayout.vue";
 import ImageDetailDisplay from "@/Components/Shared/Gallery/ImageDetailDisplay.vue";
+import Show from "@/Components/Shared/Show/Show.vue";
 import OwnerSection from "@/Components/Shared/Owner/OwnerSection.vue";
-import ServiceDetails from "@/Components/Service/ServiceDetails.vue";
+import DetailSection from "@/Components/Shared/Show/DetailSection.vue";
 import GroupedServices from "@/Components/Service/GroupedServices.vue";
-import CommentCard from "@/Components/Shared/Comment/CommentCard.vue";
-import RatingForm from "@/Components/Shared/Form/RatingForm.vue";
+import CommentSection from "@/Components/Shared/Comment/CommentSection.vue";
 import NoResultDisplay from "@/Components/Shared/NoResultDisplay.vue";
 
 import { ref } from "vue";
@@ -152,8 +90,4 @@ const props = defineProps({
 });
 
 const write_comment = ref(false);
-
-function show_write_comment() {
-  write_comment.value = true;
-}
 </script>

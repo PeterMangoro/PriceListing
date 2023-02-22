@@ -13,6 +13,7 @@
             justify-center
             px-8
             py-2
+            h-10
             text-sm
             font-medium
             hover:bg-black hover:bg-opacity-60

@@ -65,63 +65,12 @@
       </div>
     </div>
 
-    <div class="">
-      
-      <p class="text-2xl font-extrabold text-slate-50 capitalize border-b-2 flex flex-wrap gap-2">
-        What Others have to say
-
-        <span
-                @click="write_comment =! write_comment"
-                class="
-                  inline-flex
-                  justify-center
-                  px-8
-                  py-2
-                  mb-2
-                  text-sm
-                  font-medium
-                  text-slate-50
-                  capitalize
-                  border
-                  rounded
-                  hover:cursor-pointer
-                  border-green-500
-                "
-              >
-                Comment
-              </span>
-        
-      </p>
-      <div class="p-3">
-        <div class="flex p-3 mx-auto rounded-lg shadow-xl max-w-7xl">
-          <div
-            v-if="data.product.ratings.comments.length"
-            class="flex flex-wrap w-full justify-evenly"
-          >
-            
-            <comment-card
-              class="text-white"
-              v-for="comment in data.product.ratings.comments"
-              :key="comment.id"
-              :comment="comment"
-            />
-          </div>
-          <div v-else class="flex justify-center w-full">
-            <div class="items-center w-full text-2xl font-semibold">
-              No Reviews yet
-            </div>
-
-            <div class="w-full">
-             
-            </div>
-          </div>
-        </div>
-
-        <div v-if="write_comment" class="">
-          <rating-form path="ratings.add.product" :id="data.product.id" @close="write_comment=false" />
-        </div>
-      </div>
-    </div>
+    <comment-section 
+    :comments=data.product.ratings.comments 
+    :item_id="data.product.id"
+    comment_path="ratings.add.product"
+    />
+    
   </product-layout>
 </template>
   <script setup>
@@ -131,8 +80,7 @@ import Show from "@/Components/Shared/Show/Show.vue";
 import OwnerSection from "@/Components/Shared/Owner/OwnerSection.vue";
 import DetailSection from "@/Components/Shared/Show/DetailSection.vue";
 import GroupedProducts from "@/Components/Product/GroupedProducts.vue";
-import CommentCard from "@/Components/Shared/Comment/CommentCard.vue";
-import RatingForm from "@/Components/Shared/Form/RatingForm.vue";
+import CommentSection from "@/Components/Shared/Comment/CommentSection.vue";
 import NoResultDisplay from "@/Components/Shared/NoResultDisplay.vue";
 
 import { ref } from "vue";

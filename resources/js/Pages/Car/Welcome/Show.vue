@@ -1,46 +1,32 @@
-<template>
-  <car-layout>
-    <div class="flex flex-wrap p-10 justify-evenly">
-      <div class="">
-        <image-detail-display class="" :images="data.car.images" />
-      </div>
-      <div class="sm:w-1/3">
-        <car-details
-          class="text-slate-50"
-          :car="data.car"
+<template>  
+  <car-layout :title="data.car.car_make">
+    
+    <show>
+      <template #images>
+        <image-detail-display :images="data.car.images" />
+      </template>
+      <template #details>
+        <detail-section
+          :item="data.car"
           :rating="data.car.ratings.av_rating"
-        />
-      </div>
-      <div class="sm:w-1/3 text-slate-50">
-        <p>This car belongs to:</p>
-
-        <span
-          class="
-            text-lg
-            font-medium
-            text-slate-50
-            underline
-            hover:text-green-300 hover:font-bold hover:duration-200
-          "
         >
-          <Link :href="route('company_profile.show', data.car.username)">
-            {{ data.car.owner }}
-          </Link>
-        </span>
-
-        <div class="pt-5">
-          <owner-contacts :socials="data.car.contact" />
-        </div>
-
-        <document-list
-          v-if="props.data.car.documents"
-          :documents="props.data.car.documents"
-          heading="Car Documents"
-          path="attachments.show"
-          class="text-slate-50"
+          <template #heading>
+            {{ data.car.car_make }} <br>
+            {{ data.car.car_model }}
+          </template>
+        </detail-section>
+      </template>
+      <template #owner>
+        <owner-section
+          class="text-slate-100"
+          heading="This car Belongs To"
+          :username="data.car.username"
+          :owner="data.car.owner"
+          :contacts="data.car.contact"
+          :documents="data.car.documents"
         />
-      </div>
-    </div>
+      </template>
+    </show>
 
     <div>
       <p class="text-2xl font-extrabold text-slate-50 border-b-2">
@@ -53,7 +39,7 @@
           routes="welcome.cars.show"
           show_more="welcome.cars.category_type"
           :type="data.category_type"
-          :heading="'Other ' + data.category_type + ' Cars'"
+          heading="Check These Out"
         />
       </div>
       <div v-else>
@@ -80,91 +66,24 @@
       </div>
     </div>
 
-    <div>
-      <p class="text-2xl font-extrabold text-slate-50 capitalize border-b-2">
-        What Others have to say
-      </p>
-      <div class="p-3">
-        <div
-          class="flex p-3 mx-auto rounded-lg shadow-xl bg-slate-50 max-w-7xl"
-        >
-          <div
-            v-if="data.car.ratings.comments.length"
-            class="flex flex-wrap w-full justify-evenly"
-          >
-            <div class="w-full">
-              <span
-                @click="show_write_comment"
-                class="
-                  inline-flex
-                  justify-center
-                  px-8
-                  py-2
-                  text-sm
-                  font-medium
-                  text-slate-50
-                  capitalize
-                  border
-                  rounded
-                  hover:cursor-pointer
-                  border-green-500
-                "
-              >
-                add Comment
-              </span>
-            </div>
-            <comment-card
-              v-for="comment in data.car.ratings.comments"
-              :key="comment.id"
-              :comment="comment"
-            />
-          </div>
-          <div v-else class="flex justify-center w-full">
-            <div class="items-center w-full text-2xl font-semibold">
-              No Reviews yet
-            </div>
-
-            <div class="w-full">
-              <span
-                @click="show_write_comment"
-                class="
-                  inline-flex
-                  justify-center
-                  px-8
-                  py-2
-                  text-sm
-                  font-medium
-                  text-black
-                  capitalize
-                  border
-                  rounded
-                  hover:cursor-pointer
-                  border-green-500
-                "
-              >
-                add Comment
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="write_comment" class="">
-          <rating-form path="ratings.add.car" :id="data.car.id" />
-        </div>
-      </div>
-    </div>
+    <comment-section 
+    :comments=data.car.ratings.comments 
+    :item_id="data.car.id"
+    comment_path="ratings.add.car"
+    />
+    
   </car-layout>
 </template>
   <script setup>
 import CarLayout from "@/Layouts/CarLayout.vue";
 import ImageDetailDisplay from "@/Components/Shared/Gallery/ImageDetailDisplay.vue";
-import OwnerContacts from "@/Components/Shared/Owner/OwnerContacts.vue";
-import CarDetails from "@/Components/Car/CarDetails.vue";
+import Show from "@/Components/Shared/Show/Show.vue";
+import OwnerSection from "@/Components/Shared/Owner/OwnerSection.vue";
+import DetailSection from "@/Components/Shared/Show/DetailSection.vue";
 import GroupedCars from "@/Components/Car/GroupedCars.vue";
-import CommentCard from "@/Components/Shared/Comment/CommentCard.vue";
-import RatingForm from "@/Components/Shared/Form/RatingForm.vue";
-import DocumentList from "@/Components/Shared/DocumentList.vue";
+import CommentSection from "@/Components/Shared/Comment/CommentSection.vue";
 import NoResultDisplay from "@/Components/Shared/NoResultDisplay.vue";
+
 import { ref } from "vue";
 
 const props = defineProps({
@@ -172,8 +91,4 @@ const props = defineProps({
 });
 
 const write_comment = ref(false);
-
-function show_write_comment() {
-  write_comment.value = true;
-}
 </script>
