@@ -1,5 +1,5 @@
 <template>
-    <service-layout>
+    <service-layout title="Trashed Service">
       <template #header>
         <h2 class="text-xl font-semibold leading-tight text-slate-50">
           Trashed Services

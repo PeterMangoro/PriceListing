@@ -2,7 +2,7 @@
   <product-layout title="Shop">
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-sky-500">
-        Store Dashboard
+        Shop Dashboard
       </h2>
     </template>
     <!-- <bread-crumb :routes="routes" /> -->

@@ -1,5 +1,5 @@
 <template>  
-  <product-layout :title="data.product.title">
+  <product-layout :title="data.product.username">
     
     <show>
       <template #images>

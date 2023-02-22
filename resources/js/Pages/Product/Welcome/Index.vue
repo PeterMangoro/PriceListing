@@ -1,5 +1,5 @@
 <template>
-  <product-layout>
+  <product-layout title="Shop">
     <div class="p-4">
       <div class="px-2">
         <!-- <div id="products" class="flex flex-wrap px-20 justify-evenly">

@@ -1,5 +1,5 @@
 <template>
-  <product-layout>
+  <product-layout :title="data.owner.username +' Shop'">
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
       <!-- <aside class=" basis-1/12">

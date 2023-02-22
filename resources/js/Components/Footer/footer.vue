@@ -77,7 +77,7 @@ const ManagingPaths = [
   {
     id: 4,
     path: "products.index",
-    heading: "Manage your Store",
+    heading: "Manage your Shop",
   },
   {
     id: 5,
@@ -134,7 +134,7 @@ const NavigationPaths = [
   {
     id: 4,
     path: "welcome.products.index",
-    heading: "Store",
+    heading: "Shop",
   },
 
   {

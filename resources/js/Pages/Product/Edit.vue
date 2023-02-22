@@ -1,5 +1,5 @@
 <template>
-  <product-layout>
+  <product-layout title="Edit Product">
     <!-- <bread-crumb :id="data.product.id" :routes="routes" /> -->
 
     <div>

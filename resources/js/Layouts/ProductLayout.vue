@@ -43,7 +43,7 @@
               :href="route('products.index')"
               :active="route().current('products.index')"
             >
-              Manage Your Store
+              Manage Your Shop
             </JetNavLink>
 
             <JetNavLink

@@ -1,5 +1,5 @@
 <template>
-    <product-layout>
+    <product-layout title="Trashed Products">
       <template #header>
         <h2 class="text-xl font-semibold leading-tight text-sky-500">
           Trashed Products
