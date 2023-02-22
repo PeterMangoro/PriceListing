@@ -1,5 +1,5 @@
 <template>  
-  <service-layout :title="data.service.title">
+  <service-layout :title="data.service.username">
     
     <show>
       <template #images>

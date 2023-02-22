@@ -1,5 +1,5 @@
 <template>
-  <service-layout>
+  <service-layout :title="data.owner.username + ' Services'">
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
       <!-- <aside class=" basis-1/12">

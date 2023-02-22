@@ -1,5 +1,5 @@
 <template>
-    <service-layout>
+    <service-layout title=" Service List">
       <template #header>
         <h2 class="text-xl font-semibold leading-tight text-sky-500">
           Service Dashboard

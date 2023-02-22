@@ -1,5 +1,5 @@
 <template>
-  <service-layout>
+  <service-layout title="Edit Service">
     <!-- <bread-crumb :id="data.service.id" :routes="routes" /> -->
 
     <div>
