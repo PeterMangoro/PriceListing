@@ -1,5 +1,5 @@
 <template>
-  <product-layout>
+  <product-layout title="Shop">
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-sky-500">
         Store Dashboard
