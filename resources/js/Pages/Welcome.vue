@@ -1,5 +1,5 @@
 <template>
-  <app-layout>
+  <app-layout title="Welcome">
 
     <div class="pb-3">
       <landing-page :images="images2" class="pb-3" />

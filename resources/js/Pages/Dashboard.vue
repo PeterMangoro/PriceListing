@@ -1,5 +1,5 @@
 <template>
-  <app-layout>
+  <app-layout title="Dashboard">
     <section class="py-8 grid place-content-center min-h-screen">
       <div class="container px-4 mx-auto">
         <div class="flex flex-wrap justify-evenly gap-4">
