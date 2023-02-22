@@ -1,5 +1,5 @@
 <template>
-  <accommodation-layout>
+  <accommodation-layout title="Rental Accommodations">
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
       <div class="px-2">

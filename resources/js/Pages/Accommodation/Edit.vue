@@ -1,5 +1,5 @@
 <template>
-  <accommodation-layout>
+  <accommodation-layout title="Property Edit">
     <bread-crumb :id="data.accommodation.id" :routes="routes" />
 
     <div>

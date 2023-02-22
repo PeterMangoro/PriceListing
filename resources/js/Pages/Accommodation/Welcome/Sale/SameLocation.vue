@@ -1,5 +1,5 @@
 <template>
-  <accommodation-layout>
+  <accommodation-layout :title="data.location.city">
     <!-- <snack-bar :categories = data.categories /> -->
     <div class="p-4">
       <!-- <aside class=" basis-1/12">

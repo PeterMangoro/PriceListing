@@ -1,5 +1,5 @@
 <template>
-  <accommodation-layout>
+  <accommodation-layout title="Property Create">
  
     <div
       class="flex flex-wrap mx-auto max-w-7xl sm:px-6 lg:px-8 justify-evenly"

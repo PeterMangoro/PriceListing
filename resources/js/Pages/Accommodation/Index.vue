@@ -1,5 +1,5 @@
 <template>
-  <accommodation-layout>
+  <accommodation-layout title="Property List">
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-sky-500">
         Accommodation Dashboard
