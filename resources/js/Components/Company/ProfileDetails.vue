@@ -10,21 +10,21 @@
           <!-- <p>Established:  {{profile.date}} </p> -->
           
           <span v-if="profile.mission">
-            <h1 class="mt-4 text-xl font-semibold text-slate-50">Our Mission :</h1>
+            <h1 class="mt-4 text-xl font-semibold text-sky-300  ">Our Mission </h1>
             <p class="font-medium text-slate-100">
               {{ profile.mission }}
             </p>
           </span>
 
           <span v-if="profile.vision">
-            <h1 class="mt-4 text-xl font-semibold text-slate-50">Vision :</h1>
+            <h1 class="mt-4 text-xl font-semibold text-sky-300">Vision </h1>
             <p class="font-medium text-slate-100">
               {{ profile.vision }}
             </p>
           </span>
 
           <span>
-            <h1 class="mt-4 text-xl font-semibold text-slate-50">Values :</h1>
+            <h1 class="mt-4 text-xl font-semibold text-sky-300">Values </h1>
             <p class="font-medium flex  gap-2 text-slate-50" v-for="value in profile.values"
               :key="value.id">
               <span class="text-green-500 my-auto">
@@ -69,6 +69,7 @@
             hover:bg-white
             hover:shadow-md
             hover:shadow-green-500
+           
           ">
             See Our Products
           </span>
