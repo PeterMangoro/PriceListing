@@ -18,6 +18,8 @@ const form = useForm({
   town:null,
   city:null,
   country:null,
+  account:null,
+  handle:null,
   terms: false,
 });
 
@@ -77,6 +79,40 @@ const submit = () => {
         </p>
 
         <InputError class="mt-2" :message="form.errors.username" />
+      </div>
+
+      <div class="mt-4">
+        <InputLabel for="account" value="Account" />
+            <text-input
+              id="account"
+              v-model="form.account"
+              type="text"
+              class="block w-full mt-1"
+              required
+              autofocus
+              autocomplete="account"
+            />
+            <p class="text-sm text-green-500">
+          State the social media platform you want your clients to contact you at eg WhatsApp
+        </p>
+            <InputError class="mt-2" :message="form.errors.account" />
+      </div>
+
+      <div class="mt-4">
+        <InputLabel for="handle" value="Handle/Number/Address" />
+            <TextInput
+              id="handle"
+              v-model="form.handle"
+              type="text"
+              class="block w-full mt-1"
+              required
+              autofocus
+              autocomplete="handle"
+            />
+            <p class="text-sm text-green-500">
+          Contact info for the platform above eg +263 784 352 080
+        </p>
+            <InputError class="mt-2" :message="form.errors.handle" />
       </div>
 
       <div class="mt-4">

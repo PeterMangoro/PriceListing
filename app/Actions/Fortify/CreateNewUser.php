@@ -8,6 +8,7 @@ use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Services\Shared\AddressService;
+use App\Services\Shared\SocialService;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
@@ -32,6 +33,8 @@ class CreateNewUser implements CreatesNewUsers
             'town' => 'required|string|max:255',
             'city' => 'required:street|string|max:255',
             'country' => 'required|string|max:255',
+            'account' => 'required|string|max:255',
+            'handle' => 'required|string|max:255',
         ])->validate();
 
         $location = array(
@@ -41,9 +44,15 @@ class CreateNewUser implements CreatesNewUsers
             'country' => $input['country'],
 
         );
+
+        $social = array(
+            'title' => $input['account'],
+            'value' => $input['handle']
+        );
+
         return
 
-            DB::transaction(function () use ($input, $location) {
+            DB::transaction(function () use ($input, $location, $social) {
                 $user_id = DB::table('users')->insertGetId(
                     [
                         'uuid' => Str::uuid()->toString(),
@@ -53,6 +62,11 @@ class CreateNewUser implements CreatesNewUsers
                     ]
                 );
 
+                DB::table('socials')->insert([
+                    'title' => $input['account'],
+                    'value' => $input['handle'],
+                    'user_id'=> $user_id
+                ]);
                 $user = User::find($user_id);
                 AddressService::addForModel($user, $location);
                 return $user;

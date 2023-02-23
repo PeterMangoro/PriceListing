@@ -1,9 +1,10 @@
 <template>
   <div class="w-full pt-2">
-    <div class="flex flex-wrap justify-center gap-5 pb-5">
-      <h1 class="mt-4 text-2xl font-semibold underline text-slate-100">
+    <h1 class="mt-4 text-2xl font-semibold underline text-slate-100">
       Meet the Team
     </h1>
+    <div class="flex flex-wrap justify-center gap-5 pb-5">
+      
     
     </div>
     

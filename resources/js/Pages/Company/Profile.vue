@@ -1,9 +1,9 @@
 <template>
-  <app-layout>
+  <app-layout :title="data.company.name">
     <section class="mx-auto max-w-7xl">      
       <div class="pt-5 overflow-hidden">
         <div class="container px-4 mx-auto">
-          <div class="flex flex-wrap justify-center gap-3 pb-2 mx-auto">
+          <!-- <div class="flex flex-wrap justify-center gap-3 pb-2 mx-auto">
             <span 
             :class="{ [ `shadow-sky-600 hover:shadow-lg hover:shadow-sky-600  shadow-lg`]: profile }"
             class="p-2 bg-white hover:shadow-sky-600 rounded-lg hover:cursor-pointer hover:bg-slate-200 hover:text-black" @click = 
@@ -19,25 +19,27 @@
             class="p-2 bg-white rounded-lg hover:cursor-pointer hover:shadow-lg hover:shadow-sky-600 hover:bg-slate-200 hover:text-black" @click = 
             
             showTeam()>Company Team</span>
-          </div>
-          <div class="m-auto ">
+          </div> -->
+          <div class="w-full p-3 bg-black bg-opacity-60 rounded-lg">
             <span
             
-             v-if="profile">
-                <profile-details :profile=data.profile :company=data.company.name  :username=data.company.username :counts=data.counts />
+            >
+                <profile-details :employees=data.employees :profile=data.profile :company=data.company.name  :username=data.company.username :counts=data.counts />
             </span>
           
+            <span
+            
+           >
+               <team-details :team=data.employees  :username=data.company.username :team_count=data.counts.employees />
+           </span>
+
              <span
              
-              v-if="contacts">
+             >
                 <contact-details :contacts=data.contacts :address=data.address />
             </span>
             
-            <span
-            
-             v-if="team">
-                <team-details :team=data.employees  :username=data.company.username :team_count=data.counts.employees />
-            </span>
+           
             
           
           </div>
