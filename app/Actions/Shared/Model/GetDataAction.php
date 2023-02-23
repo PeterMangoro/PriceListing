@@ -63,7 +63,8 @@ class GetDataAction
     ): LengthAwarePaginator {
         $paginate = request('per_page') ?: $per_page;
         return $model
-            
+            ->latest('id')
+            ->sort()
             ->withDisplayImage()
             ->withActiveDiscountPrice()
             ->withAddress()
