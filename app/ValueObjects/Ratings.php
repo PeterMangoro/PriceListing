@@ -21,7 +21,7 @@ class Ratings
             $ratings->map(fn ($rating) => [
                 'comment' => $rating->comment,
                 'rating' => $rating->rating,
-                'user' => $rating->user->name,
+                'user' => $rating->name,
             ])
         );
     }

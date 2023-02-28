@@ -7,6 +7,22 @@
         <form @submit.prevent="submit">
           <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
+              <input-label for="name" value="Name" />
+              <text-input
+                id="name"
+                v-model="form.name"
+                type="text"
+                min="1"
+                max="10"
+                class="block w-full mt-1"
+                required
+                autofocus
+                autocomplete="name"
+              />
+              <input-error class="mt-2" :message="form.errors.rating" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
               <input-label for="rating" value="Rating Score out of 10" />
               <text-input
                 id="rating"
@@ -62,6 +78,7 @@ import InputError from "@/Components/Shared/Form/InputError.vue";
 import TextInput from "@/Components/Shared/Form/TextInput.vue";
 import TextArea from "@/Components/Shared/Form/TextArea.vue";
 import SubmitButton from "@/Components/Shared/Form/SubmitButton.vue";
+import { usePage } from '@inertiajs/vue3'
 
 const props = defineProps({
   id: Number,
@@ -70,6 +87,8 @@ const props = defineProps({
 
 const form = useForm({
   product_id: props.id,
+  // name: null || usePage().props.user.name ,
+  name: usePage().props.user ? usePage().props.user.name : null,
   rating: null,
   comment: null,
   remember: true,

@@ -7,11 +7,11 @@ use App\Http\Controllers\Shared\RatingController;
 // Comments and Rating
 Route::controller(RatingController::class)
     ->name('ratings.add.')
-    ->middleware([
-        'auth:sanctum',
-        config('jetstream.auth_session'),
-        'verified',
-    ])
+    // ->middleware([
+    //     'auth:sanctum',
+    //     config('jetstream.auth_session'),
+    //     'verified',
+    // ])
     ->group(function () {
    
     Route::post('ratings/accommodation', [RatingController::class,'accommodation'])->name('accommodation');

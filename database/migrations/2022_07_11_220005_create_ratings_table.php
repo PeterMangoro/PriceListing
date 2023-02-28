@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->morphs('ratingable');
             $table->integer('rating')->nullable();
+            $table->string('name');
             $table->text('comment')->nullable();
             $table->timestamps();
             $table->softDeletes();

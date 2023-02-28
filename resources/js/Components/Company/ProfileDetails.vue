@@ -23,7 +23,7 @@
             </p>
           </span>
 
-          <span>
+          <span v-if="profile.vision">
             <h1 class="mt-4 text-xl font-semibold text-sky-300">Values </h1>
             <p class="font-medium flex  gap-2 text-slate-50" v-for="value in profile.values"
               :key="value.id">

@@ -46,7 +46,8 @@ trait SharedScopes
                     'ratingable_id',
                     'rating',
                     'comment',
-                    'user_id'
+                    'user_id',
+                    'name'
                 )
                     ->latest('id')
                     ->with('user:id,name');

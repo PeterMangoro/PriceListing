@@ -58,7 +58,7 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             // 'engine' => 'InnoDB', #for transactions
-            'engine' => 'null',
+            'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
