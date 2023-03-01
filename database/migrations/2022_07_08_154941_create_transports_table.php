@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('transports', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('page_visits')->index()->nullable();
+            $table->bigInteger('page_visits')->index()->default(0);
             $table->uuid('uuid');
             $table->foreignId('user_id');
             $table->foreignId('car_id');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('departure')->index();
             // $table->string('departure_normalized')->virtualAs("regexp_replace(departure,'[^A-Za-z0-9]','')")->index();
             $table->string('date');
-            $table->float('price',12,2)->index();
+            $table->float('price', 12, 2)->index();
             $table->integer('passengers')->nullable();
             $table->text('detail')->nullable();
             $table->timestamps();

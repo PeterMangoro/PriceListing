@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('page_visits')->index()->nullable();
+            $table->bigInteger('page_visits')->index()->default(0);
             $table->uuid('uuid')->index();
             $table->foreignId('user_id')->nullable();
             $table->string('title')->index();

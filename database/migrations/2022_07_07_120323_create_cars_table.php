@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('page_visits')->index()->nullable();
+            $table->bigInteger('page_visits')->index()->default(0);
             $table->uuid('uuid')->index();
             $table->foreignId('user_id');
             $table->boolean('transport')->default(false)->index();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreignId('car_model_id')->nullable();
             $table->string('num_plate')->nullable();
             $table->text('detail')->nullable();
-            $table->float('price',12,2)->nullable()->index();
+            $table->float('price', 12, 2)->nullable()->index();
             $table->boolean('sale_status')->default(false)->nullable();
             $table->boolean('rent_status')->default(false)->nullable();
             $table->timestamps();

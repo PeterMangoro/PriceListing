@@ -28,7 +28,7 @@ class GetDataAction
         object $model,
         string $uuid
     ): Model {
-        return $model
+        $display= $model
             ->whereUUIDmatches($uuid)
             ->withUserSocialAccounts()
             ->withRatings()
@@ -37,6 +37,10 @@ class GetDataAction
             ->withImages()
             ->withDocuments()
             ->first();
+
+            $display->increment('page_visits');
+
+            return $display;
     }
 
     public static function fetchEditModelByUUID(
