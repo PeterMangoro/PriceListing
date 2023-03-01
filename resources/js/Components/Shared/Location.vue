@@ -5,7 +5,8 @@
       class="font-medium text-slate-300">Location: </span>
       {{ location.street }} <br />
       {{ location.town }} <br />
-      {{ location.city }}
+      {{ location.city }} <br />
+      {{ location.country }}
     </p>
 </template>
 
