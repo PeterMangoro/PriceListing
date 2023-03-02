@@ -38,7 +38,7 @@ class GetDataAction
             ->withDocuments()
             ->first();
 
-            $display->increment('page_visits');
+            $display->increment('page_visits'); #page visit counter
 
             return $display;
     }
