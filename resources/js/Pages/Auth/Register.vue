@@ -72,10 +72,11 @@ const submit = () => {
           v-model="form.username"
           type="text"
           class="block w-full mt-1"
+          @keydown.space.prevent
           required
         />
         <p class="text-sm text-green-500">
-          This will be your login name, can be email or phone number
+          This will be your login name, can be email/phone number/anything
         </p>
 
         <InputError class="mt-2" :message="form.errors.username" />

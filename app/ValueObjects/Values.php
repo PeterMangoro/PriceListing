@@ -10,7 +10,7 @@ class Values
         $this->values = $values;
     }
 
-    public static function fromString(string $values): array
+    public static function fromString(?string $values): array
     {
         return array_filter(
             explode('*', $values)
