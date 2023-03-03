@@ -56,7 +56,8 @@ class AccommodationBuilder extends Builder
         $term = '%' . preg_replace('/[^A-Za-z0-9]/', '', $terms) . '%';
         return $this->when($terms, function ($query) use ($term) {
             $query
-                ->where('location', 'like', $term);
+                ->where('location_normalized', 'like', $term)
+                ->orWhere('detail','like',$term);
         });
     }
 }

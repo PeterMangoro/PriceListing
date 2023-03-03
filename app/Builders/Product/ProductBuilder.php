@@ -50,7 +50,8 @@ class ProductBuilder extends Builder
         $term = '%' . preg_replace('/[^A-Za-z0-9]/', '', $terms) . '%';
         return $this->when($terms, function ($query) use ($term) {
             $query
-                ->where('title', 'like', $term);
+                ->where('title_normalized', 'like', $term)
+                ->orWhere('detail','like',$term);
         });
     }
 }

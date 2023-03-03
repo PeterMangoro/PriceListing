@@ -67,17 +67,17 @@ class Car extends SharedModel
                                     // dd('hie');
                                     $query->select('cars.id')
                                         ->from('cars')
-
-                                        // ->union(
-                                            // $query->newQuery()
-                                                // ->select('cars.id')
-                                                // ->from('cars')
+                                        ->orWhere('detail', 'like', $term)
+                                        ->union(
+                                            $query->newQuery()
+                                                ->select('cars.id')
+                                                ->from('cars')
                                         ->join('car_makes', 'car_makes.id', 'cars.car_make_id')
                                         ->join('car_models', 'car_models.id', 'cars.car_model_id')
                                         ->where('car_makes.title', 'like', $term)
                                         ->orWhere('car_models.title', 'like', $term)
 
-                                        // )
+                                        )
                                     ;
                                 },
                                 'matches'

@@ -33,7 +33,8 @@ class Service extends SharedModel
                         ->from(function ($query) use ($term) {
                             $query->select('id')
                                 ->from('services')
-                                ->where('title', 'like', $term)
+                                ->where('title_normalized', 'like', $term)
+                                ->orWhere('detail', 'like', $term)
                                 ->union(
                                     $query->newQuery()
                                         ->select('services.id')

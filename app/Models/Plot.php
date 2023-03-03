@@ -39,6 +39,7 @@ class Plot extends SharedModel
                             $query->select('id')
                                 ->from('plots')
                                 ->where('location', 'like', $term)
+                                ->orWhere('detail', 'like', $term)
                                 ->union(
                                     $query->newQuery()
                                         ->select('plots.id')

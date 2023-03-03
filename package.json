@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "dev": "vite",
+        "dev": "vite",      
         "build": "vite build"
     },
     "devDependencies": {
@@ -20,6 +20,7 @@
         "vue": "^3.2.31"
     },
     "dependencies": {
-        "@heroicons/vue": "^2.0.15"
+        "@heroicons/vue": "^2.0.15",
+        "@vue/server-renderer": "^3.2.47"
     }
 }
