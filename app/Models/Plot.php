@@ -31,7 +31,7 @@ class Plot extends SharedModel
     {
         collect(str_getcsv($terms, ' ', '"'))->filter()
             ->each(function ($term) use ($query) {
-                $term = preg_replace('/[^A-Za-z0-9]/', '', $term) . '%';
+                $term = '%' . preg_replace('/[^A-Za-z0-9]/', '', $term) . '%';
 
                 $query->whereIn('id', function ($query) use ($term) {
                     $query->select('id')

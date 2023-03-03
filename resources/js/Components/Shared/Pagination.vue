@@ -11,7 +11,7 @@
         v-else
         :href="link.url"
         v-html="link.label"
-        class="px-4 py-3 mb-1 mr-1 text-sm leading-4 border rounded text-slate-100 bg-slate-800 focus:text-indigo-500 focus:border-indigo-500 hover:bg-white"
+        class="px-4 py-3 mb-1 mr-1 text-sm leading-4 border rounded text-slate-100 bg-slate-800 focus:text-indigo-500 focus:border-indigo-500 hover:bg-white hover:text-black"
         :class="{ 'border-red-500 ': link.active }"
         preserve-scroll
       />

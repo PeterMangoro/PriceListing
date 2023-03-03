@@ -47,7 +47,7 @@ class ProductBuilder extends Builder
 
     public function search(?string $terms = null)
     {
-        $term = preg_replace('/[^A-Za-z0-9]/', '', $terms) . '%';
+        $term = '%' . preg_replace('/[^A-Za-z0-9]/', '', $terms) . '%';
         return $this->when($terms, function ($query) use ($term) {
             $query
                 ->where('title', 'like', $term);
