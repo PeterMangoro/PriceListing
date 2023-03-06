@@ -4,7 +4,6 @@ namespace App\Listeners\Car;
 
 use App\Events\Car\UpdatingCar;
 use App\Services\Car\CarService;
-use App\Services\Shared\AddressService;
 use App\Services\Shared\AttachmentService;
 use App\Services\Shared\DiscountService;
 use Illuminate\Support\Facades\DB;

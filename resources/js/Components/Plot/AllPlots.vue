@@ -2,19 +2,7 @@
   <!-- Plots Area -->
   <div class="py-2">
     <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        
-       
-        shadow-xl
-        sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
-        max-w-7xl
-        sm:rounded-lg
-      "
+      class="px-4 py-1 mx-auto overflow-hidden shadow-xl sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8 max-w-7xl sm:rounded-lg"
     >
       <div class="flex flex-wrap">
         <!-- <h2
@@ -60,19 +48,7 @@
           v-for="(item, index) in items"
           :key="index"
           :href="route('welcome.plots.show', item.uuid)"
-          class="
-            w-56
-            h-40
-            p-2
-            transition
-            duration-300
-            ease-in-out
-          bg-slate-100
-            shadow
-            bg-opacity-60
-            rounded-xl
-            hover:scale-105 hover:bg-slate-100
-          "
+          class="w-56 h-40 p-2 transition duration-300 ease-in-out bg-slate-100 shadow bg-opacity-60 rounded-xl hover:scale-105 hover:bg-slate-100"
         >
           <div class="flex flex-col justify-between h-full">
             <div class="block mb-2">
@@ -111,7 +87,7 @@ import Pagination from "@/Components/Shared/Pagination.vue";
 
 const props = defineProps({
   items: Object,
-  routes: Object,
+  routes: String,
   heading: String,
   route_parameter: String,
   pagination: Object,

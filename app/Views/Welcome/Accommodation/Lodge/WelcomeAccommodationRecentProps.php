@@ -17,9 +17,9 @@ class WelcomeAccommodationRecentProps extends BaseView
         return AccommodationDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
                 Accommodation::latest('id')
-                ->withAddress()
-                ->forLodges()
-                ->whereActive()
+                    ->withAddress()
+                    ->forLodges()
+                    ->whereActive()
             )
         );
     }

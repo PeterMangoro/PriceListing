@@ -2,31 +2,28 @@
 
 namespace App\Http\Controllers\Welcome;
 
-use App\Models\User;
-
-use Inertia\Inertia;
+use App\Http\Controllers\Controller;
 use App\Models\Car\CarMake;
 use App\Models\Car\CarModel;
-use App\Http\Controllers\Controller;
 use App\Models\Categories\CarCategory;
+use App\Models\User;
+use App\Views\Welcome\Car\Category\WelcomeCategoryIndexProps;
+use App\Views\Welcome\Car\Category\WelcomeCategoryTypeIndexProps;
+use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedCategoryProps;
+use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedCategoryTypeProps;
+use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedProps;
+use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedCategoryProps;
+use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedCategoryTypeProps;
+use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedProps;
+use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksCategoryProps;
+use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksCategoryTypeProps;
+use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksProps;
 use App\Views\Welcome\Car\WelcomeCarHireProps;
-use App\Views\Welcome\Car\WelcomeCarShowProps;
 use App\Views\Welcome\Car\WelcomeCarIndexProps;
 use App\Views\Welcome\Car\WelcomeCarRecentProps;
+use App\Views\Welcome\Car\WelcomeCarShowProps;
 use App\Views\Welcome\Car\WelcomeOwnerCarsProps;
-use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedProps;
-use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksProps;
-use App\Views\Welcome\Car\Category\WelcomeCategoryIndexProps;
-use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedProps;
-use App\Views\Welcome\Car\Category\WelcomeCategoryTypeIndexProps;
-use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedCategoryProps;
-use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksCategoryProps;
-use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedCategoryProps;
-use App\Views\Welcome\Car\Feature\WelcomeCarFeaturedCategoryTypeProps;
-use App\Views\Welcome\Car\TopTalks\WelcomeCarTopTalksCategoryTypeProps;
-use App\Views\Welcome\Car\Discount\WelcomeCarDiscountedCategoryTypeProps;
-
-
+use Inertia\Inertia;
 
 class WelcomeCarController extends Controller
 {
@@ -43,7 +40,6 @@ class WelcomeCarController extends Controller
             'data' => new WelcomeCarHireProps(),
         ]);
     }
-
 
     public function car_model(CarModel $model)
     {

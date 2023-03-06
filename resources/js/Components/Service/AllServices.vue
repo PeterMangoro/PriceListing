@@ -2,44 +2,18 @@
   <!-- Services Area -->
   <div class="py-2">
     <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        shadow-xl
-        sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
-        max-w-7xl
-        sm:rounded-lg
-      "
+      class="px-4 py-1 mx-auto overflow-hidden shadow-xl sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8 max-w-7xl sm:rounded-lg"
     >
       <div class="flex flex-wrap">
         <h2
           v-if="heading"
-          class="
-            items-start
-            p-4
-            text-2xl
-            font-extrabold
-            tracking-tight
-            text-slate-50
-            capitalize
-          "
+          class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
         >
           {{ heading }}
         </h2>
         <h2
           v-else
-          class="
-            items-start
-            p-4
-            text-2xl
-            font-extrabold
-            tracking-tight
-            text-slate-50
-            capitalize
-          "
+          class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
         >
           List of all Services
         </h2>
@@ -67,17 +41,7 @@
           class="p-2"
         >
           <div
-            class="
-              overflow-hidden
-              px-2
-              rounded
-              shadow-sm
-              w-72
-              hover:shadow-2xl
-              hover:-translate-y-1
-              hover:scale-105
-              hover:duration-500
-            "
+            class="overflow-hidden px-2 rounded shadow-sm w-72 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 hover:duration-500"
             :class="{
               [`shadow-red-600 hover:shadow-lg hover:shadow-red-600  shadow-lg`]:
                 item.discount,
@@ -98,29 +62,13 @@
 
             <p
               v-if="item.discount"
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-72
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-72"
             >
               {{ item.discount.price }} ⏰
             </p>
             <p
               v-else
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-72
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-72"
             >
               {{ item.price }}
             </p>
@@ -147,7 +95,7 @@ import CategoryLinks from "@/Components/Shared/Category/CategoryLinks.vue";
 
 const props = defineProps({
   items: Object,
-  routes: Object,
+  routes: String,
   heading: String,
   route_parameter: String,
   pagination: Object,

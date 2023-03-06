@@ -2,17 +2,7 @@
   <!-- Cars Area -->
   <div class="py-2">
     <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        shadow-xl
-        sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
-        max-w-7xl
-        sm:rounded-lg
-      "
+      class="px-4 py-1 mx-auto overflow-hidden shadow-xl sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8 max-w-7xl sm:rounded-lg"
     >
       <div class="flex">
         <!-- <h2
@@ -30,18 +20,7 @@
 
         <div class="p-2">
           <Link
-            class="
-              inline-flex
-              justify-center
-              px-8
-              py-2
-              text-sm
-              font-medium
-              text-slate-50
-              border border-transparent
-              rounded
-              hover:border-green-500
-            "
+            class="inline-flex justify-center px-8 py-2 text-sm font-medium text-slate-50 border border-transparent rounded hover:border-green-500"
             :href="route(show_more, type)"
             >Show More
           </Link>
@@ -55,12 +34,7 @@
           class="p-2"
         >
           <div
-            class="
-              overflow-hidden
-              rounded
-              shadow-xl
-              hover:shadow-2xl hover:-translate-y-1
-            "
+            class="overflow-hidden rounded shadow-xl hover:shadow-2xl hover:-translate-y-1"
             :class="{
               [`shadow-red-600 hover:shadow-lg hover:shadow-red-600  shadow-lg`]:
                 item.discount,
@@ -85,29 +59,13 @@
 
             <p
               v-if="item.discount"
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-28
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-28"
             >
               {{ item.discount.price }} ⏰
             </p>
             <p
               v-else
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-28
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-28"
             >
               {{ item.price }}
             </p>
@@ -120,8 +78,8 @@
 <script setup>
 const props = defineProps({
   items: Object,
-  routes: Object,
-  heading: Object,
+  routes: String,
+  heading: String,
   show_more: String,
   type: String,
 });

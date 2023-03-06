@@ -15,7 +15,7 @@ class CarTrashedIndexProps extends BaseView
         return CarDisplayData::toOwnerDisplay(
             ModelHandler::getPaginatedData(
                 Car::onlyTrashed()
-                    ->belongsToAuthUser()                  
+                    ->belongsToAuthUser()
                     ->IncludeCarDetail()
                     ->search(request('search'))
                     ->sort()

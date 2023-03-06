@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use App\Builders\Accommodation\AccommodationBuilder;
+use App\Models\Categories\AccommodationCategory;
 use App\Models\Shared\Room;
 use App\Models\Shared\SharedModel;
-use App\Models\Categories\AccommodationCategory;
-use App\Builders\Accommodation\AccommodationBuilder;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Accommodation extends SharedModel

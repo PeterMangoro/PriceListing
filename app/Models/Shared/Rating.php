@@ -19,7 +19,7 @@ class Rating extends Model
         'ratingable_id',
         'ratingable_type',
         'user_id',
-        'name'
+        'name',
     ];
 
     public function ratingable(): MorphTo

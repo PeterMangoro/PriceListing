@@ -1,13 +1,11 @@
 <?php
 
-
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Accommodation\Room\RoomController;
 use App\Http\Controllers\Accommodation\AccommodationController;
-use App\Http\Controllers\Accommodation\Room\RoomBookingController;
 use App\Http\Controllers\Accommodation\AccommodationTrashedController;
+use App\Http\Controllers\Accommodation\Room\RoomBookingController;
+use App\Http\Controllers\Accommodation\Room\RoomController;
 use App\Http\Controllers\Shared\Payment\Accommodation\AccommodationRoomPaymentController;
-
+use Illuminate\Support\Facades\Route;
 
 Route::middleware([
     'auth:sanctum',

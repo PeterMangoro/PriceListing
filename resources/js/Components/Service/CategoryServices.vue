@@ -2,45 +2,19 @@
   <!-- Services Area -->
   <div class="py-2">
     <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        shadow-xl
-        sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
-        max-w-7xl
-        sm:rounded-lg
-      "
+      class="px-4 py-1 mx-auto overflow-hidden shadow-xl sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8 max-w-7xl sm:rounded-lg"
     >
       <div class="flex flex-wrap">
         <span v-if="heading">
           <h2
             v-if="category.title"
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             {{ heading + " " + category.title }}
           </h2>
           <h2
             v-else
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             {{ heading + " " + category }} Services
           </h2>
@@ -49,29 +23,13 @@
         <span v-else>
           <h2
             v-if="category.title"
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             List of all {{ category.title }}
           </h2>
           <h2
             v-else
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             List of all {{ category }} Services
           </h2>
@@ -92,13 +50,7 @@
           class="p-2"
         >
           <div
-            class="
-              overflow-hidden
-              border
-              rounded
-              shadow-sm
-              hover:shadow-2xl hover:-translate-y-1
-            "
+            class="overflow-hidden border rounded shadow-sm hover:shadow-2xl hover:-translate-y-1"
             :class="{
               [`shadow-red-600 hover:shadow-lg hover:shadow-red-600  shadow-lg`]:
                 item.discount,
@@ -118,29 +70,13 @@
             </h3>
             <p
               v-if="item.discount"
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-28
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-28"
             >
               {{ item.discount.price }} ⏰
             </p>
             <p
               v-else
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-28
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-28"
             >
               {{ item.price }}
             </p>
@@ -166,7 +102,7 @@ import Pagination from "@/Components/Shared/Pagination.vue";
 
 const props = defineProps({
   items: Object,
-  routes: Object,
+  routes: String,
   pagination: Object,
   category: Object,
   heading: String,

@@ -49,7 +49,7 @@ export default defineComponent({
   props: {
     // any route name from laravel routes (ideally index route is what you'd search through)
     routeName: String,
-    routeParameter: Object,
+    routeParameter: String,
     placeholder: String,
     show_per_page: Boolean,
   },

@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers\Welcome;
 
-use App\Models\User;
-
-use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 use App\Models\Categories\ServiceCategory;
-use App\Views\Welcome\Service\WelcomeServiceShowProps;
-use App\Views\Welcome\Service\WelcomeServiceIndexProps;
-use App\Views\Welcome\Service\WelcomeOwnerServicesProps;
-use App\Views\Welcome\Service\WelcomeServiceRecentProps;
+use App\Models\User;
 use App\Views\Welcome\Service\Category\WelcomeCategoryIndexProps;
-use App\Views\Welcome\Service\Feature\WelcomeServiceFeaturedProps;
-use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksProps;
 use App\Views\Welcome\Service\Category\WelcomeCategoryTypeIndexProps;
+use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedCategoryProps;
+use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedCategoryTypeProps;
 use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedProps;
 use App\Views\Welcome\Service\Feature\WelcomeServiceFeaturedCategoryProps;
-use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksCategoryProps;
-use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedCategoryProps;
 use App\Views\Welcome\Service\Feature\WelcomeServiceFeaturedCategoryTypeProps;
+use App\Views\Welcome\Service\Feature\WelcomeServiceFeaturedProps;
+use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksCategoryProps;
 use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksCategoryTypeProps;
-use App\Views\Welcome\Service\Discount\WelcomeServiceDiscountedCategoryTypeProps;
-
+use App\Views\Welcome\Service\TopTalks\WelcomeServiceTopTalksProps;
+use App\Views\Welcome\Service\WelcomeOwnerServicesProps;
+use App\Views\Welcome\Service\WelcomeServiceIndexProps;
+use App\Views\Welcome\Service\WelcomeServiceRecentProps;
+use App\Views\Welcome\Service\WelcomeServiceShowProps;
+use Inertia\Inertia;
 
 class WelcomeServiceController extends Controller
 {

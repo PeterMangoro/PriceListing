@@ -2,20 +2,18 @@
 
 namespace App\Traits\User;
 
-use App\Models\Plot;
+use App\Models\Accommodation;
 use App\Models\Car\Car;
+use App\Models\Car\Transport;
+use App\Models\Plot;
 use App\Models\Product;
 use App\Models\Service;
-use App\Models\Vacancy;
-use App\Models\Accommodation;
-use App\Models\Car\Transport;
-use App\Models\Shared\Rating;
-use App\Models\Shared\Social;
 use App\Models\Shared\Employee;
+use App\Models\Shared\Rating;
 use App\Models\Shared\RoomUser;
+use App\Models\Shared\Social;
+use App\Models\Vacancy;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
-
 
 trait UserHasmanyRelationships
 {
@@ -28,7 +26,6 @@ trait UserHasmanyRelationships
     {
         return $this->hasMany(RoomUser::class, 'room_id');
     }
-
 
     public function socials(): HasMany
     {
@@ -69,8 +66,6 @@ trait UserHasmanyRelationships
     {
         return $this->hasMany(Product::class);
     }
-
-   
 
     public function employees(): HasMany
     {

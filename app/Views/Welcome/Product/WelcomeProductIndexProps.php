@@ -21,7 +21,7 @@ class WelcomeProductIndexProps extends BaseView
     {
         return ProductDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
-                 Product::whereActive()
+                Product::whereActive()
             )
         );
     }

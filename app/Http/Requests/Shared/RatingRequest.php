@@ -27,7 +27,7 @@ class RatingRequest extends FormRequest
             'product_id' => 'required|int',
             'rating' => 'required|int|max:10',
             'comment' => 'required|string',
-            'name' => 'required'
+            'name' => 'required',
 
         ];
     }

@@ -8,7 +8,7 @@
 <script setup>
 import { HeartIcon } from "@heroicons/vue/24/solid";
 const props = defineProps({
-    rating:Object,
+    rating:String,
 })
 </script>
 

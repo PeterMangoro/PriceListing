@@ -2,16 +2,12 @@
 
 namespace App\Views\Welcome\Service;
 
-use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Category\CategoryTypeData;
 use App\DataObjects\Service\ServiceDisplayData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Models\Service;
-use App\Models\Shared\Discount;
-use App\Models\Shared\Feature;
-use App\Models\Shared\Popular;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
 
@@ -21,7 +17,7 @@ class WelcomeServiceIndexProps extends BaseView
     {
         return ServiceDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
-                 Service::whereActive()
+                Service::whereActive()
             )
         );
     }

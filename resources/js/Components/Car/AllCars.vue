@@ -2,29 +2,12 @@
   <!-- Cars Area -->
   <div class="py-2">
     <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        shadow-xl
-        sm:py-1 sm:px-6
-        max-w-7xl
-        sm:rounded-lg
-      "
+      class="px-4 py-1 mx-auto overflow-hidden shadow-xl sm:py-1 sm:px-6 max-w-7xl sm:rounded-lg"
     >
       <div class="flex flex-wrap">
         <h2
           v-if="heading"
-          class="
-            items-start
-            p-4
-            text-2xl
-            font-extrabold
-            tracking-tight
-            text-slate-50
-            capitalize
-          "
+          class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
         >
           {{ heading }}
         </h2>
@@ -68,13 +51,7 @@
           class="p-2"
         >
           <div
-            class="
-              overflow-hidden
-              rounded
-              shadow-xl
-              w-56
-              hover:shadow-2xl hover:-translate-y-1
-            "
+            class="overflow-hidden rounded shadow-xl w-56 hover:shadow-2xl hover:-translate-y-1"
             :class="{
               [`shadow-red-600 hover:shadow-lg hover:shadow-red-600  shadow-lg`]:
                 item.discount,
@@ -100,29 +77,13 @@
 
             <p
               v-if="item.discount"
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-56
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-56"
             >
               {{ item.discount.price }} ⏰
             </p>
             <p
               v-else
-              class="
-                px-2
-                mt-2
-                text-sm
-                font-semibold
-                text-slate-50
-                break-words
-                w-56
-              "
+              class="px-2 mt-2 text-sm font-semibold text-slate-50 break-words w-56"
             >
               {{ item.price }}
             </p>
@@ -149,7 +110,7 @@ import CategoryLinks from "@/Components/Shared/Category/CategoryLinks.vue";
 
 const props = defineProps({
   items: Object,
-  routes: Object,
+  routes: String,
   heading: String,
   route_parameter: String,
   pagination: Object,

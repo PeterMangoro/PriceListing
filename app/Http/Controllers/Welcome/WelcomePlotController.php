@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Welcome;
 
-use App\Models\Plot;
-
-use App\Models\User;
-use Inertia\Inertia;
 use App\Http\Controllers\Controller;
-use App\Views\Welcome\Plot\WelcomePlotShowProps;
+use App\Models\Plot;
+use App\Models\User;
 use App\Views\Welcome\Plot\WelcomeCityPlotsProps;
-use App\Views\Welcome\Plot\WelcomePlotIndexProps;
 use App\Views\Welcome\Plot\WelcomeOwnerPlotsProps;
+use App\Views\Welcome\Plot\WelcomePlotIndexProps;
+use App\Views\Welcome\Plot\WelcomePlotShowProps;
+use Inertia\Inertia;
 
 class WelcomePlotController extends Controller
 {

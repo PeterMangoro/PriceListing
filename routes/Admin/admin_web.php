@@ -1,7 +1,6 @@
 <?php
 
 // use App\Http\Controllers\SuperAdminController;
-use Illuminate\Support\Facades\Route;
 
 // SuperAdmin
 // Route::controller(SuperAdminController::class)->prefix('super')->name('super.')->middleware('role:SuperAdmin')

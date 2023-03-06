@@ -24,7 +24,7 @@ class WelcomeCarShowProps extends BaseView
     }
 
     public function car()
-    {        
+    {
         return CarDetailData::toWebPage($this->car);
     }
 

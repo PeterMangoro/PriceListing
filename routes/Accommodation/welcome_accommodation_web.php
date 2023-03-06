@@ -1,10 +1,9 @@
 <?php
 
-
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Welcome\Accommodation\WelcomeSaleAccommodationController;
 use App\Http\Controllers\Welcome\Accommodation\WelcomeLodgeAccommodationController;
 use App\Http\Controllers\Welcome\Accommodation\WelcomeRentalAccommodationController;
+use App\Http\Controllers\Welcome\Accommodation\WelcomeSaleAccommodationController;
+use Illuminate\Support\Facades\Route;
 
 Route::prefix('welcome')
     ->name('welcome.')

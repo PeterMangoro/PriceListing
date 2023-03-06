@@ -5,7 +5,6 @@ namespace App\Views\Cars;
 use App\DataObjects\Car\Partials\CarForUpdate;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Car\Car;
-use App\Models\Categories\CarCategory;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\CarMakes;
 
@@ -36,6 +35,4 @@ class CarEditProps extends BaseView
     {
         return (new CarMakes())->carMakes();
     }
-
-   
 }

@@ -3,7 +3,6 @@
 namespace App\Views\Shared;
 
 use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Shared\ModelHandler;
 
 class Categories
 {

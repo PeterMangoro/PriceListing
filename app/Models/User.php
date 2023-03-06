@@ -2,25 +2,23 @@
 
 namespace App\Models;
 
-
-use App\Traits\UUID;
+use App\Builders\Shared\UserBuilder;
 use App\Models\Shared\Profile;
+use App\Traits\User\UserHasManyRelationships;
+use App\Traits\User\UserMorphRelationships;
 use App\Traits\User\UserRoles;
+use App\Traits\UUID;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\CanResetPassword as AuthCanResetPassword;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
-use App\Builders\Shared\UserBuilder;
-use Laravel\Jetstream\HasProfilePhoto;
-use Illuminate\Notifications\Notifiable;
-use App\Traits\User\UserMorphRelationships;
-use App\Traits\User\UserHasManyRelationships;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Fortify\TwoFactorAuthenticatable;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Contracts\Auth\CanResetPassword as AuthCanResetPassword;
 
 class User extends Authenticatable implements AuthCanResetPassword
 {

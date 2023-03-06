@@ -1,13 +1,12 @@
 <?php
 
-
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Welcome\WelcomeController;
 use App\Http\Controllers\Welcome\WelcomeCarController;
+use App\Http\Controllers\Welcome\WelcomeController;
 use App\Http\Controllers\Welcome\WelcomePlotController;
 use App\Http\Controllers\Welcome\WelcomeProductController;
 use App\Http\Controllers\Welcome\WelcomeServiceController;
 use App\Http\Controllers\Welcome\WelcomeTransportController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
@@ -76,7 +75,7 @@ Route::prefix('welcome')
                 Route::get('discounted/category_type/{category:type}', 'discounted_category_type')->name('discounted.category_type');
                 Route::get('discounted/category/{category:slug}', 'discounted_category')->name('discounted.category');
             });
-        Route::resource('cars', WelcomeCarController::class)->only('index', 'show')->scoped(['cars'=>'uuid']);
+        Route::resource('cars', WelcomeCarController::class)->only('index', 'show')->scoped(['cars' => 'uuid']);
 
         //Transports
         Route::controller(WelcomeTransportController::class)

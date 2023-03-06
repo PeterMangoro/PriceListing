@@ -2,12 +2,9 @@
 
 namespace App\Models\Car;
 
-use App\Models\Car\CarMake;
-use App\Models\Shared\SharedModel;
-use App\Models\Car\CarModel;
-use App\Models\Car\Transport;
 use App\Builders\Car\CarBuilder;
 use App\Models\Categories\CarCategory;
+use App\Models\Shared\SharedModel;
 
 class Car extends SharedModel
 {
@@ -72,11 +69,10 @@ class Car extends SharedModel
                                             $query->newQuery()
                                                 ->select('cars.id')
                                                 ->from('cars')
-                                        ->join('car_makes', 'car_makes.id', 'cars.car_make_id')
-                                        ->join('car_models', 'car_models.id', 'cars.car_model_id')
-                                        ->where('car_makes.title', 'like', $term)
-                                        ->orWhere('car_models.title', 'like', $term)
-
+                                                ->join('car_makes', 'car_makes.id', 'cars.car_make_id')
+                                                ->join('car_models', 'car_models.id', 'cars.car_model_id')
+                                                ->where('car_makes.title', 'like', $term)
+                                                ->orWhere('car_models.title', 'like', $term)
                                         )
                                     ;
                                 },

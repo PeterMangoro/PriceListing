@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers\Welcome;
 
-use App\Models\User;
-
-use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 use App\Models\Categories\ProductCategory;
-use App\Views\Welcome\Product\WelcomeProductShowProps;
-use App\Views\Welcome\Product\WelcomeProductIndexProps;
-use App\Views\Welcome\Product\WelcomeOwnerProductsProps;
-use App\Views\Welcome\Product\WelcomeProductRecentProps;
+use App\Models\User;
 use App\Views\Welcome\Product\Category\WelcomeCategoryIndexProps;
-use App\Views\Welcome\Product\Feature\WelcomeProductFeaturedProps;
-use App\Views\Welcome\Product\TopTalks\WelcomeProductTopTalksProps;
 use App\Views\Welcome\Product\Category\WelcomeCategoryTypeIndexProps;
+use App\Views\Welcome\Product\Discount\WelcomeProductDiscountedCategoryProps;
+use App\Views\Welcome\Product\Discount\WelcomeProductDiscountedCategoryTypeProps;
 use App\Views\Welcome\Product\Discount\WelcomeProductDiscountedProps;
 use App\Views\Welcome\Product\Feature\WelcomeProductFeaturedCategoryProps;
-use App\Views\Welcome\Product\TopTalks\WelcomeProductTopTalksCategoryProps;
-use App\Views\Welcome\Product\Discount\WelcomeProductDiscountedCategoryProps;
 use App\Views\Welcome\Product\Feature\WelcomeProductFeaturedCategoryTypeProps;
+use App\Views\Welcome\Product\Feature\WelcomeProductFeaturedProps;
+use App\Views\Welcome\Product\TopTalks\WelcomeProductTopTalksCategoryProps;
 use App\Views\Welcome\Product\TopTalks\WelcomeProductTopTalksCategoryTypeProps;
-use App\Views\Welcome\Product\Discount\WelcomeProductDiscountedCategoryTypeProps;
-
+use App\Views\Welcome\Product\TopTalks\WelcomeProductTopTalksProps;
+use App\Views\Welcome\Product\WelcomeOwnerProductsProps;
+use App\Views\Welcome\Product\WelcomeProductIndexProps;
+use App\Views\Welcome\Product\WelcomeProductRecentProps;
+use App\Views\Welcome\Product\WelcomeProductShowProps;
+use Inertia\Inertia;
 
 class WelcomeProductController extends Controller
 {

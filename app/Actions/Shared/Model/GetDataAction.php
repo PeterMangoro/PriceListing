@@ -18,7 +18,7 @@ class GetDataAction
             ->withActiveDiscountPrice()
             // ->inRandomOrder()  #It slowed down performance
             ->limit($limit)
-            ->get()         
+            ->get()
             ->shuffle();
     }
 
@@ -26,7 +26,7 @@ class GetDataAction
         object $model,
         string $uuid
     ): Model {
-        $display= $model
+        $display = $model
             ->whereUUIDmatches($uuid)
             ->withUserSocialAccounts()
             ->withRatings()
@@ -36,9 +36,9 @@ class GetDataAction
             ->withDocuments()
             ->first();
 
-            $display->increment('page_visits'); #page visit counter
+        $display->increment('page_visits'); #page visit counter
 
-            return $display;
+        return $display;
     }
 
     public static function fetchEditModelByUUID(
@@ -83,7 +83,7 @@ class GetDataAction
             ->search(request('search'))
             ->sort()
             ->selectDetailAttributes()
-          
+
             ->latest('updated_at', 'created_at')
             ->paginate($paginate)
             ->withQueryString();

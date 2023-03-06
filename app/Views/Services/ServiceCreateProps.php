@@ -3,7 +3,6 @@
 namespace App\Views\Services;
 
 use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ServiceCategory;
 use App\Views\Shared\BaseView;
 

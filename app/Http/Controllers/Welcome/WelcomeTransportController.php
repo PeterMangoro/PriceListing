@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Welcome;
 
-use App\Models\User;
-
-use Inertia\Inertia;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Views\Welcome\Transport\WelcomeOwnerTransportsProps;
+use App\Views\Welcome\Transport\WelcomeTransportIndexProps;
 use App\Views\Welcome\Transport\WelcomeTransportShowProps;
 use App\Views\Welcome\Transport\WelcomeTransportTripProps;
-use App\Views\Welcome\Transport\WelcomeTransportIndexProps;
-use App\Views\Welcome\Transport\WelcomeOwnerTransportsProps;
+use Inertia\Inertia;
 
 class WelcomeTransportController extends Controller
 {

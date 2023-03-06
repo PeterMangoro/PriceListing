@@ -2,7 +2,6 @@
 
 namespace App\Actions\Dashboard;
 
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +11,6 @@ class DashboardCountAction
     {
         // $owner = User::where('id', Auth::user()->id)->first();
 
-        
         // [
         //     'accommodation_count' => $owner->accommodations()->count(),
         //     'car_count' => $owner->cars()->count(),

@@ -2,9 +2,7 @@
 
 namespace App\Handlers\Category;
 
-use App\Actions\Mall\Model\GetDataAction;
 use App\Actions\Shared\Category\GetCategory;
-use App\Handlers\Shared\ModelHandler;
 
 class CategoryHandler
 {

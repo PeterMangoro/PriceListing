@@ -2,7 +2,6 @@
 
 namespace App\Views\Accommodations;
 
-use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\AccommodationCategory;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Categories;

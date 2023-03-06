@@ -2,28 +2,18 @@
 
 namespace App\Http\Controllers\Welcome\Accommodation;
 
-use App\Models\User;
-
-use Inertia\Inertia;
-use App\Models\Shared\Address;
 use App\Http\Controllers\Controller;
-use App\Models\Categories\AccommodationCategory;
-use App\Views\Welcome\Accommodation\WelcomeCategoryIndexProps;
-use App\Views\Welcome\Accommodation\Sale\WelcomeAccommodationShowProps;
-use App\Views\Welcome\Accommodation\Lodge\WelcomeCategoryTypeIndexProps;
-use App\Views\Welcome\Accommodation\Sale\WelcomeAccommodationRecentProps;
-use App\Views\Welcome\Accommodation\Sale\WelcomeOwnerAccommodationsProps;
-use App\Views\Welcome\Accommodation\Sale\WelcomeSaleAccommodationIndexProps;
-use App\Views\Welcome\Accommodation\Sale\WelcomeSameLocationAccommodationIndexProps;
+use App\Models\Shared\Address;
+use App\Models\User;
 use App\Views\Welcome\Accommodation\Lodge\Featured\WelcomeAccommodationFeaturedProps;
 use App\Views\Welcome\Accommodation\Lodge\TopTalks\WelcomeAccommodationTopTalksProps;
 use App\Views\Welcome\Accommodation\Sale\Discounted\WelcomeAccommodationDiscountedProps;
-use App\Views\Welcome\Accommodation\Lodge\Featured\WelcomeAccommodationFeaturedCategoryProps;
-use App\Views\Welcome\Accommodation\Lodge\TopTalks\WelcomeAccommodationTopTalksCategoryProps;
-use App\Views\Welcome\Accommodation\Sale\Discounted\WelcomeAccommodationDiscountedCategoryProps;
-use App\Views\Welcome\Accommodation\Lodge\Featured\WelcomeAccommodationFeaturedCategoryTypeProps;
-use App\Views\Welcome\Accommodation\Lodge\TopTalks\WelcomeAccommodationTopTalksCategoryTypeProps;
-use App\Views\Welcome\Accommodation\Sale\Discounted\WelcomeAccommodationDiscountedCategoryTypeProps;
+use App\Views\Welcome\Accommodation\Sale\WelcomeAccommodationRecentProps;
+use App\Views\Welcome\Accommodation\Sale\WelcomeAccommodationShowProps;
+use App\Views\Welcome\Accommodation\Sale\WelcomeOwnerAccommodationsProps;
+use App\Views\Welcome\Accommodation\Sale\WelcomeSaleAccommodationIndexProps;
+use App\Views\Welcome\Accommodation\Sale\WelcomeSameLocationAccommodationIndexProps;
+use Inertia\Inertia;
 
 class WelcomeSaleAccommodationController extends Controller
 {

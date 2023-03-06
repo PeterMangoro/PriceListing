@@ -2,19 +2,7 @@
   <!-- Products Area -->
   <div class="py-2">
     <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        
-        shadow-xl
-        
-        sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
-        max-w-7xl
-        sm:rounded-lg
-      "
+      class="px-4 py-1 mx-auto overflow-hidden shadow-xl sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8 max-w-7xl sm:rounded-lg"
     >
       <div class="flex flex-wrap">
         <!-- <h2
@@ -55,10 +43,11 @@
         />
       </div>
 
-      <category-links v-if="categories"
+      <category-links
+        v-if="categories"
         :categories="categories"
         :route_type="route_type"
-        class="shadow-none sm:flex hidden "
+        class="shadow-none sm:flex hidden"
       />
       <accommodation-list :items="items" />
       <!-- PAGINATION START -->
@@ -82,7 +71,7 @@ import AccommodationList from "@/Components/Accommodation/Partials/Accommodation
 
 const props = defineProps({
   items: Object,
-  routes: Object,
+  routes: String,
   heading: String,
   route_parameter: String,
   pagination: Object,

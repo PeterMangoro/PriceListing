@@ -1,7 +1,6 @@
 <?php
 
 // use App\Http\Controllers\PaynowController;
-use Illuminate\Support\Facades\Route;
 
 // Paynow
 // Route::controller(PaynowController::class)

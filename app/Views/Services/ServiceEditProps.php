@@ -11,8 +11,6 @@ use App\Views\Shared\BaseView;
 
 class ServiceEditProps extends BaseView
 {
-    
-
     public function __construct(
         public string $uuid,
         public ?object $service = null,

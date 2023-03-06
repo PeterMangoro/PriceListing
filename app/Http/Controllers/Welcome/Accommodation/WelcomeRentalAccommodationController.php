@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Welcome\Accommodation;
 
-use App\Models\User;
-
-use Inertia\Inertia;
-use App\Models\Shared\Address;
 use App\Http\Controllers\Controller;
+use App\Models\Shared\Address;
+use App\Models\User;
 use App\Views\Welcome\Accommodation\Rental\WelcomeAccommodationShowProps;
 use App\Views\Welcome\Accommodation\Rental\WelcomeOwnerAccommodationsProps;
 use App\Views\Welcome\Accommodation\Rental\WelcomeRentalAccommodationIndexProps;
 use App\Views\Welcome\Accommodation\Rental\WelcomeSameLocationAccommodationIndexProps;
+use Inertia\Inertia;
 
 class WelcomeRentalAccommodationController extends Controller
 {

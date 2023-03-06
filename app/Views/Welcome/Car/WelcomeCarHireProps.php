@@ -2,16 +2,12 @@
 
 namespace App\Views\Welcome\Car;
 
-use App\Actions\Shared\Feature\GetFeaturedModels;
 use App\DataObjects\Car\CarDisplayData;
 use App\DataObjects\Category\CategoryTypeData;
 use App\Handlers\Category\CategoryHandler;
 use App\Handlers\Shared\ModelHandler;
 use App\Models\Car\Car;
 use App\Models\Categories\CarCategory;
-use App\Models\Shared\Discount;
-use App\Models\Shared\Feature;
-use App\Models\Shared\Popular;
 use App\Views\Shared\BaseView;
 use App\Views\Shared\Filters;
 
@@ -22,10 +18,8 @@ class WelcomeCarHireProps extends BaseView
         return CarDisplayData::toWebPage(
             ModelHandler::getPaginatedData(
                 Car::selectMinAttributes()
-                ->IncludeCarDetail()
-                ->forHire()
-                
-
+                    ->IncludeCarDetail()
+                    ->forHire()
             )
         );
     }
@@ -86,7 +80,6 @@ class WelcomeCarHireProps extends BaseView
         return CategoryTypeData::forDisplay(
             CategoryHandler::getCategoryTypes(
                 new CarCategory()
-                
             )
         );
     }

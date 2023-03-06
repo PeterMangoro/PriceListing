@@ -3,7 +3,6 @@
 namespace App\Views\Products;
 
 use App\Handlers\Category\CategoryHandler;
-use App\Handlers\Shared\ModelHandler;
 use App\Models\Categories\ProductCategory;
 use App\Views\Shared\BaseView;
 

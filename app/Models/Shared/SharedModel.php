@@ -2,26 +2,18 @@
 
 namespace App\Models\Shared;
 
+use App\Builders\Shared\SharedScopes;
+use App\Casts\MakePointsCast;
 use App\Models\Team;
 use App\Models\User;
 use App\Traits\UUID;
-use App\Models\Shared\Price;
-use App\Models\Shared\Rating;
-use App\Models\Shared\Address;
-use App\Models\Shared\Feature;
-use App\Models\Shared\Payment;
-use App\Models\Shared\Popular;
-use App\Models\Shared\Discount;
-use App\Models\Shared\Attachment;
-use App\Builders\Shared\SharedScopes;
-use App\Casts\MakePointsCast;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SharedModel extends Model
 {
@@ -32,7 +24,7 @@ class SharedModel extends Model
 
     protected $casts = [
         'sale_status' => 'boolean',
-        'detail' =>MakePointsCast::class,
+        'detail' => MakePointsCast::class,
     ];
 
     protected $hidden = [
@@ -51,17 +43,21 @@ class SharedModel extends Model
 
     public function documents(): MorphMany
     {
-        return $this->morphMany(Attachment::class, 'attachmentable')->where('type', 'document');
+        return $this->morphMany(Attachment::class, 'attachmentable')
+            ->where('type', 'document');
     }
 
     public function trashed_attachments(): MorphMany
     {
-        return $this->morphMany(Attachment::class, 'attachmentable')->onlyTrashed();
+        return $this->morphMany(Attachment::class, 'attachmentable')
+            ->onlyTrashed();
     }
 
     public function trashed_documents(): MorphMany
     {
-        return $this->morphMany(Attachment::class, 'attachmentable')->where('type', 'document')->onlyTrashed();
+        return $this->morphMany(Attachment::class, 'attachmentable')
+            ->where('type', 'document')
+            ->onlyTrashed();
     }
 
     public function address(): MorphOne
@@ -102,9 +98,9 @@ class SharedModel extends Model
     public function latestImage()
     {
         return $this->morphOne(Attachment::class, 'attachmentable')
-        ->where('type', 'image')
-        // ->latest('id')  #this calls all models then selects the last
-        ->latestOfMany('id')    #calls only the last model
+            ->where('type', 'image')
+            // ->latest('id')  #this calls all models then selects the last
+            ->latestOfMany('id')    #calls only the last model
         ;
     }
 

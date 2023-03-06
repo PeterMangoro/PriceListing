@@ -2,47 +2,19 @@
   <!-- Products Area -->
   <div class="py-2">
     <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        
-        shadow-xl
-        bg-slate-100
-        sm:py-1 sm:px-6
-        lg:max-w-7xl lg:px-8
-        max-w-7xl
-        sm:rounded-lg
-      "
+      class="px-4 py-1 mx-auto overflow-hidden shadow-xl bg-slate-100 sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8 max-w-7xl sm:rounded-lg"
     >
       <div class="flex flex-wrap">
         <span v-if="heading">
           <h2
             v-if="category.title"
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             {{ heading + " " + category.title }}
           </h2>
           <h2
             v-else
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             {{ heading + " " + category }} Products
           </h2>
@@ -51,29 +23,13 @@
         <span v-else>
           <h2
             v-if="category.title"
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             List of all {{ category.title }}
           </h2>
           <h2
             v-else
-            class="
-              items-start
-              p-4
-              text-2xl
-              font-extrabold
-              tracking-tight
-              text-slate-50
-              capitalize
-            "
+            class="items-start p-4 text-2xl font-extrabold tracking-tight text-slate-50 capitalize"
           >
             List of all {{ category }} Products
           </h2>
@@ -107,7 +63,7 @@ import ProductList from "@/Components/Product/Partials/ProductList.vue";
 
 const props = defineProps({
   items: Object,
-  routes: Object,
+  routes: String,
   pagination: Object,
   category: Object,
   heading: String,

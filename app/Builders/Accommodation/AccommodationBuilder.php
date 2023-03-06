@@ -57,7 +57,7 @@ class AccommodationBuilder extends Builder
         return $this->when($terms, function ($query) use ($term) {
             $query
                 ->where('location_normalized', 'like', $term)
-                ->orWhere('detail','like',$term);
+                ->orWhere('detail', 'like', $term);
         });
     }
 }

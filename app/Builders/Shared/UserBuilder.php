@@ -10,7 +10,7 @@ class UserBuilder extends Builder
     {
         // return $this->with('socials:id,user_id,title,username,value');
 
-        return $this->with(['socials' => function($query){
+        return $this->with(['socials' => function ($query) {
             $query->select(
                 'id',
                 'user_id',
@@ -18,7 +18,8 @@ class UserBuilder extends Builder
                 // 'username',
                 'value'
             )
-            ->limit(6);
-        }]);
+                ->limit(6);
+        },
+        ]);
     }
 }

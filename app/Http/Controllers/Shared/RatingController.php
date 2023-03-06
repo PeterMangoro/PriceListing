@@ -14,26 +14,26 @@ class RatingController extends Controller
 {
     public function accommodation(RatingRequest $request)
     {
-        RatingHandler::forModel($request,new Accommodation(),'Accommodation');
+        RatingHandler::forModel($request, new Accommodation(), 'Accommodation');
         return back()->with('flash.banner', 'Thanks for Feedback');
     }
 
     public function product(RatingRequest $request)
     {
-        RatingHandler::forModel($request,new Product(),'Product');
+        RatingHandler::forModel($request, new Product(), 'Product');
         return back()->with('flash.banner', 'Thanks for Feedback');
     }
 
     public function car(RatingRequest $request)
     {
         // dd($request);
-        RatingHandler::forModel($request,new Car(),'Car\Car');
+        RatingHandler::forModel($request, new Car(), 'Car\Car');
         return back()->with('flash.banner', 'Thanks for Feedback');
     }
 
     public function service(RatingRequest $request)
     {
-        RatingHandler::forModel($request, new Service(),'Service');
+        RatingHandler::forModel($request, new Service(), 'Service');
         return back()->with('flash.banner', 'Thanks for Feedback');
     }
 }

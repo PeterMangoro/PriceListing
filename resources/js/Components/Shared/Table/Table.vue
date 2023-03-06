@@ -16,28 +16,7 @@
                       <span v-if="path"
                         ><Link
                           :href="route(path)"
-                          class="
-                            float-right
-                            px-6
-                            py-2.5
-                            bg-green-600
-                            text-white
-                            font-medium
-                            text-xs
-                            leading-tight
-                            uppercase
-                            rounded
-                            shadow-md
-                            hover:bg-green-700 hover:shadow-lg
-                            focus:bg-green-700
-                            focus:shadow-lg
-                            focus:outline-none
-                            focus:ring-0
-                            active:bg-green-800 active:shadow-lg
-                            transition
-                            duration-150
-                            ease-in-out
-                          "
+                          class="float-right px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
                           >{{ button }}</Link
                         ></span
                       >
@@ -46,7 +25,7 @@
                   <table class="w-full">
                     <thead>
                       <tr
-                        class="font-semibold tracking-wide text-left text-gray-900  border-b border-black"
+                        class="font-semibold tracking-wide text-left text-gray-900 border-b border-black"
                       >
                         <slot name="tableHead"></slot>
                       </tr>
@@ -62,19 +41,17 @@
         </div>
       </div>
     </div>
-   
-      <div v-if="pagination" class="p-2 flex justify-center  ">
-      <Pagination :links="pagination"  class="text-center" />
+
+    <div v-if="pagination" class="p-2 flex justify-center">
+      <Pagination :links="pagination" class="text-center" />
     </div>
-  
-    
   </div>
 </template>
 
 <script setup>
 import Pagination from "@/Components/Shared/Pagination.vue";
 const props = defineProps({
-  heading: Object,
+  heading: String,
   path: Object,
   button: Object,
   pagination: Object,

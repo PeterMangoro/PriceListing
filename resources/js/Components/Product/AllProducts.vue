@@ -1,19 +1,7 @@
 <template>
   <!-- Products Area -->
   <div class="py-2">
-    <div
-      class="
-        px-4
-        py-1
-        mx-auto
-        overflow-hidden
-        
-        shadow-xl
-        
-       
-        sm:rounded-lg
-      "
-    >
+    <div class="px-4 py-1 mx-auto overflow-hidden shadow-xl sm:rounded-lg">
       <div class="flex flex-wrap">
         <!-- <h2
           v-if="heading"
@@ -53,14 +41,13 @@
         />
       </div>
 
-      <div  v-if="categories" class="hidden sm:flex" >
+      <div v-if="categories" class="hidden sm:flex">
         <category-links
-        :categories="categories"
-        :route_type="route_type"
-        class="shadow-none"
-      />
+          :categories="categories"
+          :route_type="route_type"
+          class="shadow-none"
+        />
       </div>
-      
 
       <product-list :items="items" />
       <!-- PAGINATION START -->
@@ -84,7 +71,7 @@ import ProductList from "@/Components/Product/Partials/ProductList.vue";
 
 const props = defineProps({
   items: Object,
-  routes: Object,
+  routes: String,
   heading: String,
   route_parameter: String,
   pagination: Object,

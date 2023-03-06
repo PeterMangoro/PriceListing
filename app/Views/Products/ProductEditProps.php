@@ -2,12 +2,12 @@
 
 namespace App\Views\Products;
 
+use App\DataObjects\Product\Partials\ProductForUpdate;
+use App\Handlers\Category\CategoryHandler;
+use App\Handlers\Shared\ModelHandler;
+use App\Models\Categories\ProductCategory;
 use App\Models\Product;
 use App\Views\Shared\BaseView;
-use App\Handlers\Shared\ModelHandler;
-use App\Handlers\Category\CategoryHandler;
-use App\Models\Categories\ProductCategory;
-use App\DataObjects\Product\Partials\ProductForUpdate;
 
 class ProductEditProps extends BaseView
 {

@@ -3,12 +3,10 @@
 namespace App\Traits\User;
 
 use App\Models\Shared\Address;
-use App\Models\Shared\Payment;
 use App\Models\Shared\Attachment;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
+use App\Models\Shared\Payment;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-
-/*  */
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 trait UserMorphRelationships
 {
