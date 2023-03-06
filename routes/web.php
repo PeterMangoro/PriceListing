@@ -31,8 +31,6 @@ Route::get('{user:username}/team', [ProfileController::class,'team'])->name('com
 Route::resource('company/employees', EmployeeController::class)->except('show');
 Route::resource('company/socials', SocialController::class)->except('show');
 
-// Route::get('pricing')
-// Route::get('editor', [BlogController::class,'index']);
 Route::get('/symlink/a', function () {    
     Artisan::call('storage:link');
 });

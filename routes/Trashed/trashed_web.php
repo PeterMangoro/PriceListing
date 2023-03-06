@@ -28,20 +28,12 @@ Route::middleware([
 
     Route::prefix('user')
         ->group(function () {
-            // Route::get('products.restore',[ProductController::class,'trashed'])->name('products.trashed');
+        
             Route::resources([
-
-                'plots' => PlotController::class,
-               
+                'plots' => PlotController::class,               
                 'transports' => TransportController::class,
-
             ]);
 
-            // Route::resources([
-
-            //     'products.trashed'=>ProductController::class,
-
-            // ]);
             Route::resource('products', ProductController::class)->except('show');
             Route::resource('services', ServiceController::class)->except('show');
             Route::resource('accommodations', AccommodationController::class)->except('show');

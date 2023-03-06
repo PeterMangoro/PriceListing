@@ -18,10 +18,8 @@ class GetDataAction
             ->withActiveDiscountPrice()
             // ->inRandomOrder()  #It slowed down performance
             ->limit($limit)
-            ->get()
-            ->random(
-                fn ($items) => min($limit, count($items))
-            );
+            ->get()         
+            ->shuffle();
     }
 
     public static function fetchDisplayModelByUUID(
