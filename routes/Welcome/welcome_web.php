@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\Welcome\WelcomeCarController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\Welcome\WelcomeController;
+use App\Http\Controllers\Welcome\WelcomeCarController;
 use App\Http\Controllers\Welcome\WelcomePlotController;
 use App\Http\Controllers\Welcome\WelcomeProductController;
 use App\Http\Controllers\Welcome\WelcomeServiceController;
 use App\Http\Controllers\Welcome\WelcomeTransportController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
+Route::resource('suppliers', SupplierController::class)->only('index','show');
 
 Route::prefix('welcome')
     ->name('welcome.')

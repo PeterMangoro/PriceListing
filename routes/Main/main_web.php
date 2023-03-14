@@ -1,17 +1,17 @@
 <?php
 
-use App\Http\Controllers\Accommodation\AccommodationController;
-use App\Http\Controllers\Accommodation\AccommodationTrashedController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Car\CarController;
-use App\Http\Controllers\Car\CarTrashedController;
 use App\Http\Controllers\Plot\PlotController;
+use App\Http\Controllers\Car\CarTrashedController;
 use App\Http\Controllers\Product\ProductController;
-use App\Http\Controllers\Product\ProductTrashedController;
 use App\Http\Controllers\Service\ServiceController;
-use App\Http\Controllers\Service\ServiceTrashedController;
 use App\Http\Controllers\Shared\DashboardController;
 use App\Http\Controllers\Transport\TransportController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Product\ProductTrashedController;
+use App\Http\Controllers\Service\ServiceTrashedController;
+use App\Http\Controllers\Accommodation\AccommodationController;
+use App\Http\Controllers\Accommodation\AccommodationTrashedController;
 
 Route::middleware([
     'auth:sanctum',
@@ -36,6 +36,7 @@ Route::middleware([
             Route::resource('services', ServiceController::class)->except('show');
             Route::resource('accommodations', AccommodationController::class)->except('show');
             Route::resource('cars', CarController::class)->except('show');
+           
 
             Route::resource('products/trashed', ProductTrashedController::class)
                 ->only(['index','show'])->names([
