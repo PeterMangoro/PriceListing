@@ -2,8 +2,7 @@
   <div class="flex space-x-2  ">
     <label for="search" class="hidden">Search</label>
     <jet-input
-      id="search"
-      ref="search"
+      id="search"     
       v-model="search"
       :class="{ 'transition-border': search }"
       autocomplete="off"
@@ -13,85 +12,31 @@
       @keyup.esc="search = null"
     />
 
-    <!-- 
-                    I'm not importing per-page component coz search props will not sync  when a value changes as it requires a page reload to pass data through components
-                    <per-page :routeName=routeName /> -->
-    <select
-      v-if="show_per_page"
-      v-model="per_page"
-      @change="per_page === $event.target.value"
-      class="
-        text-sm
-        border-gray-300
-        rounded-md
-        shadow-sm
-        shadow-violet-600
-        focus:border-indigo-300
-        focus:ring
-        focus:ring-indigo-200
-        focus:ring-opacity-50
-        hidden sm:flex
-      "
-    >
-      <option value="5">5 Per Page</option>
-      <option value="10">10 Per Page</option>
-      <option value="15">15 Per Page</option>
-    </select>
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup>
+
 import JetInput from "@/Components/TextInput.vue";
-import PerPage from "@/Components/Shared/Table/PerPage.vue";
+// import PerPage from "@/Components/Shared/Table/PerPage.vue";
+import {ref,watch} from 'vue'
+import {router} from '@inertiajs/vue3'
+import DebouncedRef from '@/Composables/DebouncedRef'
 
-export default defineComponent({
-  props: {
-    // any route name from laravel routes (ideally index route is what you'd search through)
-    routeName: String,
-    routeParameter: String,
-    placeholder: String,
-    show_per_page: Boolean,
-  },
+let search = DebouncedRef('', 400);
 
-  components: {
-    JetInput,
-    PerPage,
-  },
-  data() {
-    return {
-      // page.props.search will come from the backend after search has returned.
-      search: this.$inertia.page.props.data.filters.search || null,
-      per_page: this.$inertia.page.props.data.filters.per_page || null,
-    };
-  },
+const props = defineProps({
+    routeName:String,
+    placeholder:String,
+})
 
-  watch: {
-    search() {
-      // if you type something in the search input
-      this.searchMethod();
-    },
-    per_page() {
-      // if you type something in the search input
-      this.per_pageMethod();
-    },
-  },
-
-  methods: {
-    searchMethod: _.debounce(function () {
-      this.$inertia.get(
-        this.currentUrl = window.location.href,
-        { search: this.search, per_page: this.per_page },
-        { preserveState: true, replace: true, preserveScroll: true }
-      );
-    }, 500),
-    per_pageMethod: _.debounce(function () {
-      this.$inertia.get(
-        this.currentUrl = window.location.href,
-        { search: this.search, per_page: this.per_page },
-        { preserveState: true, replace: true }
-      );
-    }, 200),
-  },
-});
+watch(search, (value) => {
+  router.get(
+    route(props.routeName),
+    { search: value },
+    {
+      preserveState: true,
+    }
+  );
+}); 
 </script>
