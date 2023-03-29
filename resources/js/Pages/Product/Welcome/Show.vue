@@ -1,4 +1,9 @@
 <template>  
+  <PageHead
+  description="Find and shop items with at cheap and affordable prices"
+    pageTitle="Price listing"
+    cover = "/storage/fcc/fcc.png"
+  />
   <product-layout :title="data.product.username">
     
     <show>
@@ -82,7 +87,7 @@ import DetailSection from "@/Components/Shared/Show/DetailSection.vue";
 import GroupedProducts from "@/Components/Product/GroupedProducts.vue";
 import CommentSection from "@/Components/Shared/Comment/CommentSection.vue";
 import NoResultDisplay from "@/Components/Shared/NoResultDisplay.vue";
-
+import PageHead from "@/Components/Shared/PageHead.vue";
 import { ref } from "vue";
 
 const props = defineProps({

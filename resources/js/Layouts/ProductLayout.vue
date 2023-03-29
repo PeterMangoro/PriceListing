@@ -266,16 +266,16 @@
             </div>
 
             <div>
-              <div class="text-base font-medium text-gray-800">
+              <div class="text-base font-medium text-gray-50">
                 {{ $page.props.user.name }}
               </div>
-              <div class="text-sm font-medium text-gray-500">
+              <div class="text-sm font-medium text-gray-50">
                 {{ $page.props.user.email }}
               </div>
             </div>
           </div>
 
-          <div class="mt-3 space-y-1">
+          <div class="mt-3 space-y-1 ">
             <JetResponsiveNavLink
               :href="route('profile.show')"
               :active="route().current('profile.show')"
@@ -299,9 +299,27 @@
             </JetResponsiveNavLink>
 
             <!-- Authentication -->
-            <form method="POST" @submit.prevent="logout">
+            <form v-if="$page.props.user" method="POST" @submit.prevent="logout">
               <JetResponsiveNavLink as="button"> Log Out </JetResponsiveNavLink>
             </form>
+
+            <div v-else>
+                <Link
+                  :href="route('login')"
+                  class="
+                    flex
+                    items-center
+                    px-4
+                    py-2                    
+                    font-medium
+                    text-white                    
+                    rounded-md
+                    hover:bg-blue-600
+                  "
+                >
+                  Login
+                </Link>
+            </div>
 
             <!-- Team Management -->
             <template v-if="$page.props.jetstream.hasTeamFeatures">

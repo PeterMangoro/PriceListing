@@ -1,23 +1,43 @@
 <template>
+   <PageHead
+  description="Shop and sell anything, anywhere. Find all prices listed easily"
+    pageTitle="Price listing"
+    cover = "/storage/fcc/fcc.png"
+  />
   <app-layout title="Welcome">
-
+   
     <div class="pb-3">
       <landing-page :images="images2" class="pb-3" />
       <div class="flex flex-wrap w-auto gap-3 justify-evenly m-2  ">
-        <welcome-card image="/storage/landing/clothes.jpg" heading="Marketplace"
+        <welcome-card 
+        image="/storage/landing/clothes.jpg" 
+        alt="buy and sell in the shop at cheap prices"
+        heading="Marketplace"
           detail="Shop from different suppliers at the cheapest price for the highest quality"
           path="welcome.products.index" />
 
-        <welcome-card image="/storage/landing/cars.webp" heading="Car Sale"
+        <welcome-card 
+        image="/storage/landing/cars.webp" 
+        alt="buy and sell your cars in the shop"
+        heading="Car Sale"
           detail="Find the best car deals and drive the car of your dreams" path="welcome.cars.index" />
 
-        <welcome-card image="/storage/landing/house.jpeg" heading="Accommodations"
+        <welcome-card 
+        image="/storage/landing/house.jpeg" 
+        alt="all accommodations and places to stay at affordable prices"
+        heading="Accommodations"
             detail="Find the place you will call home " path="welcome.accommodations.index" />
 
-        <welcome-card image="/storage/landing/farm.webp" heading="Real Estate"
+        <welcome-card 
+        image="/storage/landing/farm.webp" 
+        alt="farming, land and plots"
+        heading="Real Estate"
           detail="Purchase land for your projects at good strategic locations " path="welcome.plots.index" />
 
-        <welcome-card image="/storage/landing/construction2.jpg" heading="Services"
+        <welcome-card 
+        image="/storage/landing/construction2.jpg"
+        alt="services for your need"
+         heading="Services"
           detail="Check out Services provided ranging from fashion design, media, entertainment, car servicing and ..."
           path="welcome.services.index" />
 
@@ -37,6 +57,7 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import WelcomeCard from "@/Components/Welcome/WelcomeCard.vue";
 import LandingPage from "@/Components/Shared/Gallery/LandingPage.vue";
+import PageHead from "@/Components/Shared/PageHead.vue";
 // import CallToAction from "@/Components/Welcome/CallToAction.vue";
 const props = defineProps({
   data: Object,

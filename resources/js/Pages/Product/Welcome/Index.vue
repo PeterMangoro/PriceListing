@@ -1,4 +1,9 @@
 <template>
+    <PageHead
+  description="Find and shop items with at cheap and affordable prices"
+    pageTitle="Price listing"
+    cover = "/storage/fcc/fcc.png"
+  />
   <product-layout title="Shop">
     <div class="p-4">
       <div class="px-2">
@@ -67,6 +72,7 @@ import ProductLayout from "@/Layouts/ProductLayout.vue";
 import FeaturedProducts from "@/Components/Product/FeaturedProducts.vue";
 import AllProducts from "@/Components/Product/AllProducts.vue";
 import NoResultDisplay from "@/Components/Shared/NoResultDisplay.vue";
+import PageHead from "@/Components/Shared/PageHead.vue";
 
 const props = defineProps({
   data: Object,

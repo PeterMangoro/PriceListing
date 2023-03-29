@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex flex-wrap ">
     <template v-for="(link, key) in links" :key="key">
       <div
         v-if="link.url === null"
