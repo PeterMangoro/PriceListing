@@ -14,6 +14,7 @@ use App\Events\{
     Accommodation\Room\CreatingAccommodationRoom,
     Accommodation\Booking\CreatingAccommodationBooking,
     Car\CreatingCar,
+    Car\Insurance\CreatingCarInsurance,
     Plot\CreatingPlot,
     Product\CreatingProduct,
     Service\CreatingService,
@@ -30,6 +31,7 @@ use App\Events\{
     Accommodation\Room\UpdatingAccommodationRoom,
     Accommodation\Booking\UpdatingAccommodationBooking,
     Car\UpdatingCar,
+    Car\Insurance\UpdatingCarInsurance,
     Product\UpdatingProduct,
     Plot\UpdatingPlot,
     Service\UpdatingService,
@@ -45,6 +47,7 @@ use App\Listeners\{
     Accommodation\Room\CreateAccommodationRoom,
     Accommodation\Booking\CreateAccommodationBooking,
     Car\CreateCar,
+    Car\Insurance\CreateCarInsurance,
     Plot\CreatePlot,
     Product\CreateProduct,
     Service\CreateService,
@@ -60,6 +63,7 @@ use App\Listeners\{
     Accommodation\Room\UpdateAccommodationRoom,
     Accommodation\Booking\UpdateAccommodationBooking,
     Car\UpdateCar,
+    Car\Insurance\UpdateCarInsurance,
     Plot\UpdatePlot,
     Product\UpdateProduct,
     Service\UpdateService,
@@ -96,6 +100,10 @@ class EventServiceProvider extends ServiceProvider
 
         CreatingCar::class => [
             CreateCar::class,
+        ],
+
+        CreatingCarInsurance::class => [
+            CreateCarInsurance::class,
         ],
 
         CreatingProduct::class => [
@@ -144,6 +152,11 @@ class EventServiceProvider extends ServiceProvider
         UpdatingCar::class => [
             UpdateCar::class,
         ],
+
+        UpdatingCarInsurance::class => [
+            UpdateCarInsurance::class,
+        ],
+
 
         UpdatingPlot::class => [
             UpdatePlot::class,

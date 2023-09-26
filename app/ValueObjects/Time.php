@@ -19,4 +19,9 @@ class Time
     {
         return Carbon::parse($date)->toDayDateTimeString();
     }
+
+    public static function date($date)
+    {
+        return Carbon::parse($date)->toFormattedDayDateString();
+    }
 }

@@ -37,6 +37,7 @@ class RouteServiceProvider extends ServiceProvider
             ->group([
                 base_path('routes/Accommodation/accommodation_web.php'),
                 base_path('routes/Accommodation/welcome_accommodation_web.php'),
+                base_path('routes/Insurance/insurance_web.php'),
                 // base_path('routes/Admin/admin_web.php'),
                 base_path('routes/Footer/footer_web.php'),
                 base_path('routes/Main/main_web.php'),

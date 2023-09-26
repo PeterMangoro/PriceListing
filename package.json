@@ -2,7 +2,6 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        
         "build": "vite build && vite build --ssr"
     },
     "devDependencies": {
@@ -22,6 +21,7 @@
     },
     "dependencies": {
         "@heroicons/vue": "^2.0.15",
-        "@vue/server-renderer": "^3.2.47"
+        "@vue/server-renderer": "^3.2.47",
+        "luxon": "^3.3.0"
     }
 }
