@@ -25,14 +25,15 @@ class UpdateCarInsuranceRequest extends FormRequest
     {
         return [
             
-            'owner' => 'required',
-            'contact' => 'nullable',
-            'car_title' => 'nullable|string|max:255',
-            'car_reg' => 'nullable|string|max:255',
-            'payment' => 'nullable|string|max:255',
-            'reg_date' => 'nullable|string|max:255',
-            'reg_exp' => 'required|numeric|min:0',
-            'user_id' => 'required_without:rent_status',
+            'owner' => 'required|string|max:255',
+            'contact' => 'required|string|max:255',
+            'car_title' => 'required|string|max:255',
+            'car_reg' => 'required|string|max:255',
+            // 'payment' => 'required|array',
+            // 'reg_date' => 'required|string|max:255',
+            'reg_exp' => 'required|string|max:255',            
+            'car_insurance' => 'required_without:zimra',
+            'zimra' => 'required_without:car_insurance',
             
 
         ];

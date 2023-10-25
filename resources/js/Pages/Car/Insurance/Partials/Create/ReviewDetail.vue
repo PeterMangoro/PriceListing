@@ -11,13 +11,13 @@
         </span>
       </p>
 
-      <p class="flex flex-wrap gap-2 border-b p-2">
+      <!-- <p class="flex flex-wrap gap-2 border-b p-2">
         <span class="font-bold"> National ID/ Pasport Number: </span>
 
         <span>
           {{ form.national_id }}
         </span>
-      </p>
+      </p> -->
 
       <p class="flex flex-wrap gap-2 border-b p-2">
         <span class="font-bold"> Contact Details: </span>

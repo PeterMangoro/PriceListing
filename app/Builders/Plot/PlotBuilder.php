@@ -33,7 +33,6 @@ class PlotBuilder extends Builder
 
     public function fromSameLocation(string $location): self
     {
-        // dd($location);
         return $this->whereRelation('address', 'addresses.city', $location);
     }
 

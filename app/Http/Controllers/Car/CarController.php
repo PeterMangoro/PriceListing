@@ -44,7 +44,6 @@ class CarController extends Controller
 
     public function update(UpdateCarRequest $request, string $uuid)
     {
-        // dd(5);
         $this->handle()::update($request, $uuid);
         return back();
     }

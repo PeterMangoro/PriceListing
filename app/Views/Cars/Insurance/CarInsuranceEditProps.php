@@ -16,10 +16,11 @@ class CarInsuranceEditProps extends BaseView
         $this->uuid = $uuid;
 
         $this->car_insurance = CarInsuranceForUpdate::from(
-            ModelHandler::getModelForEdit(
-                new CarInsurance(),
-                $this->uuid
-            )
+            CarInsurance::whereUUIDmatches($uuid)
+            ->selectDetailAttributes()
+            
+            ->first()
+            
         );
        
     }

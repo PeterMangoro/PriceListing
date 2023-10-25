@@ -26,7 +26,6 @@ class RatingController extends Controller
 
     public function car(RatingRequest $request)
     {
-        // dd($request);
         RatingHandler::forModel($request, new Car(), 'Car\Car');
         return back()->with('flash.banner', 'Thanks for Feedback');
     }

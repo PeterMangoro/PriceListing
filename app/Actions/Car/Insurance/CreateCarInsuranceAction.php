@@ -11,7 +11,6 @@ class CreateCarInsuranceAction
 {
     public static function handle(object $validated_request): int
     {
-        // dd('hie');
         return DB::table('car_insurances')->insertGetId([
             'uuid' => Str::uuid()->toString(),
             'owner' => $validated_request->owner,

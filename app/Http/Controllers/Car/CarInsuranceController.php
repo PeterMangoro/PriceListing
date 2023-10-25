@@ -21,6 +21,13 @@ class CarInsuranceController extends Controller
         ]);
     }
 
+    public function show()
+    {
+        return Inertia::render('Car/Insurance/Show', [
+            // 'data' => new CarInsuranceCreateProps(),
+        ]);
+    }
+
     public function create()
     {
         return Inertia::render('Car/Insurance/Create', [
