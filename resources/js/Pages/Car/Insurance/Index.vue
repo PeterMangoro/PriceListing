@@ -1,5 +1,5 @@
 <template>
-  <car-layout title="Garage Dashboard">
+  <car-insurance-layout title="Garage Dashboard">
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-sky-500">
         Garage Dashboard
@@ -122,12 +122,12 @@
         @close="show = false"
       />
     </div>
-  </car-layout>
+  </car-insurance-layout>
 </template>
   
   <script setup>
 import { ref } from "vue";
-import CarLayout from "@/Layouts/CarLayout.vue";
+import CarInsuranceLayout from "@/Layouts/CarInsuranceLayout.vue";
 import DeleteConfirmation from "@/Components/Shared/DeleteConfirmation.vue";
 import Table from "@/Components/Shared/Table/Table.vue";
 import TableData from "@/Components/Shared/Table/TableData.vue";

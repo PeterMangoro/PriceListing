@@ -1,5 +1,5 @@
 <template>
-    <car-layout title="Car Create">
+    <car-insurance-layout title="Car Create">
 
       <div>
       <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -19,12 +19,12 @@
         </div>
       </div>
     </div>
-    </car-layout>
+    </car-insurance-layout>
   </template>
   
   
   <script setup>
-  import CarLayout from "@/Layouts/CarLayout.vue";
+  import CarInsuranceLayout from "@/Layouts/CarInsuranceLayout.vue";
 import { ref } from "vue";
 import { router } from "@inertiajs/vue3";
 import CustomerDetailForm from "@/Pages/Car/Insurance/Partials/Create/CustomerDetailForm.vue";

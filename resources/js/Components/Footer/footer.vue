@@ -56,6 +56,11 @@ const UploadingPaths = [
     path: "services.create",
     heading: "Upload a Service",
   },
+  {
+    id: 6,
+    path: "car-insurance.create",
+    heading: "Add Car Insurance",
+  },
 ];
 
 const ManagingPaths = [
@@ -83,6 +88,11 @@ const ManagingPaths = [
     id: 5,
     path: "services.index",
     heading: "Manage your Services",
+  },
+  {
+    id: 6,
+    path: "car-insurance.index",
+    heading: "View Car Insurances",
   },
 ];
 
@@ -141,6 +151,12 @@ const NavigationPaths = [
     id: 5,
     path: "welcome.services.index",
     heading: "Services",
+  },
+
+  {
+    id: 6,
+    path: "car_insurance.show",
+    heading: "Car Insurance",
   },
 ];
 </script>

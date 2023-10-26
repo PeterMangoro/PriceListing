@@ -1,10 +1,10 @@
 <script setup>
-import AppLayout from '@/Layouts/AppLayout.vue';
+import CarInsuranceLayout from '@/Layouts/CarInsuranceLayout.vue';
 import Welcome from './Partials/Welcome.vue';
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
+    <car-insurance-layout title="Dashboard">
         <div v-if="canLogin" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
       <Link
         v-if="$page.props.auth.user"
@@ -36,5 +36,5 @@ import Welcome from './Partials/Welcome.vue';
                 </div>
             </div>
         </div>
-    </AppLayout>
+    </car-insurance-layout>
 </template>
